@@ -1,0 +1,13 @@
+/* 
+Specific Core Theme Styles
+*/
+.single-recipe #page #main #primary #content .tfrh {
+  margin: 0px auto;
+  width: 80%; }
+
+.single-recipe .recipe .recipe-single-author {
+  margin-top: 10px; }
+.single-recipe .recipe .recipe-single-details > div {
+  margin-bottom: 5px; }
+.single-recipe .recipe .recipe-single-instructions ol.steps-list li.steps-item img.step-image {
+  max-width: 100%; }

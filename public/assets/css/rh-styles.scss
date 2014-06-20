@@ -1,0 +1,69 @@
+/* 
+Specific Core Theme Styles
+*/
+
+// Twenty Fourteen
+.single-recipe {
+	#page {
+		#main {
+			#primary {
+				#content {
+					.tfrh {
+						margin: 0px auto;
+						width: 80%;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.single-recipe {
+	.recipe {
+		.recipe-single-title {
+
+		}
+		.recipe-single-author {
+			margin-top: 10px;
+		}
+		.recipe-single-details {
+			> div {
+				margin-bottom: 5px;
+			}
+			.serves {
+
+			}
+			.prep-time {
+
+			}
+			.cook-time {
+
+			}
+			.equipment {
+				.equipment-item {
+
+				}
+			}
+			.nutrition {
+
+			}
+		}
+		.recipe-single-ingredients {
+			ul.ingredients-list {
+				li.ingredeients-item {
+
+				}
+			}
+		}
+		.recipe-single-instructions {
+			ol.steps-list {
+				li.steps-item {
+					img.step-image {
+						max-width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
