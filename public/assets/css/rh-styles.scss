@@ -1,69 +1,158 @@
+@import 'rh-mixins';
+
 /* 
 Specific Core Theme Styles
 */
 
 // Twenty Fourteen
-.single-recipe {
-	#page {
-		#main {
-			#primary {
-				#content {
-					.tfrh {
-						margin: 0px auto;
-						width: 80%;
-					}
+#page {
+	#main {
+		#primary {
+			#content {
+				.tfrh {
+					margin: 0px auto;
+					width: 90%;
 				}
 			}
 		}
 	}
 }
 
+.recipe {
+	.recipe-single-title {
 
-.single-recipe {
-	.recipe {
-		.recipe-single-title {
-
-		}
-		.recipe-single-author {
-			margin-top: 10px;
-		}
-		.recipe-single-details {
-			> div {
-				margin-bottom: 5px;
-			}
-			.serves {
-
-			}
-			.prep-time {
-
-			}
-			.cook-time {
-
-			}
-			.equipment {
-				.equipment-item {
-
-				}
-			}
-			.nutrition {
-
+	}
+	.recipe-single-meta {
+		margin-top: 10px;
+		.date, .author, .comments-link, .edit-link {
+			display: inline-block;
+			padding-left: 15px;
+			font-size: 14px;
+			.dashicons {
+				font-size: 16px;
+				vertical-align: bottom;
 			}
 		}
-		.recipe-single-ingredients {
-			ul.ingredients-list {
-				li.ingredeients-item {
-
-				}
-			}
+		.date {
+			padding-left: 0;
 		}
-		.recipe-single-instructions {
-			ol.steps-list {
-				li.steps-item {
-					img.step-image {
-						max-width: 100%;
+		.comments-link a:before {
+			content: none;
+		}
+	}
+	.recipe-single-photo {
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+	.recipe-single-tax {
+		.cuisine,
+		.course {
+			display: inline-block;
+			padding-right: 15px;
+			strong {
+				font-size: 17px;
+			}
+			ul {
+				display: inline-block;
+				list-style-type: none;
+				margin-left: 5px;
+				margin-bottom: 0;
+				li {
+					display: inline-block;
+					padding: 3px 8px;
+					margin-right: 5px;
+					background: #fff;
+					border: 1px solid #ddd;
+					@include transition(all, 200ms, ease);
+					&:hover {
+						background: #fbfbfb;
+
 					}
 				}
 			}
 		}
+		.cuisine {
+			border-right: 1px solid #ddd;
+			padding-right: 15px;
+			margin-right: 15px;
+		}
+	}
+	.recipe-single-details {
+		h4 {
+			margin-top: 25px;
+		}
+		> div {
+			margin-bottom: 5px;
+		}
+		strong {
+			font-size: 17px;
+			display: block;
+		}
+		.serves, .prep-time, .cook-time, .equipment {
+			font-size: 15px;
+		}
+		.serves {
+		}
+		.prep-time {
+		}
+		.cook-time {
+		}
+		.equipment {
+			.equipment-item {
+			}
+		}
+	}
+	.recipe-single-content {
+		font-size: 18px;
+	}
+	.recipe-single-ingredients {
+		h4 {
+			margin-top: 25px;
+		}
+		ul.ingredients-list {
+			margin-left: 0;
+		   	column-count: 2;
+	       	column-gap: 20px;
+	       -moz-column-count: 2;
+	       -moz-column-gap: 20px;
+	       -webkit-column-count: 2;
+	       -webkit-column-gap : 20px;
+	     /* 	column-rule-color:  #eee;
+	       	column-rule-style:  solid;
+	       	column-rule-width:  1px;
+	       -moz-column-rule-color:  #eee;
+	       -moz-column-rule-style:  solid;
+	       -moz-column-rule-width:  1px;
+	       -webkit-column-rule-color:  #eee;
+	       -webkit-column-rule-style: solid ;
+	       -webkit-column-rule-width:  1px; */
+		li.ingredeients-item {
+			}
+		}
+	}
+	.recipe-single-instructions {
+		h4 {
+			margin-top: 25px;
+		}
+		ol.steps-list {
+			li.steps-item {
+				margin-bottom: 30px;
+				p {
+					margin-bottom: 15px;
+				}
+				img.step-image {
+					max-width: 100%;
+					padding: 3px;
+					border: 1px solid #ddd;
+					border-radius: 5px;
+				}
+			}
+		}
+	}
+	.recipe-single-nutrition {
+		font-size: 14px;
+	}
+	.recipe-single-seperator {
+		margin-top: 15px;
 	}
 }

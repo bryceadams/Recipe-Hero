@@ -1,13 +1,157 @@
+/* -------------------------------------------------------------
+  Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
+  By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
+
+  List of CSS3 Sass Mixins File to be @imported and @included as you need
+
+  The purpose of this library is to facilitate the use of CSS3 on different browsers avoiding HARD TO READ and NEVER
+  ENDING css files
+
+  note: All CSS3 Properties are being supported by Safari 5
+  more info: http://www.findmebyip.com/litmus/#css3-properties
+
+  Mixins available:
+    -   background-gradient     - arguments: Start Color: #3C3C3C, End Color: #999999
+    -   background-size         - arguments: Width: 100%, Height: 100%
+    -   border-radius           - arguments: Radius: 5px
+    -   border-radius-separate  - arguments: Top Left: 5px, Top Left: 5px, Bottom Left: 5px, Bottom Right: 5px
+    -   box                     - arguments: Orientation: horizontal, Pack: center, Align: center
+    -   box-rgba                - arguments: R: 60, G: 3, B: 12, Opacity: 0.23, Color: #3C3C3C
+    -   box-shadow              - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   box-sizing              - arguments: Type: border-box
+    -   columns                 - arguments: Count: 3, Gap: 10
+    -   double-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Radius: 0
+    -   flex                    - arguments: Value: 1
+    -   flip                    - arguments: ScaleX: -1
+    -   font-face               - arguments: Font Family: myFont, Eot File Src: myFont.eot, Woff File Src: myFont.woff, Ttf File Src: myFont.ttf
+    -   opacity                 - arguments: Opacity: 0.5
+    -   outline radius          - arguments: Radius: 5px
+    -   resize                  - arguments: Direction: both
+    -   rotate                  - arguments: Degree: 0, M11: 0, M12: 0, M21: 0, M22: 0
+    CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/matrix-calculator.html
+    -   text-shadow             - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   transform               - arguments: Parameters: null
+    -   transition              - arguments: What: all, Length: 1s, Easing: ease-in-out
+    -   triple-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Color Three: #000000, Radius: 0
+
+------------------------------------------------------------- */
+/* BACKGROUND GRADIENT */
+/* BACKGROUND SIZE */
+/* BORDER RADIUS */
+/* BOX */
+/* BOX RGBA */
+/* BOX SHADOW */
+/* BOX SIZING */
+/* COLUMNS */
+/* DOUBLE BORDERS */
+/* FLEX */
+/* FLIP */
+/* FONT FACE */
+/* OPACITY */
+/* OUTLINE RADIUS */
+/* RESIZE */
+/* ROTATE*/
+/* TEXT SHADOW */
+/* TRANSFORM  */
+/* TRANSITION */
+/* TRIPLE BORDERS */
 /* 
 Specific Core Theme Styles
 */
-.single-recipe #page #main #primary #content .tfrh {
+#page #main #primary #content .tfrh {
   margin: 0px auto;
-  width: 80%; }
+  width: 90%; }
 
-.single-recipe .recipe .recipe-single-author {
+.recipe .recipe-single-meta {
   margin-top: 10px; }
-.single-recipe .recipe .recipe-single-details > div {
+  .recipe .recipe-single-meta .date, .recipe .recipe-single-meta .author, .recipe .recipe-single-meta .comments-link, .recipe .recipe-single-meta .edit-link {
+    display: inline-block;
+    padding-left: 15px;
+    font-size: 14px; }
+    .recipe .recipe-single-meta .date .dashicons, .recipe .recipe-single-meta .author .dashicons, .recipe .recipe-single-meta .comments-link .dashicons, .recipe .recipe-single-meta .edit-link .dashicons {
+      font-size: 16px;
+      vertical-align: bottom; }
+  .recipe .recipe-single-meta .date {
+    padding-left: 0; }
+  .recipe .recipe-single-meta .comments-link a:before {
+    content: none; }
+.recipe .recipe-single-photo {
+  margin-top: 15px;
+  margin-bottom: 15px; }
+.recipe .recipe-single-tax .cuisine,
+.recipe .recipe-single-tax .course {
+  display: inline-block;
+  padding-right: 15px; }
+  .recipe .recipe-single-tax .cuisine strong,
+  .recipe .recipe-single-tax .course strong {
+    font-size: 17px; }
+  .recipe .recipe-single-tax .cuisine ul,
+  .recipe .recipe-single-tax .course ul {
+    display: inline-block;
+    list-style-type: none;
+    margin-left: 5px;
+    margin-bottom: 0; }
+    .recipe .recipe-single-tax .cuisine ul li,
+    .recipe .recipe-single-tax .course ul li {
+      display: inline-block;
+      padding: 3px 8px;
+      margin-right: 5px;
+      background: #fff;
+      border: 1px solid #ddd;
+      -moz-transition: all 200ms ease;
+      -o-transition: all 200ms ease;
+      -webkit-transition: all 200ms ease;
+      -ms-transition: all 200ms ease;
+      transition: all 200ms ease; }
+      .recipe .recipe-single-tax .cuisine ul li:hover,
+      .recipe .recipe-single-tax .course ul li:hover {
+        background: #fbfbfb; }
+.recipe .recipe-single-tax .cuisine {
+  border-right: 1px solid #ddd;
+  padding-right: 15px;
+  margin-right: 15px; }
+.recipe .recipe-single-details h4 {
+  margin-top: 25px; }
+.recipe .recipe-single-details > div {
   margin-bottom: 5px; }
-.single-recipe .recipe .recipe-single-instructions ol.steps-list li.steps-item img.step-image {
-  max-width: 100%; }
+.recipe .recipe-single-details strong {
+  font-size: 17px;
+  display: block; }
+.recipe .recipe-single-details .serves, .recipe .recipe-single-details .prep-time, .recipe .recipe-single-details .cook-time, .recipe .recipe-single-details .equipment {
+  font-size: 15px; }
+.recipe .recipe-single-content {
+  font-size: 18px; }
+.recipe .recipe-single-ingredients h4 {
+  margin-top: 25px; }
+.recipe .recipe-single-ingredients ul.ingredients-list {
+  margin-left: 0;
+  column-count: 2;
+  column-gap: 20px;
+  -moz-column-count: 2;
+  -moz-column-gap: 20px;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 20px;
+  /* 	column-rule-color:  #eee;
+    	column-rule-style:  solid;
+    	column-rule-width:  1px;
+    -moz-column-rule-color:  #eee;
+    -moz-column-rule-style:  solid;
+    -moz-column-rule-width:  1px;
+    -webkit-column-rule-color:  #eee;
+    -webkit-column-rule-style: solid ;
+    -webkit-column-rule-width:  1px; */ }
+.recipe .recipe-single-instructions h4 {
+  margin-top: 25px; }
+.recipe .recipe-single-instructions ol.steps-list li.steps-item {
+  margin-bottom: 30px; }
+  .recipe .recipe-single-instructions ol.steps-list li.steps-item p {
+    margin-bottom: 15px; }
+  .recipe .recipe-single-instructions ol.steps-list li.steps-item img.step-image {
+    max-width: 100%;
+    padding: 3px;
+    border: 1px solid #ddd;
+    border-radius: 5px; }
+.recipe .recipe-single-nutrition {
+  font-size: 14px; }
+.recipe .recipe-single-seperator {
+  margin-top: 15px; }

@@ -59,9 +59,6 @@ class Recipe_Hero_Admin {
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
 
-		// Add the options page and menu item.
-		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
-
 		// Add an action link pointing to the options page.
 		$plugin_basename = plugin_basename( plugin_dir_path( realpath( dirname( __FILE__ ) ) ) . $this->plugin_slug . '.php' );
 		add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
@@ -70,13 +67,6 @@ class Recipe_Hero_Admin {
 		// Let's make the magic happen on the backend
 	 	// <em>The ingredients to our recipe.</em>
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'admin/includes/rh-tweaks.php' );
-
-
-		/*
-		 * Define custom functionality.
-		 */
-		//add_action( '@TODO', array( $this, 'action_method_name' ) );
-		//add_filter( '@TODO', array( $this, 'filter_method_name' ) );
 
 	}
 
@@ -144,26 +134,6 @@ class Recipe_Hero_Admin {
 
 	}
 
-	/**
-	 * Register the administration menu for this plugin into the WordPress Dashboard menu.
-	 *
-	 * @since    1.0.0
-	 */
-	public function add_plugin_admin_menu() {
-
-		/*
-		 * Add a settings page for this plugin to the Settings menu.
-		 */
-		$this->plugin_screen_hook_suffix = add_submenu_page(
-			'edit.php?post_type=recipe',
-			__( 'Recipe Hero', $this->plugin_slug ),
-			__( 'Settings', $this->plugin_slug ),
-			'manage_options',
-			$this->plugin_slug,
-			array( $this, 'display_plugin_admin_page' )
-		);
-
-	}
 
 	/**
 	 * Render the settings page for this plugin.
@@ -188,24 +158,6 @@ class Recipe_Hero_Admin {
 			$links
 		);
 
-	}
-
-	/**
-	 * NOTE:     Actions are points in the execution of a page or process
-	 *           lifecycle that WordPress fires.
-	 *
-	 * @since    1.0.0
-	 */
-	public function action_method_name() {
-	}
-
-	/**
-	 * NOTE:     Filters are points of execution in which WordPress modifies data
-	 *           before saving it or sending it to the browser.
-	 *
-	 * @since    1.0.0
-	 */
-	public function filter_method_name() {
 	}
 
 }

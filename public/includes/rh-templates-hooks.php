@@ -29,15 +29,32 @@ add_action( 'recipe_hero_sidebar', 'recipe_hero_get_sidebar', 10 );
  * Recipe Single Content
  *
  * @see recipe_hero_output_single_title() - 10
- * @see recipe_hero_output_single_author() - 20
- * @see recipe_hero_output_single_details() - 30
- * @see recipe_hero_output_single_ingredients - 40
- * @see recipe_hero_output_single_instructions - 50
+ * @see recipe_hero_output_single_meta - 20
+ * @see recipe_hero_output_single_photo - 30
+ * @see recipe_hero_output_single_tax() - 40
+ * @see recipe_hero_output_single_details() - 50
+ * @see recipe_hero_output_single_description - 60
+ * @see recipe_hero_output_single_ingredients - 70
+ * @see recipe_hero_output_single_instructions - 80
+ * @see recipe_hero_output_single_nutrition - 90
  */
 add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_title', 10 );
-add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_author', 20 );
-add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_details', 30 );
-add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_ingredients', 40 );
-add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_instructions', 50 );
+add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_meta', 20 );
+add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_photo', 30 );
+add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_tax', 40 );
+add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_details', 50 );
+add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_seperator', 55 );
+add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_description', 60 );
+add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_seperator', 65 );
+add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_ingredients', 70 );
+add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_seperator', 75 );
+add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_instructions', 80 );
+add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_nutrition', 90 );
+add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_seperator', 95 );
 
-add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_meta', 25 );
+/**
+ * Recipe After Single Content
+ *
+ * @see recipe_hero_output_single_comments() - 10
+ */
+add_action( 'recipe_hero_after_single_recipe', 'recipe_hero_output_single_comments', 10 );

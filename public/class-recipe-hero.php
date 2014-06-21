@@ -61,11 +61,16 @@ class Recipe_Hero {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
+		// Just in case
+		add_theme_support( 'post-thumbnails' );
+
 		// Let's make the magic happen.
 	 	// <em>The ingredients to our recipe.</em>
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-fields.php' );
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-cpt.php' );
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-tax.php' );
+		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-settings.php' );
+
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-templates.php' );
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-templates-functions.php' );
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-templates-hooks.php' );
@@ -211,6 +216,7 @@ class Recipe_Hero {
 	 * @since    1.0.0
 	 */
 	public function enqueue_styles() {
+		wp_enqueue_style( $this->plugin_slug . '-gridism', plugins_url( 'assets/css/gridism.css', __FILE__ ), array(), self::VERSION );
 		wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'assets/css/rh-styles.css', __FILE__ ), array(), self::VERSION );
 	}
 
