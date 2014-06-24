@@ -18,11 +18,12 @@ Specific Core Theme Styles
 	}
 }
 
+// Single / Archive Template
 .recipe {
 	.recipe-single-title {
-
 	}
-	.recipe-single-meta {
+	.recipe-single-meta,
+	.recipe-archive-meta {
 		margin-top: 10px;
 		.date, .author, .comments-link, .edit-link {
 			display: inline-block;
@@ -40,11 +41,29 @@ Specific Core Theme Styles
 			content: none;
 		}
 	}
-	.recipe-single-photo {
+	.recipe-single-photo,
+	.recipe-archive-photo {
 		margin-top: 15px;
 		margin-bottom: 15px;
+		img {
+			max-width: 100%;
+			padding: 3px;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+		}
+		a {
+			img {
+				@include transition( all, 150ms, ease );
+			}
+			&:hover {
+				img {
+					opacity: 0.8;
+				}
+			}
+		}
 	}
-	.recipe-single-tax {
+	.recipe-single-tax,
+	.recipe-archive-tax {
 		.cuisine,
 		.course {
 			display: inline-block;
@@ -77,10 +96,9 @@ Specific Core Theme Styles
 			margin-right: 15px;
 		}
 	}
-	.recipe-single-details {
-		h4 {
-			margin-top: 25px;
-		}
+	.recipe-single-details,
+	.recipe-archive-details {
+		margin-top: 20px;
 		> div {
 			margin-bottom: 5px;
 		}
@@ -100,6 +118,11 @@ Specific Core Theme Styles
 		.equipment {
 			.equipment-item {
 			}
+		}
+	}
+	.recipe-archive-details {
+		> div {
+			margin-bottom: 15px;
 		}
 	}
 	.recipe-single-content {
@@ -152,7 +175,7 @@ Specific Core Theme Styles
 	.recipe-single-nutrition {
 		font-size: 14px;
 	}
-	.recipe-single-seperator {
-		margin-top: 15px;
+	hr.recipe-single-seperator {
+		margin-top: 25px;
 	}
 }

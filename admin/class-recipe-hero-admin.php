@@ -63,7 +63,6 @@ class Recipe_Hero_Admin {
 		$plugin_basename = plugin_basename( plugin_dir_path( realpath( dirname( __FILE__ ) ) ) . $this->plugin_slug . '.php' );
 		add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
 
-
 		// Let's make the magic happen on the backend
 	 	// <em>The ingredients to our recipe.</em>
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'admin/includes/rh-tweaks.php' );
@@ -134,16 +133,6 @@ class Recipe_Hero_Admin {
 
 	}
 
-
-	/**
-	 * Render the settings page for this plugin.
-	 *
-	 * @since    1.0.0
-	 */
-	public function display_plugin_admin_page() {
-		include_once( 'views/admin.php' );
-	}
-
 	/**
 	 * Add settings action link to the plugins page.
 	 *
@@ -160,4 +149,28 @@ class Recipe_Hero_Admin {
 
 	}
 
+}
+
+// Plugin Activation Notice: @todo Improve This ASAP
+
+register_activation_hook( __FILE__, 'coh_plugin_activation' );
+function coh_plugin_activation() {
+	$notices = get_option( 'coh_plugin_deferred_admin_notices', array() );
+	$notices[] = __( 'Please <a href="options-permalink.php">refresh your permalinks</a> immediately. Thank you for using Recipe Hero!', 'recipe-hero' );
+	update_option( 'coh_plugin_deferred_admin_notices', $notices );
+}
+
+add_action( 'admin_notices', 'coh_plugin_admin_notices' );
+function coh_plugin_admin_notices() {
+  if ( $notices = get_option( 'coh_plugin_deferred_admin_notices' ) ) {
+    foreach ( $notices as $notice ) {
+      echo "<div class='updated'><p>" . $notice . "</p></div>";
+    }
+    delete_option( 'coh_plugin_deferred_admin_notices' );
+  }
+}
+
+register_deactivation_hook( __FILE__, 'coh_plugin_deactivation' );
+function coh_plugin_deactivation() {
+  delete_option( 'coh_plugin_deferred_admin_notices' ); 
 }

@@ -29,7 +29,7 @@ class Recipe_Hero_Admin_Settings {
      */
     public function __construct() {
         // Set our title
-        $this->title = __( 'Site Options', 'recipe-hero' );
+        $this->title = __( 'Settings', 'recipe-hero' );
     }
 
     /**
@@ -87,9 +87,34 @@ class Recipe_Hero_Admin_Settings {
             'show_names' => true,
             'fields'     => array(
                 array(
+                    'name' => '<h3>' . __( 'Basic Settings', 'recipe-hero' ) . '</h2>',
+                    'id'   => 'rh-basic-title',
+                    'type' => 'html',
+                ),
+                array(
+                    'name' => __( 'Class for Main Content', 'recipe-hero' ),
+                    'desc' => __( 'The wrapper class for the content area.', 'recipe-hero' ),
+                    'id'   => 'rh-content-class',
+                    'type' => 'text_small',
+                    'attributes' => array(
+                            'placeholder' => 'eg. site-content',
+                        ),
+                ),
+                array(
+                    'name' => '<h3>' . __( 'Custom Text', 'recipe-hero' ) . '</h2>',
+                    'id'   => 'rh-custom-text-title',
+                    'type' => 'html',
+                ),
+                array(
                     'name' => __( '\'Serves\' Text', 'recipe-hero' ),
                     'desc' => __( 'Part of the Recipe Details area', 'recipe-hero' ),
                     'id'   => 'rh-serves-text',
+                    'type' => 'text_small',
+                ),
+                array(
+                    'name' => __( '\'Equipment\' Text', 'recipe-hero' ),
+                    'desc' => __( 'Part of the Recipe Details area', 'recipe-hero' ),
+                    'id'   => 'rh-equipment-text',
                     'type' => 'text_small',
                 ),
                 array(
@@ -99,15 +124,15 @@ class Recipe_Hero_Admin_Settings {
                     'type' => 'text_small',
                 ),
                 array(
-                    'name' => __( '\'Serves\' Text', 'recipe-hero' ),
+                    'name' => __( '\'Cook Time\' Text', 'recipe-hero' ),
                     'desc' => __( 'Part of the Recipe Details area', 'recipe-hero' ),
                     'id'   => 'rh-cook-text',
                     'type' => 'text_small',
                 ),
                 array(
-                    'name' => __( '\'Equipment\' Text', 'recipe-hero' ),
+                    'name' => __( '\'Total Time\' Text', 'recipe-hero' ),
                     'desc' => __( 'Part of the Recipe Details area', 'recipe-hero' ),
-                    'id'   => 'rh-equipment-text',
+                    'id'   => 'rh-total-text',
                     'type' => 'text_small',
                 ),
             ),

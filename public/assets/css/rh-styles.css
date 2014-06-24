@@ -62,37 +62,73 @@ Specific Core Theme Styles
   margin: 0px auto;
   width: 90%; }
 
-.recipe .recipe-single-meta {
+.recipe .recipe-single-meta,
+.recipe .recipe-archive-meta {
   margin-top: 10px; }
-  .recipe .recipe-single-meta .date, .recipe .recipe-single-meta .author, .recipe .recipe-single-meta .comments-link, .recipe .recipe-single-meta .edit-link {
+  .recipe .recipe-single-meta .date, .recipe .recipe-single-meta .author, .recipe .recipe-single-meta .comments-link, .recipe .recipe-single-meta .edit-link,
+  .recipe .recipe-archive-meta .date,
+  .recipe .recipe-archive-meta .author,
+  .recipe .recipe-archive-meta .comments-link,
+  .recipe .recipe-archive-meta .edit-link {
     display: inline-block;
     padding-left: 15px;
     font-size: 14px; }
-    .recipe .recipe-single-meta .date .dashicons, .recipe .recipe-single-meta .author .dashicons, .recipe .recipe-single-meta .comments-link .dashicons, .recipe .recipe-single-meta .edit-link .dashicons {
+    .recipe .recipe-single-meta .date .dashicons, .recipe .recipe-single-meta .author .dashicons, .recipe .recipe-single-meta .comments-link .dashicons, .recipe .recipe-single-meta .edit-link .dashicons,
+    .recipe .recipe-archive-meta .date .dashicons,
+    .recipe .recipe-archive-meta .author .dashicons,
+    .recipe .recipe-archive-meta .comments-link .dashicons,
+    .recipe .recipe-archive-meta .edit-link .dashicons {
       font-size: 16px;
       vertical-align: bottom; }
-  .recipe .recipe-single-meta .date {
+  .recipe .recipe-single-meta .date,
+  .recipe .recipe-archive-meta .date {
     padding-left: 0; }
-  .recipe .recipe-single-meta .comments-link a:before {
+  .recipe .recipe-single-meta .comments-link a:before,
+  .recipe .recipe-archive-meta .comments-link a:before {
     content: none; }
-.recipe .recipe-single-photo {
+.recipe .recipe-single-photo,
+.recipe .recipe-archive-photo {
   margin-top: 15px;
   margin-bottom: 15px; }
+  .recipe .recipe-single-photo img,
+  .recipe .recipe-archive-photo img {
+    max-width: 100%;
+    padding: 3px;
+    border: 1px solid #ddd;
+    border-radius: 5px; }
+  .recipe .recipe-single-photo a img,
+  .recipe .recipe-archive-photo a img {
+    -moz-transition: all 150ms ease;
+    -o-transition: all 150ms ease;
+    -webkit-transition: all 150ms ease;
+    -ms-transition: all 150ms ease;
+    transition: all 150ms ease; }
+  .recipe .recipe-single-photo a:hover img,
+  .recipe .recipe-archive-photo a:hover img {
+    opacity: 0.8; }
 .recipe .recipe-single-tax .cuisine,
-.recipe .recipe-single-tax .course {
+.recipe .recipe-single-tax .course,
+.recipe .recipe-archive-tax .cuisine,
+.recipe .recipe-archive-tax .course {
   display: inline-block;
   padding-right: 15px; }
   .recipe .recipe-single-tax .cuisine strong,
-  .recipe .recipe-single-tax .course strong {
+  .recipe .recipe-single-tax .course strong,
+  .recipe .recipe-archive-tax .cuisine strong,
+  .recipe .recipe-archive-tax .course strong {
     font-size: 17px; }
   .recipe .recipe-single-tax .cuisine ul,
-  .recipe .recipe-single-tax .course ul {
+  .recipe .recipe-single-tax .course ul,
+  .recipe .recipe-archive-tax .cuisine ul,
+  .recipe .recipe-archive-tax .course ul {
     display: inline-block;
     list-style-type: none;
     margin-left: 5px;
     margin-bottom: 0; }
     .recipe .recipe-single-tax .cuisine ul li,
-    .recipe .recipe-single-tax .course ul li {
+    .recipe .recipe-single-tax .course ul li,
+    .recipe .recipe-archive-tax .cuisine ul li,
+    .recipe .recipe-archive-tax .course ul li {
       display: inline-block;
       padding: 3px 8px;
       margin-right: 5px;
@@ -104,21 +140,33 @@ Specific Core Theme Styles
       -ms-transition: all 200ms ease;
       transition: all 200ms ease; }
       .recipe .recipe-single-tax .cuisine ul li:hover,
-      .recipe .recipe-single-tax .course ul li:hover {
+      .recipe .recipe-single-tax .course ul li:hover,
+      .recipe .recipe-archive-tax .cuisine ul li:hover,
+      .recipe .recipe-archive-tax .course ul li:hover {
         background: #fbfbfb; }
-.recipe .recipe-single-tax .cuisine {
+.recipe .recipe-single-tax .cuisine,
+.recipe .recipe-archive-tax .cuisine {
   border-right: 1px solid #ddd;
   padding-right: 15px;
   margin-right: 15px; }
-.recipe .recipe-single-details h4 {
-  margin-top: 25px; }
-.recipe .recipe-single-details > div {
-  margin-bottom: 5px; }
-.recipe .recipe-single-details strong {
-  font-size: 17px;
-  display: block; }
-.recipe .recipe-single-details .serves, .recipe .recipe-single-details .prep-time, .recipe .recipe-single-details .cook-time, .recipe .recipe-single-details .equipment {
-  font-size: 15px; }
+.recipe .recipe-single-details,
+.recipe .recipe-archive-details {
+  margin-top: 20px; }
+  .recipe .recipe-single-details > div,
+  .recipe .recipe-archive-details > div {
+    margin-bottom: 5px; }
+  .recipe .recipe-single-details strong,
+  .recipe .recipe-archive-details strong {
+    font-size: 17px;
+    display: block; }
+  .recipe .recipe-single-details .serves, .recipe .recipe-single-details .prep-time, .recipe .recipe-single-details .cook-time, .recipe .recipe-single-details .equipment,
+  .recipe .recipe-archive-details .serves,
+  .recipe .recipe-archive-details .prep-time,
+  .recipe .recipe-archive-details .cook-time,
+  .recipe .recipe-archive-details .equipment {
+    font-size: 15px; }
+.recipe .recipe-archive-details > div {
+  margin-bottom: 15px; }
 .recipe .recipe-single-content {
   font-size: 18px; }
 .recipe .recipe-single-ingredients h4 {
@@ -153,5 +201,5 @@ Specific Core Theme Styles
     border-radius: 5px; }
 .recipe .recipe-single-nutrition {
   font-size: 14px; }
-.recipe .recipe-single-seperator {
-  margin-top: 15px; }
+.recipe hr.recipe-single-seperator {
+  margin-top: 25px; }

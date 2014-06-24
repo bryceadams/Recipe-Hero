@@ -40,6 +40,11 @@ if( !defined( 'RECIPE_HERO_TEMPLATE_DIR' ) ) {
 	define( 'RECIPE_HERO_TEMPLATE_DIR', plugin_dir_path( __FILE__ ) . 'templates/' );
 }
 
+// Define Current Plugin Version
+if( ! defined( 'RECIPE_HERO_VERSION_NUMBER' ) ) {
+	define( 'RECIPE_HERO_VERSION_NUMBER', '1.0' );
+}
+
 /*----------------------------------------------------------------------------*
  * Public-Facing Functionality
  *----------------------------------------------------------------------------*/

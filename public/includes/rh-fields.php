@@ -50,20 +50,22 @@ function recipe_hero_sample_metaboxes( array $meta_boxes ) {
 			),
 			array(
 				'name' => __( 'Preparation Time', 'cmb' ),
-				'desc' => __( 'Please use formatting like __m or __h or __h __m', 'cmb' ),
 				'id'   => $prefix . 'detail_prep_time',
 				'type' => 'text_small',
+				'before' => ' ',
+				'after' => 'Minutes',
 				'attributes' => array(
-									'placeholder' => 'eg. 15m',
+									'placeholder' => 'eg. 15',
 				),
 			),
 			array(
 				'name' => __( 'Cooking Time', 'cmb' ),
-				'desc' => __( 'Please use formatting like __m or __h or __h __m', 'cmb' ),
 				'id'   => $prefix . 'detail_cook_time',
 				'type' => 'text_small',
+				'before' => ' ',
+				'after' => 'Minutes',
 				'attributes' => array(
-									'placeholder' => 'eg. 1h 45m',
+									'placeholder' => 'eg. 85',
 				),
 			),
 			array(

@@ -74,6 +74,7 @@ class Recipe_Hero {
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-templates.php' );
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-templates-functions.php' );
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-templates-hooks.php' );
+		
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-schema.php' );
 
 	}
@@ -218,6 +219,7 @@ class Recipe_Hero {
 	public function enqueue_styles() {
 		wp_enqueue_style( $this->plugin_slug . '-gridism', plugins_url( 'assets/css/gridism.css', __FILE__ ), array(), self::VERSION );
 		wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'assets/css/rh-styles.css', __FILE__ ), array(), self::VERSION );
+		wp_enqueue_style( 'dashicons' );
 	}
 
 	/**

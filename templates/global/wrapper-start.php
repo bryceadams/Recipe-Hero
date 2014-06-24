@@ -28,6 +28,7 @@ switch( $template ) {
 		echo '<div id="primary" class="content-area"><div id="content" role="main" class="site-content twentyfourteen"><div class="tfrh">';
 		break;
 	default :
-		echo '<div id="container"><div id="content" role="main">';
+		$remove_char = array( '#', '.' );
+		echo '<div id="container"><div id="content" class="content ' . str_replace( $remove_char, "", recipe_hero_get_option( 'rh-content-class', 'recipe-hero-options' ) ) . '" role="main">';
 		break;
 }

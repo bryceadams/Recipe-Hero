@@ -1,6 +1,6 @@
 <?php
 /**
- * General Template-related Functions
+ * Recipe Wrapper Template Display Functions
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
@@ -10,16 +10,12 @@
  */
 
 /**
- * Include all the template parts
+ * Recipe Title
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
  * @since 	  1.0
  */
-
-require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/templates-parts/rh-templates-parts-display.php' );
-
-
 
 if ( ! function_exists( 'recipe_hero_output_content_wrapper' ) ) {
 
@@ -33,6 +29,7 @@ if ( ! function_exists( 'recipe_hero_output_content_wrapper' ) ) {
 
 		recipe_hero_get_template( 'global/wrapper-start.php' );
 	}
+
 }
 if ( ! function_exists( 'recipe_hero_content_wrapper_end' ) ) {
 
@@ -45,17 +42,5 @@ if ( ! function_exists( 'recipe_hero_content_wrapper_end' ) ) {
 	function recipe_hero_output_content_wrapper_end() {
 		recipe_hero_get_template( 'global/wrapper-end.php' );
 	}
-}
-
-if ( ! function_exists( 'recipe_hero_get_sidebar' ) ) {
-
-	/**
-	 * Get the shop sidebar template.
-	 *
-	 * @access public
-	 * @return void
-	 */
-	function recipe_hero_get_sidebar() {
-		recipe_hero_get_template( 'global/sidebar.php' );
-	}
+	
 }

@@ -36,7 +36,10 @@ function recipe_hero_tc_template_chooser( $template ) {
     if ( is_archive() ) {
         return recipe_hero_tc_get_template_hierarchy( 'archive' );
     }
- 
+    if ( is_search() ) {
+        return recipe_hero_tc_get_template_hierarchy( 'search-results' );
+    }
+
 }
 
 /**

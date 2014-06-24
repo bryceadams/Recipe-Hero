@@ -1,6 +1,6 @@
 <?php
 /**
- * Archive Recipe Template File
+ * Search Recipe Template File
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
