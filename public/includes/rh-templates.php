@@ -14,7 +14,7 @@
  * Tell WordPress not to use single.php for Recipe Single Posts
  * @package Recipe Hero
  * @author  Captain Theme <info@captaintheme.com>
- * @since   1.0
+ * @since   0.5.0
  */
  
 add_filter( 'template_include', 'recipe_hero_tc_template_chooser');
@@ -46,7 +46,7 @@ function recipe_hero_tc_template_chooser( $template ) {
  * Template Loading for Recipe Single Posts
  * @package Recipe Hero
  * @author  Captain Theme <info@captaintheme.com>
- * @since   1.0
+ * @since   0.5.0
  */
 
 function recipe_hero_tc_get_template_hierarchy( $template ) {
@@ -70,7 +70,7 @@ function recipe_hero_tc_get_template_hierarchy( $template ) {
  * Get Template Parts for Recipes
  * @package Recipe Hero
  * @author  Captain Theme <info@captaintheme.com>
- * @since   1.0
+ * @since   0.5.0
  */
 
 function recipe_hero_get_template_part( $slug, $name = '' ) {

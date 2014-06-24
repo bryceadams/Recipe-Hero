@@ -17,18 +17,18 @@ class Recipe_Hero {
 	/**
 	 * Plugin version, used for cache-busting of style and script file references.
 	 *
-	 * @since   1.0.0
+	 * @since   0.5.0
 	 *
 	 * @var     string
 	 */
-	const VERSION = '1.0.0';
+	const VERSION = '0.5.0';
 
 	/**
 	 * The variable name is used as the text domain when internationalizing strings
 	 * of text. Its value should match the Text Domain file header in the main
 	 * plugin file.
 	 *
-	 * @since    1.0.0
+	 * @since    0.5.0
 	 *
 	 * @var      string
 	 */
@@ -37,7 +37,7 @@ class Recipe_Hero {
 	/**
 	 * Instance of this class.
 	 *
-	 * @since    1.0.0
+	 * @since    0.5.0
 	 *
 	 * @var      object
 	 */
@@ -47,7 +47,7 @@ class Recipe_Hero {
 	 * Initialize the plugin by setting localization and loading public scripts
 	 * and styles.
 	 *
-	 * @since     1.0.0
+	 * @since     0.5.0
 	 */
 	private function __construct() {
 
@@ -82,7 +82,7 @@ class Recipe_Hero {
 	/**
 	 * Return the plugin slug.
 	 *
-	 * @since    1.0.0
+	 * @since    0.5.0
 	 *
 	 * @return    Plugin slug variable.
 	 */
@@ -93,7 +93,7 @@ class Recipe_Hero {
 	/**
 	 * Return an instance of this class.
 	 *
-	 * @since     1.0.0
+	 * @since     0.5.0
 	 *
 	 * @return    object    A single instance of this class.
 	 */
@@ -110,7 +110,7 @@ class Recipe_Hero {
 	/**
 	 * Fired when the plugin is activated.
 	 *
-	 * @since    1.0.0
+	 * @since    0.5.0
 	 *
 	 * @param    boolean    $network_wide    True if WPMU superadmin uses
 	 *                                       "Network Activate" action, false if
@@ -148,7 +148,7 @@ class Recipe_Hero {
 	/**
 	 * Fired when a new site is activated with a WPMU environment.
 	 *
-	 * @since    1.0.0
+	 * @since    0.5.0
 	 *
 	 * @param    int    $blog_id    ID of the new blog.
 	 */
@@ -170,7 +170,7 @@ class Recipe_Hero {
 	 * - not spam
 	 * - not deleted
 	 *
-	 * @since    1.0.0
+	 * @since    0.5.0
 	 *
 	 * @return   array|false    The blog ids, false if no matches.
 	 */
@@ -190,7 +190,7 @@ class Recipe_Hero {
 	/**
 	 * Fired for each blog when the plugin is activated.
 	 *
-	 * @since    1.0.0
+	 * @since    0.5.0
 	 */
 	private static function single_activate() {
 		// @TODO: Define activation functionality here
@@ -199,7 +199,7 @@ class Recipe_Hero {
 	/**
 	 * Load the plugin text domain for translation.
 	 *
-	 * @since    1.0.0
+	 * @since    0.5.0
 	 */
 	public function load_plugin_textdomain() {
 
@@ -214,7 +214,7 @@ class Recipe_Hero {
 	/**
 	 * Register and enqueue public-facing style sheet.
 	 *
-	 * @since    1.0.0
+	 * @since    0.5.0
 	 */
 	public function enqueue_styles() {
 		wp_enqueue_style( $this->plugin_slug . '-gridism', plugins_url( 'assets/css/gridism.css', __FILE__ ), array(), self::VERSION );
@@ -225,7 +225,7 @@ class Recipe_Hero {
 	/**
 	 * Register and enqueues public-facing JavaScript files.
 	 *
-	 * @since    1.0.0
+	 * @since    0.5.0
 	 */
 	public function enqueue_scripts() {
 		wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'assets/js/rh-scripts.js', __FILE__ ), array( 'jquery' ), self::VERSION );
@@ -235,7 +235,7 @@ class Recipe_Hero {
 	 * NOTE:  Actions are points in the execution of a page or process
 	 *        lifecycle that WordPress fires.
 	 *
-	 * @since    1.0.0
+	 * @since    0.5.0
 	 */
 	public function action_method_name() {
 		// @TODO: Define your action hook callback here
@@ -245,7 +245,7 @@ class Recipe_Hero {
 	 * NOTE:  Filters are points of execution in which WordPress modifies data
 	 *        before saving it or sending it to the browser.
 	 *
-	 * @since    1.0.0
+	 * @since    0.5.0
 	 */
 	public function filter_method_name() {
 		// @TODO: Define your filter hook callback here

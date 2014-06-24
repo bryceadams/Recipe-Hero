@@ -14,7 +14,7 @@
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0
+ * @since 	  0.5.0
  */
 
 require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/templates-parts/rh-templates-parts-single.php' );

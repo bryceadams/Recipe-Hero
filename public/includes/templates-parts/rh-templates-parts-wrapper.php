@@ -14,7 +14,7 @@
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0
+ * @since 	  0.5.0
  */
 
 if ( ! function_exists( 'recipe_hero_output_content_wrapper' ) ) {

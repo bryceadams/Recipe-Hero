@@ -1,7 +1,7 @@
 <?php
 /**
  * CMB Theme Options
- * @version 0.1.0
+ * @version 0.5.0
  */
 class Recipe_Hero_Admin_Settings {
 
@@ -25,7 +25,7 @@ class Recipe_Hero_Admin_Settings {
 
     /**
      * Constructor
-     * @since 0.1.0
+     * @since 0.5.0
      */
     public function __construct() {
         // Set our title
@@ -34,7 +34,7 @@ class Recipe_Hero_Admin_Settings {
 
     /**
      * Initiate our hooks
-     * @since 0.1.0
+     * @since 0.5.0
      */
     public function hooks() {
         add_action( 'admin_init', array( $this, 'init' ) );
@@ -43,7 +43,7 @@ class Recipe_Hero_Admin_Settings {
 
     /**
      * Register our setting to WP
-     * @since  0.1.0
+     * @since  0.5.0
      */
     public function init() {
         register_setting( self::$key, self::$key );
@@ -51,7 +51,7 @@ class Recipe_Hero_Admin_Settings {
 
     /**
      * Add menu options page
-     * @since 0.1.0
+     * @since 0.5.0
      */
     public function add_options_page() {
         $this->options_page = add_submenu_page( 'edit.php?post_type=recipe', $this->title, $this->title, 'manage_options', self::$key, array( $this, 'admin_page_display' ) );
@@ -59,7 +59,7 @@ class Recipe_Hero_Admin_Settings {
 
     /**
      * Admin page markup. Mostly handled by CMB
-     * @since  0.1.0
+     * @since  0.5.0
      */
     public function admin_page_display() {
         ?>
@@ -72,7 +72,7 @@ class Recipe_Hero_Admin_Settings {
 
     /**
      * Defines the theme option metabox and field configuration
-     * @since  0.1.0
+     * @since  0.5.0
      * @return array
      */
     public static function option_fields() {
@@ -142,7 +142,7 @@ class Recipe_Hero_Admin_Settings {
 
     /**
      * Make public the protected $key variable.
-     * @since  0.1.0
+     * @since  0.5.0
      * @return string  Option key
      */
     public static function key() {
@@ -157,7 +157,7 @@ $Recipe_Hero_Admin_Settings->hooks();
 
 /**
  * Wrapper function around cmb_get_option
- * @since  0.1.0
+ * @since  0.5.0
  * @param  string  $key Options array key
  * @return mixed        Option value
  */

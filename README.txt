@@ -4,7 +4,7 @@ Donate link: http://recipehero.in/
 Tags: recipe, recipes, cooking, ingredients, food, cook, recipe hero, captain theme
 Requires at least: 3.5.1
 Tested up to: 3.9.1
-Stable tag: 1.0.0
+Stable tag: 0.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,12 +61,12 @@ Send me your most precious family recipe.
 
 == Changelog ==
 
-= 1.0 =
-* Initial Release
+= 0.5.0 =
+* Initial BETA Release
 
 == Updates ==
 
-They'll come automatically through the WordPress dashboard - just relax and cook.hose changes -- as long as the trunk's `readme.txt` points to the correct stable tag.
+They'll come automatically through the WordPress dashboard - just relax and cook.anges -- as long as the trunk's `readme.txt` points to the correct stable tag.
 
     If no stable tag is provided, it is assumed that trunk is stable, but you should specify "trunk" if that's where
 you put the stable version, in order to eliminate any doubt.

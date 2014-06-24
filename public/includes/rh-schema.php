@@ -14,7 +14,7 @@
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0
+ * @since 	  0.5.0
  * @todo 	  Would be better to use some function or class for getting the time as it needs to be ISO8601 time format
  */
 
@@ -36,7 +36,7 @@ function recipe_hero_schema_prep_time() {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0
+ * @since 	  0.5.0
  * @todo 	  Would be better to use some function or class for getting the time as it needs to be ISO8601 time format
  */
 
@@ -58,7 +58,7 @@ function recipe_hero_schema_cook_time() {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0
+ * @since 	  0.5.0
  * @todo 	  Would be better to use some function or class for getting the time as it needs to be ISO8601 time format
  */
 

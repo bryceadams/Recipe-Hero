@@ -19,7 +19,7 @@ class Recipe_Hero_Admin {
 	/**
 	 * Instance of this class.
 	 *
-	 * @since    1.0.0
+	 * @since    0.5.0
 	 *
 	 * @var      object
 	 */
@@ -28,7 +28,7 @@ class Recipe_Hero_Admin {
 	/**
 	 * Slug of the plugin screen.
 	 *
-	 * @since    1.0.0
+	 * @since    0.5.0
 	 *
 	 * @var      string
 	 */
@@ -38,7 +38,7 @@ class Recipe_Hero_Admin {
 	 * Initialize the plugin by loading admin scripts & styles and adding a
 	 * settings page and menu.
 	 *
-	 * @since     1.0.0
+	 * @since     0.5.0
 	 */
 	private function __construct() {
 
@@ -72,7 +72,7 @@ class Recipe_Hero_Admin {
 	/**
 	 * Return an instance of this class.
 	 *
-	 * @since     1.0.0
+	 * @since     0.5.0
 	 *
 	 * @return    object    A single instance of this class.
 	 */
@@ -96,7 +96,7 @@ class Recipe_Hero_Admin {
 	/**
 	 * Register and enqueue admin-specific style sheet.
 	 *
-	 * @since     1.0.0
+	 * @since     0.5.0
 	 *
 	 * @return    null    Return early if no settings page is registered.
 	 */
@@ -116,7 +116,7 @@ class Recipe_Hero_Admin {
 	/**
 	 * Register and enqueue admin-specific JavaScript.
 	 *
-	 * @since     1.0.0
+	 * @since     0.5.0
 	 *
 	 * @return    null    Return early if no settings page is registered.
 	 */
@@ -136,7 +136,7 @@ class Recipe_Hero_Admin {
 	/**
 	 * Add settings action link to the plugins page.
 	 *
-	 * @since    1.0.0
+	 * @since    0.5.0
 	 */
 	public function add_action_links( $links ) {
 
@@ -149,28 +149,4 @@ class Recipe_Hero_Admin {
 
 	}
 
-}
-
-// Plugin Activation Notice: @todo Improve This ASAP
-
-register_activation_hook( __FILE__, 'coh_plugin_activation' );
-function coh_plugin_activation() {
-	$notices = get_option( 'coh_plugin_deferred_admin_notices', array() );
-	$notices[] = __( 'Please <a href="options-permalink.php">refresh your permalinks</a> immediately. Thank you for using Recipe Hero!', 'recipe-hero' );
-	update_option( 'coh_plugin_deferred_admin_notices', $notices );
-}
-
-add_action( 'admin_notices', 'coh_plugin_admin_notices' );
-function coh_plugin_admin_notices() {
-  if ( $notices = get_option( 'coh_plugin_deferred_admin_notices' ) ) {
-    foreach ( $notices as $notice ) {
-      echo "<div class='updated'><p>" . $notice . "</p></div>";
-    }
-    delete_option( 'coh_plugin_deferred_admin_notices' );
-  }
-}
-
-register_deactivation_hook( __FILE__, 'coh_plugin_deactivation' );
-function coh_plugin_deactivation() {
-  delete_option( 'coh_plugin_deferred_admin_notices' ); 
 }

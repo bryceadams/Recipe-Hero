@@ -14,7 +14,7 @@
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0
+ * @since 	  0.5.0
  */
 
 if ( ! function_exists( 'recipe_hero_output_archive_title' ) ) {
@@ -41,7 +41,7 @@ if ( ! function_exists( 'recipe_hero_output_archive_title' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0
+ * @since 	  0.5.0
  * @todo 	  Make 'By' fitlerable / an option
  */
 
@@ -82,7 +82,7 @@ if ( ! function_exists( 'recipe_hero_output_archive_meta' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0
+ * @since 	  0.5.0
  */
 
 if ( ! function_exists( 'recipe_hero_output_archive_photo' ) ) {
@@ -110,7 +110,7 @@ if ( ! function_exists( 'recipe_hero_output_archive_photo' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0
+ * @since 	  0.5.0
  * @todo 	  Make 'By' fitlerable / an option
  */
 
@@ -171,7 +171,7 @@ if ( ! function_exists( 'recipe_hero_output_archive_tax' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0
+ * @since 	  0.5.0
  */
 
 if ( ! function_exists( 'recipe_hero_output_archive_description' ) ) {
@@ -201,7 +201,7 @@ if ( ! function_exists( 'recipe_hero_output_archive_description' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0
+ * @since 	  0.5.0
  */
 
 if ( ! function_exists( 'recipe_hero_output_archive_details' ) ) {

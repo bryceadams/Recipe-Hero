@@ -14,7 +14,7 @@
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0
+ * @since 	  0.5.0
  */
 
 if ( ! function_exists( 'recipe_hero_output_single_title' ) ) {
@@ -40,7 +40,7 @@ if ( ! function_exists( 'recipe_hero_output_single_title' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0
+ * @since 	  0.5.0
  * @todo 	  Make 'By' fitlerable / an option
  */
 
@@ -81,7 +81,7 @@ if ( ! function_exists( 'recipe_hero_output_single_meta' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0
+ * @since 	  0.5.0
  */
 
 if ( ! function_exists( 'recipe_hero_output_single_photo' ) ) {
@@ -108,7 +108,7 @@ if ( ! function_exists( 'recipe_hero_output_single_photo' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0
+ * @since 	  0.5.0
  * @todo 	  Make 'By' fitlerable / an option
  */
 
@@ -169,7 +169,7 @@ if ( ! function_exists( 'recipe_hero_output_single_tax' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0
+ * @since 	  0.5.0
  */
 
 if ( ! function_exists( 'recipe_hero_output_single_details' ) ) {
@@ -276,7 +276,7 @@ if ( ! function_exists( 'recipe_hero_output_single_details' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0
+ * @since 	  0.5.0
  */
 
 if ( ! function_exists( 'recipe_hero_output_single_description' ) ) {
@@ -308,7 +308,7 @@ if ( ! function_exists( 'recipe_hero_output_single_description' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0
+ * @since 	  0.5.0
  * @todo 	  For the css3 columns being used to display, need to add javacript support (https://github.com/BetleyWhitehorne/CSS3MultiColumn)
  */
 
@@ -369,7 +369,7 @@ if ( ! function_exists( 'recipe_hero_output_single_ingredients' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0
+ * @since 	  0.5.0
  */
 
 if ( ! function_exists( 'recipe_hero_output_single_instructions' ) ) {
@@ -422,7 +422,7 @@ if ( ! function_exists( 'recipe_hero_output_single_instructions' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0
+ * @since 	  0.5.0
  */
 
 if ( ! function_exists( 'recipe_hero_output_single_nutrition' ) ) {
@@ -450,7 +450,7 @@ if ( ! function_exists( 'recipe_hero_output_single_nutrition' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0
+ * @since 	  0.5.0
  */
 
 if ( ! function_exists( 'recipe_hero_output_single_comments' ) ) {
@@ -473,7 +473,7 @@ if ( ! function_exists( 'recipe_hero_output_single_comments' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0
+ * @since 	  0.5.0
  */
 
 if ( ! function_exists( 'recipe_hero_output_single_seperator' ) ) {
@@ -491,7 +491,7 @@ if ( ! function_exists( 'recipe_hero_output_single_seperator' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0
+ * @since 	  0.5.0
  */
 
 function recipe_hero_convert_minute_hour($time, $format = '%dh %02dm') {
@@ -509,7 +509,7 @@ function recipe_hero_convert_minute_hour($time, $format = '%dh %02dm') {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0
+ * @since 	  0.5.0
  */
 
 function recipe_hero_calc_total_cook_time() {
@@ -530,7 +530,7 @@ function recipe_hero_calc_total_cook_time() {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0
+ * @since 	  0.5.0
  * @todo 	  Not sure what to do about translations and plurals here.
  */
 

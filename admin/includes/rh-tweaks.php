@@ -13,7 +13,7 @@
  * Change 'Enter title here' title placeholder text to something more fitting.
  * @package Recipe Hero
  * @author  Captain Theme <info@captaintheme.com>
- * @since   1.0
+ * @since   0.5.0
  */
 
 function recipe_hero_change_default_title( $title ){
@@ -31,7 +31,7 @@ add_filter( 'enter_title_here', 'recipe_hero_change_default_title' );
  *
  * @package Recipe Hero
  * @author  Captain Theme <info@captaintheme.com>
- * @since   1.0
+ * @since   0.5.0
  */
 
 function recipe_hero_ftimg_metabox_name() {
