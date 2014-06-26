@@ -10,7 +10,7 @@ Specific Core Theme Styles
 		#primary {
 			#content {
 				.tfrh {
-					margin: 0px auto;
+					margin: 50px auto 0;
 					width: 90%;
 				}
 			}
@@ -61,6 +61,9 @@ Specific Core Theme Styles
 				}
 			}
 		}
+		.recipe-schema-thumb {
+			display: none;
+		}
 	}
 	.recipe-single-tax,
 	.recipe-archive-tax {
@@ -106,18 +109,21 @@ Specific Core Theme Styles
 			font-size: 17px;
 			display: block;
 		}
-		.serves, .prep-time, .cook-time, .equipment {
+		.serves, .equipment, .prep-time, .cook-time, .total-time {
 			font-size: 15px;
 		}
 		.serves {
+		}
+		.equipment {
+			.equipment-item {
+			}
 		}
 		.prep-time {
 		}
 		.cook-time {
 		}
-		.equipment {
-			.equipment-item {
-			}
+		.total-time {
+			font-weight: bold;
 		}
 	}
 	.recipe-archive-details {

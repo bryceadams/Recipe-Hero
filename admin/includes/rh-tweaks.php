@@ -39,3 +39,38 @@ function recipe_hero_ftimg_metabox_name() {
 	add_meta_box('postimagediv', __('Recipe Completed Photo'), 'post_thumbnail_meta_box', 'recipe', 'side', 'low');
 }
 add_action( 'add_meta_boxes_recipe', 'recipe_hero_ftimg_metabox_name' );
+
+
+/**
+ * Admin Notice on Plugin Activation
+ *
+ * @package Recipe Hero
+ * @author  Captain Theme <info@captaintheme.com>
+ * @since   0.6.0
+ * @todo 	Make it so that the user_meta data is only added on the permalinks page
+ */
+
+add_action( 'admin_notices', 'recipe_hero_admin_notice' );
+function recipe_hero_admin_notice() {
+	global $current_user;
+        $user_id = $current_user->ID;
+        /* Check that the user hasn't already clicked to ignore the message */
+	if ( ! get_user_meta( $user_id, 'rh_ignore_notice' ) ) {
+        echo '<div class="updated"><p>'; 
+        _e( 'Thanks for using Recipe Hero! Please', 'recipe-hero' );
+        echo ' <strong><a href="' . get_admin_url() . 'options-permalink.php' . '">';
+        _e( 're-save your permalinks', 'recipe-hero' );
+        echo '</a></strong> ';
+        _e( 'to get started (this notice will disappear afterwards).', 'recipe-hero' );
+        echo "</p></div>";
+	}
+}
+add_action( 'admin_init', 'recipe_hero_nag_ignore' );
+function recipe_hero_nag_ignore() {
+	global $current_user;
+        $user_id = $current_user->ID;
+        /* If user clicks to ignore the notice, add that to their user meta */
+        if ( isset( $_GET['settings-updated'] ) && 'true' == $_GET['settings-updated'] ) {
+             add_user_meta( $user_id, 'rh_ignore_notice', 'true', true );
+	}
+}

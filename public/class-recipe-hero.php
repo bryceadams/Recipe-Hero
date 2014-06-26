@@ -17,11 +17,11 @@ class Recipe_Hero {
 	/**
 	 * Plugin version, used for cache-busting of style and script file references.
 	 *
-	 * @since   0.5.0
+	 * @since   0.6.0
 	 *
 	 * @var     string
 	 */
-	const VERSION = '0.5.0';
+	const VERSION = '0.6.0';
 
 	/**
 	 * The variable name is used as the text domain when internationalizing strings
@@ -57,23 +57,24 @@ class Recipe_Hero {
 		// Activate plugin when new blog is added
 		add_action( 'wpmu_new_blog', array( $this, 'activate_new_site' ) );
 
-		// Load public-facing style sheet and JavaScript.
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-
 		// Just in case
 		add_theme_support( 'post-thumbnails' );
 
 		// Let's make the magic happen.
 	 	// <em>The ingredients to our recipe.</em>
+		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-frontend-scripts.php' );
+
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-fields.php' );
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-cpt.php' );
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-tax.php' );
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-settings.php' );
+		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-settings-functions.php' );
 
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-templates.php' );
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-templates-functions.php' );
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-templates-hooks.php' );
+
+		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-lightbox.php' );
 		
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-schema.php' );
 
@@ -105,6 +106,7 @@ class Recipe_Hero {
 		}
 
 		return self::$instance;
+
 	}
 
 	/**
@@ -209,26 +211,6 @@ class Recipe_Hero {
 		load_textdomain( $domain, trailingslashit( WP_LANG_DIR ) . $domain . '/' . $domain . '-' . $locale . '.mo' );
 		load_plugin_textdomain( $domain, FALSE, basename( plugin_dir_path( dirname( __FILE__ ) ) ) . '/languages/' );
 
-	}
-
-	/**
-	 * Register and enqueue public-facing style sheet.
-	 *
-	 * @since    0.5.0
-	 */
-	public function enqueue_styles() {
-		wp_enqueue_style( $this->plugin_slug . '-gridism', plugins_url( 'assets/css/gridism.css', __FILE__ ), array(), self::VERSION );
-		wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'assets/css/rh-styles.css', __FILE__ ), array(), self::VERSION );
-		wp_enqueue_style( 'dashicons' );
-	}
-
-	/**
-	 * Register and enqueues public-facing JavaScript files.
-	 *
-	 * @since    0.5.0
-	 */
-	public function enqueue_scripts() {
-		wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'assets/js/rh-scripts.js', __FILE__ ), array( 'jquery' ), self::VERSION );
 	}
 
 	/**

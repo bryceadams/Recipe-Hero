@@ -40,7 +40,7 @@ if ( ! function_exists( 'recipe_hero_output_single_title' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.5.0
+ * @since 	  0.6.0
  * @todo 	  Make 'By' fitlerable / an option
  */
 
@@ -54,13 +54,15 @@ if ( ! function_exists( 'recipe_hero_output_single_meta' ) ) {
 
 		<div class="recipe-single-meta">
 
-			<div class="date">
+			<div class="date updated">
+				<meta itemprop="datePublished" content="<?php echo get_the_date( 'c' ); ?>">
 				<span class="dashicons dashicons-clock"></span> <?php echo $date; ?>
 			</div>
-			<div class="author">
-				<span class="dashicons dashicons-admin-users"></span> <?php echo the_author_posts_link(); ?>
+			<div class="vcard author" itemprop="author">
+				<span class="dashicons dashicons-admin-users"></span> <span class="fn"><?php echo the_author_posts_link(); ?></span>
 			</div>
 			<div class="comments-link">
+				 <meta itemprop="interactionCount" content="UserComments:<?php comments_number( '0', '1','%' ); ?>" />
 				<span class="dashicons dashicons-testimonial"></span> <a href="#comments"><?php comments_number( __( '0 Comments', 'recipe-hero' ), __( '1 Comment', 'recipe-hero' ), __( '% Comments', 'recipe-hero' ) ); ?></a>
 			</div>
 			<?php if ( get_edit_post_link() ) { ?>
@@ -81,7 +83,7 @@ if ( ! function_exists( 'recipe_hero_output_single_meta' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.5.0
+ * @since 	  0.6.0
  */
 
 if ( ! function_exists( 'recipe_hero_output_single_photo' ) ) {
@@ -91,11 +93,13 @@ if ( ! function_exists( 'recipe_hero_output_single_photo' ) ) {
 		// Variables
 		global $post;
 
-		$photo = get_the_post_thumbnail();
+		$photo = get_the_post_thumbnail( $post->ID, 'full', array( 'itemprop' => 'image' ) );
+		$thumb = get_the_post_thumbnail( $post->ID, 'thumbnail', array( 'class' => 'recipe-schema-thumb', 'itemprop' => 'image' ) );
 
 		if ( has_post_thumbnail() ) {
 			echo '<div class="recipe-single-photo">';
 			echo $photo;
+			echo $thumb;
 			echo '</div>';
 		}
 
@@ -108,7 +112,7 @@ if ( ! function_exists( 'recipe_hero_output_single_photo' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.5.0
+ * @since 	  0.6.0
  * @todo 	  Make 'By' fitlerable / an option
  */
 
@@ -124,7 +128,8 @@ if ( ! function_exists( 'recipe_hero_output_single_tax' ) ) {
 				if(!is_wp_error( $cuisine_terms )){
 					$cuisine = '<ul>';
 					foreach($cuisine_terms as $term){
-						$cuisine .= '<li><a href="'.get_term_link($term->slug, 'cuisine').'">'.$term->name.'</a></li>'; 
+						$cuisine .= '<li><a href="' . get_term_link($term->slug, 'cuisine') . '">' . $term->name . '</a></li>';
+						$cuisine_meta = $term->name . ', ';
 					}
 					$cuisine .= '</ul>';
 				}
@@ -135,7 +140,8 @@ if ( ! function_exists( 'recipe_hero_output_single_tax' ) ) {
 				if(!is_wp_error( $course_terms )){
 					$course = '<ul>';
 					foreach($course_terms as $term){
-						$course .= '<li><a href="'.get_term_link($term->slug, 'course').'">'.$term->name.'</a></li>'; 
+						$course .= '<li><a href="' . get_term_link($term->slug, 'course') . '">' . $term->name . '</a></li>';
+						$course_meta = $term->name . ', ';
 					}
 					$course .= '</ul>';
 				}
@@ -147,12 +153,14 @@ if ( ! function_exists( 'recipe_hero_output_single_tax' ) ) {
 
 			<?php if ( isset( $cuisine ) ) { ?>
 				<div class="cuisine">
+					<meta itemprop="recipeCuisine" content="<?php echo $cuisine_meta; ?>">
 					<strong><?php _e( 'Cuisines', 'recipe-hero' ); ?>:</strong> <?php echo $cuisine; ?>
 				</div>
 			<?php } ?>
 
 			<?php if ( isset ( $course ) ) { ?>
-				<div class="course">	
+				<div class="course">
+					<meta itemprop="recipeCategory" content="<?php echo $course_meta; ?>">	
 					<strong><?php _e( 'Courses', 'recipe-hero' ); ?>:</strong> <?php echo $course; ?>
 				</div>
 			<?php } ?>
@@ -276,7 +284,7 @@ if ( ! function_exists( 'recipe_hero_output_single_details' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.5.0
+ * @since 	  0.6.0
  */
 
 if ( ! function_exists( 'recipe_hero_output_single_description' ) ) {
@@ -290,7 +298,9 @@ if ( ! function_exists( 'recipe_hero_output_single_description' ) ) {
 
 			<div class="recipe-single-content">
 
-				<?php echo $description; ?>
+				<span itemprop="description">
+					<?php echo $description; ?>
+				</span>
 
 				<hr class="recipe-single-seperator" />
 
@@ -308,7 +318,7 @@ if ( ! function_exists( 'recipe_hero_output_single_description' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.5.0
+ * @since 	  0.6.0
  * @todo 	  For the css3 columns being used to display, need to add javacript support (https://github.com/BetleyWhitehorne/CSS3MultiColumn)
  */
 
@@ -345,7 +355,7 @@ if ( ! function_exists( 'recipe_hero_output_single_ingredients' ) ) {
 				        $ingredient_name = $ingredient['name'];
 				    }
 
-				    echo '<li class="ingredients-item" itemprop="ingredeints">';
+				    echo '<li class="ingredients-item" itemprop="ingredients">';
 				    echo $ingredient_quantity . ' ';
 				    echo $ingredient_amount . ' ';
 				    echo $ingredient_name;
@@ -369,7 +379,7 @@ if ( ! function_exists( 'recipe_hero_output_single_ingredients' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.5.0
+ * @since 	  0.6.0
  */
 
 if ( ! function_exists( 'recipe_hero_output_single_instructions' ) ) {
@@ -387,6 +397,7 @@ if ( ! function_exists( 'recipe_hero_output_single_instructions' ) ) {
 				echo '<h4 class="instructions-heading">' . __( 'Instructions', 'recipe-hero' ) . '</h4>';
 
 				echo '<ol class="steps-list" itemprop="recipeInstructions">';
+				$intruction_count = 1;
 				foreach ( (array) $instructions as $key => $instruction ) {
 
 				    $ingredient_quantity = $ingredient_amount = $ingredient_name = '';
@@ -396,15 +407,17 @@ if ( ! function_exists( 'recipe_hero_output_single_instructions' ) ) {
 				    }
 
 				    if ( $instruction['_recipe_hero_step_image'] ) {
-				    	$instruction_image = '<img src="' . $instruction['_recipe_hero_step_image'] . '" class="step-image" />';
+				    	$instruction_image = '<a href="' . $instruction['_recipe_hero_step_image'] . '" class="steps-image-link" title="' . __( 'Step', 'recipe-hero' ) . ' ' . $intruction_count . '"><img src="' . $instruction['_recipe_hero_step_image'] . '" class="step-image" /></a>';
 				  	} else {
 				  		$instruction_image ='';
 				  	}
 
-				    echo '<li class="steps-item" itemprop="ingredeints">';
+				    echo '<li class="steps-item">';
 				    echo wpautop( $instruction_text ) . ' ';
 				    echo $instruction_image;
 				    echo '</li>';
+
+				    $intruction_count++;
 
 				}
 				echo '</ul>';

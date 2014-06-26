@@ -59,7 +59,7 @@
 Specific Core Theme Styles
 */
 #page #main #primary #content .tfrh {
-  margin: 0px auto;
+  margin: 50px auto 0;
   width: 90%; }
 
 .recipe .recipe-single-meta,
@@ -106,6 +106,9 @@ Specific Core Theme Styles
   .recipe .recipe-single-photo a:hover img,
   .recipe .recipe-archive-photo a:hover img {
     opacity: 0.8; }
+  .recipe .recipe-single-photo .recipe-schema-thumb,
+  .recipe .recipe-archive-photo .recipe-schema-thumb {
+    display: none; }
 .recipe .recipe-single-tax .cuisine,
 .recipe .recipe-single-tax .course,
 .recipe .recipe-archive-tax .cuisine,
@@ -159,12 +162,16 @@ Specific Core Theme Styles
   .recipe .recipe-archive-details strong {
     font-size: 17px;
     display: block; }
-  .recipe .recipe-single-details .serves, .recipe .recipe-single-details .prep-time, .recipe .recipe-single-details .cook-time, .recipe .recipe-single-details .equipment,
+  .recipe .recipe-single-details .serves, .recipe .recipe-single-details .equipment, .recipe .recipe-single-details .prep-time, .recipe .recipe-single-details .cook-time, .recipe .recipe-single-details .total-time,
   .recipe .recipe-archive-details .serves,
+  .recipe .recipe-archive-details .equipment,
   .recipe .recipe-archive-details .prep-time,
   .recipe .recipe-archive-details .cook-time,
-  .recipe .recipe-archive-details .equipment {
+  .recipe .recipe-archive-details .total-time {
     font-size: 15px; }
+  .recipe .recipe-single-details .total-time,
+  .recipe .recipe-archive-details .total-time {
+    font-weight: bold; }
 .recipe .recipe-archive-details > div {
   margin-bottom: 15px; }
 .recipe .recipe-single-content {

@@ -4,7 +4,7 @@ Donate link: http://recipehero.in/
 Tags: recipe, recipes, cooking, ingredients, food, cook, recipe hero, captain theme
 Requires at least: 3.5.1
 Tested up to: 3.9.1
-Stable tag: 0.5.0
+Stable tag: 0.6.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -60,6 +60,12 @@ Send me your most precious family recipe.
 == Screenshots ==
 
 == Changelog ==
+
+= 0.6.0 =
+* Various Improvements
+* Fix schema.org mark-up
+* Added Lightbox
+* System for removing default styles with filter, etc.
 
 = 0.5.0 =
 * Initial BETA Release

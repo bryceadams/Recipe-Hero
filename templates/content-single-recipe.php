@@ -9,7 +9,7 @@
 	 
 ?>
 
-<article itemscope itemtype="http://scheme.org/Recipe" id="recipe-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article itemscope itemtype="http://schema.org/Recipe" id="recipe-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php do_action( 'recipe_hero_single_recipe_content') ?>
 

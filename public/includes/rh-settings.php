@@ -1,8 +1,14 @@
 <?php
 /**
- * CMB Theme Options
- * @version 0.5.0
+ * Recipe Hero Settings / Options Fields
+ *
+ * @package   Recipe Hero
+ * @author    Captain Theme <info@captaintheme.com>
+ * @license   GPL-2.0+
+ * @link      http://captaintheme.com
+ * @copyright 2014 Captain Theme
  */
+
 class Recipe_Hero_Admin_Settings {
 
     /**
@@ -72,7 +78,7 @@ class Recipe_Hero_Admin_Settings {
 
     /**
      * Defines the theme option metabox and field configuration
-     * @since  0.5.0
+     * @since  0.6.0
      * @return array
      */
     public static function option_fields() {
@@ -134,6 +140,24 @@ class Recipe_Hero_Admin_Settings {
                     'desc' => __( 'Part of the Recipe Details area', 'recipe-hero' ),
                     'id'   => 'rh-total-text',
                     'type' => 'text_small',
+                ),
+                array(
+                    'name' => '<h3>' . __( 'Styling', 'recipe-hero' ) . '</h2>',
+                    'id'   => 'rh-styling-title',
+                    'type' => 'html',
+                ),
+                array(
+                    'name' => __( 'Disable Recipe Hero Styles', 'recipe-hero' ),
+                    'desc' => __( 'Selecting this will stop the plugin loading the default styles used in Recipe Hero for layout and styling.', 'recipe-hero' ),
+                    'id'   => 'rh-disable-styles',
+                    'type' => 'checkbox',
+                    'default' => 0,
+                ),
+                array(
+                    'name' => __( 'Disable Lightbox', 'recipe-hero' ),
+                    'desc' => __( 'Selecting this will disable the lightbox used in Recipe Hero', 'recipe-hero' ),
+                    'id'   => 'rh-disable-lightbox',
+                    'type' => 'checkbox',
                 ),
             ),
         );
