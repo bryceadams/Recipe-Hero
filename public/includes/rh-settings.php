@@ -147,11 +147,10 @@ class Recipe_Hero_Admin_Settings {
                     'type' => 'html',
                 ),
                 array(
-                    'name' => __( 'Disable Recipe Hero Styles', 'recipe-hero' ),
-                    'desc' => __( 'Selecting this will stop the plugin loading the default styles used in Recipe Hero for layout and styling.', 'recipe-hero' ),
-                    'id'   => 'rh-disable-styles',
-                    'type' => 'checkbox',
-                    'default' => 0,
+                    'name'    => __( 'Disable Recipe Hero Styles', 'recipe-hero' ),
+                    'desc'    => __( 'Selecting this will stop the plugin loading the default styles used in Recipe Hero for layout and styling.', 'recipe-hero' ),
+                    'id'      => 'rh-disable-styles',
+                    'type'    => 'checkbox',
                 ),
                 array(
                     'name' => __( 'Disable Lightbox', 'recipe-hero' ),
