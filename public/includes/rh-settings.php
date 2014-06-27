@@ -78,7 +78,7 @@ class Recipe_Hero_Admin_Settings {
 
     /**
      * Defines the theme option metabox and field configuration
-     * @since  0.6.0
+     * @since  0.7.0
      * @return array
      */
     public static function option_fields() {
@@ -96,6 +96,13 @@ class Recipe_Hero_Admin_Settings {
                     'name' => '<h3>' . __( 'Basic Settings', 'recipe-hero' ) . '</h2>',
                     'id'   => 'rh-basic-title',
                     'type' => 'html',
+                ),
+                array(
+                    'name'    => __( 'Recipes Page / Home', 'cmb' ),
+                    'desc'    => __( 'The page you select here will be the home of all your recipes. Additionally, the \'Recipe Archive\' of your site can be found at: ', 'cmb' ) . site_url('/recipes/'),
+                    'id'      => 'rh-recipe-page-display',
+                    'type'    => 'select',
+                    'options' => recipe_hero_get_page_options( array( 'post_type' => 'page', 'numberposts' => -1 ) ),
                 ),
                 array(
                     'name' => __( 'Class for Main Content', 'recipe-hero' ),
@@ -116,6 +123,18 @@ class Recipe_Hero_Admin_Settings {
                         'sidebar' => __( 'Sidebar', 'recipe-hero' ),
                         'fullwidth' => __( 'Full Width', 'recipe-hero' ),
                     ),
+                ),
+                array(
+                    'name'    => __( 'Show Recipes in Loop', 'recipe-hero' ),
+                    'desc'    => __( 'Selecting this will show your recipes along side posts in the standard WordPress loop.', 'recipe-hero' ),
+                    'id'      => 'rh-show-in-loop',
+                    'type'    => 'checkbox',
+                ),
+                array(
+                    'name'    => __( 'Show Recipes in Feed', 'recipe-hero' ),
+                    'desc'    => __( 'Selecting this will show your recipes along side posts in the standard WordPress feed.', 'recipe-hero' ),
+                    'id'      => 'rh-show-in-feed',
+                    'type'    => 'checkbox',
                 ),
                 array(
                     'name' => '<h3>' . __( 'Custom Text', 'recipe-hero' ) . '</h2>',
@@ -188,6 +207,34 @@ class Recipe_Hero_Admin_Settings {
 // Get it started
 $Recipe_Hero_Admin_Settings = new Recipe_Hero_Admin_Settings();
 $Recipe_Hero_Admin_Settings->hooks();
+
+/**
+     * Custom Function to Get All Pages for an Option
+     * @param  array $query_args Optional. Overrides defaults.
+     * @return array             An array of options that matches the CMB options array
+     * @since 0.7.0
+     */
+    function recipe_hero_get_page_options( $query_args ) {
+
+        $args = wp_parse_args( $query_args, array(
+            'post_type'     => 'page',
+            'numberposts'   => -1,
+        ) );
+
+        $posts = get_posts( $args );
+
+        $post_options = array();
+        if ( $posts ) {
+            foreach ( $posts as $post ) {
+                       $post_options[] = array(
+                           'name' => $post->post_title,
+                           'value' => $post->ID
+                       );
+            }
+        }
+
+        return $post_options;
+    }
 
 /**
  * Wrapper function around cmb_get_option

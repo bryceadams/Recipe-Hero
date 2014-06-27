@@ -9,8 +9,6 @@
  * @copyright 2014 Captain Theme
  */
 
-
-
 add_filter( 'cmb_meta_boxes', 'recipe_hero_sample_metaboxes' );
 /**
  * Define the metabox and field configurations.

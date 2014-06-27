@@ -403,13 +403,13 @@ if ( ! function_exists( 'recipe_hero_output_single_instructions' ) ) {
 				$intruction_count = 1;
 				foreach ( (array) $instructions as $key => $instruction ) {
 
-				    $ingredient_quantity = $ingredient_amount = $ingredient_name = '';
+				    $instruction_text = $instruction_image = '';
 
 				    if ( isset( $instruction['_recipe_hero_step_instruction'] ) ) {
 				        $instruction_text = $instruction['_recipe_hero_step_instruction'];
 				    }
 
-				    if ( $instruction['_recipe_hero_step_image'] ) {
+				    if ( isset ( $instruction['_recipe_hero_step_image'] ) ) {
 				    	$instruction_image = '<a href="' . $instruction['_recipe_hero_step_image'] . '" class="steps-image-link" title="' . __( 'Step', 'recipe-hero' ) . ' ' . $intruction_count . '"><img src="' . $instruction['_recipe_hero_step_image'] . '" class="step-image" /></a>';
 				  	} else {
 				  		$instruction_image ='';

@@ -49,3 +49,52 @@ function recipe_hero_option_disable_lightbox() {
 
 }
 add_action( 'wp_enqueue_scripts', 'recipe_hero_option_disable_lightbox', 9999 );
+
+/**
+ * Turn Specified Page into Recipe Home
+ *
+ * @package   Recipe Hero
+ * @author    Captain Theme <info@captaintheme.com>
+ * @since 	  0.7.0
+ */
+
+function recipe_hero_recipe_home_page_content( $content ) {
+
+	// Variables
+	global $post;
+	$rh_home_id = recipe_hero_get_option( 'rh-recipe-page-display', 'recipe-hero-options' );
+
+	if ( isset( $rh_home_id ) ) {
+		if ( $post->ID == $rh_home_id ) {
+			$content = 'yo';
+		}
+	}
+
+	return $content;
+
+}
+
+//add_filter( 'the_content', 'recipe_hero_recipe_home_page_content' );
+
+/**
+ * Specified Recipe Home Page - Hide Comments (if turned on)
+ *
+ * @package   Recipe Hero
+ * @author    Captain Theme <info@captaintheme.com>
+ * @since 	  0.7.0
+ */
+
+function my_override_comments_open( $close ) {
+
+	// Variables
+	global $post;
+	$rh_home_id = recipe_hero_get_option( 'rh-recipe-page-display', 'recipe-hero-options' );
+
+    if ( isset( $rh_home_id ) ) {
+		if ( $post->ID == $rh_home_id ) {
+			$close = false;
+		}
+	}
+    return $close;
+}
+add_filter('comments_open', 'my_override_comments_open', 1000);

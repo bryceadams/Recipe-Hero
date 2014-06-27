@@ -31,7 +31,7 @@ if ( ! function_exists( 'recipe_hero_get_sidebar' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.5.0
+ * @since 	  0.6.7
  */
 
 function recipe_hero_display_sidebar_right() {
@@ -40,8 +40,10 @@ function recipe_hero_display_sidebar_right() {
 
 	if ( $sidebar_setting == 'sidebar' ) {
 		echo recipe_hero_get_sidebar();
-	} else {
+	} elseif ( $sidebar_setting == 'fullwidth' ) {
 		echo '<style type="text/css">#content { width: 100%; }</style>';
+	} else {
+		echo recipe_hero_get_sidebar();
 	}
 
 }
@@ -55,6 +57,8 @@ function recipe_hero_display_sidebar_body_class( $classes ) {
 
 	if ( $sidebar_setting == 'sidebar' && get_post_type() == 'recipe' ) {
 		$classes[] = 'has-right-sidebar';
+		return $classes;
+	} else {
 		return $classes;
 	}
 

@@ -14,6 +14,16 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php get_header(); ?>
 
 	<?php
+
+		$args = array(
+				'post_type' => 'recipe',
+			);
+
+		$the_query = new WP_Query( $args );
+
+	?>
+
+	<?php
 		/**
 		 * recipe_hero_before_main_content hook
 		 *
@@ -22,11 +32,15 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 		do_action( 'recipe_hero_before_main_content' );
 	?>
 
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+
+			<?php
+			//	if ( $counter % $columns == 1 ) {
+					//echo '<div class="grid">';
+			//	}
+			?>
 
 			<?php recipe_hero_get_template_part( 'content', 'archive-recipe' ); ?>
-
-			<hr /><?php // Should this be removed? ?>
 
 		<?php endwhile; // end of the loop. ?>
 
@@ -37,15 +51,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 		 * @hooked recipe_hero_output_content_wrapper_end - 10 (outputs closing divs for the content)
 		 */
 		do_action( 'recipe_hero_after_main_content' );
-	?>
-
-	<?php
-		/**
-		 * recipe_hero_sidebar hook
-		 *
-		 * @hooked recipe_hero_get_sidebar - 10
-		 */
-		do_action( 'recipe_hero_sidebar_right' );
 	?>
 
 <?php get_footer(); ?>

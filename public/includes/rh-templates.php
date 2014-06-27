@@ -14,16 +14,23 @@
  * Tell WordPress not to use single.php for Recipe Single Posts
  * @package Recipe Hero
  * @author  Captain Theme <info@captaintheme.com>
- * @since   0.5.0
+ * @since   0.7.0
  */
  
 add_filter( 'template_include', 'recipe_hero_tc_template_chooser');
 
 function recipe_hero_tc_template_chooser( $template ) {
  
-    // Post ID
+    // Variables
     $post_id = get_the_ID();
- 
+    $rh_home_id = recipe_hero_get_option( 'rh-recipe-page-display', 'recipe-hero-options' );
+
+     if ( isset( $rh_home_id ) ) {
+        if ( $post_id == $rh_home_id ) {
+            return recipe_hero_tc_get_template_hierarchy( 'archive-home' );
+        }
+    }
+
     // For all other CPT
     if ( get_post_type( $post_id ) != 'recipe' ) {
         return $template;
@@ -56,7 +63,7 @@ function recipe_hero_tc_get_template_hierarchy( $template ) {
     $template = $template_slug . '.php';
  
     // Check if a custom template exists in the theme folder, if not, load the plugin template file
-    if ( $theme_file = locate_template( array( 'templates/' . $template ) ) ) {
+    if ( $theme_file = locate_template( array( 'rh-templates/' . $template ) ) ) {
         $file = $theme_file;
     }
     else {

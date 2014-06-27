@@ -263,21 +263,23 @@ if ( ! function_exists( 'recipe_hero_output_archive_details' ) ) {
 								} else {
 									_e( 'Prep Time', 'recipe-hero' );
 								} ?>
-						</strong> <meta itemprop="prepTime" content="<?php echo recipe_hero_schema_prep_time(); ?>"><?php echo $prep_time; ?>
+						</strong> <meta itemprop="prepTime" content="<?php echo recipe_hero_schema_prep_time(); ?>">
+						<div class="the-time"><span class="dashicons dashicons-clock"></span> <?php echo $prep_time; ?></div>
 					</div>
 				<?php } ?>
 
 				<?php if ( $cook_time ) { ?>
 
-				<div class="cook-time unit w-1-4">
-					<strong>
-						<?php if ( recipe_hero_get_option( 'rh-cook-text', 'recipe-hero-options' ) ) {
-								echo recipe_hero_get_option( 'rh-cook-text', 'recipe-hero-options' );
-							} else {
-								_e( 'Cook Time', 'recipe-hero' );
-							} ?>
-					</strong> <meta itemprop="cookTime" content="<?php echo recipe_hero_schema_cook_time(); ?>"> <?php echo $cook_time; ?>
-				</div>
+					<div class="cook-time unit w-1-4">
+						<strong>
+							<?php if ( recipe_hero_get_option( 'rh-cook-text', 'recipe-hero-options' ) ) {
+									echo recipe_hero_get_option( 'rh-cook-text', 'recipe-hero-options' );
+								} else {
+									_e( 'Cook Time', 'recipe-hero' );
+								} ?>
+						</strong> <meta itemprop="cookTime" content="<?php echo recipe_hero_schema_cook_time(); ?>">
+						<div class="the-time"><span class="dashicons dashicons-clock"></span> <?php echo $cook_time; ?></div>
+					</div>
 
 				<?php } ?>
 
