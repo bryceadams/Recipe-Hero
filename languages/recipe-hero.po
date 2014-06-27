@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Recipe Hero\n"
-"POT-Creation-Date: 2014-06-26 13:06+1000\n"
-"PO-Revision-Date: 2014-06-26 13:07+1000\n"
+"POT-Creation-Date: 2014-06-27 14:19+1000\n"
+"PO-Revision-Date: 2014-06-27 14:19+1000\n"
 "Last-Translator: \n"
 "Language-Team: Recipe Hero <info@recipehero.in>\n"
 "Language: en\n"
@@ -189,7 +189,7 @@ msgid "A summary of nutrition information you would like to include."
 msgstr ""
 
 #: ../public/includes/rh-fields.php:99
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:337
+#: ../public/includes/templates-parts/rh-templates-parts-single.php:340
 msgid "Ingredients"
 msgstr ""
 
@@ -230,17 +230,17 @@ msgid "Milliliter (ml)"
 msgstr ""
 
 #: ../public/includes/rh-fields.php:131
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:571
+#: ../public/includes/templates-parts/rh-templates-parts-single.php:575
 msgid "Teaspoon"
 msgstr ""
 
 #: ../public/includes/rh-fields.php:132
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:574
+#: ../public/includes/templates-parts/rh-templates-parts-single.php:578
 msgid "Tablespoon"
 msgstr ""
 
 #: ../public/includes/rh-fields.php:133
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:577
+#: ../public/includes/templates-parts/rh-templates-parts-single.php:581
 msgid "Cup"
 msgstr ""
 
@@ -293,7 +293,7 @@ msgid "Remove Step"
 msgstr ""
 
 #: ../public/includes/rh-fields.php:178
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:397
+#: ../public/includes/templates-parts/rh-templates-parts-single.php:400
 msgid "Instructions"
 msgstr ""
 
@@ -314,60 +314,81 @@ msgid "Class for Main Content"
 msgstr ""
 
 #: ../public/includes/rh-settings.php:102
-msgid "The wrapper class for the content area."
+msgid ""
+"The wrapper class for the content area. This is needed if your theme only "
+"applies styles inside of this class."
 msgstr ""
 
 #: ../public/includes/rh-settings.php:110
-msgid "Custom Text"
+msgid "Sidebar Settings"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:115
-msgid "'Serves' Text"
+#: ../public/includes/rh-settings.php:111
+msgid ""
+"Do you want to display your theme's sidebar or make it Full Width? This will "
+"affect all Recipe-related pages/posts. Full Width view is experimental at "
+"the moment."
 msgstr ""
 
 #: ../public/includes/rh-settings.php:116
-#: ../public/includes/rh-settings.php:122
-#: ../public/includes/rh-settings.php:128
-#: ../public/includes/rh-settings.php:134
-#: ../public/includes/rh-settings.php:140
-msgid "Part of the Recipe Details area"
+msgid "Sidebar"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:117
+msgid "Full Width"
 msgstr ""
 
 #: ../public/includes/rh-settings.php:121
-msgid "'Equipment' Text"
+msgid "Custom Text"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:126
+msgid "'Serves' Text"
 msgstr ""
 
 #: ../public/includes/rh-settings.php:127
+#: ../public/includes/rh-settings.php:133
+#: ../public/includes/rh-settings.php:139
+#: ../public/includes/rh-settings.php:145
+#: ../public/includes/rh-settings.php:151
+msgid "Part of the Recipe Details area"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:132
+msgid "'Equipment' Text"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:138
 msgid "'Prep Time' Text"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:133
+#: ../public/includes/rh-settings.php:144
 msgid "'Cook Time' Text"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:139
+#: ../public/includes/rh-settings.php:150
 msgid "'Total Time' Text"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:145
+#: ../public/includes/rh-settings.php:156
 msgid "Styling"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:150
+#: ../public/includes/rh-settings.php:161
 msgid "Disable Recipe Hero Styles"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:151
+#: ../public/includes/rh-settings.php:162
 msgid ""
 "Selecting this will stop the plugin loading the default styles used in "
 "Recipe Hero for layout and styling."
 msgstr ""
 
-#: ../public/includes/rh-settings.php:157
+#: ../public/includes/rh-settings.php:167
 msgid "Disable Lightbox"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:158
+#: ../public/includes/rh-settings.php:168
 msgid "Selecting this will disable the lightbox used in Recipe Hero"
 msgstr ""
 
@@ -476,46 +497,46 @@ msgid "Prep Time"
 msgstr ""
 
 #: ../public/includes/templates-parts/rh-templates-parts-archive.php:277
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:253
+#: ../public/includes/templates-parts/rh-templates-parts-single.php:254
 msgid "Cook Time"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:410
+#: ../public/includes/templates-parts/rh-templates-parts-single.php:413
 msgid "Step"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:452
+#: ../public/includes/templates-parts/rh-templates-parts-single.php:455
 msgid "Nutrition"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:562
+#: ../public/includes/templates-parts/rh-templates-parts-single.php:566
 msgid "Gram"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:565
+#: ../public/includes/templates-parts/rh-templates-parts-single.php:569
 msgid "Ounce"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:568
+#: ../public/includes/templates-parts/rh-templates-parts-single.php:572
 msgid "Milliliter"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:580
+#: ../public/includes/templates-parts/rh-templates-parts-single.php:584
 msgid "LIter"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:583
+#: ../public/includes/templates-parts/rh-templates-parts-single.php:587
 msgid "Pound"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:586
+#: ../public/includes/templates-parts/rh-templates-parts-single.php:590
 msgid "Kilogram"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:589
+#: ../public/includes/templates-parts/rh-templates-parts-single.php:593
 msgid "Slice"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:592
+#: ../public/includes/templates-parts/rh-templates-parts-single.php:596
 msgid "Piece"
 msgstr ""

@@ -10,7 +10,7 @@
  */
 
 /**
- * Recipe Title
+ * Recipe Content Wrappers
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
@@ -43,4 +43,28 @@ if ( ! function_exists( 'recipe_hero_content_wrapper_end' ) ) {
 		recipe_hero_get_template( 'global/wrapper-end.php' );
 	}
 	
+}
+
+/**
+ * Recipe Header Wrapper
+ *
+ * @package   Recipe Hero
+ * @author    Captain Theme <info@captaintheme.com>
+ * @since 	  0.5.0
+ */
+
+if ( ! function_exists( 'recipe_hero_output_single_header_before' ) ) {
+
+	function recipe_hero_output_single_header_before() {
+		echo '<header class="entry-header">';
+	}
+
+}
+
+if ( ! function_exists( 'recipe_hero_output_single_header_after' ) ) {
+
+	function recipe_hero_output_single_header_after() {
+		echo '</header>';
+	}
+
 }

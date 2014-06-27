@@ -25,7 +25,7 @@ if ( ! function_exists( 'recipe_hero_output_single_title' ) ) {
 		global $post;
 		$get_title = get_the_title( $post->ID );
 
-		$title = '<h1 class="recipe-single-title entry-title" itemprop="name">';
+		$title = '<h1 class="recipe-single-title ' . recipe_hero_class_recipe_title() . '" itemprop="name">';
 		$title .= $get_title;
 		$title .= '</h1>';
 
@@ -187,18 +187,18 @@ if ( ! function_exists( 'recipe_hero_output_single_details' ) ) {
 		// Variables
 		global $post;
 		$serves 	= get_post_meta( $post->ID, '_recipe_hero_detail_serves', true );
+		$equipment 	= get_post_meta ( $post->ID, '_recipe_hero_detail_equipment', false );
 		$prep_time 	= recipe_hero_convert_minute_hour ( get_post_meta ( $post->ID, '_recipe_hero_detail_prep_time', true ) );
 		$cook_time 	= recipe_hero_convert_minute_hour ( get_post_meta ( $post->ID, '_recipe_hero_detail_cook_time', true ) );
-		$total_time = recipe_hero_convert_minute_hour ( recipe_hero_calc_total_cook_time() );
-		$equipment 	= get_post_meta ( $post->ID, '_recipe_hero_detail_equipment', false ); ?>
+		$total_time = recipe_hero_convert_minute_hour ( recipe_hero_calc_total_cook_time() ); ?>
 
 		<div class="recipe-single-details">
 
-			<div class="grid">
+			<div class="rh-grid">
 
 				<?php if ( $serves ) { ?>
 
-				<div class="serves unit w-1-5">
+				<div class="serves unit w-1-4">
 					<strong>
 						<?php if ( recipe_hero_get_option( 'rh-serves-text', 'recipe-hero-options' ) ) {
 								echo recipe_hero_get_option( 'rh-serves-text', 'recipe-hero-options' );
@@ -211,7 +211,7 @@ if ( ! function_exists( 'recipe_hero_output_single_details' ) ) {
 				<?php } ?>
 
 				<?php if ( $equipment ) { ?>
-					<div class="equipment unit w-1-5">
+					<div class="equipment unit w-1-4">
 						<strong>
 							<?php if ( recipe_hero_get_option( 'rh-equipment-text', 'recipe-hero-options' ) ) {
 									echo recipe_hero_get_option( 'rh-equipment-text', 'recipe-hero-options' );
@@ -232,41 +232,44 @@ if ( ! function_exists( 'recipe_hero_output_single_details' ) ) {
 				<?php } ?>
 
 				<?php if ( $prep_time ) { ?>
-					<div class="prep-time unit w-1-5">
+					<div class="prep-time unit w-1-4">
 						<strong>
 							<?php if ( recipe_hero_get_option( 'rh-prep-text', 'recipe-hero-options' ) ) {
 									echo recipe_hero_get_option( 'rh-prep-text', 'recipe-hero-options' );
 								} else {
 									_e( 'Prep Time', 'recipe-hero' );
 								} ?>
-						</strong> <meta itemprop="prepTime" content="<?php echo recipe_hero_schema_prep_time(); ?>"><?php echo $prep_time; ?>
+						</strong> <meta itemprop="prepTime" content="<?php echo recipe_hero_schema_prep_time(); ?>">
+						<div class="the-time"><span class="dashicons dashicons-clock"></span> <?php echo $prep_time; ?></div>
 					</div>
 				<?php } ?>
 
 				<?php if ( $cook_time ) { ?>
 
-				<div class="cook-time unit w-1-5">
-					<strong>
-						<?php if ( recipe_hero_get_option( 'rh-cook-text', 'recipe-hero-options' ) ) {
-								echo recipe_hero_get_option( 'rh-cook-text', 'recipe-hero-options' );
-							} else {
-								_e( 'Cook Time', 'recipe-hero' );
-							} ?>
-					</strong> <meta itemprop="cookTime" content="<?php echo recipe_hero_schema_cook_time(); ?>"> <?php echo $cook_time; ?>
-				</div>
+					<div class="cook-time unit w-1-4">
+						<strong>
+							<?php if ( recipe_hero_get_option( 'rh-cook-text', 'recipe-hero-options' ) ) {
+									echo recipe_hero_get_option( 'rh-cook-text', 'recipe-hero-options' );
+								} else {
+									_e( 'Cook Time', 'recipe-hero' );
+								} ?>
+						</strong> <meta itemprop="cookTime" content="<?php echo recipe_hero_schema_cook_time(); ?>">
+						<div class="the-time"><span class="dashicons dashicons-clock"></span> <?php echo $cook_time; ?></div>
+						<meta itemprop="totalTime" content="<?php echo recipe_hero_schema_total_time(); ?>">
+					</div>
 
 				<?php } ?>
 
-				<?php if ( $total_time ) { ?>
+				<?php /* if ( $total_time ) { ?>
 
-				<div class="total-time unit w-1-5">
+				<div class="total-time unit w-1-4">
 					<strong>
 					Total Time
 					</strong>
 					<meta itemprop="totalTime" content="<?php echo recipe_hero_schema_total_time(); ?>"> <?php echo $total_time; ?>
 				</div>
 
-				<?php } ?>
+				<?php } */ ?>
 
 			</div>
 
@@ -471,7 +474,8 @@ if ( ! function_exists( 'recipe_hero_output_single_comments' ) ) {
 	function recipe_hero_output_single_comments() {
 
 		if ( comments_open() || get_comments_number() ) {
-			comments_template();
+			//comments_template();
+			comments_template( '/comments.php', true ); 
 		}
 
 	}

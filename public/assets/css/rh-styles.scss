@@ -4,22 +4,14 @@
 Specific Core Theme Styles
 */
 
-// Twenty Fourteen
-#page {
-	#main {
-		#primary {
-			#content {
-				.tfrh {
-					margin: 50px auto 0;
-					width: 90%;
-				}
-			}
-		}
-	}
-}
-
 // Single / Archive Template
-.recipe {
+article.recipe {
+	padding: 15px 25px;
+	line-height: 1.4;
+	h4 {
+		font-size: 28px;
+		margin-bottom: 18px;
+	}
 	.recipe-single-title {
 	}
 	.recipe-single-meta,
@@ -106,11 +98,12 @@ Specific Core Theme Styles
 			margin-bottom: 5px;
 		}
 		strong {
-			font-size: 17px;
+			font-size: 18px;
 			display: block;
+			color: #333;
 		}
 		.serves, .equipment, .prep-time, .cook-time, .total-time {
-			font-size: 15px;
+			font-size: 16px;
 		}
 		.serves {
 		}
@@ -122,9 +115,16 @@ Specific Core Theme Styles
 		}
 		.cook-time {
 		}
+		.prep-time, .cook-time {
+			span {
+				font-size: 17px;
+				vertical-align: middle;
+			}
+		}
 		.total-time {
 			font-weight: bold;
 		}
+
 	}
 	.recipe-archive-details {
 		> div {
@@ -132,7 +132,8 @@ Specific Core Theme Styles
 		}
 	}
 	.recipe-single-content {
-		font-size: 18px;
+		font-size: 16px;
+		margin-top: 25px;
 	}
 	.recipe-single-ingredients {
 		h4 {
@@ -146,7 +147,8 @@ Specific Core Theme Styles
 	       -moz-column-gap: 20px;
 	       -webkit-column-count: 2;
 	       -webkit-column-gap : 20px;
-	     /* 	column-rule-color:  #eee;
+	       font-size: 16px;
+	     /* column-rule-color:  #eee;
 	       	column-rule-style:  solid;
 	       	column-rule-width:  1px;
 	       -moz-column-rule-color:  #eee;
@@ -168,6 +170,8 @@ Specific Core Theme Styles
 				margin-bottom: 30px;
 				p {
 					margin-bottom: 15px;
+					font-size: 16px;
+					line-height: 1.6;
 				}
 				img.step-image {
 					max-width: 100%;
@@ -184,4 +188,7 @@ Specific Core Theme Styles
 	hr.recipe-single-seperator {
 		margin-top: 25px;
 	}
+}
+.single-recipe #comments {
+	padding: 15px 25px;
 }

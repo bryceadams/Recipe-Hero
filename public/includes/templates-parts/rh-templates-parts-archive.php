@@ -25,7 +25,7 @@ if ( ! function_exists( 'recipe_hero_output_archive_title' ) ) {
 		global $post;
 		$get_title = get_the_title( $post->ID );
 
-		$title = '<h1 class="recipe-archive-title entry-title" itemprop="name">';
+		$title = '<h1 class="recipe-archive-title ' . recipe_hero_class_recipe_title() . '" itemprop="name">';
 		$title .= '<a href="' . get_permalink( $post->ID ) . '" title="' . $get_title . '" rel="bookmark">';
 		$title .= $get_title;
 		$title .= '</a></h1>';
@@ -218,11 +218,11 @@ if ( ! function_exists( 'recipe_hero_output_archive_details' ) ) {
 
 		<div class="recipe-archive-details">
 
-			<div class="grid">
+			<div class="rh-grid">
 
 				<?php if ( $serves ) { ?>
 
-				<div class="serves unit w-1-5">
+				<div class="serves unit w-1-4">
 					<strong>
 						<?php if ( recipe_hero_get_option( 'rh-serves-text', 'recipe-hero-options' ) ) {
 								echo recipe_hero_get_option( 'rh-serves-text', 'recipe-hero-options' );
@@ -235,7 +235,7 @@ if ( ! function_exists( 'recipe_hero_output_archive_details' ) ) {
 				<?php } ?>
 
 				<?php if ( $equipment ) { ?>
-					<div class="equipment unit w-1-5">
+					<div class="equipment unit w-1-4">
 						<strong>
 							<?php if ( recipe_hero_get_option( 'rh-equipment-text', 'recipe-hero-options' ) ) {
 									echo recipe_hero_get_option( 'rh-equipment-text', 'recipe-hero-options' );
@@ -256,7 +256,7 @@ if ( ! function_exists( 'recipe_hero_output_archive_details' ) ) {
 				<?php } ?>
 
 				<?php if ( $prep_time ) { ?>
-					<div class="prep-time unit w-1-5">
+					<div class="prep-time unit w-1-4">
 						<strong>
 							<?php if ( recipe_hero_get_option( 'rh-prep-text', 'recipe-hero-options' ) ) {
 									echo recipe_hero_get_option( 'rh-prep-text', 'recipe-hero-options' );
@@ -269,7 +269,7 @@ if ( ! function_exists( 'recipe_hero_output_archive_details' ) ) {
 
 				<?php if ( $cook_time ) { ?>
 
-				<div class="cook-time unit w-1-5">
+				<div class="cook-time unit w-1-4">
 					<strong>
 						<?php if ( recipe_hero_get_option( 'rh-cook-text', 'recipe-hero-options' ) ) {
 								echo recipe_hero_get_option( 'rh-cook-text', 'recipe-hero-options' );
@@ -281,7 +281,7 @@ if ( ! function_exists( 'recipe_hero_output_archive_details' ) ) {
 
 				<?php } ?>
 
-				<?php if ( $total_time ) { ?>
+				<?php /* if ( $total_time ) { ?>
 
 				<div class="total-time unit w-1-5">
 					<strong>
@@ -290,7 +290,7 @@ if ( ! function_exists( 'recipe_hero_output_archive_details' ) ) {
 					<meta itemprop="totalTime" content="<?php echo recipe_hero_schema_total_time(); ?>"> <?php echo $total_time; ?>
 				</div>
 
-				<?php } ?>
+				<?php } */ ?>
 
 			</div>
 

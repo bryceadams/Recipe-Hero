@@ -14,7 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 
 <?php get_header(); ?>
 
-
 	<?php
 		/**
 		 * recipe_hero_before_main_content hook
@@ -43,9 +42,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 		/**
 		 * recipe_hero_sidebar hook
 		 *
-		 * @hooked recipe_hero_get_sidebar - 10
+		 * @hooked recipe_hero_display_sidebar_right - 10
 		 */
-		do_action( 'recipe_hero_sidebar' );
+		do_action( 'recipe_hero_sidebar_right' );
 	?>
 
 <?php get_footer(); ?>

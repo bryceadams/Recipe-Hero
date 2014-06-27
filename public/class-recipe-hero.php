@@ -73,6 +73,7 @@ class Recipe_Hero {
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-templates.php' );
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-templates-functions.php' );
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-templates-hooks.php' );
+		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-classes.php' );
 
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-lightbox.php' );
 		
