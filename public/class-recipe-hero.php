@@ -21,7 +21,7 @@ class Recipe_Hero {
 	 *
 	 * @var     string
 	 */
-	const VERSION = '0.6.0';
+	const VERSION = '0.6.6';
 
 	/**
 	 * The variable name is used as the text domain when internationalizing strings
@@ -47,7 +47,7 @@ class Recipe_Hero {
 	 * Initialize the plugin by setting localization and loading public scripts
 	 * and styles.
 	 *
-	 * @since     0.5.0
+	 * @since     0.6.5
 	 */
 	private function __construct() {
 

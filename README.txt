@@ -4,7 +4,7 @@ Donate link: http://recipehero.in/
 Tags: recipe, recipes, cooking, ingredients, food, cook, recipe hero, captain theme
 Requires at least: 3.5.1
 Tested up to: 3.9.1
-Stable tag: 0.6.0
+Stable tag: 0.6.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,12 +16,16 @@ It shouldn't be difficult to add a recipe to your WordPress site.
 
 Recipe Hero adds a new custom post type, **recipe**, to your website. Adding a recipe is just like adding a post. You can add everything from the recipe's yield to the equipment needed, the cooking time to the ingredients.
 
-Navigate to `http://yourwebsite.com/recipes` to see all the new recipes you've added. You can easily customise the CSS to your liking and make it look perfect.
+Navigate to `http://yourwebsite.com/recipes` to see all the new recipes you've added. You can easily customise the CSS to your liking and make it look perfect. It’s automatically set-up to be responsive, clean & beautiful.
 
 * Custom Post Type for 'Recipes'
 * Recipe Details, Ingredients & Instructions
+* Completely responsive
 * Plenty of Options
-* Valid schema.org Markup - Works with Google Rich Snippets etc.
+* Valid schema.org Markup - Works with Google Rich Snippets etc. (SEO Optimized)
+* Inherits Your Theme’s Styles Automatically
+* Full Width + Sidebar Layouts
+* Image Lightbox
 * Can Extend / Develop with custom actions, etc.
 * Completely Open Source GPL Project - see [GitHub](https://github.com/bryceadams/Recipe-Hero) to contribute!
 * Translation-Ready (includes .pot file etc.)
@@ -86,6 +90,14 @@ Sure, but on food-steroids.
 5. Example of a Recipe #2
 
 == Changelog ==
+
+= 0.6.6 =
+* Style Fix for Twenty Fourteen Theme
+
+= 0.6.5 =
+* Major Styling Improvements
+* Layout Improvements
+* Sidebar / Full Width Layout Option
 
 = 0.6.0 =
 * Various Improvements

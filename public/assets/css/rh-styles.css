@@ -58,6 +58,12 @@
 /* 
 Specific Core Theme Styles
 */
+#page #main #primary #content .tfrh {
+  margin: 50px auto 0; }
+
+/* 
+Single / Archive Template
+*/
 article.recipe {
   padding: 15px 25px;
   line-height: 1.4; }
