@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Recipe Hero\n"
-"POT-Creation-Date: 2014-06-27 14:19+1000\n"
-"PO-Revision-Date: 2014-06-27 14:19+1000\n"
+"POT-Creation-Date: 2014-06-28 15:25+1000\n"
+"PO-Revision-Date: 2014-06-28 15:25+1000\n"
 "Last-Translator: \n"
 "Language-Team: Recipe Hero <info@recipehero.in>\n"
 "Language: en\n"
@@ -116,192 +116,192 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: ../public/includes/rh-cpt.php:24 ../public/includes/rh-cpt.php:25
+#: ../public/includes/rh-cpt.php:26 ../public/includes/rh-cpt.php:27
 msgid "Add New Recipe"
 msgstr ""
 
-#: ../public/includes/rh-cpt.php:26
+#: ../public/includes/rh-cpt.php:28
 #: ../public/includes/templates-parts/rh-templates-parts-archive.php:69
 #: ../public/includes/templates-parts/rh-templates-parts-single.php:70
 msgid "Edit Recipe"
 msgstr ""
 
-#: ../public/includes/rh-cpt.php:27
+#: ../public/includes/rh-cpt.php:29
 msgid "New Recipe"
 msgstr ""
 
-#: ../public/includes/rh-cpt.php:28
+#: ../public/includes/rh-cpt.php:30
 msgid "View Recipe"
 msgstr ""
 
-#: ../public/includes/rh-cpt.php:29
+#: ../public/includes/rh-cpt.php:31
 msgid "Search Recipes"
 msgstr ""
 
-#: ../public/includes/rh-cpt.php:30
+#: ../public/includes/rh-cpt.php:32
 msgid "No Recipes found"
 msgstr ""
 
-#: ../public/includes/rh-cpt.php:31
+#: ../public/includes/rh-cpt.php:33
 msgid "No Recipes found in the trash"
 msgstr ""
 
-#: ../public/includes/rh-cpt.php:33
+#: ../public/includes/rh-cpt.php:35
 msgid "Recipe Hero"
 msgstr ""
 
-#: ../public/includes/rh-cpt.php:42
+#: ../public/includes/rh-cpt.php:44
 msgid "Recipe"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:34
+#: ../public/includes/rh-fields.php:36
 msgid "Recipe Details"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:42
+#: ../public/includes/rh-fields.php:44
 #: ../public/includes/templates-parts/rh-templates-parts-archive.php:230
 #: ../public/includes/templates-parts/rh-templates-parts-single.php:206
 msgid "Serves"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:52
+#: ../public/includes/rh-fields.php:54
 msgid "Preparation Time"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:62
+#: ../public/includes/rh-fields.php:64
 msgid "Cooking Time"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:72
+#: ../public/includes/rh-fields.php:74
 msgid "Equipment Needed"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:73
+#: ../public/includes/rh-fields.php:75
 msgid "Any special equipment worthy of mentioning that is required."
 msgstr ""
 
-#: ../public/includes/rh-fields.php:82
+#: ../public/includes/rh-fields.php:84
 msgid "Nutritional Info"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:83
+#: ../public/includes/rh-fields.php:85
 msgid "A summary of nutrition information you would like to include."
 msgstr ""
 
-#: ../public/includes/rh-fields.php:99
+#: ../public/includes/rh-fields.php:101
 #: ../public/includes/templates-parts/rh-templates-parts-single.php:340
 msgid "Ingredients"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:105
+#: ../public/includes/rh-fields.php:107
 msgid "Add all of the ingredients for this recipe."
 msgstr ""
 
-#: ../public/includes/rh-fields.php:107
+#: ../public/includes/rh-fields.php:109
 msgid "Ingredient {#}"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:108
+#: ../public/includes/rh-fields.php:110
 msgid "Add Another Ingredient"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:109
+#: ../public/includes/rh-fields.php:111
 msgid "Remove Ingredient"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:115
+#: ../public/includes/rh-fields.php:117
 msgid "Quantity"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:123
+#: ../public/includes/rh-fields.php:125
 msgid "Amount"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:128
+#: ../public/includes/rh-fields.php:130
 msgid "Gram (gm)"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:129
+#: ../public/includes/rh-fields.php:131
 msgid "Ounce (oz)"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:130
+#: ../public/includes/rh-fields.php:132
 msgid "Milliliter (ml)"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:131
+#: ../public/includes/rh-fields.php:133
 #: ../public/includes/templates-parts/rh-templates-parts-single.php:575
 msgid "Teaspoon"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:132
+#: ../public/includes/rh-fields.php:134
 #: ../public/includes/templates-parts/rh-templates-parts-single.php:578
 msgid "Tablespoon"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:133
+#: ../public/includes/rh-fields.php:135
 #: ../public/includes/templates-parts/rh-templates-parts-single.php:581
 msgid "Cup"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:134
+#: ../public/includes/rh-fields.php:136
 msgid "Liter (L)"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:135
+#: ../public/includes/rh-fields.php:137
 msgid "Pound (lb)"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:136
+#: ../public/includes/rh-fields.php:138
 msgid "Kilogram (kg)"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:137
+#: ../public/includes/rh-fields.php:139
 msgid "Slices"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:138
+#: ../public/includes/rh-fields.php:140
 msgid "Pieces"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:139
+#: ../public/includes/rh-fields.php:141
 msgid "None (blank)"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:145
+#: ../public/includes/rh-fields.php:147
 msgid "Ingredient"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:162
+#: ../public/includes/rh-fields.php:164
 msgid "Steps"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:168
+#: ../public/includes/rh-fields.php:170
 msgid "Add all of the preparation and cooking steps for this recipe."
 msgstr ""
 
-#: ../public/includes/rh-fields.php:170
+#: ../public/includes/rh-fields.php:172
 msgid "Step {#}"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:171
+#: ../public/includes/rh-fields.php:173
 msgid "Add Another Step"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:172
+#: ../public/includes/rh-fields.php:174
 msgid "Remove Step"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:178
+#: ../public/includes/rh-fields.php:180
 #: ../public/includes/templates-parts/rh-templates-parts-single.php:400
 msgid "Instructions"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:184
+#: ../public/includes/rh-fields.php:186
 msgid "Step Photo"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:185
+#: ../public/includes/rh-fields.php:187
 msgid "Upload an image or enter a URL (optional)"
 msgstr ""
 
@@ -310,149 +310,185 @@ msgid "Basic Settings"
 msgstr ""
 
 #: ../public/includes/rh-settings.php:101
-msgid "Class for Main Content"
+msgid "Recipes Page / Home"
 msgstr ""
 
 #: ../public/includes/rh-settings.php:102
+msgid ""
+"The page you select here will be the home of all your recipes. Additionally, "
+"the 'Recipe Archive' of your site can be found at: "
+msgstr ""
+
+#: ../public/includes/rh-settings.php:108
+msgid "Recipes Per Page on the Recipe Page"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:109
+msgid ""
+"This will only apply for the recipe page, selected in the option above. "
+"Other recipe archives use the default posts per page setting."
+msgstr ""
+
+#: ../public/includes/rh-settings.php:114
+msgid "Infinite"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:118
+msgid "Class for Main Content"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:119
 msgid ""
 "The wrapper class for the content area. This is needed if your theme only "
 "applies styles inside of this class."
 msgstr ""
 
-#: ../public/includes/rh-settings.php:110
+#: ../public/includes/rh-settings.php:127
 msgid "Sidebar Settings"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:111
+#: ../public/includes/rh-settings.php:128
 msgid ""
 "Do you want to display your theme's sidebar or make it Full Width? This will "
 "affect all Recipe-related pages/posts. Full Width view is experimental at "
 "the moment."
 msgstr ""
 
-#: ../public/includes/rh-settings.php:116
+#: ../public/includes/rh-settings.php:133
 msgid "Sidebar"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:117
+#: ../public/includes/rh-settings.php:134
 msgid "Full Width"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:121
-msgid "Custom Text"
-msgstr ""
-
-#: ../public/includes/rh-settings.php:126
-msgid "'Serves' Text"
-msgstr ""
-
-#: ../public/includes/rh-settings.php:127
-#: ../public/includes/rh-settings.php:133
-#: ../public/includes/rh-settings.php:139
-#: ../public/includes/rh-settings.php:145
-#: ../public/includes/rh-settings.php:151
-msgid "Part of the Recipe Details area"
-msgstr ""
-
-#: ../public/includes/rh-settings.php:132
-msgid "'Equipment' Text"
-msgstr ""
-
 #: ../public/includes/rh-settings.php:138
-msgid "'Prep Time' Text"
-msgstr ""
-
-#: ../public/includes/rh-settings.php:144
-msgid "'Cook Time' Text"
-msgstr ""
-
-#: ../public/includes/rh-settings.php:150
-msgid "'Total Time' Text"
-msgstr ""
-
-#: ../public/includes/rh-settings.php:156
 msgid "Styling"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:161
+#: ../public/includes/rh-settings.php:143
 msgid "Disable Recipe Hero Styles"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:162
+#: ../public/includes/rh-settings.php:144
 msgid ""
 "Selecting this will stop the plugin loading the default styles used in "
 "Recipe Hero for layout and styling."
 msgstr ""
 
-#: ../public/includes/rh-settings.php:167
+#: ../public/includes/rh-settings.php:149
 msgid "Disable Lightbox"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:168
+#: ../public/includes/rh-settings.php:150
 msgid "Selecting this will disable the lightbox used in Recipe Hero"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:25
-msgid "Add New Course"
+#: ../public/includes/rh-settings.php:155
+msgid "Recipe Padding (px)"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:26
-msgid "Edit Course"
+#: ../public/includes/rh-settings.php:156
+msgid ""
+"Sometimes you may want to add some padding around the recipe articles. "
+"Normally from 0-25px is enough."
+msgstr ""
+
+#: ../public/includes/rh-settings.php:164
+msgid "Custom Text"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:169
+msgid "'Serves' Text"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:170
+#: ../public/includes/rh-settings.php:176
+#: ../public/includes/rh-settings.php:182
+#: ../public/includes/rh-settings.php:188
+#: ../public/includes/rh-settings.php:194
+msgid "Part of the Recipe Details area"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:175
+msgid "'Equipment' Text"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:181
+msgid "'Prep Time' Text"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:187
+msgid "'Cook Time' Text"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:193
+msgid "'Total Time' Text"
 msgstr ""
 
 #: ../public/includes/rh-tax.php:27
-msgid "New Course"
+msgid "Add New Course"
 msgstr ""
 
 #: ../public/includes/rh-tax.php:28
-msgid "View Course"
+msgid "Edit Course"
 msgstr ""
 
 #: ../public/includes/rh-tax.php:29
-msgid "Search Courses"
+msgid "New Course"
 msgstr ""
 
 #: ../public/includes/rh-tax.php:30
-msgid "No Course found"
+msgid "View Course"
 msgstr ""
 
 #: ../public/includes/rh-tax.php:31
+msgid "Search Courses"
+msgstr ""
+
+#: ../public/includes/rh-tax.php:32
+msgid "No Course found"
+msgstr ""
+
+#: ../public/includes/rh-tax.php:33
 msgid "No Course found in Trash"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:38
+#: ../public/includes/rh-tax.php:40
+#: ../public/includes/templates-parts/rh-templates-parts-tax-header.php:35
 msgid "Course"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:63
+#: ../public/includes/rh-tax.php:69
 msgid "Add New Cuisine"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:64
+#: ../public/includes/rh-tax.php:70
 msgid "Edit Cuisine"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:65
+#: ../public/includes/rh-tax.php:71
 msgid "New Cuisine"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:66
+#: ../public/includes/rh-tax.php:72
 msgid "View Cuisine"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:67
+#: ../public/includes/rh-tax.php:73
 msgid "Search Cuisines"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:68
+#: ../public/includes/rh-tax.php:74
 msgid "No Cuisine found"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:69
+#: ../public/includes/rh-tax.php:75
 msgid "No Cuisine found in Trash"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:76
+#: ../public/includes/rh-tax.php:82
+#: ../public/includes/templates-parts/rh-templates-parts-tax-header.php:26
 msgid "Cuisine"
 msgstr ""
 
@@ -496,7 +532,7 @@ msgstr ""
 msgid "Prep Time"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-archive.php:277
+#: ../public/includes/templates-parts/rh-templates-parts-archive.php:278
 #: ../public/includes/templates-parts/rh-templates-parts-single.php:254
 msgid "Cook Time"
 msgstr ""
@@ -539,4 +575,16 @@ msgstr ""
 
 #: ../public/includes/templates-parts/rh-templates-parts-single.php:596
 msgid "Piece"
+msgstr ""
+
+#: ../rh-templates/archive-home.php:52
+msgid "Sorry, there are no recipes to show!"
+msgstr ""
+
+#: ../rh-templates/archive-home.php:55
+msgid "Add Your First Recipe!"
+msgstr ""
+
+#: ../rh-templates/archive-home.php:58
+msgid "We have some coming soon though!"
 msgstr ""
