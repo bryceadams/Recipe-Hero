@@ -17,25 +17,35 @@
  * @since 	  0.7.0
  */		
 
-	function recipe_hero_archive_tax_title() { ?>
+if ( ! function_exists( 'recipe_hero_archive_tax_title' ) ) {
 
+	function recipe_hero_archive_tax_title() {
+
+		if ( is_tax( 'cuisine' ) ) {
+
+			$cuisine_text = __( 'Cuisine', 'recipe-hero' );
+
+			echo '<div class="recipe-archive-tax-header">';
+			echo '<h1 class="archive-title">';
+			echo single_term_title( $cuisine_text . ': ' );
+			echo '</h1>';
 		
-			<?php
-				if ( is_tax( 'cuisine' ) ) {
-					$cuisine_text = __( 'Cuisine' );
-					echo '<h1 class="archive-title">';
-					echo single_term_title( $cuisine_text . ': ' );
-					echo '</h1>';
-				} elseif ( is_tax( 'course' ) ) {
-					$course_text = __( 'Course' );
-					echo '<h1 class="archive-title">';
-					echo single_term_title( $course_text . ': ' );
-					echo '</h1>';
-				} else { }
-			?>
-		</h1>
+		} elseif ( is_tax( 'course' ) ) {
 
-	<?php }
+			$course_text = __( 'Course', 'recipe-hero' );
+			
+			echo '<div class="recipe-archive-tax-header">';
+			echo '<h1 class="archive-title">';
+			echo single_term_title( $course_text . ': ' );
+			echo '</h1>';
+		
+		} else { }
+
+	}
+
+}
+
+if ( ! function_exists( 'recipe_hero_archive_tax_desc' ) ) {
 
 	function recipe_hero_archive_tax_desc() {
 
@@ -47,6 +57,10 @@
 					echo apply_filters( 'category_archive_meta', '<div class="taxonomy-description">' . $term_description . '</div>' );
 				}
 
+				echo '</div><hr />';
+
 			}
 	
 	}
+
+}

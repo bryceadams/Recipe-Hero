@@ -14,13 +14,17 @@
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.6.0
+ * @since 	  0.7.0
  */
 
-function recipe_hero_option_disable_styles() {
+if ( ! function_exists( 'recipe_hero_option_disable_styles' ) ) {
+	
+	function recipe_hero_option_disable_styles() {
 
-	if ( recipe_hero_get_option( 'rh-disable-styles', 'recipe-hero-options' ) ) {
-		add_filter( 'recipe_hero_enqueue_styles', '__return_false' );
+		if ( recipe_hero_get_option( 'rh-disable-styles', 'recipe-hero-options' ) ) {
+			add_filter( 'recipe_hero_enqueue_styles', '__return_false' );
+		}
+
 	}
 
 }
@@ -31,50 +35,28 @@ add_action( 'init', 'recipe_hero_option_disable_styles', 9999 );
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.6.0
+ * @since 	  0.7.0
  */
 
-function recipe_hero_option_disable_lightbox() {
+if ( ! function_exists( 'recipe_hero_option_disable_lightbox' ) ) {
 
-	if ( ! recipe_hero_get_option( 'rh-disable-lightbox', 'recipe-hero-options' ) ) {
+	function recipe_hero_option_disable_lightbox() {
 
-		if ( ( get_post_type() == 'recipe' ) && is_single() ) {
+		if ( ! recipe_hero_get_option( 'rh-disable-lightbox', 'recipe-hero-options' ) ) {
 
-			wp_enqueue_script( 'magnific' );
-			wp_enqueue_style( 'magnific-css' );
-			
+			if ( ( get_post_type() == 'recipe' ) && is_single() ) {
+
+				wp_enqueue_script( 'magnific' );
+				wp_enqueue_style( 'magnific-css' );
+				
+			}
+
 		}
 
 	}
 
 }
 add_action( 'wp_enqueue_scripts', 'recipe_hero_option_disable_lightbox', 9999 );
-
-/**
- * Turn Specified Page into Recipe Home
- *
- * @package   Recipe Hero
- * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.7.0
- */
-
-function recipe_hero_recipe_home_page_content( $content ) {
-
-	// Variables
-	global $post;
-	$rh_home_id = recipe_hero_get_option( 'rh-recipe-page-display', 'recipe-hero-options' );
-
-	if ( isset( $rh_home_id ) ) {
-		if ( $post->ID == $rh_home_id ) {
-			$content = 'yo';
-		}
-	}
-
-	return $content;
-
-}
-
-//add_filter( 'the_content', 'recipe_hero_recipe_home_page_content' );
 
 /**
  * Specified Recipe Home Page - Hide Comments (if turned on)
@@ -84,17 +66,55 @@ function recipe_hero_recipe_home_page_content( $content ) {
  * @since 	  0.7.0
  */
 
-function my_override_comments_open( $close ) {
+if ( ! function_exists( 'recipe_hero_override_comments_open' ) ) {
+	
+	function recipe_hero_override_comments_open( $close ) {
 
-	// Variables
-	global $post;
-	$rh_home_id = recipe_hero_get_option( 'rh-recipe-page-display', 'recipe-hero-options' );
+		// Variables
+		global $post;
+		$rh_home_id = recipe_hero_get_option( 'rh-recipe-page-display', 'recipe-hero-options' );
 
-    if ( isset( $rh_home_id ) ) {
-		if ( $post->ID == $rh_home_id ) {
-			$close = false;
+	    if ( isset( $rh_home_id ) ) {
+			if ( $post->ID == $rh_home_id ) {
+				$close = false;
+			}
 		}
+	    return $close;
 	}
-    return $close;
+
 }
-add_filter('comments_open', 'my_override_comments_open', 1000);
+add_filter('comments_open', 'recipe_hero_override_comments_open', 1000);
+
+/**
+ * Basic Styling Options
+ *
+ * @package   Recipe Hero
+ * @author    Captain Theme <info@captaintheme.com>
+ * @since 	  0.7.0
+ * @todo 	  Make rules smarter - if 'px' needed but not given, append it, etc.
+ */
+
+if ( ! function_exists( 'recipe_hero_option_styles' ) ) {
+
+	function recipe_hero_option_styles() {
+
+		$padding = recipe_hero_get_option( 'rh-styling-option-padding', 'recipe-hero-options' ); ?>
+		
+		<style type="text/css">
+
+			<?php if ( $padding ) { ?>
+
+				.recipe-archive-tax-header,
+				article.recipe,
+				.single-recipe #comments {
+					padding: <?php echo $padding; ?>;
+				}
+
+			<?php } ?>
+
+		</style>
+
+	<?php }
+
+}
+add_action( 'wp_head', 'recipe_hero_option_styles' );

@@ -64,12 +64,19 @@ Specific Core Theme Styles
 /* 
 Single / Archive Template
 */
+.recipe-archive-tax-header h1 {
+  font-size: 30px;
+  margin-top: 5px;
+  margin-bottom: 15px; }
+
 article.recipe {
-  padding: 15px 25px;
   line-height: 1.4; }
   article.recipe h4 {
     font-size: 28px;
     margin-bottom: 18px; }
+  article.recipe .recipe-single-title,
+  article.recipe .recipe-archive-title {
+    font-size: 35px; }
   article.recipe .recipe-single-meta,
   article.recipe .recipe-archive-meta {
     margin-top: 10px; }
@@ -191,6 +198,9 @@ article.recipe {
   article.recipe .recipe-single-content {
     font-size: 16px;
     margin-top: 25px; }
+  article.recipe .recipe-archive-content {
+    font-size: 16px;
+    line-height: 1.6; }
   article.recipe .recipe-single-ingredients h4 {
     margin-top: 25px; }
   article.recipe .recipe-single-ingredients ul.ingredients-list {
@@ -228,6 +238,3 @@ article.recipe {
     font-size: 14px; }
   article.recipe hr.recipe-single-seperator {
     margin-top: 25px; }
-
-.single-recipe #comments {
-  padding: 15px 25px; }

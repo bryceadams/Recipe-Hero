@@ -98,11 +98,21 @@ class Recipe_Hero_Admin_Settings {
                     'type' => 'html',
                 ),
                 array(
-                    'name'    => __( 'Recipes Page / Home', 'cmb' ),
-                    'desc'    => __( 'The page you select here will be the home of all your recipes. Additionally, the \'Recipe Archive\' of your site can be found at: ', 'cmb' ) . site_url('/recipes/'),
+                    'name'    => __( 'Recipes Page / Home', 'recipe-hero' ),
+                    'desc'    => __( 'The page you select here will be the home of all your recipes. Additionally, the \'Recipe Archive\' of your site can be found at: ', 'recipe-hero' ) . site_url('/recipes/'),
                     'id'      => 'rh-recipe-page-display',
                     'type'    => 'select',
                     'options' => recipe_hero_get_page_options( array( 'post_type' => 'page', 'numberposts' => -1 ) ),
+                ),
+                array(
+                    'name'    => __( 'Recipes Per Page on the Recipe Page', 'recipe-hero' ),
+                    'desc'    => __( 'This will only apply for the recipe page, selected in the option above. Other recipe archives use the default posts per page setting.', 'recipe-hero' ),
+                    'id'      => 'rh-recipes-per-page',
+                    'type'    => 'select',
+                    'default' => 10,
+                    'options' => array(
+                        5 => 5, 6 => 6, 7 => 7, 8 => 8, 9 => 9, 10 => 10, 11 => 11, 12 => 12, 13 => 13, 14 => 14, 15 => 15, -1 => __( 'Infinite', 'recipe-hero' ),
+                    ),
                 ),
                 array(
                     'name' => __( 'Class for Main Content', 'recipe-hero' ),
@@ -125,16 +135,30 @@ class Recipe_Hero_Admin_Settings {
                     ),
                 ),
                 array(
-                    'name'    => __( 'Show Recipes in Loop', 'recipe-hero' ),
-                    'desc'    => __( 'Selecting this will show your recipes along side posts in the standard WordPress loop.', 'recipe-hero' ),
-                    'id'      => 'rh-show-in-loop',
+                    'name' => '<h3>' . __( 'Styling', 'recipe-hero' ) . '</h2>',
+                    'id'   => 'rh-styling-title',
+                    'type' => 'html',
+                ),
+                array(
+                    'name'    => __( 'Disable Recipe Hero Styles', 'recipe-hero' ),
+                    'desc'    => __( 'Selecting this will stop the plugin loading the default styles used in Recipe Hero for layout and styling.', 'recipe-hero' ),
+                    'id'      => 'rh-disable-styles',
                     'type'    => 'checkbox',
                 ),
                 array(
-                    'name'    => __( 'Show Recipes in Feed', 'recipe-hero' ),
-                    'desc'    => __( 'Selecting this will show your recipes along side posts in the standard WordPress feed.', 'recipe-hero' ),
-                    'id'      => 'rh-show-in-feed',
-                    'type'    => 'checkbox',
+                    'name' => __( 'Disable Lightbox', 'recipe-hero' ),
+                    'desc' => __( 'Selecting this will disable the lightbox used in Recipe Hero', 'recipe-hero' ),
+                    'id'   => 'rh-disable-lightbox',
+                    'type' => 'checkbox',
+                ),
+                 array(
+                    'name' => __( 'Recipe Padding (px)', 'recipe-hero' ),
+                    'desc' => __( 'Sometimes you may want to add some padding around the recipe articles. Normally from 0-25px is enough.', 'recipe-hero' ),
+                    'id'   => 'rh-styling-option-padding',
+                    'type' => 'text_small',
+                    'attributes' => array(
+                        'placeholder' => 'eg. 15px',
+                        ),
                 ),
                 array(
                     'name' => '<h3>' . __( 'Custom Text', 'recipe-hero' ) . '</h2>',
@@ -171,23 +195,6 @@ class Recipe_Hero_Admin_Settings {
                     'id'   => 'rh-total-text',
                     'type' => 'text_small',
                 ),
-                array(
-                    'name' => '<h3>' . __( 'Styling', 'recipe-hero' ) . '</h2>',
-                    'id'   => 'rh-styling-title',
-                    'type' => 'html',
-                ),
-                array(
-                    'name'    => __( 'Disable Recipe Hero Styles', 'recipe-hero' ),
-                    'desc'    => __( 'Selecting this will stop the plugin loading the default styles used in Recipe Hero for layout and styling.', 'recipe-hero' ),
-                    'id'      => 'rh-disable-styles',
-                    'type'    => 'checkbox',
-                ),
-                array(
-                    'name' => __( 'Disable Lightbox', 'recipe-hero' ),
-                    'desc' => __( 'Selecting this will disable the lightbox used in Recipe Hero', 'recipe-hero' ),
-                    'id'   => 'rh-disable-lightbox',
-                    'type' => 'checkbox',
-                ),
             ),
         );
         return self::$plugin_options;
@@ -214,6 +221,9 @@ $Recipe_Hero_Admin_Settings->hooks();
      * @return array             An array of options that matches the CMB options array
      * @since 0.7.0
      */
+
+if ( ! function_exists( 'recipe_hero_get_page_options' ) ) {
+
     function recipe_hero_get_page_options( $query_args ) {
 
         $args = wp_parse_args( $query_args, array(
@@ -236,12 +246,18 @@ $Recipe_Hero_Admin_Settings->hooks();
         return $post_options;
     }
 
+}
+
 /**
  * Wrapper function around cmb_get_option
- * @since  0.5.0
+ * @since  0.7.0
  * @param  string  $key Options array key
  * @return mixed        Option value
  */
-function recipe_hero_get_option( $key = '' ) {
-    return cmb_get_option( Recipe_Hero_Admin_Settings::key(), $key );
+if ( ! function_exists( 'recipe_hero_get_option' ) ) {
+
+    function recipe_hero_get_option( $key = '' ) {
+        return cmb_get_option( Recipe_Hero_Admin_Settings::key(), $key );
+    }
+
 }

@@ -17,11 +17,11 @@ class Recipe_Hero {
 	/**
 	 * Plugin version, used for cache-busting of style and script file references.
 	 *
-	 * @since   0.6.7
+	 * @since   0.7.0
 	 *
 	 * @var     string
 	 */
-	const VERSION = '0.6.7';
+	const VERSION = '0.7.0';
 
 	/**
 	 * The variable name is used as the text domain when internationalizing strings

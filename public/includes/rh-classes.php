@@ -16,17 +16,21 @@
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.6.5
+ * @since 	  0.7.0
  */
 
-function recipe_hero_class_recipe_title() {
-	
-	$classes = 	array(
-					'entry-title',
-					'post-title',
-				);
+if ( ! function_exists( 'recipe_hero_class_recipe_title' ) ) {
 
-	$title_classes = implode( ' ', $classes );
-	return $title_classes;
+	function recipe_hero_class_recipe_title() {
+		
+		$classes = 	array(
+						'entry-title',
+						'post-title',
+					);
+
+		$title_classes = implode( ' ', $classes );
+		return $title_classes;
+
+	}
 
 }

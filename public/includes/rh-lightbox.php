@@ -14,34 +14,38 @@
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.6.0
+ * @since 	  0.7.0
  */
 
-function recipe_hero_initialize_lightbox_js() {
+if ( ! function_exists( 'recipe_hero_initialize_lightbox_js' ) ) {
 
-	if ( ! recipe_hero_get_option( 'rh-disable-lightbox', 'recipe-hero-options' ) ) {
+	function recipe_hero_initialize_lightbox_js() {
 
-		if ( ( get_post_type() == 'recipe' ) && is_single() ) { ?>
+		if ( ! recipe_hero_get_option( 'rh-disable-lightbox', 'recipe-hero-options' ) ) {
 
-			<script type="text/javascript">
+			if ( ( get_post_type() == 'recipe' ) && is_single() ) { ?>
 
-				jQuery(document).ready(function() {
-					jQuery('.steps-image-link').magnificPopup({ 
-					  type: 'image',
-					   gallery: {
-						    // options for gallery
-						    enabled: true
-						  },
-						  image: {
-						    // options for image content type
-						    titleSrc: 'title'
-						  }
+				<script type="text/javascript">
+
+					jQuery(document).ready(function() {
+						jQuery('.steps-image-link').magnificPopup({ 
+						  type: 'image',
+						   gallery: {
+							    // options for gallery
+							    enabled: true
+							  },
+							  image: {
+							    // options for image content type
+							    titleSrc: 'title'
+							  }
+						});
 					});
-				});
 
-			</script>
+				</script>
 
-		<?php }
+			<?php }
+
+		}
 
 	}
 

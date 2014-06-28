@@ -17,6 +17,8 @@
  * @since 	  0.7.0
  */
 
+if ( ! function_exists( 'recipe_hero_register_recipe_posttype' ) ) {
+	
 	function recipe_hero_register_recipe_posttype() {
 		$labels 		= array(
 			'name' 				=> _x( 'Recipes', 'post type general name' ),
@@ -35,7 +37,7 @@
 		
 		$taxonomies 	= array();
 
-		$supports   	= array( 'title','editor','author','thumbnail','excerpt','comments','revisions' );
+		$supports   	= array( 'title','editor','author','thumbnail','excerpt','comments','revisions', 'publicize' );
 		
 		$post_type_args = array(
 			'labels' 			=> $labels,
@@ -58,3 +60,5 @@
 		 register_post_type( 'recipe', $post_type_args );
 	}
 	add_action( 'init', 'recipe_hero_register_recipe_posttype' );
+
+}

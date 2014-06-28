@@ -17,6 +17,10 @@ add_filter( 'cmb_meta_boxes', 'recipe_hero_sample_metaboxes' );
  * @author    Captain Theme <info@captaintheme.com>
  * @param  	  array $meta_boxes
  * @return 	  array
+ *
+ * @package Recipe Hero
+ * @author  Captain Theme <info@captaintheme.com>
+ * @since   0.7.0
  */
 function recipe_hero_sample_metaboxes( array $meta_boxes ) {
 
@@ -200,9 +204,14 @@ add_action( 'init', 'recipe_hero_initialize_cmb_meta_boxes', 9999 );
 /**
  * Initialize the metabox class.
  */
-function recipe_hero_initialize_cmb_meta_boxes() {
 
-	if ( ! class_exists( 'cmb_Meta_Box' ) )
-		require_once 'fields/init.php';
+if ( ! function_exists( 'recipe_hero_initialize_cmb_meta_boxes' ) ) {
+
+	function recipe_hero_initialize_cmb_meta_boxes() {
+
+		if ( ! class_exists( 'cmb_Meta_Box' ) )
+			require_once 'fields/init.php';
+
+	}
 
 }

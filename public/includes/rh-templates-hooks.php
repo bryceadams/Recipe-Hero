@@ -7,6 +7,7 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
+ * @since 	  0.7.0
  */
 
 /**
@@ -20,6 +21,8 @@ add_action( 'recipe_hero_after_main_content', 'recipe_hero_output_content_wrappe
 
 
 /**
+ * Taxonomy Titles / Descriptions
+ *
  * @see recipe_hero_archive_tax_title - 20
  * @see recipe_hero_archive_tax_desc - 30
  */
@@ -47,6 +50,7 @@ add_action( 'recipe_hero_sidebar_right', 'recipe_hero_display_sidebar_right', 10
  * @see recipe_hero_output_single_ingredients - 70
  * @see recipe_hero_output_single_instructions - 80
  * @see recipe_hero_output_single_nutrition - 90
+ * @see recipe_hero_output_jetpack_sharing_buttons - 100
  */
 add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_header_before', 5 );
 add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_title', 10 );
@@ -59,6 +63,7 @@ add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_desc
 add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_ingredients', 70 );
 add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_instructions', 80 );
 add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_nutrition', 90 );
+add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_jetpack_sharing_buttons', 100 );
 
 /**
  * Recipe After Single Content

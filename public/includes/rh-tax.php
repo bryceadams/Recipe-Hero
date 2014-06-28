@@ -17,6 +17,8 @@
  * @since 	  0.5.0
  */
 
+if ( ! function_exists( 'recipe_hero_register_course_tax' ) ) {
+
 	function recipe_hero_register_course_tax() {
 		$labels = array(
 			'name' 					=> _x( 'Courses', 'taxonomy general name' ),
@@ -45,7 +47,9 @@
 		 );
 		register_taxonomy('course', $pages, $args);
 	}
-	add_action('init', 'recipe_hero_register_course_tax');
+
+}
+add_action('init', 'recipe_hero_register_course_tax');
 
  /**
  * Register 'Cuisine' Taxonomy.
@@ -54,6 +58,8 @@
  * @author    Captain Theme <info@captaintheme.com>
  * @since 	  0.5.0
  */
+
+if ( ! function_exists( 'recipe_hero_register_cuisine_tax' ) ) {
 
 	function recipe_hero_register_cuisine_tax() {
 		$labels = array(
@@ -83,4 +89,6 @@
 		 );
 		register_taxonomy('cuisine', $pages, $args);
 	}
-	add_action('init', 'recipe_hero_register_cuisine_tax');
+
+}
+add_action('init', 'recipe_hero_register_cuisine_tax');
