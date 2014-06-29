@@ -22,10 +22,10 @@ Navigate to `http://yourwebsite.com/recipes` to see all the new recipes you've a
 * Recipe Details, Ingredients & Instructions
 * Completely responsive
 * Plenty of Options
+* Templating Engine for easy customization
 * Display with easy [recipe] & [recipes] shortcode
 * Valid schema.org Markup - Works with Google Rich Snippets etc. (SEO Optimized)
 * Inherits Your Theme's Styles Automatically
-* Full Width + Sidebar Layouts
 * Image Lightbox
 * Can Extend / Develop with custom actions, etc.
 * Completely Open Source GPL Project - see [GitHub](https://github.com/bryceadams/Recipe-Hero) to contribute!
