@@ -7,6 +7,7 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
+ * @since 0.7.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
@@ -25,8 +26,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<?php recipe_hero_get_template_part( 'content', 'archive-recipe' ); ?>
-
-			<hr /><?php // Should this be removed? ?>
 
 		<?php endwhile; // end of the loop. ?>
 

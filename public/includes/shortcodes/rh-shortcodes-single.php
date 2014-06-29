@@ -1,0 +1,78 @@
+<?php
+/**
+ * Recipe Shortcode - Single Recipe
+ *
+ * @package   Recipe Hero
+ * @author    Captain Theme <info@captaintheme.com>
+ * @license   GPL-2.0+
+ * @link      http://captaintheme.com
+ * @copyright 2014 Captain Theme
+ */
+
+/**
+ * Function to Display Single
+ *
+ * @package   Recipe Hero
+ * @author    Captain Theme <info@captaintheme.com>
+ * @since 	  0.7.1
+ */
+
+if ( ! function_exists( 'recipe_hero_shortcode_single_display' ) ) {
+	
+	function recipe_hero_shortcode_single_display( $id ) {
+
+		if ( ! $id ) {
+		
+			echo 'You need to include the ID attribute!';
+		
+		} else {
+		
+			$args = array(
+					'post_type' => 'recipe',
+					'posts_per_page' => 1,
+					'p' => $id
+				);
+
+			$the_query = new WP_Query( $args );
+			
+			if ( $the_query->have_posts() ) {
+
+				while ( $the_query->have_posts() ) : $the_query->the_post();
+
+					echo recipe_hero_get_template_part( 'content', 'single-recipe' );
+
+				endwhile;
+
+			wp_reset_postdata();
+
+			} else {
+
+			}
+
+		}
+
+	}
+
+}
+
+if ( ! function_exists( 'recipe_hero_shortcode_single' ) ) {
+	
+	function recipe_hero_shortcode_single( $atts ) {
+
+		// Attributes
+		extract( shortcode_atts(
+			array(
+				'id' => '', // id of Recipe
+				
+			), $atts )
+		);
+		
+		ob_start();
+		recipe_hero_shortcode_single_display( $id );
+		$data = ob_get_clean();
+		return $data;
+
+	}
+
+}
+add_shortcode( 'recipe', 'recipe_hero_shortcode_single' );

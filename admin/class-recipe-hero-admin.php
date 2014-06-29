@@ -66,6 +66,7 @@ class Recipe_Hero_Admin {
 		// Let's make the magic happen on the backend
 	 	// <em>The ingredients to our recipe.</em>
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'admin/includes/rh-tweaks.php' );
+		require_once( RECIPE_HERO_PLUGIN_DIR . 'admin/includes/rh-help-tab.php' );
 
 	}
 
@@ -102,12 +103,7 @@ class Recipe_Hero_Admin {
 	 */
 	public function enqueue_admin_styles() {
 
-		if ( ! isset( $this->plugin_screen_hook_suffix ) ) {
-			return;
-		}
-
-		$screen = get_current_screen();
-		if ( $this->plugin_screen_hook_suffix == $screen->id ) {
+		if ( recipe_hero_admin_get_current_post_type() == 'recipe' ) {
 			wp_enqueue_style( $this->plugin_slug .'-admin-styles', plugins_url( 'assets/css/admin.css', __FILE__ ), array(), Recipe_Hero::VERSION );
 		}
 

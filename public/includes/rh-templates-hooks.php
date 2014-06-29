@@ -7,7 +7,7 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
- * @since 	  0.7.0
+ * @since 	  0.7.1
  */
 
 /**
@@ -34,7 +34,7 @@ add_action( 'recipe_hero_before_main_content', 'recipe_hero_archive_tax_desc', 3
  *
  * @see recipe_hero_display_sidebar_right() - 10
  */
-add_action( 'recipe_hero_sidebar_right', 'recipe_hero_display_sidebar_right', 10 );
+add_action( 'recipe_hero_sidebar_right', 'recipe_hero_get_sidebar', 10 );
 
 /**
  * Recipe Single Content

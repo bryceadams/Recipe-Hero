@@ -60,6 +60,12 @@ Specific Core Theme Styles
 */
 #page #main #primary #content .tfrh {
   margin: 50px auto 0; }
+  #page #main #primary #content .tfrh .hentry.has-post-thumbnail {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 48px; }
+  #page #main #primary #content .tfrh .hentry:first-of-type {
+    border-top: 0;
+    padding-top: 0; }
 
 /* 
 Single / Archive Template
@@ -72,8 +78,9 @@ Single / Archive Template
 article.recipe {
   line-height: 1.4; }
   article.recipe h4 {
-    font-size: 28px;
-    margin-bottom: 18px; }
+    font-size: 23px;
+    margin-bottom: 18px;
+    font-weight: 600; }
   article.recipe .recipe-single-title,
   article.recipe .recipe-archive-title {
     font-size: 35px; }
@@ -87,7 +94,8 @@ article.recipe {
     article.recipe .recipe-archive-meta .edit-link {
       display: inline-block;
       padding-left: 15px;
-      font-size: 14px; }
+      font-size: 14px;
+      margin-top: 0; }
       article.recipe .recipe-single-meta .date .dashicons, article.recipe .recipe-single-meta .author .dashicons, article.recipe .recipe-single-meta .comments-link .dashicons, article.recipe .recipe-single-meta .edit-link .dashicons,
       article.recipe .recipe-archive-meta .date .dashicons,
       article.recipe .recipe-archive-meta .author .dashicons,
@@ -134,7 +142,7 @@ article.recipe {
     article.recipe .recipe-single-tax .course strong,
     article.recipe .recipe-archive-tax .cuisine strong,
     article.recipe .recipe-archive-tax .course strong {
-      font-size: 17px; }
+      font-size: 16px; }
     article.recipe .recipe-single-tax .cuisine ul,
     article.recipe .recipe-single-tax .course ul,
     article.recipe .recipe-archive-tax .cuisine ul,
@@ -149,7 +157,7 @@ article.recipe {
       article.recipe .recipe-archive-tax .course ul li {
         display: inline-block;
         padding: 3px 8px;
-        margin-right: 5px;
+        margin: 0 5px 0 0;
         background: #fff;
         border: 1px solid #ddd;
         -moz-transition: all 200ms ease;
@@ -157,6 +165,11 @@ article.recipe {
         -webkit-transition: all 200ms ease;
         -ms-transition: all 200ms ease;
         transition: all 200ms ease; }
+        article.recipe .recipe-single-tax .cuisine ul li a,
+        article.recipe .recipe-single-tax .course ul li a,
+        article.recipe .recipe-archive-tax .cuisine ul li a,
+        article.recipe .recipe-archive-tax .course ul li a {
+          text-decoration: none; }
         article.recipe .recipe-single-tax .cuisine ul li:hover,
         article.recipe .recipe-single-tax .course ul li:hover,
         article.recipe .recipe-archive-tax .cuisine ul li:hover,
@@ -175,16 +188,17 @@ article.recipe {
       margin-bottom: 5px; }
     article.recipe .recipe-single-details strong,
     article.recipe .recipe-archive-details strong {
-      font-size: 18px;
+      font-size: 16px;
       display: block;
-      color: #333; }
+      color: #333;
+      margin-bottom: 5px; }
     article.recipe .recipe-single-details .serves, article.recipe .recipe-single-details .equipment, article.recipe .recipe-single-details .prep-time, article.recipe .recipe-single-details .cook-time, article.recipe .recipe-single-details .total-time,
     article.recipe .recipe-archive-details .serves,
     article.recipe .recipe-archive-details .equipment,
     article.recipe .recipe-archive-details .prep-time,
     article.recipe .recipe-archive-details .cook-time,
     article.recipe .recipe-archive-details .total-time {
-      font-size: 16px; }
+      font-size: 14px; }
     article.recipe .recipe-single-details .prep-time span, article.recipe .recipe-single-details .cook-time span,
     article.recipe .recipe-archive-details .prep-time span,
     article.recipe .recipe-archive-details .cook-time span {
@@ -197,7 +211,8 @@ article.recipe {
     margin-bottom: 15px; }
   article.recipe .recipe-single-content {
     font-size: 16px;
-    margin-top: 25px; }
+    margin-top: 25px;
+    line-height: 1.6; }
   article.recipe .recipe-archive-content {
     font-size: 16px;
     line-height: 1.6; }
@@ -211,7 +226,7 @@ article.recipe {
     -moz-column-gap: 20px;
     -webkit-column-count: 2;
     -webkit-column-gap: 20px;
-    font-size: 16px;
+    font-size: 14px;
     /* column-rule-color:  #eee;
       	column-rule-style:  solid;
       	column-rule-width:  1px;
@@ -221,19 +236,23 @@ article.recipe {
       -webkit-column-rule-color:  #eee;
       -webkit-column-rule-style: solid ;
       -webkit-column-rule-width:  1px; */ }
+    article.recipe .recipe-single-ingredients ul.ingredients-list li.ingredients-item {
+      padding-bottom: 5px; }
   article.recipe .recipe-single-instructions h4 {
     margin-top: 25px; }
-  article.recipe .recipe-single-instructions ol.steps-list li.steps-item {
-    margin-bottom: 30px; }
-    article.recipe .recipe-single-instructions ol.steps-list li.steps-item p {
-      margin-bottom: 15px;
-      font-size: 16px;
-      line-height: 1.6; }
-    article.recipe .recipe-single-instructions ol.steps-list li.steps-item img.step-image {
-      max-width: 100%;
-      padding: 3px;
-      border: 1px solid #ddd;
-      border-radius: 5px; }
+  article.recipe .recipe-single-instructions ol.steps-list {
+    list-style-type: decimal; }
+    article.recipe .recipe-single-instructions ol.steps-list li.steps-item {
+      margin-bottom: 30px; }
+      article.recipe .recipe-single-instructions ol.steps-list li.steps-item p {
+        margin-bottom: 15px;
+        font-size: 14px;
+        line-height: 1.6; }
+      article.recipe .recipe-single-instructions ol.steps-list li.steps-item img.step-image {
+        max-width: 100%;
+        padding: 3px;
+        border: 1px solid #ddd;
+        border-radius: 5px; }
   article.recipe .recipe-single-nutrition {
     font-size: 14px; }
   article.recipe hr.recipe-single-seperator {

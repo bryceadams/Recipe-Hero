@@ -1,0 +1,15 @@
+/* This stylesheet is used to style the admin option form of the plugin. */
+
+.post-type-recipe {
+	#posts-filter {
+		.wp-list-table {
+			tr {
+				th {
+					&#id {
+						width: 50px;
+					}
+				}
+			}
+		}
+	}
+}

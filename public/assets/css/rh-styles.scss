@@ -11,6 +11,14 @@ Specific Core Theme Styles
 			#content {
 				.tfrh {
 					margin: 50px auto 0;
+					.hentry.has-post-thumbnail {
+						border-top: 1px solid rgba(0, 0, 0, 0.1);
+						padding-top: 48px;
+					}
+					.hentry:first-of-type {
+						border-top: 0;
+						padding-top: 0;
+					}
 				}
 			}
 		}
@@ -31,8 +39,9 @@ Single / Archive Template
 article.recipe {
 	line-height: 1.4;
 	h4 {
-		font-size: 28px;
+		font-size: 23px;
 		margin-bottom: 18px;
+		font-weight: 600;
 	}
 	.recipe-single-title,
 	.recipe-archive-title {
@@ -45,6 +54,7 @@ article.recipe {
 			display: inline-block;
 			padding-left: 15px;
 			font-size: 14px;
+			margin-top: 0;
 			.dashicons {
 				font-size: 16px;
 				vertical-align: bottom;
@@ -88,7 +98,7 @@ article.recipe {
 			display: inline-block;
 			padding-right: 15px;
 			strong {
-				font-size: 17px;
+				font-size: 16px;
 			}
 			ul {
 				display: inline-block;
@@ -98,10 +108,13 @@ article.recipe {
 				li {
 					display: inline-block;
 					padding: 3px 8px;
-					margin-right: 5px;
+					margin: 0 5px 0 0;
 					background: #fff;
 					border: 1px solid #ddd;
 					@include transition(all, 200ms, ease);
+					a {
+						text-decoration: none;
+					}
 					&:hover {
 						background: #fbfbfb;
 
@@ -122,12 +135,13 @@ article.recipe {
 			margin-bottom: 5px;
 		}
 		strong {
-			font-size: 18px;
+			font-size: 16px;
 			display: block;
 			color: #333;
+			margin-bottom: 5px;
 		}
 		.serves, .equipment, .prep-time, .cook-time, .total-time {
-			font-size: 16px;
+			font-size: 14px;
 		}
 		.serves {
 		}
@@ -158,6 +172,7 @@ article.recipe {
 	.recipe-single-content {
 		font-size: 16px;
 		margin-top: 25px;
+		line-height: 1.6;
 	}
 	.recipe-archive-content {
 		font-size: 16px;
@@ -175,7 +190,7 @@ article.recipe {
 	       -moz-column-gap: 20px;
 	       -webkit-column-count: 2;
 	       -webkit-column-gap : 20px;
-	       font-size: 16px;
+	       font-size: 14px;
 	     /* column-rule-color:  #eee;
 	       	column-rule-style:  solid;
 	       	column-rule-width:  1px;
@@ -185,7 +200,8 @@ article.recipe {
 	       -webkit-column-rule-color:  #eee;
 	       -webkit-column-rule-style: solid ;
 	       -webkit-column-rule-width:  1px; */
-		li.ingredeients-item {
+			li.ingredients-item {
+				padding-bottom: 5px;
 			}
 		}
 	}
@@ -194,11 +210,12 @@ article.recipe {
 			margin-top: 25px;
 		}
 		ol.steps-list {
+			list-style-type: decimal;
 			li.steps-item {
 				margin-bottom: 30px;
 				p {
 					margin-bottom: 15px;
-					font-size: 16px;
+					font-size: 14px;
 					line-height: 1.6;
 				}
 				img.step-image {

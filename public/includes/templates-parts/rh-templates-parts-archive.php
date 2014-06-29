@@ -26,7 +26,7 @@ if ( ! function_exists( 'recipe_hero_output_archive_title' ) ) {
 		$get_title = get_the_title( $post->ID );
 
 		$title = '<h1 class="recipe-archive-title ' . recipe_hero_class_recipe_title() . '" itemprop="name">';
-		$title .= '<a href="' . get_permalink( $post->ID ) . '" title="' . $get_title . '" rel="bookmark">';
+		$title .= '<a href="' . esc_url( get_permalink( $post->ID ) ) . '" title="' . $get_title . '" rel="bookmark">';
 		$title .= $get_title;
 		$title .= '</a></h1>';
 
@@ -96,7 +96,7 @@ if ( ! function_exists( 'recipe_hero_output_archive_photo' ) ) {
 
 		if ( has_post_thumbnail() ) {
 			echo '<div class="recipe-archive-photo">';
-			echo '<a href="' . get_permalink( $post->ID ) . '" title="' . get_the_title( $post->ID ) . '" rel="bookmark">';
+			echo '<a href="' . esc_url( get_permalink( $post->ID ) ) . '" title="' . get_the_title( $post->ID ) . '" rel="bookmark">';
 			echo $photo;
 			echo '</a></div>';
 		}

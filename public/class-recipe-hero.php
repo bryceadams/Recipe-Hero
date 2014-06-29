@@ -17,11 +17,11 @@ class Recipe_Hero {
 	/**
 	 * Plugin version, used for cache-busting of style and script file references.
 	 *
-	 * @since   0.7.0
+	 * @since   0.7.1
 	 *
 	 * @var     string
 	 */
-	const VERSION = '0.7.0';
+	const VERSION = '0.7.1';
 
 	/**
 	 * The variable name is used as the text domain when internationalizing strings
@@ -47,7 +47,7 @@ class Recipe_Hero {
 	 * Initialize the plugin by setting localization and loading public scripts
 	 * and styles.
 	 *
-	 * @since     0.6.5
+	 * @since     0.7.1
 	 */
 	private function __construct() {
 
@@ -59,6 +59,10 @@ class Recipe_Hero {
 
 		// Just in case
 		add_theme_support( 'post-thumbnails' );
+
+		// Image Sizes
+		add_image_size( 'rh-admin-column', 100, 100, true );
+		add_image_size( 'rh-recipe-single', 650 );
 
 		// Let's make the magic happen.
 	 	// <em>The ingredients to our recipe.</em>
@@ -74,6 +78,7 @@ class Recipe_Hero {
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-templates-functions.php' );
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-templates-hooks.php' );
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-classes.php' );
+		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-shortcodes.php' );
 
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-lightbox.php' );
 		

@@ -11,7 +11,7 @@
  * Plugin Name:       Recipe Hero
  * Plugin URI:        http://recipehero.in/
  * Description:       The last recipe plugin you'll ever need.
- * Version:           0.7.0
+ * Version:           0.7.1
  * Author:            Captain Theme
  * Author URI:        http://captaintheme.com/
  * Text Domain:       recipe-hero
@@ -42,7 +42,7 @@ if( !defined( 'RECIPE_HERO_TEMPLATE_DIR' ) ) {
 
 // Define Current Plugin Version
 if( ! defined( 'RECIPE_HERO_VERSION_NUMBER' ) ) {
-	define( 'RECIPE_HERO_VERSION_NUMBER', '0.7.0' );
+	define( 'RECIPE_HERO_VERSION_NUMBER', '0.7.1' );
 }
 
 /*----------------------------------------------------------------------------*

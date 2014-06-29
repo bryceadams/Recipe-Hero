@@ -93,7 +93,7 @@ if ( ! function_exists( 'recipe_hero_output_single_photo' ) ) {
 		// Variables
 		global $post;
 
-		$photo = get_the_post_thumbnail( $post->ID, 'full', array( 'itemprop' => 'image' ) );
+		$photo = get_the_post_thumbnail( $post->ID, 'rh-recipe-single', array( 'itemprop' => 'image' ) );
 		$thumb = get_the_post_thumbnail( $post->ID, 'thumbnail', array( 'class' => 'recipe-schema-thumb', 'itemprop' => 'image' ) );
 
 		if ( has_post_thumbnail() ) {
@@ -337,7 +337,7 @@ if ( ! function_exists( 'recipe_hero_output_single_ingredients' ) ) {
 
 			echo '<div class="recipe-single-ingredients">';
 
-				echo '<h4 class="ingredients-heading">' . __( 'Ingredients', 'recipe-hero' ) . '</h4>';
+				echo '<h4 class="inredients-heading">' . __( 'Ingredients', 'recipe-hero' ) . '</h4>';
 
 				echo '<ul class="ingredients-list">';
 				foreach ( (array) $ingredients as $key => $ingredient ) {

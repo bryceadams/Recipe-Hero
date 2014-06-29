@@ -78,7 +78,7 @@ class Recipe_Hero_Admin_Settings {
 
     /**
      * Defines the theme option metabox and field configuration
-     * @since  0.7.0
+     * @since  0.7.1
      * @return array
      */
     public static function option_fields() {
@@ -124,26 +124,9 @@ class Recipe_Hero_Admin_Settings {
                         ),
                 ),
                 array(
-                    'name'    => __( 'Sidebar Settings', 'recipe-hero' ),
-                    'desc'    => __( 'Do you want to display your theme\'s sidebar or make it Full Width? This will affect all Recipe-related pages/posts. Full Width view is experimental at the moment.', 'recipe-hero' ),
-                    'id'      => 'rh-sidebar-settings',
-                    'type'    => 'select',
-                    'default' => 'sidebar',
-                    'options' => array(
-                        'sidebar' => __( 'Sidebar', 'recipe-hero' ),
-                        'fullwidth' => __( 'Full Width', 'recipe-hero' ),
-                    ),
-                ),
-                array(
                     'name' => '<h3>' . __( 'Styling', 'recipe-hero' ) . '</h2>',
                     'id'   => 'rh-styling-title',
                     'type' => 'html',
-                ),
-                array(
-                    'name'    => __( 'Disable Recipe Hero Styles', 'recipe-hero' ),
-                    'desc'    => __( 'Selecting this will stop the plugin loading the default styles used in Recipe Hero for layout and styling.', 'recipe-hero' ),
-                    'id'      => 'rh-disable-styles',
-                    'type'    => 'checkbox',
                 ),
                 array(
                     'name' => __( 'Disable Lightbox', 'recipe-hero' ),
