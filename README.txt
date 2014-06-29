@@ -22,6 +22,7 @@ Navigate to `http://yourwebsite.com/recipes` to see all the new recipes you've a
 * Recipe Details, Ingredients & Instructions
 * Completely responsive
 * Plenty of Options
+* Display with easy [recipe] & [recipes] shortcode
 * Valid schema.org Markup - Works with Google Rich Snippets etc. (SEO Optimized)
 * Inherits Your Theme's Styles Automatically
 * Full Width + Sidebar Layouts
@@ -31,6 +32,10 @@ Navigate to `http://yourwebsite.com/recipes` to see all the new recipes you've a
 * Translation-Ready (includes .pot file etc.)
 * Documentation (coming soon!)
 * Supported
+
+**Contributing:** Why not help out? This project is being actively developed [on GitHub](https://github.com/bryceadams/Recipe-Hero/). Feel free to report issues, help others and make pull requests!
+
+**Translations:** If you translate Recipe Hero, please [send me your translation](mailto:info@recipehero.in) so I can add it to the plugin for others to use. Here is a guide to [translating the plugin](captaintheme.com/docs/general/translating-a-theme-or-plugin/) to help you out!
 
 == Installation ==
 
@@ -92,6 +97,7 @@ Sure, but on food-steroids.
 == Changelog ==
 
 = 0.7.1 =
+* 2 New Shortcodes - [recipe] & [recipes]
 * Remove hr in-between archive.php recipes
 * Added courses/cuisines taxonomy sorting/details to Recipes Admin
 * Added Thumbnail to Recipes Admin

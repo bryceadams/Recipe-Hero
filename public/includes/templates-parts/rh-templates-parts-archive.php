@@ -92,7 +92,7 @@ if ( ! function_exists( 'recipe_hero_output_archive_photo' ) ) {
 		// Variables
 		global $post;
 
-		$photo = get_the_post_thumbnail();
+		$photo = get_the_post_thumbnail( $post->ID, 'rh-recipe-single' );
 
 		if ( has_post_thumbnail() ) {
 			echo '<div class="recipe-archive-photo">';

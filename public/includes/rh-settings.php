@@ -98,7 +98,7 @@ class Recipe_Hero_Admin_Settings {
                     'type' => 'html',
                 ),
                 array(
-                    'name'    => __( 'Recipes Page / Home', 'recipe-hero' ),
+                    'name'    => __( 'Recipes Page', 'recipe-hero' ),
                     'desc'    => __( 'The page you select here will be the home of all your recipes. Additionally, the \'Recipe Archive\' of your site can be found at: ', 'recipe-hero' ) . site_url('/recipes/'),
                     'id'      => 'rh-recipe-page-display',
                     'type'    => 'select',
