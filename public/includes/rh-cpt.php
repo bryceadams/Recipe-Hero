@@ -31,7 +31,7 @@ if ( ! function_exists( 'recipe_hero_register_recipe_posttype' ) ) {
 			'search_items' 		=> __( 'Search Recipes' ),
 			'not_found' 		=> __( 'No Recipes found' ),
 			'not_found_in_trash'=> __( 'No Recipes found in the trash' ),
-			'parent_item_colon' => __( '' ),
+			'parent_item_colon' => '',
 			'menu_name'			=> __( 'Recipe Hero' )
 		);
 		

@@ -19,7 +19,6 @@
 add_action( 'recipe_hero_before_main_content', 'recipe_hero_output_content_wrapper', 10 );
 add_action( 'recipe_hero_after_main_content', 'recipe_hero_output_content_wrapper_end', 10 );
 
-
 /**
  * Taxonomy Titles / Descriptions
  *
@@ -28,6 +27,13 @@ add_action( 'recipe_hero_after_main_content', 'recipe_hero_output_content_wrappe
  */
 add_action( 'recipe_hero_before_main_content', 'recipe_hero_archive_tax_title', 20 );
 add_action( 'recipe_hero_before_main_content', 'recipe_hero_archive_tax_desc', 30 );
+
+/**
+ * Search Results Page
+ *
+ * @see recipe_hero_output_search_header - 40
+ */
+add_action( 'recipe_hero_before_main_content', 'recipe_hero_output_search_header', 40 );
 
 /**
  * Sidebar

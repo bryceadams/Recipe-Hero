@@ -105,6 +105,8 @@ Sure, but on food-steroids.
 * Remove Sidebar / Full-Width Option
 * Remove 'Disable Styles' Option (you can do this via a Filter)
 * Major Styles Overhall
+* Fixed search-results.php page style
+* Added search-results.php search text
 * Improved Sanitization
 
 = 0.7.0 =

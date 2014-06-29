@@ -24,11 +24,19 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 		do_action( 'recipe_hero_before_main_content' );
 	?>
 
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php while ( have_posts() ) : the_post();
 
-			<?php recipe_hero_get_template_part( 'content', 'archive-recipe' ); ?>
+			if ( get_post_type() == 'recipe' ) {
 
-		<?php endwhile; // end of the loop. ?>
+				recipe_hero_get_template_part( 'content', 'archive-recipe' );
+
+			} else {
+
+				get_template_part( 'content', get_post_format() );
+
+			}
+
+		endwhile; // end of the loop. ?>
 
 	<?php
 		/**
@@ -45,7 +53,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 		 *
 		 * @hooked recipe_hero_get_sidebar - 10
 		 */
-		do_action( 'recipe_hero_sidebar' );
+		do_action( 'recipe_hero_sidebar_right' );
 	?>
 
 <?php get_footer(); ?>

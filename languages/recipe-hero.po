@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Recipe Hero\n"
-"POT-Creation-Date: 2014-06-28 15:25+1000\n"
-"PO-Revision-Date: 2014-06-28 15:25+1000\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2014-06-30 01:59+1000\n"
+"PO-Revision-Date: 2014-06-30 01:59+1000\n"
+"Last-Translator: Recipe Hero <info@recipehero.in>\n"
 "Language-Team: Recipe Hero <info@recipehero.in>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
@@ -15,24 +15,84 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../admin/class-recipe-hero-admin.php:145
+#: ../admin/class-recipe-hero-admin.php:141
 #: ../public/includes/rh-settings.php:38
 msgid "Settings"
+msgstr ""
+
+#: ../admin/includes/rh-help-tab.php:45
+msgid "Documentation"
+msgstr ""
+
+#: ../admin/includes/rh-help-tab.php:46
+#, php-format
+msgid ""
+"You can access the documentation over at the <a href=\"%s\">Recipe Hero "
+"Documentation</a>."
+msgstr ""
+
+#: ../admin/includes/rh-help-tab.php:51
+msgid "Support"
+msgstr ""
+
+#: ../admin/includes/rh-help-tab.php:52
+#, php-format
+msgid ""
+"You can post a support thread on <a href=\"%s\">Recipe Hero Support Forum</"
+"a>."
 msgstr ""
 
 #: ../admin/includes/rh-tweaks.php:39
 msgid "Recipe Completed Photo"
 msgstr ""
 
-#: ../admin/includes/rh-tweaks.php:60
-msgid "Thanks for using Recipe Hero! Please"
+#: ../admin/includes/rh-tweaks.php:57
+msgid "Recipe Title"
+msgstr ""
+
+#: ../admin/includes/rh-tweaks.php:58
+msgid "ID"
+msgstr ""
+
+#: ../admin/includes/rh-tweaks.php:59 ../public/includes/rh-tax.php:40
+#: ../public/includes/templates-parts/rh-templates-parts-tax-header.php:35
+msgid "Course"
+msgstr ""
+
+#: ../admin/includes/rh-tweaks.php:60 ../public/includes/rh-tax.php:82
+#: ../public/includes/templates-parts/rh-templates-parts-tax-header.php:26
+msgid "Cuisine"
+msgstr ""
+
+#: ../admin/includes/rh-tweaks.php:61
+msgid "Photo"
 msgstr ""
 
 #: ../admin/includes/rh-tweaks.php:62
-msgid "re-save your permalinks"
+msgid "Author"
 msgstr ""
 
 #: ../admin/includes/rh-tweaks.php:64
+msgid "Date"
+msgstr ""
+
+#: ../admin/includes/rh-tweaks.php:109
+msgid "No Courses"
+msgstr ""
+
+#: ../admin/includes/rh-tweaks.php:133
+msgid "No Cuisines"
+msgstr ""
+
+#: ../admin/includes/rh-tweaks.php:212
+msgid "Thanks for using Recipe Hero! Please"
+msgstr ""
+
+#: ../admin/includes/rh-tweaks.php:214
+msgid "re-save your permalinks"
+msgstr ""
+
+#: ../admin/includes/rh-tweaks.php:216
 msgid "to get started (this notice will disappear afterwards)."
 msgstr ""
 
@@ -310,7 +370,7 @@ msgid "Basic Settings"
 msgstr ""
 
 #: ../public/includes/rh-settings.php:101
-msgid "Recipes Page / Home"
+msgid "Recipes Page"
 msgstr ""
 
 #: ../public/includes/rh-settings.php:102
@@ -344,85 +404,74 @@ msgid ""
 msgstr ""
 
 #: ../public/includes/rh-settings.php:127
-msgid "Sidebar Settings"
-msgstr ""
-
-#: ../public/includes/rh-settings.php:128
-msgid ""
-"Do you want to display your theme's sidebar or make it Full Width? This will "
-"affect all Recipe-related pages/posts. Full Width view is experimental at "
-"the moment."
-msgstr ""
-
-#: ../public/includes/rh-settings.php:133
-msgid "Sidebar"
-msgstr ""
-
-#: ../public/includes/rh-settings.php:134
-msgid "Full Width"
-msgstr ""
-
-#: ../public/includes/rh-settings.php:138
 msgid "Styling"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:143
-msgid "Disable Recipe Hero Styles"
-msgstr ""
-
-#: ../public/includes/rh-settings.php:144
-msgid ""
-"Selecting this will stop the plugin loading the default styles used in "
-"Recipe Hero for layout and styling."
-msgstr ""
-
-#: ../public/includes/rh-settings.php:149
+#: ../public/includes/rh-settings.php:132
 msgid "Disable Lightbox"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:150
+#: ../public/includes/rh-settings.php:133
 msgid "Selecting this will disable the lightbox used in Recipe Hero"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:155
+#: ../public/includes/rh-settings.php:138
+msgid "Recipe Width (px)"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:139
+msgid "The width of the recipe. This can also be a %, like 90%."
+msgstr ""
+
+#: ../public/includes/rh-settings.php:147
 msgid "Recipe Padding (px)"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:156
+#: ../public/includes/rh-settings.php:148
 msgid ""
 "Sometimes you may want to add some padding around the recipe articles. "
 "Normally from 0-25px is enough."
 msgstr ""
 
-#: ../public/includes/rh-settings.php:164
+#: ../public/includes/rh-settings.php:156
+msgid "Center Recipe Container"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:157
+msgid ""
+"Selecting this will center the recipe in the middle of its container "
+"(experimental)."
+msgstr ""
+
+#: ../public/includes/rh-settings.php:162
 msgid "Custom Text"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:169
+#: ../public/includes/rh-settings.php:167
 msgid "'Serves' Text"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:170
-#: ../public/includes/rh-settings.php:176
-#: ../public/includes/rh-settings.php:182
-#: ../public/includes/rh-settings.php:188
-#: ../public/includes/rh-settings.php:194
+#: ../public/includes/rh-settings.php:168
+#: ../public/includes/rh-settings.php:174
+#: ../public/includes/rh-settings.php:180
+#: ../public/includes/rh-settings.php:186
+#: ../public/includes/rh-settings.php:192
 msgid "Part of the Recipe Details area"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:175
+#: ../public/includes/rh-settings.php:173
 msgid "'Equipment' Text"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:181
+#: ../public/includes/rh-settings.php:179
 msgid "'Prep Time' Text"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:187
+#: ../public/includes/rh-settings.php:185
 msgid "'Cook Time' Text"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:193
+#: ../public/includes/rh-settings.php:191
 msgid "'Total Time' Text"
 msgstr ""
 
@@ -454,11 +503,6 @@ msgstr ""
 msgid "No Course found in Trash"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:40
-#: ../public/includes/templates-parts/rh-templates-parts-tax-header.php:35
-msgid "Course"
-msgstr ""
-
 #: ../public/includes/rh-tax.php:69
 msgid "Add New Cuisine"
 msgstr ""
@@ -487,9 +531,8 @@ msgstr ""
 msgid "No Cuisine found in Trash"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:82
-#: ../public/includes/templates-parts/rh-templates-parts-tax-header.php:26
-msgid "Cuisine"
+#: ../public/includes/shortcodes/rh-shortcodes-archive.php:73
+msgid "No recipes have been found!"
 msgstr ""
 
 #: ../public/includes/templates-parts/rh-templates-parts-archive.php:65
@@ -535,6 +578,11 @@ msgstr ""
 #: ../public/includes/templates-parts/rh-templates-parts-archive.php:278
 #: ../public/includes/templates-parts/rh-templates-parts-single.php:254
 msgid "Cook Time"
+msgstr ""
+
+#: ../public/includes/templates-parts/rh-templates-parts-search.php:28
+#, php-format
+msgid "Search Results for: %s"
 msgstr ""
 
 #: ../public/includes/templates-parts/rh-templates-parts-single.php:413

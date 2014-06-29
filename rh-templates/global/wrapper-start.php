@@ -16,19 +16,23 @@ $template = get_option( 'template' );
 
 switch( $template ) {
 	case 'twentyeleven' :
-		echo '<div id="primary"><div id="content" role="main">';
+		echo '<div id="primary"><div id="content" class="' . str_replace( $remove_char, "", recipe_hero_get_option( 'rh-content-class', 'recipe-hero-options' ) ) . '">';
 		break;
 	case 'twentytwelve' :
-		echo '<div id="primary" class="site-content"><div id="content" role="main">';
+		echo '<div id="primary" class="site-content"><div id="content" class="' . str_replace( $remove_char, "", recipe_hero_get_option( 'rh-content-class', 'recipe-hero-options' ) ) . '">';
 		break;
 	case 'twentythirteen' :
-		echo '<div id="primary" class="site-content"><div id="content" role="main" class="entry-content twentythirteen">';
+		echo '<div id="primary" class="site-content"><div id="content" class="entry-content twentythirteen' . str_replace( $remove_char, "", recipe_hero_get_option( 'rh-content-class', 'recipe-hero-options' ) ) . '">';
 		break;
 	case 'twentyfourteen' :
-		echo '<div id="primary" class="content-area"><div id="content" role="main" class="site-content twentyfourteen"><div class="tfrh">';
+		echo '<div id="primary" class="content-area"><div id="content" class="site-content twentyfourteen' . str_replace( $remove_char, "", recipe_hero_get_option( 'rh-content-class', 'recipe-hero-options' ) ) . '"><div class="tfrh">';
 		break;
 	default :
 		$remove_char = array( '#', '.' );
-		echo '<div id="container"><div id="content" class="content ' . str_replace( $remove_char, "", recipe_hero_get_option( 'rh-content-class', 'recipe-hero-options' ) ) . '" role="main">';
+		echo '<div id="container"><div id="content" class="content ' . str_replace( $remove_char, "", recipe_hero_get_option( 'rh-content-class', 'recipe-hero-options' ) );
+		if ( is_search() ) {
+			echo ' recipe-search';
+		}
+		echo '" role="main">';
 		break;
 }

@@ -134,14 +134,29 @@ class Recipe_Hero_Admin_Settings {
                     'id'   => 'rh-disable-lightbox',
                     'type' => 'checkbox',
                 ),
-                 array(
+                array(
+                    'name' => __( 'Recipe Width (px)', 'recipe-hero' ),
+                    'desc' => __( 'The width of the recipe. This can also be a %, like 90%.', 'recipe-hero' ),
+                    'id'   => 'rh-styling-option-width',
+                    'type' => 'text_small',
+                    'attributes' => array(
+                        'placeholder' => 'eg. 600px or 85%',
+                        ),
+                ),
+                array(
                     'name' => __( 'Recipe Padding (px)', 'recipe-hero' ),
                     'desc' => __( 'Sometimes you may want to add some padding around the recipe articles. Normally from 0-25px is enough.', 'recipe-hero' ),
                     'id'   => 'rh-styling-option-padding',
                     'type' => 'text_small',
                     'attributes' => array(
-                        'placeholder' => 'eg. 15px',
+                        'placeholder' => 'eg. 15px or 10px 25px 5px',
                         ),
+                ),
+                array(
+                    'name' => __( 'Center Recipe Container', 'recipe-hero' ),
+                    'desc' => __( 'Selecting this will center the recipe in the middle of its container (experimental).', 'recipe-hero' ),
+                    'id'   => 'rh-styling-option-center',
+                    'type' => 'checkbox',
                 ),
                 array(
                     'name' => '<h3>' . __( 'Custom Text', 'recipe-hero' ) . '</h2>',

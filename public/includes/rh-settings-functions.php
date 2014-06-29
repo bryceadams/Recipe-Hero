@@ -98,16 +98,37 @@ if ( ! function_exists( 'recipe_hero_option_styles' ) ) {
 
 	function recipe_hero_option_styles() {
 
-		$padding = recipe_hero_get_option( 'rh-styling-option-padding', 'recipe-hero-options' ); ?>
-		
+		$padding = recipe_hero_get_option( 'rh-styling-option-padding', 'recipe-hero-options' );
+		$width = recipe_hero_get_option( 'rh-styling-option-width', 'recipe-hero-options' );
+		$center = recipe_hero_get_option( 'rh-styling-option-center', 'recipe-hero-options' ); ?>
+
 		<style type="text/css">
 
 			<?php if ( $padding ) { ?>
+				
 
-				.recipe-archive-tax-header,
 				article.recipe,
-				.single-recipe #comments {
+				.recipe-archive-tax-header,
+				.single-recipe #comments,
+				.recipe-search article,
+				.recipe-search header.page-header {
 					padding: <?php echo $padding; ?>;
+				}
+
+			<?php } ?>
+
+			<?php if ( $width ) { ?>
+
+				article {
+					width: <?php echo $width; ?>;
+				}
+
+			<?php } ?>
+
+			<?php if ( $center ) { ?>
+
+				article {
+					margin: 0 auto;
 				}
 
 			<?php } ?>
