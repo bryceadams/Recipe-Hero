@@ -295,7 +295,7 @@ if ( ! function_exists( 'recipe_hero_output_single_description' ) ) {
 	function recipe_hero_output_single_description() {
 
 		// Variables
-		$description = get_the_content();
+		$description = apply_filters( 'the_content', get_the_content() );
 
 		if ( $description ) { ?>
 
