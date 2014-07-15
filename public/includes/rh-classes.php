@@ -11,6 +11,8 @@
  * @todo 	  Make all fitlerable
  */
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
  * Recipe Title
  *

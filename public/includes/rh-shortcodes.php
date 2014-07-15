@@ -9,6 +9,8 @@
  * @copyright 2014 Captain Theme
  */
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
  * Include all the shortcodes
  *

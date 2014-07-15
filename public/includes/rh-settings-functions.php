@@ -9,40 +9,23 @@
  * @copyright 2014 Captain Theme
  */
 
-/**
- * Disable Styles
- *
- * @package   Recipe Hero
- * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.7.0
- */
-
-if ( ! function_exists( 'recipe_hero_option_disable_styles' ) ) {
-	
-	function recipe_hero_option_disable_styles() {
-
-		if ( recipe_hero_get_option( 'rh-disable-styles', 'recipe-hero-options' ) ) {
-			add_filter( 'recipe_hero_enqueue_styles', '__return_false' );
-		}
-
-	}
-
-}
-add_action( 'init', 'recipe_hero_option_disable_styles', 9999 );
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
  * Disable Lightbox
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.7.0
+ * @since 	  0.8.0
  */
 
 if ( ! function_exists( 'recipe_hero_option_disable_lightbox' ) ) {
 
 	function recipe_hero_option_disable_lightbox() {
 
-		if ( ! recipe_hero_get_option( 'rh-disable-lightbox', 'recipe-hero-options' ) ) {
+		global $rh_style_options;
+
+		if ( ! $rh_style_options['disable_lightbox'] ) {
 
 			if ( ( get_post_type() == 'recipe' ) && is_single() ) {
 
@@ -63,16 +46,18 @@ add_action( 'wp_enqueue_scripts', 'recipe_hero_option_disable_lightbox', 9999 );
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.7.0
+ * @since 	  0.8.0
  */
 
 if ( ! function_exists( 'recipe_hero_override_comments_open' ) ) {
 	
 	function recipe_hero_override_comments_open( $close ) {
 
-		// Variables
 		global $post;
-		$rh_home_id = recipe_hero_get_option( 'rh-recipe-page-display', 'recipe-hero-options' );
+
+		if ( isset( $rh_general_options['page_home'] ) ) {
+            $rh_home_id = $rh_general_options['page_home'];
+        }
 
 	    if ( isset( $rh_home_id ) ) {
 			if ( $post->ID == $rh_home_id ) {
@@ -98,11 +83,31 @@ if ( ! function_exists( 'recipe_hero_option_styles' ) ) {
 
 	function recipe_hero_option_styles() {
 
-		$padding = recipe_hero_get_option( 'rh-styling-option-padding', 'recipe-hero-options' );
-		$width = recipe_hero_get_option( 'rh-styling-option-width', 'recipe-hero-options' );
-		$center = recipe_hero_get_option( 'rh-styling-option-center', 'recipe-hero-options' ); ?>
+		global $rh_style_options;
+
+		if ( isset ( $rh_style_options['recipe_width'] ) ) {
+			$width = $rh_style_options['recipe_width'];
+		}
+		
+		if ( isset ( $rh_style_options['recipe_padding'] ) ) {
+			$padding = $rh_style_options['recipe_padding'];
+		}
+
+		if ( isset ( $rh_style_options['center_container'] ) ) {
+			$center = $rh_style_options['center_container'];
+		}
+
+		?>
 
 		<style type="text/css">
+
+			<?php if ( $width ) { ?>
+
+				article {
+					width: <?php echo $width; ?>;
+				}
+
+			<?php } ?>
 
 			<?php if ( $padding ) { ?>
 				
@@ -113,14 +118,6 @@ if ( ! function_exists( 'recipe_hero_option_styles' ) ) {
 				.recipe-search article,
 				.recipe-search header.page-header {
 					padding: <?php echo $padding; ?>;
-				}
-
-			<?php } ?>
-
-			<?php if ( $width ) { ?>
-
-				article {
-					width: <?php echo $width; ?>;
 				}
 
 			<?php } ?>

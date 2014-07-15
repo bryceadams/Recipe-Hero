@@ -9,18 +9,20 @@
  * @copyright 2014 Captain Theme
  */
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
  * Include all the template parts
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.7.0
+ * @since 	  0.8.0
  */
 
-require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/templates-parts/rh-templates-parts-archive.php' );
-require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/templates-parts/rh-templates-parts-search.php' );
-require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/templates-parts/rh-templates-parts-sidebar.php' );
-require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/templates-parts/rh-templates-parts-single.php' );
-require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/templates-parts/rh-templates-parts-supports.php' );
-require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/templates-parts/rh-templates-parts-tax-header.php' );
-require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/templates-parts/rh-templates-parts-wrapper.php' );
+require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/templates-parts/rh-templates-archive-functions.php' );
+require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/templates-parts/rh-templates-search-functions.php' );
+require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/templates-parts/rh-templates-sidebar-functions.php' );
+require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/templates-parts/rh-templates-single-functions.php' );
+require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/templates-parts/rh-templates-supports-functions.php' );
+require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/templates-parts/rh-templates-tax-header-functions.php' );
+require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/templates-parts/rh-templates-wrapper-functions.php' );

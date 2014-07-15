@@ -10,6 +10,8 @@
  * @since 	  0.7.1
  */
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
  * Content Wrappers
  *

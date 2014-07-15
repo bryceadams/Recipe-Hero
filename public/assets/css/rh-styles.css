@@ -102,7 +102,8 @@ article.recipe {
       article.recipe .recipe-archive-meta .comments-link .dashicons,
       article.recipe .recipe-archive-meta .edit-link .dashicons {
         font-size: 16px;
-        vertical-align: bottom; }
+        vertical-align: bottom;
+        line-height: 1.35; }
     article.recipe .recipe-single-meta .date,
     article.recipe .recipe-archive-meta .date {
       padding-left: 0; }
@@ -213,9 +214,15 @@ article.recipe {
     font-size: 16px;
     margin-top: 25px;
     line-height: 1.6; }
+    article.recipe .recipe-single-content p {
+      margin-bottom: 12px; }
   article.recipe .recipe-archive-content {
     font-size: 16px;
     line-height: 1.6; }
+    article.recipe .recipe-archive-content p {
+      margin-bottom: 12px; }
+    article.recipe .recipe-archive-content .sharedaddy {
+      margin-top: 15px; }
   article.recipe .recipe-single-ingredients h4 {
     margin-top: 25px; }
   article.recipe .recipe-single-ingredients ul.ingredients-list {
@@ -226,16 +233,7 @@ article.recipe {
     -moz-column-gap: 20px;
     -webkit-column-count: 2;
     -webkit-column-gap: 20px;
-    font-size: 14px;
-    /* column-rule-color:  #eee;
-      	column-rule-style:  solid;
-      	column-rule-width:  1px;
-      -moz-column-rule-color:  #eee;
-      -moz-column-rule-style:  solid;
-      -moz-column-rule-width:  1px;
-      -webkit-column-rule-color:  #eee;
-      -webkit-column-rule-style: solid ;
-      -webkit-column-rule-width:  1px; */ }
+    font-size: 14px; }
     article.recipe .recipe-single-ingredients ul.ingredients-list li.ingredients-item {
       padding-bottom: 5px; }
   article.recipe .recipe-single-instructions h4 {
@@ -254,6 +252,8 @@ article.recipe {
         border: 1px solid #ddd;
         border-radius: 5px; }
   article.recipe .recipe-single-nutrition {
-    font-size: 14px; }
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px; }
   article.recipe hr.recipe-single-seperator {
     margin-top: 25px; }

@@ -8,6 +8,8 @@
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
  */
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  
  /**
  * Register 'Recipe' Custom Post Type.

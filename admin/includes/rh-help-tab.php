@@ -9,11 +9,13 @@
  * @copyright 2014 Captain Theme
  */
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
  * Standard Help Tab for admin list of Recipes
  * @package Recipe Hero
  * @author  Captain Theme <info@captaintheme.com>
- * @since   0.7.1
+ * @since   0.8,0
  * @todo    Add more information, etc.
  */
 
@@ -23,11 +25,36 @@ if ( ! function_exists( 'recipe_hero_admin_help_tab' ) ) {
     function recipe_hero_admin_help_tab() {
         $recipe_hero_help_edit_page = 'edit.php';
         $recipe_hero_help_post_new_page = 'post-new.php';
+        $recipe_hero_settings_page =    add_submenu_page(
+                                            '',               // The ID of the top-level menu page to which this submenu item belongs
+                                            __( 'Recipe Hero Settings', 'recipe-hero' ),         // The value used to populate the browser's title bar when the menu page is active
+                                            __( 'New Settings', 'recipe-hero' ),                 // The label of this submenu item displayed in the menu
+                                            'administrator',                    // What roles are able to access this submenu item
+                                            'recipe_hero_general_options',    // The ID used to represent this submenu item
+                                            'recipe_hero_general'             // The callback function used to render the options for this submenu item
+                                        );
+        $recipe_hero_settings_page_2 =  add_submenu_page(
+                                            '',    // leave blank so no menu page created
+                                            __( 'Style', 'recipe-hero' ),
+                                            __( 'Style', 'recipe-hero' ),
+                                            'administrator',
+                                            'recipe_hero_style_options'
+                                        );
+        $recipe_hero_settings_page_3 =  add_submenu_page(
+                                            '', // leave blank so no menu page created
+                                            __( 'Labels', 'recipe-hero' ),
+                                            __( 'Labels', 'recipe-hero' ),
+                                            'administrator',
+                                            'recipe_hero_labels_options'
+                                        );
 
         $screen = get_current_screen();
         if ( recipe_hero_admin_get_current_post_type() == 'recipe' ) {
-            add_action('load-' . $recipe_hero_help_edit_page, 'recipe_hero_admin_add_help_tab');
-            add_action('load-' . $recipe_hero_help_post_new_page, 'recipe_hero_admin_add_help_tab');   
+            add_action( 'load-' . $recipe_hero_help_edit_page, 'recipe_hero_admin_add_help_tab' );
+            add_action( 'load-' . $recipe_hero_help_post_new_page, 'recipe_hero_admin_add_help_tab' );
+            add_action( 'load-' . $recipe_hero_settings_page, 'recipe_hero_admin_add_help_tab' );
+            add_action( 'load-' . $recipe_hero_settings_page_2, 'recipe_hero_admin_add_help_tab' );
+            add_action( 'load-' . $recipe_hero_settings_page_3, 'recipe_hero_admin_add_help_tab' );
         }
     }
 
@@ -36,6 +63,7 @@ if ( ! function_exists( 'recipe_hero_admin_help_tab' ) ) {
 if ( ! function_exists( 'recipe_hero_admin_add_help_tab' ) ) {
 
     function recipe_hero_admin_add_help_tab () {
+
         global $recipe_hero_help_page;
         $screen = get_current_screen();
 
@@ -51,6 +79,7 @@ if ( ! function_exists( 'recipe_hero_admin_add_help_tab' ) ) {
             'title'   => __( 'Support', 'recipe-hero' ),
             'content' => '<p>' . sprintf( __( 'You can post a support thread on <a href="%s">Recipe Hero Support Forum</a>.', 'recipe-hero' ), 'http://recipehero.in/support/' ) . '</p>',
         ) );
+
     }
 
 }

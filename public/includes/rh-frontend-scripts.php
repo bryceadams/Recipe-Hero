@@ -9,7 +9,9 @@
  * @copyright 2014 Captain Theme
  */
 
- class Recipe_Hero_Frontend_Scripts {
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
+class Recipe_Hero_Frontend_Scripts {
 
 	/**
 	 * Constructor
@@ -52,7 +54,7 @@
 		// Register all scripts/styles for later use
 		wp_register_script( 'rh-plugin-script', plugins_url( '../assets/js/rh-scripts.js', __FILE__ ), array( 'jquery' ), RECIPE_HERO_VERSION_NUMBER, true );
 		wp_register_script( 'magnific', plugins_url( '../assets/js/jquery.magnific-popup.min.js', __FILE__ ), array( 'jquery' ), RECIPE_HERO_VERSION_NUMBER, true );
-
+		
 		wp_register_style( 'magnific-css', plugins_url( '../assets/css/magnific-popup.css', __FILE__ ), RECIPE_HERO_VERSION_NUMBER, true );
 
 		wp_enqueue_script( 'jquery' );

@@ -68,6 +68,7 @@ class Recipe_Hero_Admin {
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'admin/includes/rh-tweaks.php' );
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'admin/includes/rh-help-tab.php' );
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'admin/includes/rh-columns.php' );
+		require_once( RECIPE_HERO_PLUGIN_DIR . 'admin/includes/rh-admin-scripts.php' );
 
 	}
 

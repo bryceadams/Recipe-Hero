@@ -1,10 +1,10 @@
 === Recipe Hero ===
 Contributors: captaintheme, recipehero,
 Donate link: http://recipehero.in/
-Tags: recipe, recipes, cooking, ingredients, food, cook, recipe hero, captain theme
+Tags: recipe, recipes, cooking, ingredients, food, cook, cook book, recipe hero, captain theme, google recipes
 Requires at least: 3.5.1
 Tested up to: 3.9.1
-Stable tag: 0.7.1
+Stable tag: 0.8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,10 @@ Recipe Hero is the easiest way to add recipes to your WordPress site in seconds.
 
 It shouldn't be difficult to add a recipe to your WordPress site.
 
-Recipe Hero adds a new custom post type, **recipe**, to your website. Adding a recipe is just like adding a post. You can add everything from the recipe's yield to the equipment needed, the cooking time to the ingredients.
+Recipe Hero adds a new custom post type, **recipe**, to your website. Adding a recipe is just like adding a post. You can add everything from the recipe's yield to the equipment needed, the cooking time to the ingredients - everything will be automatically formatted for Google Rich Snippets.
+
+* **Support / Docs @ [Recipe Hero HQ](http://recipehero.in/)**
+* **Want to try it out?** [Recipe Hero Demo](http://try.recipehero.in/)
 
 Navigate to `http://yourwebsite.com/recipes` to see all the new recipes you've added. You can easily customise the CSS to your liking and make it look perfect. It's automatically set-up to be responsive, clean & beautiful.
 
@@ -22,8 +25,8 @@ Navigate to `http://yourwebsite.com/recipes` to see all the new recipes you've a
 * Recipe Details, Ingredients & Instructions
 * Completely responsive
 * Plenty of Options
-* Templating Engine for easy customization
-* Display with easy [recipe] & [recipes] shortcode
+* Templating Engine for easy customization (anything can be edited)
+* Display with easy [recipe] & [recipes] shortcodes
 * Valid schema.org Markup - Works with Google Rich Snippets etc. (SEO Optimized)
 * Inherits Your Theme's Styles Automatically
 * Image Lightbox
@@ -35,7 +38,10 @@ Navigate to `http://yourwebsite.com/recipes` to see all the new recipes you've a
 
 **Contributing:** Why not help out? This project is being actively developed [on GitHub](https://github.com/bryceadams/Recipe-Hero/). Feel free to report issues, help others and make pull requests!
 
-**Translations:** If you translate Recipe Hero, please [send me your translation](mailto:info@recipehero.in) so I can add it to the plugin for others to use. Here is a guide to [translating the plugin](captaintheme.com/docs/general/translating-a-theme-or-plugin/) to help you out!
+**Translations:** If you translate Recipe Hero, please [send me your translation](mailto:info@recipehero.in) so I can add it to the plugin for others to use. Here is a guide to [translating the plugin](captaintheme.com/docs/general/translating-a-theme-or-plugin/) to help you out! The following translations are available:
+
+* Chezch (cs_CZ)
+* Korean (ko_KR)
 
 == Installation ==
 
@@ -61,12 +67,28 @@ Navigate to `http://yourwebsite.com/recipes` to see all the new recipes you've a
 3. Upload the `recipe-hero` directory to the `/wp-content/plugins/` directory
 4. Activate the plugin in the Plugin dashboard
 
+= RE-SAVE YOUR PERMALINKS! =
+
+It's **essential** that you re-save your permalinks after installing and activating Recipe Hero. Simply go to **Settings > Permalinks** and re-save the settings you currently have (for best results switch to **post name**).
+
+== Usage ==
+
+After creating your first recipe, you'll normally be able to go to: `http://yourwebsite.com/recipes/` to view an archive of all your recipes.
+
+You can also visit **Recipe Hero > Settings > General Options** and choose a Recipe Page. This will turn the chosen page (created through **Pages > Add New**) into a recipe archive, showing all of your recipes. This is useful for then making that page your home page (in **Settings > Reading**).
+
+There are also 2 shortcodes included with Recipe Hero:
+
+* `[recipes]` - displays multiple recipes (see docs below)
+* `[recipe]` - displays single recipe (see docs below)
+
+**For more about displaying recipes, check out our [Displaying Recipes](http://recipehero.in/docs/displaying-recipes/) documentation.**
 
 == Frequently Asked Questions ==
 
 = I keep getting 404 Page Not Found errors when trying to view the recipes I've added! =
 
-You need to refresh your permalinks first! Navigate to `http://yourwebsite.com/wp-admin/options-permalink.php` and re-save your permalink settings.
+You need to re-save your permalinks first! Navigate to `http://yourwebsite.com/wp-admin/options-permalink.php` and re-save your permalink settings.
 
 = How do I remove the default Recipe Hero styling? =
 
@@ -80,7 +102,7 @@ Please feel free to [send me your translation](mailto:info@recipehero.in) afterw
 
 = Will Google recognise my recipes and show them like the other recipes in Google? =
 
-Sure, but on food-steroids.
+Sure, but on food-steroids. Just check out the screenshots area.
 
 = How can I thank you? =
 
@@ -88,13 +110,27 @@ Sure, but on food-steroids.
 
 == Screenshots ==
 
-1. Adding a Recipe
-2. Editing Recipe Instructions
-3. Recipe Hero Settings Page
-4. Example of a Recipe
-5. Example of a Recipe #2
+1. Single Recipe
+2. Single Recipe #2
+3. Single Recipe #3
+4. Google Rich Snippets Preview
+5. Recipe Hero Settings #1
+6. Recipe Hero Settings #2
+7. Recipe Hero Settings #3
 
 == Changelog ==
+
+= 0.8.0 =
+* **NOTE:** Major Update - you will lose your Recipe Hero Settings (NOT YOUR  RECIPES THOUGH - Don't Worry!)
+* Reworked Termplating System for Single / Archive Template Content
+* Switch to WordPress Settings API & Redesigned Settings
+* Bug Fix: global wrapper start undefined variable
+* Bux Fix: Instructions part
+* Better Security Measures with disallowing direct file access
+* Sanitize recipe fields
+* More formatting improvements
+* Added Chezch Translation (Thanks http://www.kvaskovani.cz/)
+* Added Korean Translation (Thanks Younwoo!)
 
 = 0.7.1 =
 * 2 New Shortcodes - [recipe] & [recipes]

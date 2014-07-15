@@ -9,7 +9,9 @@
  * @copyright 2014 Captain Theme
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
+global $rh_general_options; ?>
 
 <?php get_header(); ?>
 
@@ -25,7 +27,14 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 	<?php
 
 		// Variables
-		$recipes_per_page = recipe_hero_get_option( 'rh-recipes-per-page', 'recipe-hero-options' );
+		if ( isset( $rh_general_options['per_page'] ) ) {
+	
+			$recipes_per_page = $rh_general_options['per_page'];
+
+		} else {
+
+			$recipes_per_page = 10;
+		}
 
 		$args = array(
 				'post_type' => 'recipe',

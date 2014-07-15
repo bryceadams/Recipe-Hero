@@ -9,6 +9,8 @@
  * @copyright 2014 Captain Theme
  */
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 add_filter( 'cmb_meta_boxes', 'recipe_hero_sample_metaboxes' );
 /**
  * Define the metabox and field configurations.
@@ -20,7 +22,7 @@ add_filter( 'cmb_meta_boxes', 'recipe_hero_sample_metaboxes' );
  *
  * @package Recipe Hero
  * @author  Captain Theme <info@captaintheme.com>
- * @since   0.7.0
+ * @since   0.7.2
  */
 function recipe_hero_sample_metaboxes( array $meta_boxes ) {
 
@@ -41,13 +43,21 @@ function recipe_hero_sample_metaboxes( array $meta_boxes ) {
 		// 'cmb_styles' => true, // Enqueue the CMB stylesheet on the frontend
 		'fields'     => array(
 			array(
-				'name' => __( 'Serves', 'recipe-hero' ),
-				//'desc' => __( 'field description (optional)', 'recipe-hero' ),
+				'name' => __( 'Servings', 'recipe-hero' ),
+				'desc' => __( 'A number for the servings amount', 'recipe-hero' ),
 				'id'   => $prefix . 'detail_serves',
 				'type' => 'text_small',
-				'after' => 'People',
 				'attributes' => array(
 									'placeholder' => 'eg. 4',
+				),
+			),
+			array(
+				'name' => __( 'Servings Type', 'recipe-hero' ),
+				'desc' => __( 'The type of servings that relates to the Servings Amount, like how many people it will feed or how many burgers it can make, etc.', 'recipe-hero' ),
+				'id'   => $prefix . 'detail_serves_type',
+				'type' => 'text_small',
+				'attributes' => array(
+									'placeholder' => 'eg. People',
 				),
 			),
 			array(

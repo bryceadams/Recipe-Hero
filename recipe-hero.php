@@ -11,7 +11,7 @@
  * Plugin Name:       Recipe Hero
  * Plugin URI:        http://recipehero.in/
  * Description:       The last recipe plugin you'll ever need.
- * Version:           0.7.1
+ * Version:           0.8.0
  * Author:            Captain Theme
  * Author URI:        http://captaintheme.com/
  * Text Domain:       recipe-hero
@@ -27,23 +27,27 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /*----------------------------------------------------------------------------*
- * Define Some Cool Constants
+ * Define Some Cool Constants & Globals
  *----------------------------------------------------------------------------*/
 
 // Plugin Folder Path
-if( !defined( 'RECIPE_HERO_PLUGIN_DIR' ) ) {
+if( ! defined( 'RECIPE_HERO_PLUGIN_DIR' ) ) {
 	define( 'RECIPE_HERO_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 }
 
 // Template Folder Path
-if( !defined( 'RECIPE_HERO_TEMPLATE_DIR' ) ) {
-	define( 'RECIPE_HERO_TEMPLATE_DIR', plugin_dir_path( __FILE__ ) . 'rh-templates/' );
+if( ! defined( 'RECIPE_HERO_TEMPLATE_DIR' ) ) {
+	define( 'RECIPE_HERO_TEMPLATE_DIR', 'recipe-hero/' );
 }
 
 // Define Current Plugin Version
 if( ! defined( 'RECIPE_HERO_VERSION_NUMBER' ) ) {
-	define( 'RECIPE_HERO_VERSION_NUMBER', '0.7.1' );
+	define( 'RECIPE_HERO_VERSION_NUMBER', '0.8.0' );
 }
+
+$rh_general_options = get_option( 'recipe_hero_general_options' );
+$rh_style_options = get_option( 'recipe_hero_style_options' );
+$rh_labels_options = get_option( 'recipe_hero_labels_options' );
 
 /*----------------------------------------------------------------------------*
  * Public-Facing Functionality

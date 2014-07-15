@@ -1,0 +1,664 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Recipe Hero\n"
+"POT-Creation-Date: 2014-07-14 21:16+1000\n"
+"PO-Revision-Date: 2014-07-14 21:16+1000\n"
+"Last-Translator: Recipe Hero <info@recipehero.in>\n"
+"Language-Team: Recipe Hero <info@recipehero.in>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../admin/class-recipe-hero-admin.php:143
+#: ../public/includes/rh-settings.php:20
+msgid "Settings"
+msgstr ""
+
+#: ../admin/includes/rh-columns.php:27
+msgid "Recipe Title"
+msgstr ""
+
+#: ../admin/includes/rh-columns.php:28
+msgid "ID"
+msgstr ""
+
+#: ../admin/includes/rh-columns.php:29 ../public/includes/rh-tax.php:42
+#: ../public/includes/templates-parts/rh-templates-tax-header-functions.php:37
+msgid "Course"
+msgstr ""
+
+#: ../admin/includes/rh-columns.php:30 ../public/includes/rh-tax.php:84
+#: ../public/includes/templates-parts/rh-templates-tax-header-functions.php:28
+msgid "Cuisine"
+msgstr ""
+
+#: ../admin/includes/rh-columns.php:31
+msgid "Photo"
+msgstr ""
+
+#: ../admin/includes/rh-columns.php:32
+msgid "Author"
+msgstr ""
+
+#: ../admin/includes/rh-columns.php:34
+msgid "Date"
+msgstr ""
+
+#: ../admin/includes/rh-columns.php:79
+msgid "No Courses"
+msgstr ""
+
+#: ../admin/includes/rh-columns.php:103
+msgid "No Cuisines"
+msgstr ""
+
+#: ../admin/includes/rh-help-tab.php:30 ../public/includes/rh-settings.php:19
+#: ../public/includes/rh-settings.php:72
+msgid "Recipe Hero Settings"
+msgstr ""
+
+#: ../admin/includes/rh-help-tab.php:31
+msgid "New Settings"
+msgstr ""
+
+#: ../admin/includes/rh-help-tab.php:38 ../admin/includes/rh-help-tab.php:39
+#: ../public/includes/rh-settings.php:28 ../public/includes/rh-settings.php:29
+#: ../public/includes/rh-settings.php:79
+msgid "Style"
+msgstr ""
+
+#: ../admin/includes/rh-help-tab.php:45 ../admin/includes/rh-help-tab.php:46
+#: ../public/includes/rh-settings.php:37 ../public/includes/rh-settings.php:38
+#: ../public/includes/rh-settings.php:82
+msgid "Labels"
+msgstr ""
+
+#: ../admin/includes/rh-help-tab.php:73
+msgid "Documentation"
+msgstr ""
+
+#: ../admin/includes/rh-help-tab.php:74
+#, php-format
+msgid ""
+"You can access the documentation over at the <a href=\"%s\">Recipe Hero "
+"Documentation</a>."
+msgstr ""
+
+#: ../admin/includes/rh-help-tab.php:79
+msgid "Support"
+msgstr ""
+
+#: ../admin/includes/rh-help-tab.php:80
+#, php-format
+msgid ""
+"You can post a support thread on <a href=\"%s\">Recipe Hero Support Forum</"
+"a>."
+msgstr ""
+
+#: ../admin/includes/rh-tweaks.php:41
+msgid "Recipe Completed Photo"
+msgstr ""
+
+#: ../admin/includes/rh-tweaks.php:63
+msgid "Thanks for using Recipe Hero! Please"
+msgstr ""
+
+#: ../admin/includes/rh-tweaks.php:65
+msgid "re-save your permalinks"
+msgstr ""
+
+#: ../admin/includes/rh-tweaks.php:67
+msgid "to get started (this notice will disappear afterwards)."
+msgstr ""
+
+#: ../public/includes/fields/helpers/cmb_Meta_Box_ajax.php:47
+msgid "Please Try Again"
+msgstr ""
+
+#: ../public/includes/fields/helpers/cmb_Meta_Box_ajax.php:131
+msgid "Remove Embed"
+msgstr ""
+
+#: ../public/includes/fields/helpers/cmb_Meta_Box_ajax.php:134
+#, php-format
+msgid "No oEmbed Results Found for %s. View more info at"
+msgstr ""
+
+#: ../public/includes/fields/helpers/cmb_Meta_Box_field.php:459
+msgid "Add Group"
+msgstr ""
+
+#: ../public/includes/fields/helpers/cmb_Meta_Box_field.php:460
+msgid "Remove Group"
+msgstr ""
+
+#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:250
+msgid "Add Row"
+msgstr ""
+
+#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:306
+#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:706
+#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:768
+msgid "Remove"
+msgstr ""
+
+#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:601
+#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:635
+msgid "No terms"
+msgstr ""
+
+#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:674
+#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:728
+msgid "Add or Upload File"
+msgstr ""
+
+#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:695
+#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:760
+msgid "Remove Image"
+msgstr ""
+
+#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:706
+#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:768
+msgid "File:"
+msgstr ""
+
+#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:706
+#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:768
+msgid "Download"
+msgstr ""
+
+#: ../public/includes/fields/init.php:258
+msgid "Clear"
+msgstr ""
+
+#: ../public/includes/fields/init.php:259
+msgid "Default"
+msgstr ""
+
+#: ../public/includes/fields/init.php:260
+msgid "Select Color"
+msgstr ""
+
+#: ../public/includes/fields/init.php:261
+msgid "Current Color"
+msgstr ""
+
+#: ../public/includes/fields/init.php:288
+msgid "Select / Deselect All"
+msgstr ""
+
+#: ../public/includes/fields/init.php:1177
+msgid "Save"
+msgstr ""
+
+#: ../public/includes/rh-cpt.php:28 ../public/includes/rh-cpt.php:29
+msgid "Add New Recipe"
+msgstr ""
+
+#: ../public/includes/rh-cpt.php:30 ../templates/archive/meta.php:33
+#: ../templates/single/meta.php:35
+msgid "Edit Recipe"
+msgstr ""
+
+#: ../public/includes/rh-cpt.php:31
+msgid "New Recipe"
+msgstr ""
+
+#: ../public/includes/rh-cpt.php:32
+msgid "View Recipe"
+msgstr ""
+
+#: ../public/includes/rh-cpt.php:33
+msgid "Search Recipes"
+msgstr ""
+
+#: ../public/includes/rh-cpt.php:34
+msgid "No Recipes found"
+msgstr ""
+
+#: ../public/includes/rh-cpt.php:35
+msgid "No Recipes found in the trash"
+msgstr ""
+
+#: ../public/includes/rh-cpt.php:37
+msgid "Recipe Hero"
+msgstr ""
+
+#: ../public/includes/rh-cpt.php:46
+msgid "Recipe"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:38
+msgid "Recipe Details"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:46
+msgid "Servings"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:47
+msgid "A number for the servings amount"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:55
+msgid "Servings Type"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:56
+msgid ""
+"The type of servings that relates to the Servings Amount, like how many "
+"people it will feed or how many burgers it can make, etc."
+msgstr ""
+
+#: ../public/includes/rh-fields.php:64
+msgid "Preparation Time"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:74
+msgid "Cooking Time"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:84
+msgid "Equipment Needed"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:85
+msgid "Any special equipment worthy of mentioning that is required."
+msgstr ""
+
+#: ../public/includes/rh-fields.php:94
+msgid "Nutritional Info"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:95
+msgid "A summary of nutrition information you would like to include."
+msgstr ""
+
+#: ../public/includes/rh-fields.php:111 ../templates/single/ingredients.php:20
+msgid "Ingredients"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:117
+msgid "Add all of the ingredients for this recipe."
+msgstr ""
+
+#: ../public/includes/rh-fields.php:119
+msgid "Ingredient {#}"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:120
+msgid "Add Another Ingredient"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:121
+msgid "Remove Ingredient"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:127
+msgid "Quantity"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:135
+msgid "Amount"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:140
+msgid "Gram (gm)"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:141
+msgid "Ounce (oz)"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:142
+msgid "Milliliter (ml)"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:143
+#: ../public/includes/templates-parts/rh-templates-single-functions.php:297
+msgid "Teaspoon"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:144
+#: ../public/includes/templates-parts/rh-templates-single-functions.php:300
+msgid "Tablespoon"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:145
+#: ../public/includes/templates-parts/rh-templates-single-functions.php:303
+msgid "Cup"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:146
+msgid "Liter (L)"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:147
+msgid "Pound (lb)"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:148
+msgid "Kilogram (kg)"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:149
+msgid "Slices"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:150
+msgid "Pieces"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:151
+msgid "None (blank)"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:157
+msgid "Ingredient"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:174
+msgid "Steps"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:180
+msgid "Add all of the preparation and cooking steps for this recipe."
+msgstr ""
+
+#: ../public/includes/rh-fields.php:182
+msgid "Step {#}"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:183
+msgid "Add Another Step"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:184
+msgid "Remove Step"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:190
+#: ../templates/single/instructions.php:19
+msgid "Instructions"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:196
+msgid "Step Photo"
+msgstr ""
+
+#: ../public/includes/rh-fields.php:197
+msgid "Upload an image or enter a URL (optional)"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:76
+msgid "General"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:171
+msgid "General Options"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:178
+msgid "Recipe Page"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:186
+msgid "Recipes Per Page"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:194
+msgid "Main Content Class"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:219
+msgid "Style Options"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:226
+msgid "Disable Lightbox"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:231
+msgid "Selecting this will disable the lightbox used in Recipe Hero"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:237
+msgid "Recipe Width (px)"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:245
+msgid "Recipe Padding (px)"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:253
+msgid "Center Recipe Container"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:258
+msgid ""
+"Selecting this will center the recipe in the middle of its container "
+"(experimental)"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:280
+msgid "Custom Lables"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:287
+msgid "'Serves' Text"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:295
+msgid "'Equipment' Text"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:303
+msgid "'Prep Time' Text"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:311
+msgid "'Cook Time' Text"
+msgstr ""
+
+#: ../public/includes/rh-settings.php:327
+msgid "Basic settings that relate to how the plugin functions."
+msgstr ""
+
+#: ../public/includes/rh-settings.php:331
+msgid "Disable styles and add basic styling changes to the plugin."
+msgstr ""
+
+#: ../public/includes/rh-settings.php:335
+msgid "Change the output of certain parts of Recipe Hero."
+msgstr ""
+
+#: ../public/includes/rh-settings.php:336
+msgid "For more control over this, you should tranlate Recipe Hero."
+msgstr ""
+
+#: ../public/includes/rh-settings.php:368
+msgid ""
+"The page you select here will be the home of all your recipes. Additionally, "
+"the 'Recipe Archive' of your site can be found at: "
+msgstr ""
+
+#: ../public/includes/rh-settings.php:380
+msgid ""
+"This will only apply for the recipe page, selected in the option above. "
+"Other recipe archives use the default posts per page setting."
+msgstr ""
+
+#: ../public/includes/rh-settings.php:396
+msgid ""
+"The wrapper class for the content area. This is needed if your theme only "
+"applies styles inside of this class."
+msgstr ""
+
+#: ../public/includes/rh-settings.php:423
+msgid "The width of the recipe. This can also be a %, like 90%."
+msgstr ""
+
+#: ../public/includes/rh-settings.php:439
+msgid ""
+"Sometimes you may want to add some padding around the recipe articles. "
+"Normally from 0-25px is enough."
+msgstr ""
+
+#: ../public/includes/rh-tax.php:29
+msgid "Add New Course"
+msgstr ""
+
+#: ../public/includes/rh-tax.php:30
+msgid "Edit Course"
+msgstr ""
+
+#: ../public/includes/rh-tax.php:31
+msgid "New Course"
+msgstr ""
+
+#: ../public/includes/rh-tax.php:32
+msgid "View Course"
+msgstr ""
+
+#: ../public/includes/rh-tax.php:33
+msgid "Search Courses"
+msgstr ""
+
+#: ../public/includes/rh-tax.php:34
+msgid "No Course found"
+msgstr ""
+
+#: ../public/includes/rh-tax.php:35
+msgid "No Course found in Trash"
+msgstr ""
+
+#: ../public/includes/rh-tax.php:71
+msgid "Add New Cuisine"
+msgstr ""
+
+#: ../public/includes/rh-tax.php:72
+msgid "Edit Cuisine"
+msgstr ""
+
+#: ../public/includes/rh-tax.php:73
+msgid "New Cuisine"
+msgstr ""
+
+#: ../public/includes/rh-tax.php:74
+msgid "View Cuisine"
+msgstr ""
+
+#: ../public/includes/rh-tax.php:75
+msgid "Search Cuisines"
+msgstr ""
+
+#: ../public/includes/rh-tax.php:76
+msgid "No Cuisine found"
+msgstr ""
+
+#: ../public/includes/rh-tax.php:77
+msgid "No Cuisine found in Trash"
+msgstr ""
+
+#: ../public/includes/shortcodes/rh-shortcodes-archive.php:75
+msgid "No recipes have been found!"
+msgstr ""
+
+#: ../public/includes/templates-parts/rh-templates-search-functions.php:30
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: ../public/includes/templates-parts/rh-templates-single-functions.php:288
+msgid "Gram"
+msgstr ""
+
+#: ../public/includes/templates-parts/rh-templates-single-functions.php:291
+msgid "Ounce"
+msgstr ""
+
+#: ../public/includes/templates-parts/rh-templates-single-functions.php:294
+msgid "Milliliter"
+msgstr ""
+
+#: ../public/includes/templates-parts/rh-templates-single-functions.php:306
+msgid "LIter"
+msgstr ""
+
+#: ../public/includes/templates-parts/rh-templates-single-functions.php:309
+msgid "Pound"
+msgstr ""
+
+#: ../public/includes/templates-parts/rh-templates-single-functions.php:312
+msgid "Kilogram"
+msgstr ""
+
+#: ../public/includes/templates-parts/rh-templates-single-functions.php:315
+msgid "Slice"
+msgstr ""
+
+#: ../public/includes/templates-parts/rh-templates-single-functions.php:318
+msgid "Piece"
+msgstr ""
+
+#: ../templates/archive-home.php:61
+msgid "Sorry, there are no recipes to show!"
+msgstr ""
+
+#: ../templates/archive-home.php:64
+msgid "Add Your First Recipe!"
+msgstr ""
+
+#: ../templates/archive-home.php:67
+msgid "We have some coming soon though!"
+msgstr ""
+
+#: ../templates/archive/category.php:47 ../templates/single/category.php:47
+msgid "Cuisines"
+msgstr ""
+
+#: ../templates/archive/category.php:56 ../templates/single/category.php:56
+msgid "Courses"
+msgstr ""
+
+#: ../templates/archive/details.php:34 ../templates/single/details.php:34
+msgid "Serves"
+msgstr ""
+
+#: ../templates/archive/details.php:47 ../templates/single/details.php:47
+msgid "Equipment"
+msgstr ""
+
+#: ../templates/archive/details.php:68 ../templates/single/details.php:68
+msgid "Prep Time"
+msgstr ""
+
+#: ../templates/archive/details.php:82 ../templates/single/details.php:82
+msgid "Cook Time"
+msgstr ""
+
+#: ../templates/archive/meta.php:27 ../templates/single/meta.php:28
+msgid "0 Comments"
+msgstr ""
+
+#: ../templates/archive/meta.php:27 ../templates/single/meta.php:28
+msgid "1 Comment"
+msgstr ""
+
+#: ../templates/archive/meta.php:27 ../templates/single/meta.php:28
+msgid "% Comments"
+msgstr ""
+
+#: ../templates/single/instructions.php:39
+msgid "Step"
+msgstr ""
+
+#: ../templates/single/nutrition.php:18
+msgid "Nutrition"
+msgstr ""

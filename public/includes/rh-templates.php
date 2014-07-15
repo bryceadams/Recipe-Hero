@@ -9,6 +9,7 @@
  * @copyright 2014 Captain Theme
  */
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
  * Tell WordPress not to use single.php for Recipe Single Posts
@@ -21,10 +22,14 @@ add_filter( 'template_include', 'recipe_hero_tc_template_chooser');
 if ( ! function_exists( 'recipe_hero_tc_template_chooser' ) ) {
 
     function recipe_hero_tc_template_chooser( $template ) {
+
+        global $rh_general_options;
      
         // Variables
         $post_id = get_the_ID();
-        $rh_home_id = recipe_hero_get_option( 'rh-recipe-page-display', 'recipe-hero-options' );
+        if ( isset( $rh_general_options['page_home'] ) ) {
+            $rh_home_id = $rh_general_options['page_home'];
+        }
 
         if ( isset( $rh_home_id ) ) {
             if ( $post_id == $rh_home_id ) {
@@ -68,11 +73,11 @@ if ( ! function_exists( 'recipe_hero_tc_get_template_hierarchy' ) ) {
         $template = $template_slug . '.php';
      
         // Check if a custom template exists in the theme folder, if not, load the plugin template file
-        if ( $theme_file = locate_template( array( 'rh-templates/' . $template ) ) ) {
+        if ( $theme_file = locate_template( array( 'recipe-hero/' . $template ) ) ) {
             $file = $theme_file;
         }
         else {
-            $file = RECIPE_HERO_PLUGIN_DIR . '/rh-templates/' . $template;
+            $file = RECIPE_HERO_PLUGIN_DIR . '/templates/' . $template;
         }
      
         return apply_filters( 'recipe_hero_repl_template_' . $template, $file );
@@ -93,14 +98,14 @@ if ( ! function_exists( 'recipe_hero_get_template_part' ) ) {
 
         $template = '';
 
-        // Look in yourtheme/slug-name.php and yourtheme/woocommerce/slug-name.php
+        // Look in yourtheme/slug-name.php and yourtheme/recipe-hero/slug-name.php
         if ( $name ) {
             $template = locate_template( array( "{$slug}-{$name}.php", RECIPE_HERO_TEMPLATE_DIR . "{$slug}-{$name}.php" ) );
         }
 
         // Get default slug-name.php
-        if ( ! $template && $name && file_exists( RECIPE_HERO_PLUGIN_DIR . "/rh-templates/{$slug}-{$name}.php" ) ) {
-            $template = RECIPE_HERO_PLUGIN_DIR . "/rh-templates/{$slug}-{$name}.php";
+        if ( ! $template && $name && file_exists( RECIPE_HERO_PLUGIN_DIR . "/templates/{$slug}-{$name}.php" ) ) {
+            $template = RECIPE_HERO_PLUGIN_DIR . "/templates/{$slug}-{$name}.php";
         }
 
         // If template file doesn't exist, look in yourtheme/slug.php and yourtheme/woocommerce/slug.php
@@ -175,18 +180,21 @@ if ( ! function_exists( 'recipe_hero_get_template' ) ) {
  *
  * @package Recipe Hero
  * @author  Captain Theme <info@captaintheme.com>
- * @since   0.7.0
+ * @since   0.8.0
  */
 
 if ( ! function_exists( 'recipe_hero_locate_template' ) ) {
 
     function recipe_hero_locate_template( $template_name, $template_path = '', $default_path = '' ) {
+        
         if ( ! $template_path ) {
             $template_path = RECIPE_HERO_TEMPLATE_DIR;
         }
 
         if ( ! $default_path ) {
-            $default_path = RECIPE_HERO_PLUGIN_DIR . '/rh-templates/';
+
+            $default_path = RECIPE_HERO_PLUGIN_DIR . '/templates/';
+        
         }
 
         // Look within passed path within the theme - this is priority
@@ -199,11 +207,14 @@ if ( ! function_exists( 'recipe_hero_locate_template' ) ) {
 
         // Get default template
         if ( ! $template ) {
+
             $template = $default_path . $template_name;
+        
         }
 
         // Return what we found
-        return apply_filters('recipe_hero_locate_template', $template, $template_name, $template_path);
+        return apply_filters( 'recipe_hero_locate_template', $template, $template_name, $template_path );
+
     }
 
 }

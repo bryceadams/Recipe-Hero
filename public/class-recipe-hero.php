@@ -17,11 +17,11 @@ class Recipe_Hero {
 	/**
 	 * Plugin version, used for cache-busting of style and script file references.
 	 *
-	 * @since   0.7.1
+	 * @since   0.8.0
 	 *
 	 * @var     string
 	 */
-	const VERSION = '0.7.1';
+	const VERSION = '0.8.0';
 
 	/**
 	 * The variable name is used as the text domain when internationalizing strings
@@ -47,7 +47,7 @@ class Recipe_Hero {
 	 * Initialize the plugin by setting localization and loading public scripts
 	 * and styles.
 	 *
-	 * @since     0.7.1
+	 * @since     0.8.0
 	 */
 	private function __construct() {
 
@@ -71,6 +71,7 @@ class Recipe_Hero {
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-fields.php' );
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-cpt.php' );
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-tax.php' );
+		
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-settings.php' );
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-settings-functions.php' );
 
@@ -202,6 +203,7 @@ class Recipe_Hero {
 	 */
 	private static function single_activate() {
 		// @TODO: Define activation functionality here
+		// @TODO: Add plugin activation message here?
 	}
 
 	/**
@@ -217,26 +219,6 @@ class Recipe_Hero {
 		load_textdomain( $domain, trailingslashit( WP_LANG_DIR ) . $domain . '/' . $domain . '-' . $locale . '.mo' );
 		load_plugin_textdomain( $domain, FALSE, basename( plugin_dir_path( dirname( __FILE__ ) ) ) . '/languages/' );
 
-	}
-
-	/**
-	 * NOTE:  Actions are points in the execution of a page or process
-	 *        lifecycle that WordPress fires.
-	 *
-	 * @since    0.5.0
-	 */
-	public function action_method_name() {
-		// @TODO: Define your action hook callback here
-	}
-
-	/**
-	 * NOTE:  Filters are points of execution in which WordPress modifies data
-	 *        before saving it or sending it to the browser.
-	 *
-	 * @since    0.5.0
-	 */
-	public function filter_method_name() {
-		// @TODO: Define your filter hook callback here
 	}
 
 }

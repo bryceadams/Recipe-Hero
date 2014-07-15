@@ -1,11 +1,15 @@
 <?php
+	
+	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-	 do_action( 'recipe_here_before_single_recipe' );
+	do_action( 'recipe_hero_before_single_recipe' );
 
-	 if ( post_password_required() ) {
-	 	echo get_the_password_form();
-	 	return;
-	 }
+	if ( post_password_required() ) {
+
+		echo get_the_password_form();
+		return;
+	
+	}
 	 
 ?>
 

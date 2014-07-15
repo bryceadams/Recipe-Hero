@@ -9,6 +9,8 @@
  * @copyright 2014 Captain Theme
  */
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
  * Change 'Enter title here' title placeholder text to something more fitting.
  * @package Recipe Hero
