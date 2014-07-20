@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * Standard Help Tab for admin list of Recipes
  * @package Recipe Hero
  * @author  Captain Theme <info@captaintheme.com>
- * @since   0.8,0
+ * @since   0.8.0
  * @todo    Add more information, etc.
  */
 

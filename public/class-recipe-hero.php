@@ -21,7 +21,7 @@ class Recipe_Hero {
 	 *
 	 * @var     string
 	 */
-	const VERSION = '0.8.0';
+	const VERSION = '0.8.1';
 
 	/**
 	 * The variable name is used as the text domain when internationalizing strings

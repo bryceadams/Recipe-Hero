@@ -4,7 +4,7 @@ Donate link: http://recipehero.in/
 Tags: recipe, recipes, cooking, ingredients, food, cook, cook book, recipe hero, captain theme, google recipes
 Requires at least: 3.5.1
 Tested up to: 3.9.1
-Stable tag: 0.8.0
+Stable tag: 0.8.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -119,6 +119,9 @@ Sure, but on food-steroids. Just check out the screenshots area.
 7. Recipe Hero Settings #3
 
 == Changelog ==
+
+= 0.8.1 =
+* Bug Fix: Ingredients Amount Display
 
 = 0.8.0 =
 * **NOTE:** Major Update - you will lose your Recipe Hero Settings (NOT YOUR  RECIPES THOUGH - Don't Worry!)

@@ -16,99 +16,109 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @package Recipe Hero
  * @author  Captain Theme <info@captaintheme.com>
- * @since   0.7.1
+ * @since   0.8.1
  */
 
 add_filter( 'manage_edit-recipe_columns', 'recipe_hero_recipe_columns' ) ;
-function recipe_hero_recipe_columns( $columns ) {
+if ( ! function_exists( 'recipe_hero_recipe_columns' ) ) {
+    
+    function recipe_hero_recipe_columns( $columns ) {
 
-    $columns = array(
-        'cb'        => '<input type="checkbox" />',
-        'title'     => __( 'Recipe Title' ),
-        'id'        => __( 'ID' ),
-        'course'    => __( 'Course' ),
-        'cuisine'   => __( 'Cuisine' ),
-        'photo'     => __( 'Photo' ),
-        'author'    => __( 'Author' ),
-        'comments'  => '<span class="dashicons dashicons-admin-comments"></span>',
-        'date'      => __( 'Date' )
-    );
+        $columns = array(
+            'cb'        => '<input type="checkbox" />',
+            'title'     => __( 'Recipe Title' ),
+            'id'        => __( 'ID' ),
+            'course'    => __( 'Course' ),
+            'cuisine'   => __( 'Cuisine' ),
+            'photo'     => __( 'Photo' ),
+            'author'    => __( 'Author' ),
+            'comments'  => '<span class="dashicons dashicons-admin-comments"></span>',
+            'date'      => __( 'Date' )
+        );
 
-    return $columns;
+        return $columns;
+    }
+
 }
 
 add_action( 'manage_recipe_posts_custom_column', 'recipe_hero_manage_recipe_columns', 10, 2 );
-function recipe_hero_manage_recipe_columns( $column, $post_id ) {
-    global $post;
-
-    switch( $column ) {
-
-        case 'id' :
+if ( ! function_exists( 'recipe_hero_manage_recipe_columns' ) ) {
+    
+    function recipe_hero_manage_recipe_columns( $column, $post_id ) {
         
-            echo $post_id;
+        global $post;
 
-            break;
+        switch( $column ) {
 
-        case 'photo' :
+            case 'id' :
 
-            if ( has_post_thumbnail() ) {
-                echo get_the_post_thumbnail( $post_id, 'rh-admin-column' );
-            }
+                echo $post_id;
 
-            break;
+                break;
 
-        case 'course' :
+            case 'photo' :
 
-            $terms = get_the_terms( $post_id, 'course' );
-
-            if ( !empty( $terms ) ) {
-
-                $out = array();
-
-                foreach ( $terms as $term ) {
-                    $out[] = sprintf( '<a href="%s">%s</a>',
-                        esc_url( add_query_arg( array( 'post_type' => $post->post_type, 'course' => $term->slug ), 'edit.php' ) ),
-                        esc_html( sanitize_term_field( 'name', $term->name, $term->term_id, 'course', 'display' ) )
-                    );
+                if ( has_post_thumbnail() ) {
+                    echo get_the_post_thumbnail( $post_id, 'rh-admin-column' );
                 }
 
-                echo join( ', ', $out );
-            }
+                break;
 
-            else {
-                _e( 'No Courses', 'recipe-hero' );
-            }
+            case 'course' :
 
-            break;
+                $terms = get_the_terms( $post_id, 'course' );
 
-        case 'cuisine' :
+                if ( !empty( $terms ) ) {
 
-            $terms = get_the_terms( $post_id, 'cuisine' );
+                    $out = array();
 
-            if ( !empty( $terms ) ) {
+                    foreach ( $terms as $term ) {
+                        $out[] = sprintf( '<a href="%s">%s</a>',
+                            esc_url( add_query_arg( array( 'post_type' => $post->post_type, 'course' => $term->slug ), 'edit.php' ) ),
+                            esc_html( sanitize_term_field( 'name', $term->name, $term->term_id, 'course', 'display' ) )
+                        );
+                    }
 
-                $out = array();
-
-                foreach ( $terms as $term ) {
-                    $out[] = sprintf( '<a href="%s">%s</a>',
-                        esc_url( add_query_arg( array( 'post_type' => $post->post_type, 'cuisine' => $term->slug ), 'edit.php' ) ),
-                        esc_html( sanitize_term_field( 'name', $term->name, $term->term_id, 'cuisine', 'display' ) )
-                    );
+                    echo join( ', ', $out );
                 }
 
-                echo join( ', ', $out );
-            }
+                else {
+                    _e( 'No Courses', 'recipe-hero' );
+                }
 
-            else {
-                _e( 'No Cuisines', 'recipe-hero' );
-            }
+                break;
 
-            break;
+            case 'cuisine' :
+
+                $terms = get_the_terms( $post_id, 'cuisine' );
+
+                if ( !empty( $terms ) ) {
+
+                    $out = array();
+
+                    foreach ( $terms as $term ) {
+                        $out[] = sprintf( '<a href="%s">%s</a>',
+                            esc_url( add_query_arg( array( 'post_type' => $post->post_type, 'cuisine' => $term->slug ), 'edit.php' ) ),
+                            esc_html( sanitize_term_field( 'name', $term->name, $term->term_id, 'cuisine', 'display' ) )
+                        );
+                    }
+
+                    echo join( ', ', $out );
+                }
+
+                else {
+                    _e( 'No Cuisines', 'recipe-hero' );
+                }
+
+                break;
+
+
+            default :
+                break;
+        }
         
-
-        default :
-            break;
     }
+    
 }
 
 
@@ -117,47 +127,56 @@ function recipe_hero_manage_recipe_columns( $column, $post_id ) {
  *
  * @package Recipe Hero
  * @author  Captain Theme <info@captaintheme.com>
- * @since   0.7.1
+ * @since   0.8.1
  */
 
 add_filter( 'manage_edit-recipe_sortable_columns', 'recipe_hero_recipe_sort_columns' );
-function recipe_hero_recipe_sort_columns( $columns ) {
+if ( ! function_exists( 'recipe_hero_recipe_sort_columns' ) ) {
+    
+    function recipe_hero_recipe_sort_columns( $columns ) {
 
-    $columns['course'] = 'course';
-    $columns['cuisine'] = 'cuisine';
+        $columns['course'] = 'course';
+        $columns['cuisine'] = 'cuisine';
 
-    return $columns;
+        return $columns;
+        
+    }
+    
 }
 
-function recipe_hero_orderby( $orderby, $wp_query ) {
-    global $wpdb;
+if ( ! function_exists( 'recipe_hero_orderby' ) ) {
+    
+    function recipe_hero_orderby( $orderby, $wp_query ) {
+        global $wpdb;
 
-    if ( isset( $wp_query->query['orderby'] ) && 'course' == $wp_query->query['orderby'] ) {
-        $orderby = "(
-            SELECT GROUP_CONCAT(name ORDER BY name ASC)
-            FROM $wpdb->term_relationships
-            INNER JOIN $wpdb->term_taxonomy USING (term_taxonomy_id)
-            INNER JOIN $wpdb->terms USING (term_id)
-            WHERE $wpdb->posts.ID = object_id
-            AND taxonomy = 'course'
-            GROUP BY object_id
-        ) ";
-        $orderby .= ( 'ASC' == strtoupper( $wp_query->get('order') ) ) ? 'ASC' : 'DESC';
+        if ( isset( $wp_query->query['orderby'] ) && 'course' == $wp_query->query['orderby'] ) {
+            $orderby = "(
+                SELECT GROUP_CONCAT(name ORDER BY name ASC)
+                FROM $wpdb->term_relationships
+                INNER JOIN $wpdb->term_taxonomy USING (term_taxonomy_id)
+                INNER JOIN $wpdb->terms USING (term_id)
+                WHERE $wpdb->posts.ID = object_id
+                AND taxonomy = 'course'
+                GROUP BY object_id
+            ) ";
+            $orderby .= ( 'ASC' == strtoupper( $wp_query->get('order') ) ) ? 'ASC' : 'DESC';
+        }
+
+        if ( isset( $wp_query->query['orderby'] ) && 'cuisine' == $wp_query->query['orderby'] ) {
+            $orderby = "(
+                SELECT GROUP_CONCAT(name ORDER BY name ASC)
+                FROM $wpdb->term_relationships
+                INNER JOIN $wpdb->term_taxonomy USING (term_taxonomy_id)
+                INNER JOIN $wpdb->terms USING (term_id)
+                WHERE $wpdb->posts.ID = object_id
+                AND taxonomy = 'cuisine'
+                GROUP BY object_id
+            ) ";
+            $orderby .= ( 'ASC' == strtoupper( $wp_query->get('order') ) ) ? 'ASC' : 'DESC';
+        }
+
+        return $orderby;
     }
-
-    if ( isset( $wp_query->query['orderby'] ) && 'cuisine' == $wp_query->query['orderby'] ) {
-        $orderby = "(
-            SELECT GROUP_CONCAT(name ORDER BY name ASC)
-            FROM $wpdb->term_relationships
-            INNER JOIN $wpdb->term_taxonomy USING (term_taxonomy_id)
-            INNER JOIN $wpdb->terms USING (term_id)
-            WHERE $wpdb->posts.ID = object_id
-            AND taxonomy = 'cuisine'
-            GROUP BY object_id
-        ) ";
-        $orderby .= ( 'ASC' == strtoupper( $wp_query->get('order') ) ) ? 'ASC' : 'DESC';
-    }
-
-    return $orderby;
+    
 }
 add_filter( 'posts_orderby', 'recipe_hero_orderby', 10, 2 );
