@@ -4,7 +4,7 @@
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.8.1
+ * @version 	  0.8.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -50,8 +50,8 @@ $ingredients = get_post_meta( $post->ID, '_recipe_hero_ingredients_group', true 
 
 	   	<li class="ingredients-item" itemprop="ingredients">
 	   		<?php echo $ingredient_quantity; ?> 
-	    	<?php echo $ingredient_amount; ?> 
-	    	<?php echo $ingredient_name; ?> 
+	   		<?php echo $ingredient_amount; ?> 
+	   		<?php echo $ingredient_name; ?> 
 	    </li>
 
 	<?php

@@ -120,6 +120,15 @@ Sure, but on food-steroids. Just check out the screenshots area.
 
 == Changelog ==
 
+= 0.9.0 =
+* New: Autocomplete Ingredients when adding in Edit screen
+* New: Ingredients Column in Recipes Edit Screen
+* New: Custom Image Sizes in Settings
+* New: Instructions Image Size
+* New: Chosen jQuery Select Included for Admin
+* New: Cuisine & Course Custom Labels
+* Bug Fix: Lightbox Option Handling
+
 = 0.8.1 =
 * Bug Fix: Ingredients Amount Display
 

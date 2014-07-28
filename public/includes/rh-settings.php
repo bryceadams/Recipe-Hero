@@ -7,7 +7,7 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
- * @since     0.8.0
+ * @since     0.9.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
@@ -123,9 +123,17 @@ function recipe_hero_general( $active_tab = '' ) {
 function recipe_hero_default_general_options() {
     
     $defaults = array(
-        'page_home' => '',
-        'per_page' => 10,
-        'main_content_class' => '',
+        'page_home'             => '',
+        'per_page'              => 10,
+        'main_content_class'    => '',
+
+        'image_size_main_width'     => 700,
+        'image_size_main_height'    => '',
+        'image_size_main_crop'      => 0,
+        'image_size_steps_width'    => 650,
+        'image_size_steps_height'   => '',
+        'image_size_steps_crop'     => 0,
+
     );
     
     return apply_filters( 'recipe_hero_default_general_options', $defaults );
@@ -135,10 +143,10 @@ function recipe_hero_default_general_options() {
 function recipe_hero_default_style_options() {
     
     $defaults = array(
-        'disable_lightbox' => 0,
-        'recipe_width'       =>  '',
-        'recipe_padding'      =>  '',
-        'center_container'    =>  0,
+        'disable_lightbox'      => 0,
+        'recipe_width'          => '',
+        'recipe_padding'        => '',
+        'center_container'      => 0,
     );
     
     return apply_filters( 'recipe_hero_default_style_options', $defaults );
@@ -148,10 +156,12 @@ function recipe_hero_default_style_options() {
 function recipe_hero_default_labels_options() {
     
     $defaults = array(
-        'label_serves'     =>  '',
-        'label_equipment'  =>  '',
-        'label_prep'  =>  '',
-        'label_cook'     =>  '',
+        'label_serves'      => '',
+        'label_equipment'   => '',
+        'label_prep'        => '',
+        'label_cook'        => '',
+        'label_cuisine'     => '',
+        'label_course'      => '',
     );
     
     return apply_filters( 'recipe_hero_default_labels_options', $defaults );
@@ -195,6 +205,31 @@ function recipe_hero_initialize_options() {
         'recipe_hero_main_content_class_callback',   
         'recipe_hero_general_options', 
         'general_settings_section'            
+    );
+
+    // Image Sizes Section
+
+    add_settings_section(
+        'general_settings_image_sizes_section',
+        __( 'Recipe Image Sizes', 'recipe-hero' ),
+        'recipe_hero_general_image_sizes_desc_callback', 
+        'recipe_hero_general_options'
+    );
+    
+    add_settings_field(
+        'rh-recipe-image-size-main',
+        __( 'Main Recipe Image', 'recipe-hero' ),
+        'recipe_hero_image_size_main_callback',
+        'recipe_hero_general_options',
+        'general_settings_image_sizes_section'
+    );
+
+    add_settings_field(
+        'rh-recipe-image-size-steps',
+        __( 'Steps Image', 'recipe-hero' ),
+        'recipe_hero_image_size_steps_callback',
+        'recipe_hero_general_options',
+        'general_settings_image_sizes_section'
     );
     
     register_setting(
@@ -314,6 +349,22 @@ function recipe_hero_initialize_labels_options() {
         'labels_options_section'            
     );
 
+    add_settings_field( 
+        'rh-recipe-label-cuisine',                        
+        __( '\'Cuisine\' Text', 'recipe-hero' ),                           
+        'recipe_hero_label_cuisine_callback',   
+        'recipe_hero_labels_options', 
+        'labels_options_section'            
+    );
+
+    add_settings_field( 
+        'rh-recipe-label-course',                        
+        __( '\'Course\' Text', 'recipe-hero' ),                           
+        'recipe_hero_label_course_callback',   
+        'recipe_hero_labels_options', 
+        'labels_options_section'            
+    );
+
     register_setting(
         'recipe_hero_labels_options',
         'recipe_hero_labels_options'
@@ -325,6 +376,10 @@ add_action( 'admin_init', 'recipe_hero_initialize_labels_options' );
 
 function recipe_hero_general_options_callback() {
     echo '<p>' . __( 'Basic settings that relate to how the plugin functions.', 'recipe-hero' ) . '</p>';
+}
+
+function recipe_hero_general_image_sizes_desc_callback() {
+    echo '<p>' . __( 'These settings affect the actual dimensions of recipe images – the display on the front-end will still be affected by CSS styles. After changing these settings you may need to regenerate your thumbnails.', 'recipe-hero' ) . '</p>';
 }
 
 function recipe_hero_style_options_callback() {
@@ -342,7 +397,7 @@ function recipe_hero_page_choice_callback() {
 
     $options = get_option( 'recipe_hero_general_options' );
 
-    $html = '<select id="page_home" name="recipe_hero_general_options[page_home]">';
+    $html = '<select id="page_home" class="chosen" name="recipe_hero_general_options[page_home]" data-placeholder="Choose a page...">';
         
         $args = wp_parse_args( array(
                 'post_type'     => 'page',
@@ -375,7 +430,6 @@ function recipe_hero_per_page_callback() {
     
     $options = get_option( 'recipe_hero_general_options' );
     
-    // Render the output
     echo '<input type="number" min="-1" id="per_page" class="numeric" name="recipe_hero_general_options[per_page]" value="' . $options['per_page'] . '" />';
     echo '<p class="option-description">' . __( 'This will only apply for the recipe page, selected in the option above. Other recipe archives use the default posts per page setting.', 'recipe-hero' ) . '</p>';
 
@@ -391,9 +445,34 @@ function recipe_hero_main_content_class_callback() {
         $main_class_content = '';
     }
     
-    // Render the output
     echo '<input type="text" size="15" id="main_class_content" name="recipe_hero_general_options[main_class_content]" value="' . $main_class_content . '" placeholder="eg. .site-content" />';
     echo '<p class="option-description">' . __( 'The wrapper class for the content area. This is needed if your theme only applies styles inside of this class.', 'recipe-hero' ) . '</p>';
+
+}
+
+function recipe_hero_image_size_main_callback() {
+    
+    $options = get_option( 'recipe_hero_general_options' );
+    
+    echo '<input type="number" min="0" id="image_size_main_width" class="numeric image-size-px" name="recipe_hero_general_options[image_size_main_width]" value="' . $options['image_size_main_width'] . '" />';
+    echo ' x ';
+    echo '<input type="number" min="0" id="image_size_main_height" class="numeric image-size-px" name="recipe_hero_general_options[image_size_main_height]" value="' . $options['image_size_main_height'] . '" />';
+    echo ' px ';
+    echo '<input type="checkbox" id="image_size_main_crop" name="recipe_hero_general_options[image_size_main_crop]" value="1" ' . checked( 1, isset( $options['image_size_main_crop'] ) ? $options['image_size_main_crop'] : 0, false ) . '/>'; 
+    echo '<label for="image_size_main_crop"> ' . __( 'Hard Crop?', 'recipe-hero' ) . '</label>';     
+
+}
+
+function recipe_hero_image_size_steps_callback() {
+    
+    $options = get_option( 'recipe_hero_general_options' );
+    
+    echo '<input type="number" min="0" id="image_size_steps_width" class="numeric image-size-px" name="recipe_hero_general_options[image_size_steps_width]" value="' . $options['image_size_steps_width'] . '" />';
+    echo ' x ';
+    echo '<input type="number" min="0" id="image_size_steps_height" class="numeric image-size-px" name="recipe_hero_general_options[image_size_steps_height]" value="' . $options['image_size_steps_height'] . '" />';
+    echo ' px ';
+    echo '<input type="checkbox" id="image_size_steps_crop" name="recipe_hero_general_options[image_size_steps_crop]" value="1" ' . checked( 1, isset( $options['image_size_steps_crop'] ) ? $options['image_size_steps_crop'] : 0, false ) . '/>'; 
+    echo '<label for="image_size_steps_crop"> ' . __( 'Hard Crop?', 'recipe-hero' ) . '</label>'; 
 
 }
 
@@ -418,7 +497,6 @@ function recipe_hero_recipe_width_callback() {
         $recipe_width = '';
     }
     
-    // Render the output
     echo '<input type="text" size="15" id="recipe_width" name="recipe_hero_style_options[recipe_width]" value="' . $recipe_width . '" placeholder="eg. 600px or 90%" />';
     echo '<p class="option-description">' . __( 'The width of the recipe. This can also be a %, like 90%.', 'recipe-hero' ) . '</p>';
 
@@ -434,7 +512,6 @@ function recipe_hero_recipe_padding_callback() {
         $recipe_padding = '';
     }
     
-    // Render the output
     echo '<input type="text" size="15" id="recipe_padding" name="recipe_hero_style_options[recipe_padding]" value="' . $recipe_padding . '" placeholder="eg. 15px or 10px 0 5px" />';
     echo '<p class="option-description">' . __( 'Sometimes you may want to add some padding around the recipe articles. Normally from 0-25px is enough.', 'recipe-hero' ) . '</p>';
 
@@ -461,9 +538,7 @@ function recipe_hero_label_serves_callback() {
         $label_serves = '';
     }
     
-    // Render the output
     echo '<input type="text" size="15" id="label_serves" name="recipe_hero_labels_options[label_serves]" value="' . $label_serves . '" placeholder="Serves" />';
-    echo '<p class="option-description">' . __( '', 'recipe-hero' ) . '</p>';
 
 }
 
@@ -477,9 +552,7 @@ function recipe_hero_label_equipment_callback() {
         $label_equipment = '';
     }
     
-    // Render the output
     echo '<input type="text" size="15" id="label_equipment" name="recipe_hero_labels_options[label_equipment]" value="' . $label_equipment . '" placeholder="Equipment" />';
-    echo '<p class="option-description">' . __( '', 'recipe-hero' ) . '</p>';
 
 }
 
@@ -493,9 +566,7 @@ function recipe_hero_label_prep_callback() {
         $label_prep = '';
     }
     
-    // Render the output
     echo '<input type="text" size="15" id="label_prep" name="recipe_hero_labels_options[label_prep]" value="' . $label_prep . '" placeholder="Prep Time" />';
-    echo '<p class="option-description">' . __( '', 'recipe-hero' ) . '</p>';
 
 }
 
@@ -509,8 +580,34 @@ function recipe_hero_label_cook_callback() {
         $label_cook = '';
     }
     
-    // Render the output
     echo '<input type="text" size="15" id="label_cook" name="recipe_hero_labels_options[label_cook]" value="' . $label_cook . '" placeholder="Cook Time" />';
-    echo '<p class="option-description">' . __( '', 'recipe-hero' ) . '</p>';
+
+}
+
+function recipe_hero_label_cuisine_callback() {
+    
+    $options = get_option( 'recipe_hero_labels_options' );
+
+    if ( isset( $options['label_cuisine'] ) ) {
+        $label_cuisine = $options['label_cuisine'];
+    } else {
+        $label_cuisine = '';
+    }
+    
+    echo '<input type="text" size="15" id="label_cuisine" name="recipe_hero_labels_options[label_cuisine]" value="' . $label_cuisine . '" placeholder="Cuisine" />';
+
+}
+
+function recipe_hero_label_course_callback() {
+    
+    $options = get_option( 'recipe_hero_labels_options' );
+
+    if ( isset( $options['label_course'] ) ) {
+        $label_course = $options['label_course'];
+    } else {
+        $label_course = '';
+    }
+    
+    echo '<input type="text" size="15" id="label_course" name="recipe_hero_labels_options[label_course]" value="' . $label_course . '" placeholder="Course" />';
 
 }

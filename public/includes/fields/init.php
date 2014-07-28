@@ -239,7 +239,7 @@ class cmb_Meta_Box {
 
 		global $wp_version;
 		// Only use minified files if SCRIPT_DEBUG is off
-		$min = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
+		$min = '';
 
 		// scripts required for cmb
 		$scripts = array( 'jquery', 'jquery-ui-core', 'cmb-datepicker', /*'media-upload', */'cmb-timepicker' );

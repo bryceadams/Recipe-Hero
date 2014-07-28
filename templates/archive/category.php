@@ -4,12 +4,13 @@
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.8.0
+ * @version 	  0.8.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 global $post;
+global $rh_labels_options;
 
 $cuisine_terms = wp_get_object_terms($post->ID, 'cuisine');
 $course_terms = wp_get_object_terms($post->ID, 'course');
@@ -44,7 +45,13 @@ if ( ! empty ( $course_terms ) ) {
 
 		<div class="cuisine">
 			<meta itemprop="recipeCuisine" content="<?php echo $cuisine_meta; ?>">
-			<strong><?php _e ( 'Cuisines', 'recipe-hero' ); ?>:</strong> <?php echo $cuisine; ?>
+			<strong>
+			<?php if ( ! empty( $rh_labels_options['label_cuisine'] ) ) {
+				echo $rh_labels_options['label_cuisine'];
+			} else {
+				_e( 'Cuisine', 'recipe-hero' );
+			} ?></strong>
+			<?php echo $cuisine; ?>
 		</div>
 
 	<?php } ?>
@@ -53,7 +60,13 @@ if ( ! empty ( $course_terms ) ) {
 
 		<div class="course">
 			<meta itemprop="recipeCategory" content="<?php echo $course_meta; ?>">	
-			<strong><?php _e ( 'Courses', 'recipe-hero' ); ?>:</strong> <?php echo $course; ?>
+			<strong>
+			<?php if ( ! empty( $rh_labels_options['label_course'] ) ) {
+				echo $rh_labels_options['label_course'];
+			} else {
+				_e( 'Course', 'recipe-hero' );
+			} ?></strong>
+			<?php echo $course; ?>
 		</div>
 		
 	<?php } ?>

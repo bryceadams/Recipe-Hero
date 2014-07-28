@@ -4,7 +4,7 @@
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.8.0
+ * @version 	  0.8.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -36,7 +36,9 @@ if ( $instructions ) { ?>
 
 		    	if ( $instruction['_recipe_hero_step_image'] ) {
 		    		
-		    		$instruction_image = '<a href="' . $instruction['_recipe_hero_step_image'] . '" class="steps-image-link" title="' . __( 'Step', 'recipe-hero' ) . ' ' . $intruction_count . '"><img src="' . $instruction['_recipe_hero_step_image'] . '" class="step-image" /></a>';
+		    		$instruction_image = '<a href="' . $instruction['_recipe_hero_step_image'] . '" class="steps-image-link" title="' . __( 'Step', 'recipe-hero' ) . ' ' . $intruction_count . '">';
+		    		$instruction_image .= wp_get_attachment_image( $instruction['_recipe_hero_step_image_id'], 'rh-recipe-steps', false, array( 'class' => 'step-image', ) );
+		    		$instruction_image .= '</a>';
 
 		    	}
 

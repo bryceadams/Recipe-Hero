@@ -575,6 +575,8 @@ window.CMB = (function(window, document, $, undefined){
 				$element.val( inputVals[ index ]['val'] );
 			}
 		});
+
+		
 	};
 
 	/**

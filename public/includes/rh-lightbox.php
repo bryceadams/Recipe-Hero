@@ -25,7 +25,7 @@ if ( ! function_exists( 'recipe_hero_initialize_lightbox_js' ) ) {
 
 		global $rh_style_options;
 
-		if ( ! $rh_style_options['disable_lightbox'] ) {
+		if ( ! isset ( $rh_style_options['disable_lightbox'] ) ) {
 
 			if ( ( get_post_type() == 'recipe' ) && is_single() ) { ?>
 

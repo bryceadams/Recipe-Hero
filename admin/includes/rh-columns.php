@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @package Recipe Hero
  * @author  Captain Theme <info@captaintheme.com>
- * @since   0.8.1
+ * @since   0.9.0
  */
 
 add_filter( 'manage_edit-recipe_columns', 'recipe_hero_recipe_columns' ) ;
@@ -26,14 +26,15 @@ if ( ! function_exists( 'recipe_hero_recipe_columns' ) ) {
 
         $columns = array(
             'cb'        => '<input type="checkbox" />',
-            'title'     => __( 'Recipe Title' ),
-            'id'        => __( 'ID' ),
-            'course'    => __( 'Course' ),
-            'cuisine'   => __( 'Cuisine' ),
-            'photo'     => __( 'Photo' ),
-            'author'    => __( 'Author' ),
+            'title'     => __( 'Recipe Title', 'recipe-hero' ),
+            'id'        => __( 'ID', 'recipe-hero' ),
+            'course'    => __( 'Course', 'recipe-hero' ),
+            'cuisine'   => __( 'Cuisine', 'recipe-hero' ),
+            'ingredients' => __( 'Ingredients', 'recipe-hero' ),
+            'photo'     => __( 'Photo', 'recipe-hero' ),
+            'author'    => __( 'Author', 'recipe-hero' ),
             'comments'  => '<span class="dashicons dashicons-admin-comments"></span>',
-            'date'      => __( 'Date' )
+            'date'      => __( 'Date', 'recipe-hero' )
         );
 
         return $columns;
@@ -112,6 +113,25 @@ if ( ! function_exists( 'recipe_hero_manage_recipe_columns' ) ) {
 
                 break;
 
+            case 'ingredients' :
+
+                $ingredients = get_post_meta( $post->ID, '_recipe_hero_ingredients_group', true );
+        
+                foreach ( ( array ) $ingredients as $key => $ingredient ) {
+
+                    $ingredient_name = '';
+
+                    if ( isset( $ingredient['name'] ) ) {  
+
+                        $ingredient_name = $ingredient['name'];
+                        
+                    }
+
+                    echo $ingredient_name . '<br />';
+
+                }
+
+                break;
 
             default :
                 break;

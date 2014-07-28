@@ -1,5 +1,8 @@
 /* This stylesheet is used to style the admin option form of the plugin. */
 
+// Imports
+@import 'lib/chosen';
+
 .post-type-recipe {
 	#posts-filter {
 		.wp-list-table {
@@ -72,10 +75,15 @@
 		}
 		.rhs-fields {
 			padding: 10px 0 0 25px;
-			input#per_page {
+			input#per_page,
+			input.image-size-px {
 				width: 60px;
-				height: 150%;
+				height: 130%;
 				font-size: 110%;
+			}
+			input#image_size_main_crop,
+			input#image_size_steps_crop {
+				margin-left: 15px;
 			}
 			.option-description {
 				color: #999;
@@ -87,4 +95,12 @@
 			}
 		}
 	}
+}
+
+/**
+jQuery UI Autocomplete Styles
+**/
+
+.ui-autocomplete {
+	background: #fff;
 }

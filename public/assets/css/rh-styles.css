@@ -144,6 +144,11 @@ article.recipe {
     article.recipe .recipe-archive-tax .cuisine strong,
     article.recipe .recipe-archive-tax .course strong {
       font-size: 16px; }
+      article.recipe .recipe-single-tax .cuisine strong:after,
+      article.recipe .recipe-single-tax .course strong:after,
+      article.recipe .recipe-archive-tax .cuisine strong:after,
+      article.recipe .recipe-archive-tax .course strong:after {
+        content: ':'; }
     article.recipe .recipe-single-tax .cuisine ul,
     article.recipe .recipe-single-tax .course ul,
     article.recipe .recipe-archive-tax .cuisine ul,

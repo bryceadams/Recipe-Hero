@@ -1,15 +1,22 @@
 <?php
+/**
+ * Recipe Single Content
+ *
+ * @package   	Recipe Hero
+ * @author    	Captain Theme <info@captaintheme.com>
+ * @version 	0.9.0
+ */
 	
-	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-	do_action( 'recipe_hero_before_single_recipe' );
+do_action( 'recipe_hero_before_single_recipe' );
 
-	if ( post_password_required() ) {
+if ( post_password_required() ) {
 
-		echo get_the_password_form();
-		return;
-	
-	}
+	echo get_the_password_form();
+	return;
+
+}
 	 
 ?>
 

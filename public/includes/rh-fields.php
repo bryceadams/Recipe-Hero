@@ -22,7 +22,7 @@ add_filter( 'cmb_meta_boxes', 'recipe_hero_sample_metaboxes' );
  *
  * @package Recipe Hero
  * @author  Captain Theme <info@captaintheme.com>
- * @since   0.7.2
+ * @since   0.9.0
  */
 function recipe_hero_sample_metaboxes( array $meta_boxes ) {
 
@@ -159,6 +159,10 @@ function recipe_hero_sample_metaboxes( array $meta_boxes ) {
 						'id'   => 'name',
 						'type' => 'text_medium',
 						// 'repeatable' => true,
+						'attributes' => array(
+							'class' => 'ingredient_name_field',
+							'placeholder' => __( 'Start typing to see used ingredients (or add a new one)', 'recipe-hero' ),
+							),
 					),
 				),
 			),
@@ -194,7 +198,7 @@ function recipe_hero_sample_metaboxes( array $meta_boxes ) {
 					),
 					array(
 						'name' => __( 'Step Photo', 'recipe-hero' ),
-						'desc' => __( 'Upload an image or enter a URL (optional)', 'recipe-hero' ),
+						'desc' => __( 'Upload an image using the media uploader (optional)', 'recipe-hero' ),
 						'id'   => $prefix . 'step_image',
 						'type' => 'file',
 						'allow' => array( 'attachment' ), // onlu attachments allowed --> no URLs

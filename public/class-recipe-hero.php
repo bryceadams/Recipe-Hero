@@ -17,11 +17,11 @@ class Recipe_Hero {
 	/**
 	 * Plugin version, used for cache-busting of style and script file references.
 	 *
-	 * @since   0.8.0
+	 * @since   0.9.0
 	 *
 	 * @var     string
 	 */
-	const VERSION = '0.8.1';
+	const VERSION = '0.9.0';
 
 	/**
 	 * The variable name is used as the text domain when internationalizing strings
@@ -60,10 +60,6 @@ class Recipe_Hero {
 		// Just in case
 		add_theme_support( 'post-thumbnails' );
 
-		// Image Sizes
-		add_image_size( 'rh-admin-column', 100, 100, true );
-		add_image_size( 'rh-recipe-single', 650 );
-
 		// Let's make the magic happen.
 	 	// <em>The ingredients to our recipe.</em>
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-frontend-scripts.php' );
@@ -78,13 +74,16 @@ class Recipe_Hero {
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-templates.php' );
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-templates-functions.php' );
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-templates-hooks.php' );
+
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-classes.php' );
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-shortcodes.php' );
+		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-general-functions.php' );
+		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-image-sizes.php' );
 
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-lightbox.php' );
 		
 		require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/rh-schema.php' );
-
+		
 	}
 
 	/**
