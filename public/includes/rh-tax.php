@@ -16,9 +16,10 @@
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.5.0
+ * @since 	  0.9.0
  */
 
+add_action( 'init', 'recipe_hero_register_course_tax' );
 if ( ! function_exists( 'recipe_hero_register_course_tax' ) ) {
 
 	function recipe_hero_register_course_tax() {
@@ -39,7 +40,7 @@ if ( ! function_exists( 'recipe_hero_register_course_tax' ) ) {
 		
 		$args = array(
 			'labels' 			=> $labels,
-			'singular_label' 	=> __('Course'),
+			'singular_label' 	=> __( 'Course' ),
 			'public' 			=> true,
 			'show_ui' 			=> true,
 			'hierarchical' 		=> false,
@@ -47,11 +48,10 @@ if ( ! function_exists( 'recipe_hero_register_course_tax' ) ) {
 			'show_in_nav_menus' => false,
 			'rewrite' 			=> array('slug' => 'courses', 'with_front' => false ),
 		 );
-		register_taxonomy('course', $pages, $args);
+		register_taxonomy( 'course', $pages, $args );
 	}
 
 }
-add_action('init', 'recipe_hero_register_course_tax');
 
  /**
  * Register 'Cuisine' Taxonomy.
@@ -61,6 +61,7 @@ add_action('init', 'recipe_hero_register_course_tax');
  * @since 	  0.5.0
  */
 
+add_action( 'init', 'recipe_hero_register_cuisine_tax' );
 if ( ! function_exists( 'recipe_hero_register_cuisine_tax' ) ) {
 
 	function recipe_hero_register_cuisine_tax() {
@@ -81,16 +82,15 @@ if ( ! function_exists( 'recipe_hero_register_cuisine_tax' ) ) {
 		
 		$args = array(
 			'labels' 			=> $labels,
-			'singular_label' 	=> __('Cuisine'),
+			'singular_label' 	=> __( 'Cuisine' ),
 			'public' 			=> true,
 			'show_ui' 			=> true,
 			'hierarchical' 		=> false,
 			'show_tagcloud' 	=> false,
 			'show_in_nav_menus' => false,
-			'rewrite' 			=> array('slug' => 'cuisines', 'with_front' => false ),
+			'rewrite' 			=> array( 'slug' => 'cuisines', 'with_front' => false ),
 		 );
-		register_taxonomy('cuisine', $pages, $args);
+		register_taxonomy( 'cuisine', $pages, $args );
 	}
 
 }
-add_action('init', 'recipe_hero_register_cuisine_tax');

@@ -127,7 +127,9 @@ Sure, but on food-steroids. Just check out the screenshots area.
 * New: Instructions Image Size
 * New: Chosen jQuery Select Included for Admin
 * New: Cuisine & Course Custom Labels
+* New: Welcome / Install Page
 * Bug Fix: Lightbox Option Handling
+* Bug Fix: More if ( ! function_exists ) wrappers
 
 = 0.8.1 =
 * Bug Fix: Ingredients Amount Display

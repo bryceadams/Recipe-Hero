@@ -10,7 +10,9 @@
  * @since 	  0.9.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 class Recipe_Hero_Admin_Scripts {
 

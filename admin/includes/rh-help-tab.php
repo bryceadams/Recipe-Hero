@@ -9,7 +9,9 @@
  * @copyright 2014 Captain Theme
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
+}
 
 /**
  * Standard Help Tab for admin list of Recipes

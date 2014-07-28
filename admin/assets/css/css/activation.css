@@ -1,0 +1,37 @@
+.recipe-hero-message {
+  position: relative;
+  border-left-color: #cc99c2 !important;
+  overflow: hidden; }
+  .recipe-hero-message .twitter-share-button {
+    vertical-align: middle;
+    margin-left: 3px; }
+
+p.recipe-hero-actions a.button-primary,
+.recipe-hero-message a.button-primary {
+  background: #c90000;
+  border-color: #c30000;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 0 rgba(0, 0, 0, 0.15);
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.7; }
+  p.recipe-hero-actions a.button-primary:hover,
+  .recipe-hero-message a.button-primary:hover {
+    background: #b80000;
+    border-color: #a70000;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 0 rgba(0, 0, 0, 0.15); }
+  p.recipe-hero-actions a.button-primary:active,
+  .recipe-hero-message a.button-primary:active {
+    background: #960000;
+    border-color: #850000; }
+p.recipe-hero-actions .twitter-share-button,
+.recipe-hero-message .twitter-share-button {
+  vertical-align: middle;
+  margin-left: 3px; }
+
+p.recipe-hero-actions {
+  margin-bottom: 2em; }
+
+.recipe-hero-about-text {
+  margin-bottom: 1em !important; }

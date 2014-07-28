@@ -9,23 +9,31 @@
  * @copyright 2014 Captain Theme
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 /**
  * Recipe Archive Titles (Cat / Tax etc.)
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.7.0
+ * @since 	  0.9.0
  */		
 
 if ( ! function_exists( 'recipe_hero_archive_tax_title' ) ) {
 
 	function recipe_hero_archive_tax_title() {
 
+		global $rh_labels_options;
+
 		if ( is_tax( 'cuisine' ) ) {
 
-			$cuisine_text = __( 'Cuisine', 'recipe-hero' );
+			if ( ! empty( $rh_labels_options['label_cuisine'] ) ) {
+				$cuisine_text = $rh_labels_options['label_cuisine'];
+			} else {
+				$cuisine_text = __( 'Cuisine', 'recipe-hero' );
+			}
 
 			echo '<div class="recipe-archive-tax-header">';
 			echo '<h1 class="archive-title">';
@@ -34,7 +42,11 @@ if ( ! function_exists( 'recipe_hero_archive_tax_title' ) ) {
 		
 		} elseif ( is_tax( 'course' ) ) {
 
-			$course_text = __( 'Course', 'recipe-hero' );
+			if ( ! empty( $rh_labels_options['label_course'] ) ) {
+				$course_text = $rh_labels_options['label_course'];
+			} else {
+				$course_text = __( 'Course', 'recipe-hero' );
+			}
 			
 			echo '<div class="recipe-archive-tax-header">';
 			echo '<h1 class="archive-title">';

@@ -16,9 +16,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.7.0
+ * @since 	  0.9.0
  */
 
+add_action( 'init', 'recipe_hero_register_recipe_posttype' );
 if ( ! function_exists( 'recipe_hero_register_recipe_posttype' ) ) {
 	
 	function recipe_hero_register_recipe_posttype() {
@@ -61,6 +62,5 @@ if ( ! function_exists( 'recipe_hero_register_recipe_posttype' ) ) {
 		 );
 		 register_post_type( 'recipe', $post_type_args );
 	}
-	add_action( 'init', 'recipe_hero_register_recipe_posttype' );
 
 }

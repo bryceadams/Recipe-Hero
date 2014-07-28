@@ -379,7 +379,7 @@ function recipe_hero_general_options_callback() {
 }
 
 function recipe_hero_general_image_sizes_desc_callback() {
-    echo '<p>' . __( 'These settings affect the actual dimensions of recipe images – the display on the front-end will still be affected by CSS styles. After changing these settings you may need to regenerate your thumbnails.', 'recipe-hero' ) . '</p>';
+    echo '<p>' . __( 'These settings affect the actual dimensions of recipe images – the display on the front-end will still be affected by CSS styles. After changing these settings you may need to <a href="http://wordpress.org/plugins/regenerate-thumbnails/">regenerate your thumbnails</a>.', 'recipe-hero' ) . '</p>';
 }
 
 function recipe_hero_style_options_callback() {
