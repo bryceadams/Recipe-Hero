@@ -135,13 +135,13 @@ class Recipe_Hero_Admin {
 	/**
 	 * Add settings action link to the plugins page.
 	 *
-	 * @since    0.6.0
+	 * @since    0.9.0
 	 */
 	public function add_action_links( $links ) {
 
 		return array_merge(
 			array(
-				'settings' => '<a href="' . admin_url( 'edit.php?post_type=recipe&page=recipe_hero_options' ) . '">' . __( 'Settings', $this->plugin_slug ) . '</a>'
+				'settings' => '<a href="' . admin_url( 'edit.php?post_type=recipe&page=recipe_hero_general_options' ) . '">' . __( 'Settings', $this->plugin_slug ) . '</a>'
 			),
 			$links
 		);

@@ -74,6 +74,9 @@ Single / Archive Template
   font-size: 30px;
   margin-top: 5px;
   margin-bottom: 15px; }
+.recipe-archive-tax-header p {
+  line-height: 1.5;
+  font-size: 14px; }
 
 article.recipe {
   line-height: 1.4; }

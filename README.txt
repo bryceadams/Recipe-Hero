@@ -128,8 +128,10 @@ Sure, but on food-steroids. Just check out the screenshots area.
 * New: Chosen jQuery Select Included for Admin
 * New: Cuisine & Course Custom Labels
 * New: Welcome / Install Page
+* New: Uninstall.php File with New 'Delete Options' Setting
 * Bug Fix: Lightbox Option Handling
 * Bug Fix: More if ( ! function_exists ) wrappers
+* Bug Fix: Plugins Page Settings Link
 
 = 0.8.1 =
 * Bug Fix: Ingredients Amount Display

@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * Tell WordPress not to use single.php for Recipe Single Posts
  * @package Recipe Hero
  * @author  Captain Theme <info@captaintheme.com>
- * @since   0.7.0
+ * @since   0.9.0
  */
  
 add_filter( 'template_include', 'recipe_hero_tc_template_chooser');
@@ -23,36 +23,43 @@ if ( ! function_exists( 'recipe_hero_tc_template_chooser' ) ) {
 
     function recipe_hero_tc_template_chooser( $template ) {
 
-        global $rh_general_options;
-     
-        // Variables
-        $post_id = get_the_ID();
-        if ( isset( $rh_general_options['page_home'] ) ) {
-            $rh_home_id = $rh_general_options['page_home'];
-        }
+        global $post, $rh_general_options;
 
-        if ( isset( $rh_home_id ) ) {
-            if ( $post_id == $rh_home_id ) {
-                return recipe_hero_tc_get_template_hierarchy( 'archive-home' );
-            }
-        }
-
-        // For all other CPT
-        if ( get_post_type( $post_id ) != 'recipe' ) {
+        if ( ! empty ( $post ) ) {
+            $post_id = $post->ID;
+        } else {
             return $template;
         }
-     
-        // Else use custom template
-        if ( is_single() ) {
-            return recipe_hero_tc_get_template_hierarchy( 'single' );
+
+        if ( isset( $rh_general_options['page_home'] ) ) {
+            
+            $rh_home_id = $rh_general_options['page_home'];
+    
+            if ( isset( $rh_home_id ) ) {
+                if ( $post_id == $rh_home_id ) {
+                    return recipe_hero_tc_get_template_hierarchy( 'archive-home' );
+                }
+            }
+
         }
-        if ( is_archive() ) {
-            return recipe_hero_tc_get_template_hierarchy( 'archive' );
-        }
-        if ( is_search() ) {
-            return recipe_hero_tc_get_template_hierarchy( 'search-results' );
+        
+        if ( get_post_type( $post_id ) == 'recipe' ) {
+
+            // Else use custom template
+            if ( is_single() ) {
+                return recipe_hero_tc_get_template_hierarchy( 'single' );
+            }
+            if ( is_archive() ) {
+                return recipe_hero_tc_get_template_hierarchy( 'archive' );
+            }
+            if ( is_search() ) {
+                return recipe_hero_tc_get_template_hierarchy( 'search-results' );
+            }
+
         }
 
+        return $template;
+        
     }
 
 }

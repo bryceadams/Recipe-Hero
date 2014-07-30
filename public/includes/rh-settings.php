@@ -41,6 +41,15 @@ function recipe_hero_example_menu() {
         create_function( null, 'recipe_hero_general( "labels_options" );' )
     );
 
+    add_submenu_page(
+        '', // leave blank so no menu page created
+        __( 'Other', 'recipe-hero' ),
+        __( 'Other', 'recipe-hero' ),
+        'administrator',
+        'recipe_hero_other_options',
+        create_function( null, 'recipe_hero_general( "other_options" );' )
+    );
+
 
 }
 add_action( 'admin_menu', 'recipe_hero_example_menu' );
@@ -49,13 +58,17 @@ function recipe_hero_general( $active_tab = '' ) {
 ?>
     <div class="wrap recipe-hero-settings">
 
-        <?php if( $active_tab == 'style_options' ) {
+        <?php if ( $active_tab == 'style_options' ) {
 
             $active_tab = 'style_options';
 
-        } else if( $active_tab == 'labels_options' ) {
+        } elseif ( $active_tab == 'labels_options' ) {
 
             $active_tab = 'labels_options';
+
+        } elseif ( $active_tab == 'other_options' ) {
+
+            $active_tab = 'other_options';
 
         } else {
 
@@ -81,6 +94,9 @@ function recipe_hero_general( $active_tab = '' ) {
                     <li class="<?php echo $active_tab == 'labels_options' ? 'active' : ''; ?> pages">
                         <a href="?post_type=recipe&page=recipe_hero_labels_options"><?php _e( 'Labels', 'recipe-hero' ); ?></a>
                     </li>
+                    <li class="<?php echo $active_tab == 'other_options' ? 'active' : ''; ?> pages">
+                        <a href="?post_type=recipe&page=recipe_hero_other_options"><?php _e( 'Other', 'recipe-hero' ); ?></a>
+                    </li>
                 </ul>
     
         </header>
@@ -90,22 +106,27 @@ function recipe_hero_general( $active_tab = '' ) {
         <form method="post" action="options.php" class="rhs-fields">
             <?php
             
-                if( $active_tab == 'general_options' ) {
-                
-                    settings_fields( 'recipe_hero_general_options' );
-                    do_settings_sections( 'recipe_hero_general_options' );
-                    
-                } elseif( $active_tab == 'style_options' ) {
+                if ( $active_tab == 'style_options' ) {
                 
                     settings_fields( 'recipe_hero_style_options' );
                     do_settings_sections( 'recipe_hero_style_options' );
                     
-                } else {
+                } elseif ( $active_tab == 'labels_options' ) {
                 
                     settings_fields( 'recipe_hero_labels_options' );
                     do_settings_sections( 'recipe_hero_labels_options' );
+                
+                } elseif ( $active_tab == 'other_options' ) {
+
+                    settings_fields( 'recipe_hero_other_options' );
+                    do_settings_sections( 'recipe_hero_other_options' );
+
+                } else {
+                
+                    settings_fields( 'recipe_hero_general_options' );
+                    do_settings_sections( 'recipe_hero_general_options' );
                     
-                }
+                } 
                 
                 submit_button();
             
@@ -165,6 +186,16 @@ function recipe_hero_default_labels_options() {
     );
     
     return apply_filters( 'recipe_hero_default_labels_options', $defaults );
+    
+}
+
+function recipe_hero_default_other_options() {
+    
+    $defaults = array(
+        'delete_options'    => 1,
+    );
+    
+    return apply_filters( 'recipe_hero_default_other_options', $defaults );
     
 }
 
@@ -373,6 +404,37 @@ function recipe_hero_initialize_labels_options() {
 }
 add_action( 'admin_init', 'recipe_hero_initialize_labels_options' );
 
+function recipe_hero_initialize_other_options() {
+
+    if ( false == get_option( 'recipe_hero_other_options' ) ) {   
+   
+        add_option( 'recipe_hero_other_options', apply_filters( 'recipe_hero_default_other_options', recipe_hero_default_other_options() ) );
+   
+    }
+
+    add_settings_section(
+        'other_options_section',
+        __( 'Other Settings', 'recipe-hero' ),
+        'recipe_hero_other_options_callback',
+        'recipe_hero_other_options'
+    );
+    
+    register_setting(
+        'recipe_hero_other_options',
+        'recipe_hero_other_options'
+    );
+
+    add_settings_field( 
+        'rh-recipe-delete-options',                      
+        __( 'Delete Options', 'recipe-hero' ),              
+        'recipe_hero_delete_options_callback',   
+        'recipe_hero_other_options',        
+        'other_options_section'
+    );
+
+}
+add_action( 'admin_init', 'recipe_hero_initialize_other_options' );
+
 
 function recipe_hero_general_options_callback() {
     echo '<p>' . __( 'Basic settings that relate to how the plugin functions.', 'recipe-hero' ) . '</p>';
@@ -389,6 +451,10 @@ function recipe_hero_style_options_callback() {
 function recipe_hero_labels_options_callback() {
     echo '<p>' . __( 'Change the output of certain parts of Recipe Hero.', 'recipe-hero' ) . '</p>';
     echo '<p>' . __( 'For more control over this, you should tranlate Recipe Hero.', 'recipe-hero' ) . '</p>';
+}
+
+function recipe_hero_other_options_callback() {
+    echo '<p>' . __( 'Other settings that didn\'t quite fit anywhere else.', 'recipe-hero' ) . '</p>';
 }
 
 /* Pages Callback */
@@ -610,4 +676,15 @@ function recipe_hero_label_course_callback() {
     
     echo '<input type="text" size="15" id="label_course" name="recipe_hero_labels_options[label_course]" value="' . $label_course . '" placeholder="Course" />';
 
+}
+
+function recipe_hero_delete_options_callback($args) {
+    
+    $options = get_option('recipe_hero_other_options');
+    
+    $html = '<input type="checkbox" id="delete_options" name="recipe_hero_other_options[delete_options]" value="1" ' . checked( 1, isset( $options['delete_options'] ) ? $options['delete_options'] : 0, false ) . '/>'; 
+    $html .= '<label for="delete_options">&nbsp;Delete the Recipe Hero options from your database on DELETION of the plugin.</label>'; 
+    
+    echo $html;
+    
 }

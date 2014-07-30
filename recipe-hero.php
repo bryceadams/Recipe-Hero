@@ -48,6 +48,7 @@ if( ! defined( 'RECIPE_HERO_VERSION_NUMBER' ) ) {
 $rh_general_options = get_option( 'recipe_hero_general_options' );
 $rh_style_options = get_option( 'recipe_hero_style_options' );
 $rh_labels_options = get_option( 'recipe_hero_labels_options' );
+$rh_other_options = get_option( 'recipe_hero_other_options' );
 
 /*----------------------------------------------------------------------------*
  * Public-Facing Functionality
