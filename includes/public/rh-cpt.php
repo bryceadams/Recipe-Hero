@@ -22,6 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 
 add_action( 'init', 'recipe_hero_register_recipe_posttype' );
+
 if ( ! function_exists( 'recipe_hero_register_recipe_posttype' ) ) {
 	
 	function recipe_hero_register_recipe_posttype() {

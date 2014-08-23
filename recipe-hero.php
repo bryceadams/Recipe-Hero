@@ -20,7 +20,6 @@
  * Domain Path:       /languages
  * Made with the amazing: WordPress-Plugin-Boilerplate: v2.6.1
  */
-
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
@@ -54,21 +53,19 @@ $rh_other_options = get_option( 'recipe_hero_other_options' );
  * Public-Facing Functionality
  *----------------------------------------------------------------------------*/
 
-require_once( plugin_dir_path( __FILE__ ) . 'public/class-recipe-hero.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'includes/class-recipe-hero.php' );
 
 register_activation_hook( __FILE__, array( 'Recipe_Hero', 'activate' ) );
 
 add_action( 'plugins_loaded', array( 'Recipe_Hero', 'get_instance' ) );
 
 /*----------------------------------------------------------------------------*
- * Dashboard and Administrative Functionality
- *----------------------------------------------------------------------------*/
+* Dashboard and Administrative Functionality
+*----------------------------------------------------------------------------*/
 
 if ( is_admin() ) {
 
-	require_once( plugin_dir_path( __FILE__ ) . 'admin/class-recipe-hero-admin.php' );
+	require_once( RECIPE_HERO_PLUGIN_DIR . 'includes/admin/class-recipe-hero-admin.php' );
 	add_action( 'plugins_loaded', array( 'Recipe_Hero_Admin', 'get_instance' ) );
 
 }
-
-

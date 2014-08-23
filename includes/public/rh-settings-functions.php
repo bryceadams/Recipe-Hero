@@ -31,7 +31,7 @@ if ( ! function_exists( 'recipe_hero_option_disable_lightbox' ) ) {
 
 				wp_enqueue_script( 'magnific' );
 				wp_enqueue_style( 'magnific-css' );
-				
+
 			}
 
 		}
@@ -50,7 +50,7 @@ add_action( 'wp_enqueue_scripts', 'recipe_hero_option_disable_lightbox', 9999 );
  */
 
 if ( ! function_exists( 'recipe_hero_override_comments_open' ) ) {
-	
+
 	function recipe_hero_override_comments_open( $close ) {
 
 		global $post;
@@ -88,7 +88,7 @@ if ( ! function_exists( 'recipe_hero_option_styles' ) ) {
 		if ( isset ( $rh_style_options['recipe_width'] ) ) {
 			$width = $rh_style_options['recipe_width'];
 		}
-		
+
 		if ( isset ( $rh_style_options['recipe_padding'] ) ) {
 			$padding = $rh_style_options['recipe_padding'];
 		}
@@ -110,7 +110,7 @@ if ( ! function_exists( 'recipe_hero_option_styles' ) ) {
 			<?php } ?>
 
 			<?php if ( $padding ) { ?>
-				
+
 
 				article.recipe,
 				.recipe-archive-tax-header,

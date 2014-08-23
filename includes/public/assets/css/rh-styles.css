@@ -55,7 +55,7 @@
 /* TRANSFORM  */
 /* TRANSITION */
 /* TRIPLE BORDERS */
-/* 
+/*
 Specific Core Theme Styles
 */
 #page #main #primary #content .tfrh {
@@ -67,7 +67,7 @@ Specific Core Theme Styles
     border-top: 0;
     padding-top: 0; }
 
-/* 
+/*
 Single / Archive Template
 */
 .recipe-archive-tax-header h1 {
@@ -96,6 +96,7 @@ article.recipe {
     article.recipe .recipe-archive-meta .comments-link,
     article.recipe .recipe-archive-meta .edit-link {
       display: inline-block;
+      vertical-align: bottom;
       padding-left: 15px;
       font-size: 14px;
       margin-top: 0; }
@@ -107,6 +108,13 @@ article.recipe {
         font-size: 16px;
         vertical-align: bottom;
         line-height: 1.35; }
+      article.recipe .recipe-single-meta .date a, article.recipe .recipe-single-meta .author a, article.recipe .recipe-single-meta .comments-link a, article.recipe .recipe-single-meta .edit-link a,
+      article.recipe .recipe-archive-meta .date a,
+      article.recipe .recipe-archive-meta .author a,
+      article.recipe .recipe-archive-meta .comments-link a,
+      article.recipe .recipe-archive-meta .edit-link a {
+        float: none;
+        font-size: 14px; }
     article.recipe .recipe-single-meta .date,
     article.recipe .recipe-archive-meta .date {
       padding-left: 0; }
@@ -199,7 +207,6 @@ article.recipe {
     article.recipe .recipe-archive-details strong {
       font-size: 16px;
       display: block;
-      color: #333;
       margin-bottom: 5px; }
     article.recipe .recipe-single-details .serves, article.recipe .recipe-single-details .equipment, article.recipe .recipe-single-details .prep-time, article.recipe .recipe-single-details .cook-time, article.recipe .recipe-single-details .total-time,
     article.recipe .recipe-archive-details .serves,

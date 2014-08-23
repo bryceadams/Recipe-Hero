@@ -15,6 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Change 'Enter title here' title placeholder text to something more fitting.
+ *
  * @package Recipe Hero
  * @author  Captain Theme <info@captaintheme.com>
  * @since   0.9.0
@@ -85,7 +86,7 @@ if ( ! function_exists( 'recipe_hero_admin_notice' ) ) {
                 _e( 're-save your permalinks', 'recipe-hero' );
                 echo '</a></strong> ';
                 _e( 'to get started (this notice will disappear afterwards).', 'recipe-hero' );
-                echo "</p></div>";
+                echo '</p></div>';
             }
     	}
 

@@ -23,9 +23,10 @@ Navigate to `http://yourwebsite.com/recipes` to see all the new recipes you've a
 
 * Custom Post Type for 'Recipes'
 * Recipe Details, Ingredients & Instructions
-* Completely responsive
-* Plenty of Options
-* Templating Engine for easy customization (anything can be edited)
+* Completely Responsive
+* Settings Panel
+* Intuitive Admin / Editing Experience
+* Templating Engine for easy customization (anything can be edited!)
 * Display with easy [recipe] & [recipes] shortcodes
 * Valid schema.org Markup - Works with Google Rich Snippets etc. (SEO Optimized)
 * Inherits Your Theme's Styles Automatically
@@ -41,6 +42,7 @@ Navigate to `http://yourwebsite.com/recipes` to see all the new recipes you've a
 **Translations:** If you translate Recipe Hero, please [send me your translation](mailto:info@recipehero.in) so I can add it to the plugin for others to use. Here is a guide to [translating the plugin](captaintheme.com/docs/general/translating-a-theme-or-plugin/) to help you out! The following translations are available:
 
 * Chezch (cs_CZ)
+* Bulgarian (bg_BG) - Thanks Anton!
 * Korean (ko_KR)
 
 == Installation ==
@@ -127,11 +129,11 @@ Sure, but on food-steroids. Just check out the screenshots area.
 * New: Instructions Image Size
 * New: Chosen jQuery Select Included for Admin
 * New: Cuisine & Course Custom Labels
-* New: Welcome / Install Page
 * New: Uninstall.php File with New 'Delete Options' Setting
 * Bug Fix: Lightbox Option Handling
 * Bug Fix: More if ( ! function_exists ) wrappers
 * Bug Fix: Plugins Page Settings Link
+* Bug Fix: Entire File Re-Structuring
 
 = 0.8.1 =
 * Bug Fix: Ingredients Amount Display

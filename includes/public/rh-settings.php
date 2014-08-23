@@ -10,49 +10,55 @@
  * @since     0.9.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
+}
 
-function recipe_hero_example_menu() {
+add_action( 'admin_menu', 'recipe_hero_settings_add_pages' );
 
-    add_submenu_page(
-        'edit.php?post_type=recipe',
-        __( 'Recipe Hero Settings', 'recipe-hero' ),
-        __( 'Settings', 'recipe-hero' ),
-        'administrator',
-        'recipe_hero_general_options',
-        'recipe_hero_general'
-    );
+if ( ! function_exists( 'recipe_hero_settings_add_pages' ) ) {
 
-    add_submenu_page(
-        '',    // leave blank so no menu page created
-        __( 'Style', 'recipe-hero' ),
-        __( 'Style', 'recipe-hero' ),
-        'administrator',
-        'recipe_hero_style_options',
-        create_function( null, 'recipe_hero_general( "style_options" );' )
-    );
-    
-    add_submenu_page(
-        '', // leave blank so no menu page created
-        __( 'Labels', 'recipe-hero' ),
-        __( 'Labels', 'recipe-hero' ),
-        'administrator',
-        'recipe_hero_labels_options',
-        create_function( null, 'recipe_hero_general( "labels_options" );' )
-    );
+    function recipe_hero_settings_add_pages() {
 
-    add_submenu_page(
-        '', // leave blank so no menu page created
-        __( 'Other', 'recipe-hero' ),
-        __( 'Other', 'recipe-hero' ),
-        'administrator',
-        'recipe_hero_other_options',
-        create_function( null, 'recipe_hero_general( "other_options" );' )
-    );
+        add_submenu_page(
+            'edit.php?post_type=recipe',
+            __( 'Recipe Hero Settings', 'recipe-hero' ),
+            __( 'Settings', 'recipe-hero' ),
+            'administrator',
+            'recipe_hero_general_options',
+            'recipe_hero_general'
+        );
 
+        add_submenu_page(
+            '',    // leave blank so no menu page created
+            __( 'Style', 'recipe-hero' ),
+            __( 'Style', 'recipe-hero' ),
+            'administrator',
+            'recipe_hero_style_options',
+            create_function( null, 'recipe_hero_general( "style_options" );' )
+        );
+        
+        add_submenu_page(
+            '', // leave blank so no menu page created
+            __( 'Labels', 'recipe-hero' ),
+            __( 'Labels', 'recipe-hero' ),
+            'administrator',
+            'recipe_hero_labels_options',
+            create_function( null, 'recipe_hero_general( "labels_options" );' )
+        );
+
+        add_submenu_page(
+            '', // leave blank so no menu page created
+            __( 'Other', 'recipe-hero' ),
+            __( 'Other', 'recipe-hero' ),
+            'administrator',
+            'recipe_hero_other_options',
+            create_function( null, 'recipe_hero_general( "other_options" );' )
+        );
+
+    }
 
 }
-add_action( 'admin_menu', 'recipe_hero_example_menu' );
 
 function recipe_hero_general( $active_tab = '' ) {
 ?>
@@ -61,6 +67,7 @@ function recipe_hero_general( $active_tab = '' ) {
         <?php if ( $active_tab == 'style_options' ) {
 
             $active_tab = 'style_options';
+            echo '<title>Style Options</title>';
 
         } elseif ( $active_tab == 'labels_options' ) {
 

@@ -22,6 +22,7 @@
  */
 
 add_action( 'init', 'recipe_hero_register_course_tax' );
+
 if ( ! function_exists( 'recipe_hero_register_course_tax' ) ) {
 
 	function recipe_hero_register_course_tax() {
@@ -64,6 +65,7 @@ if ( ! function_exists( 'recipe_hero_register_course_tax' ) ) {
  */
 
 add_action( 'init', 'recipe_hero_register_cuisine_tax' );
+
 if ( ! function_exists( 'recipe_hero_register_cuisine_tax' ) ) {
 
 	function recipe_hero_register_cuisine_tax() {

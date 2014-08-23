@@ -9,7 +9,9 @@
  * @copyright 2014 Captain Theme
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 /**
  * Include all the shortcodes
@@ -19,5 +21,5 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * @since 	  0.7.1
  */
 
-require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/shortcodes/rh-shortcodes-single.php' );
-require_once( RECIPE_HERO_PLUGIN_DIR . 'public/includes/shortcodes/rh-shortcodes-archive.php' );
+require_once( RECIPE_HERO_PLUGIN_DIR . 'includes/public/shortcodes/rh-shortcodes-single.php' );
+require_once( RECIPE_HERO_PLUGIN_DIR . 'includes/public/shortcodes/rh-shortcodes-archive.php' );

@@ -34,9 +34,9 @@ class Recipe_Hero_Admin_Scripts {
 		global $post, $wp;
 
 		// Register all scripts/styles for later use
-		wp_register_script( 'numeric', plugins_url( '../assets/js/jquery.numeric.js', __FILE__ ), array( 'jquery' ), RECIPE_HERO_VERSION_NUMBER, true );
-		wp_register_script( 'liquidmetal', plugins_url( '../assets/js/liquidmetal.js', __FILE__ ), array( 'jquery' ), RECIPE_HERO_VERSION_NUMBER, true );		
-		wp_register_script( 'chosen', plugins_url( '../assets/js/jquery.chosen.min.js', __FILE__ ), array( 'jquery' ), RECIPE_HERO_VERSION_NUMBER, true );
+		wp_register_script( 'numeric', plugins_url( 'assets/js/jquery.numeric.js', __FILE__ ), array( 'jquery' ), RECIPE_HERO_VERSION_NUMBER, true );
+		wp_register_script( 'liquidmetal', plugins_url( 'assets/js/liquidmetal.js', __FILE__ ), array( 'jquery' ), RECIPE_HERO_VERSION_NUMBER, true );
+		wp_register_script( 'chosen', plugins_url( 'assets/js/jquery.chosen.min.js', __FILE__ ), array( 'jquery' ), RECIPE_HERO_VERSION_NUMBER, true );
 
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'numeric' );
@@ -44,7 +44,7 @@ class Recipe_Hero_Admin_Scripts {
 		wp_enqueue_script( 'jquery-ui-autocomplete' );
 		wp_enqueue_script( 'liquidmetal' );
 		wp_enqueue_script( 'chosen' );
-		
+
 	}
 
 
@@ -114,9 +114,9 @@ if ( ! function_exists( 'recipe_hero_initialize_admin_autocomplete_js' ) ) {
 			        ];
 			        // Also going to use LiquidMetal for better auto-completing
 			        $("#_recipe_hero_ingredients_group_repeat .ingredient_name_field").live('focus', function() {
-			        
+
 				        $("#_recipe_hero_ingredients_group_repeat .ingredient_name_field").autocomplete({
-				            source: data, minLength: 0, delay: 0, source: function(request, response ) { 
+				            source: data, minLength: 0, delay: 0, source: function(request, response ) {
 								var arr;
 
 								if(request.term == "")  {
@@ -133,7 +133,7 @@ if ( ! function_exists( 'recipe_hero_initialize_admin_autocomplete_js' ) ) {
 
 								arr = arr.sort(function(a,b) { return a['score'] < b['score'] }) ;
 							  	return response( $.map(arr, function(value) { return  value['value']; }) );
-							} 
+							}
 						});
 
 					});

@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../admin/class-recipe-hero-admin.php:141
-#: ../public/includes/rh-settings.php:38
+#: ../includes/public/rh-settings.php:38
 msgid "Settings"
 msgstr "셋"
 
@@ -54,13 +54,13 @@ msgstr "레시피 제 "
 msgid "ID"
 msgstr "아이"
 
-#: ../admin/includes/rh-tweaks.php:59 ../public/includes/rh-tax.php:40
-#: ../public/includes/templates-parts/rh-templates-parts-tax-header.php:35
+#: ../admin/includes/rh-tweaks.php:59 ../includes/public/rh-tax.php:40
+#: ../includes/public/templates-parts/rh-templates-parts-tax-header.php:35
 msgid "Course"
 msgstr ""
 
-#: ../admin/includes/rh-tweaks.php:60 ../public/includes/rh-tax.php:82
-#: ../public/includes/templates-parts/rh-templates-parts-tax-header.php:26
+#: ../admin/includes/rh-tweaks.php:60 ../includes/public/rh-tax.php:82
+#: ../includes/public/templates-parts/rh-templates-parts-tax-header.php:26
 msgid "Cuisine"
 msgstr ""
 
@@ -96,532 +96,532 @@ msgstr ""
 msgid "to get started (this notice will disappear afterwards)."
 msgstr ""
 
-#: ../public/includes/fields/helpers/cmb_Meta_Box_ajax.php:47
+#: ../includes/public/fields/helpers/cmb_Meta_Box_ajax.php:47
 msgid "Please Try Again"
 msgstr ""
 
-#: ../public/includes/fields/helpers/cmb_Meta_Box_ajax.php:131
+#: ../includes/public/fields/helpers/cmb_Meta_Box_ajax.php:131
 msgid "Remove Embed"
 msgstr ""
 
-#: ../public/includes/fields/helpers/cmb_Meta_Box_ajax.php:134
+#: ../includes/public/fields/helpers/cmb_Meta_Box_ajax.php:134
 #, php-format
 msgid "No oEmbed Results Found for %s. View more info at"
 msgstr ""
 
-#: ../public/includes/fields/helpers/cmb_Meta_Box_field.php:459
+#: ../includes/public/fields/helpers/cmb_Meta_Box_field.php:459
 msgid "Add Group"
 msgstr ""
 
-#: ../public/includes/fields/helpers/cmb_Meta_Box_field.php:460
+#: ../includes/public/fields/helpers/cmb_Meta_Box_field.php:460
 msgid "Remove Group"
 msgstr ""
 
-#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:250
+#: ../includes/public/fields/helpers/cmb_Meta_Box_types.php:250
 msgid "Add Row"
 msgstr ""
 
-#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:306
-#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:706
-#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:768
+#: ../includes/public/fields/helpers/cmb_Meta_Box_types.php:306
+#: ../includes/public/fields/helpers/cmb_Meta_Box_types.php:706
+#: ../includes/public/fields/helpers/cmb_Meta_Box_types.php:768
 msgid "Remove"
 msgstr ""
 
-#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:601
-#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:635
+#: ../includes/public/fields/helpers/cmb_Meta_Box_types.php:601
+#: ../includes/public/fields/helpers/cmb_Meta_Box_types.php:635
 msgid "No terms"
 msgstr ""
 
-#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:674
-#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:728
+#: ../includes/public/fields/helpers/cmb_Meta_Box_types.php:674
+#: ../includes/public/fields/helpers/cmb_Meta_Box_types.php:728
 msgid "Add or Upload File"
 msgstr ""
 
-#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:695
-#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:760
+#: ../includes/public/fields/helpers/cmb_Meta_Box_types.php:695
+#: ../includes/public/fields/helpers/cmb_Meta_Box_types.php:760
 msgid "Remove Image"
 msgstr ""
 
-#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:706
-#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:768
+#: ../includes/public/fields/helpers/cmb_Meta_Box_types.php:706
+#: ../includes/public/fields/helpers/cmb_Meta_Box_types.php:768
 msgid "File:"
 msgstr ""
 
-#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:706
-#: ../public/includes/fields/helpers/cmb_Meta_Box_types.php:768
+#: ../includes/public/fields/helpers/cmb_Meta_Box_types.php:706
+#: ../includes/public/fields/helpers/cmb_Meta_Box_types.php:768
 msgid "Download"
 msgstr ""
 
-#: ../public/includes/fields/init.php:258
+#: ../includes/public/fields/init.php:258
 msgid "Clear"
 msgstr ""
 
-#: ../public/includes/fields/init.php:259
+#: ../includes/public/fields/init.php:259
 msgid "Default"
 msgstr ""
 
-#: ../public/includes/fields/init.php:260
+#: ../includes/public/fields/init.php:260
 msgid "Select Color"
 msgstr ""
 
-#: ../public/includes/fields/init.php:261
+#: ../includes/public/fields/init.php:261
 msgid "Current Color"
 msgstr ""
 
-#: ../public/includes/fields/init.php:288
+#: ../includes/public/fields/init.php:288
 msgid "Select / Deselect All"
 msgstr ""
 
-#: ../public/includes/fields/init.php:1177
+#: ../includes/public/fields/init.php:1177
 msgid "Save"
 msgstr ""
 
-#: ../public/includes/rh-cpt.php:26 ../public/includes/rh-cpt.php:27
+#: ../includes/public/rh-cpt.php:26 ../includes/public/rh-cpt.php:27
 msgid "Add New Recipe"
 msgstr ""
 
-#: ../public/includes/rh-cpt.php:28
-#: ../public/includes/templates-parts/rh-templates-parts-archive.php:69
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:70
+#: ../includes/public/rh-cpt.php:28
+#: ../includes/public/templates-parts/rh-templates-parts-archive.php:69
+#: ../includes/public/templates-parts/rh-templates-parts-single.php:70
 msgid "Edit Recipe"
 msgstr ""
 
-#: ../public/includes/rh-cpt.php:29
+#: ../includes/public/rh-cpt.php:29
 msgid "New Recipe"
 msgstr "새 레시"
 
-#: ../public/includes/rh-cpt.php:30
+#: ../includes/public/rh-cpt.php:30
 msgid "View Recipe"
 msgstr "레시피 보"
 
-#: ../public/includes/rh-cpt.php:31
+#: ../includes/public/rh-cpt.php:31
 msgid "Search Recipes"
 msgstr ""
 
-#: ../public/includes/rh-cpt.php:32
+#: ../includes/public/rh-cpt.php:32
 msgid "No Recipes found"
 msgstr ""
 
-#: ../public/includes/rh-cpt.php:33
+#: ../includes/public/rh-cpt.php:33
 msgid "No Recipes found in the trash"
 msgstr ""
 
-#: ../public/includes/rh-cpt.php:35
+#: ../includes/public/rh-cpt.php:35
 msgid "Recipe Hero"
 msgstr ""
 
-#: ../public/includes/rh-cpt.php:44
+#: ../includes/public/rh-cpt.php:44
 msgid "Recipe"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:36
+#: ../includes/public/rh-fields.php:36
 msgid "Recipe Details"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:44
-#: ../public/includes/templates-parts/rh-templates-parts-archive.php:230
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:206
+#: ../includes/public/rh-fields.php:44
+#: ../includes/public/templates-parts/rh-templates-parts-archive.php:230
+#: ../includes/public/templates-parts/rh-templates-parts-single.php:206
 msgid "Serves"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:54
+#: ../includes/public/rh-fields.php:54
 msgid "Preparation Time"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:64
+#: ../includes/public/rh-fields.php:64
 msgid "Cooking Time"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:74
+#: ../includes/public/rh-fields.php:74
 msgid "Equipment Needed"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:75
+#: ../includes/public/rh-fields.php:75
 msgid "Any special equipment worthy of mentioning that is required."
 msgstr ""
 
-#: ../public/includes/rh-fields.php:84
+#: ../includes/public/rh-fields.php:84
 msgid "Nutritional Info"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:85
+#: ../includes/public/rh-fields.php:85
 msgid "A summary of nutrition information you would like to include."
 msgstr ""
 
-#: ../public/includes/rh-fields.php:101
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:340
+#: ../includes/public/rh-fields.php:101
+#: ../includes/public/templates-parts/rh-templates-parts-single.php:340
 msgid "Ingredients"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:107
+#: ../includes/public/rh-fields.php:107
 msgid "Add all of the ingredients for this recipe."
 msgstr ""
 
-#: ../public/includes/rh-fields.php:109
+#: ../includes/public/rh-fields.php:109
 msgid "Ingredient {#}"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:110
+#: ../includes/public/rh-fields.php:110
 msgid "Add Another Ingredient"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:111
+#: ../includes/public/rh-fields.php:111
 msgid "Remove Ingredient"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:117
+#: ../includes/public/rh-fields.php:117
 msgid "Quantity"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:125
+#: ../includes/public/rh-fields.php:125
 msgid "Amount"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:130
+#: ../includes/public/rh-fields.php:130
 msgid "Gram (gm)"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:131
+#: ../includes/public/rh-fields.php:131
 msgid "Ounce (oz)"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:132
+#: ../includes/public/rh-fields.php:132
 msgid "Milliliter (ml)"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:133
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:575
+#: ../includes/public/rh-fields.php:133
+#: ../includes/public/templates-parts/rh-templates-parts-single.php:575
 msgid "Teaspoon"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:134
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:578
+#: ../includes/public/rh-fields.php:134
+#: ../includes/public/templates-parts/rh-templates-parts-single.php:578
 msgid "Tablespoon"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:135
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:581
+#: ../includes/public/rh-fields.php:135
+#: ../includes/public/templates-parts/rh-templates-parts-single.php:581
 msgid "Cup"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:136
+#: ../includes/public/rh-fields.php:136
 msgid "Liter (L)"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:137
+#: ../includes/public/rh-fields.php:137
 msgid "Pound (lb)"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:138
+#: ../includes/public/rh-fields.php:138
 msgid "Kilogram (kg)"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:139
+#: ../includes/public/rh-fields.php:139
 msgid "Slices"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:140
+#: ../includes/public/rh-fields.php:140
 msgid "Pieces"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:141
+#: ../includes/public/rh-fields.php:141
 msgid "None (blank)"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:147
+#: ../includes/public/rh-fields.php:147
 msgid "Ingredient"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:164
+#: ../includes/public/rh-fields.php:164
 msgid "Steps"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:170
+#: ../includes/public/rh-fields.php:170
 msgid "Add all of the preparation and cooking steps for this recipe."
 msgstr ""
 
-#: ../public/includes/rh-fields.php:172
+#: ../includes/public/rh-fields.php:172
 msgid "Step {#}"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:173
+#: ../includes/public/rh-fields.php:173
 msgid "Add Another Step"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:174
+#: ../includes/public/rh-fields.php:174
 msgid "Remove Step"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:180
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:400
+#: ../includes/public/rh-fields.php:180
+#: ../includes/public/templates-parts/rh-templates-parts-single.php:400
 msgid "Instructions"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:186
+#: ../includes/public/rh-fields.php:186
 msgid "Step Photo"
 msgstr ""
 
-#: ../public/includes/rh-fields.php:187
+#: ../includes/public/rh-fields.php:187
 msgid "Upload an image or enter a URL (optional)"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:96
+#: ../includes/public/rh-settings.php:96
 msgid "Basic Settings"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:101
+#: ../includes/public/rh-settings.php:101
 msgid "Recipes Page"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:102
+#: ../includes/public/rh-settings.php:102
 msgid ""
 "The page you select here will be the home of all your recipes. Additionally, "
 "the 'Recipe Archive' of your site can be found at: "
 msgstr ""
 
-#: ../public/includes/rh-settings.php:108
+#: ../includes/public/rh-settings.php:108
 msgid "Recipes Per Page on the Recipe Page"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:109
+#: ../includes/public/rh-settings.php:109
 msgid ""
 "This will only apply for the recipe page, selected in the option above. "
 "Other recipe archives use the default posts per page setting."
 msgstr ""
 
-#: ../public/includes/rh-settings.php:114
+#: ../includes/public/rh-settings.php:114
 msgid "Infinite"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:118
+#: ../includes/public/rh-settings.php:118
 msgid "Class for Main Content"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:119
+#: ../includes/public/rh-settings.php:119
 msgid ""
 "The wrapper class for the content area. This is needed if your theme only "
 "applies styles inside of this class."
 msgstr ""
 
-#: ../public/includes/rh-settings.php:127
+#: ../includes/public/rh-settings.php:127
 msgid "Styling"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:132
+#: ../includes/public/rh-settings.php:132
 msgid "Disable Lightbox"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:133
+#: ../includes/public/rh-settings.php:133
 msgid "Selecting this will disable the lightbox used in Recipe Hero"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:138
+#: ../includes/public/rh-settings.php:138
 msgid "Recipe Width (px)"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:139
+#: ../includes/public/rh-settings.php:139
 msgid "The width of the recipe. This can also be a %, like 90%."
 msgstr ""
 
-#: ../public/includes/rh-settings.php:147
+#: ../includes/public/rh-settings.php:147
 msgid "Recipe Padding (px)"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:148
+#: ../includes/public/rh-settings.php:148
 msgid ""
 "Sometimes you may want to add some padding around the recipe articles. "
 "Normally from 0-25px is enough."
 msgstr ""
 
-#: ../public/includes/rh-settings.php:156
+#: ../includes/public/rh-settings.php:156
 msgid "Center Recipe Container"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:157
+#: ../includes/public/rh-settings.php:157
 msgid ""
 "Selecting this will center the recipe in the middle of its container "
 "(experimental)."
 msgstr ""
 
-#: ../public/includes/rh-settings.php:162
+#: ../includes/public/rh-settings.php:162
 msgid "Custom Text"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:167
+#: ../includes/public/rh-settings.php:167
 msgid "'Serves' Text"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:168
-#: ../public/includes/rh-settings.php:174
-#: ../public/includes/rh-settings.php:180
-#: ../public/includes/rh-settings.php:186
-#: ../public/includes/rh-settings.php:192
+#: ../includes/public/rh-settings.php:168
+#: ../includes/public/rh-settings.php:174
+#: ../includes/public/rh-settings.php:180
+#: ../includes/public/rh-settings.php:186
+#: ../includes/public/rh-settings.php:192
 msgid "Part of the Recipe Details area"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:173
+#: ../includes/public/rh-settings.php:173
 msgid "'Equipment' Text"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:179
+#: ../includes/public/rh-settings.php:179
 msgid "'Prep Time' Text"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:185
+#: ../includes/public/rh-settings.php:185
 msgid "'Cook Time' Text"
 msgstr ""
 
-#: ../public/includes/rh-settings.php:191
+#: ../includes/public/rh-settings.php:191
 msgid "'Total Time' Text"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:27
+#: ../includes/public/rh-tax.php:27
 msgid "Add New Course"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:28
+#: ../includes/public/rh-tax.php:28
 msgid "Edit Course"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:29
+#: ../includes/public/rh-tax.php:29
 msgid "New Course"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:30
+#: ../includes/public/rh-tax.php:30
 msgid "View Course"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:31
+#: ../includes/public/rh-tax.php:31
 msgid "Search Courses"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:32
+#: ../includes/public/rh-tax.php:32
 msgid "No Course found"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:33
+#: ../includes/public/rh-tax.php:33
 msgid "No Course found in Trash"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:69
+#: ../includes/public/rh-tax.php:69
 msgid "Add New Cuisine"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:70
+#: ../includes/public/rh-tax.php:70
 msgid "Edit Cuisine"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:71
+#: ../includes/public/rh-tax.php:71
 msgid "New Cuisine"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:72
+#: ../includes/public/rh-tax.php:72
 msgid "View Cuisine"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:73
+#: ../includes/public/rh-tax.php:73
 msgid "Search Cuisines"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:74
+#: ../includes/public/rh-tax.php:74
 msgid "No Cuisine found"
 msgstr ""
 
-#: ../public/includes/rh-tax.php:75
+#: ../includes/public/rh-tax.php:75
 msgid "No Cuisine found in Trash"
 msgstr ""
 
-#: ../public/includes/shortcodes/rh-shortcodes-archive.php:73
+#: ../includes/public/shortcodes/rh-shortcodes-archive.php:73
 msgid "No recipes have been found!"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-archive.php:65
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:66
+#: ../includes/public/templates-parts/rh-templates-parts-archive.php:65
+#: ../includes/public/templates-parts/rh-templates-parts-single.php:66
 msgid "0 Comments"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-archive.php:65
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:66
+#: ../includes/public/templates-parts/rh-templates-parts-archive.php:65
+#: ../includes/public/templates-parts/rh-templates-parts-single.php:66
 msgid "1 Comment"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-archive.php:65
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:66
+#: ../includes/public/templates-parts/rh-templates-parts-archive.php:65
+#: ../includes/public/templates-parts/rh-templates-parts-single.php:66
 msgid "% Comments"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-archive.php:152
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:157
+#: ../includes/public/templates-parts/rh-templates-parts-archive.php:152
+#: ../includes/public/templates-parts/rh-templates-parts-single.php:157
 msgid "Cuisines"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-archive.php:158
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:164
+#: ../includes/public/templates-parts/rh-templates-parts-archive.php:158
+#: ../includes/public/templates-parts/rh-templates-parts-single.php:164
 msgid "Courses"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-archive.php:232
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:208
+#: ../includes/public/templates-parts/rh-templates-parts-archive.php:232
+#: ../includes/public/templates-parts/rh-templates-parts-single.php:208
 msgid "People"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-archive.php:243
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:219
+#: ../includes/public/templates-parts/rh-templates-parts-archive.php:243
+#: ../includes/public/templates-parts/rh-templates-parts-single.php:219
 msgid "Equipment"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-archive.php:264
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:240
+#: ../includes/public/templates-parts/rh-templates-parts-archive.php:264
+#: ../includes/public/templates-parts/rh-templates-parts-single.php:240
 msgid "Prep Time"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-archive.php:278
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:254
+#: ../includes/public/templates-parts/rh-templates-parts-archive.php:278
+#: ../includes/public/templates-parts/rh-templates-parts-single.php:254
 msgid "Cook Time"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-search.php:28
+#: ../includes/public/templates-parts/rh-templates-parts-search.php:28
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:413
+#: ../includes/public/templates-parts/rh-templates-parts-single.php:413
 msgid "Step"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:455
+#: ../includes/public/templates-parts/rh-templates-parts-single.php:455
 msgid "Nutrition"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:566
+#: ../includes/public/templates-parts/rh-templates-parts-single.php:566
 msgid "Gram"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:569
+#: ../includes/public/templates-parts/rh-templates-parts-single.php:569
 msgid "Ounce"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:572
+#: ../includes/public/templates-parts/rh-templates-parts-single.php:572
 msgid "Milliliter"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:584
+#: ../includes/public/templates-parts/rh-templates-parts-single.php:584
 msgid "LIter"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:587
+#: ../includes/public/templates-parts/rh-templates-parts-single.php:587
 msgid "Pound"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:590
+#: ../includes/public/templates-parts/rh-templates-parts-single.php:590
 msgid "Kilogram"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:593
+#: ../includes/public/templates-parts/rh-templates-parts-single.php:593
 msgid "Slice"
 msgstr ""
 
-#: ../public/includes/templates-parts/rh-templates-parts-single.php:596
+#: ../includes/public/templates-parts/rh-templates-parts-single.php:596
 msgid "Piece"
 msgstr ""
 
