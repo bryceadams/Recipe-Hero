@@ -4,7 +4,7 @@ Donate link: http://recipehero.in/
 Tags: recipe, recipes, cooking, ingredients, food, cook, cook book, recipe hero, captain theme, google recipes
 Requires at least: 3.5.1
 Tested up to: 3.9.1
-Stable tag: 0.8.1
+Stable tag: 0.9.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
