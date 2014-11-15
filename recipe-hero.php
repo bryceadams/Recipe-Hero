@@ -11,61 +11,276 @@
  * Plugin Name:       Recipe Hero
  * Plugin URI:        http://recipehero.in/
  * Description:       The last recipe plugin you'll ever need.
- * Version:           0.9.0
- * Author:            Captain Theme
- * Author URI:        http://captaintheme.com/
+ * Version:           1.0.0
+ * Author:            Bryce Adams
+ * Author URI:        http://bryce.se/
  * Text Domain:       recipe-hero
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path:       /languages
  * Made with the amazing: WordPress-Plugin-Boilerplate: v2.6.1
  */
+
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
 /*----------------------------------------------------------------------------*
- * Define Some Cool Constants & Globals
- *----------------------------------------------------------------------------*/
-
-// Plugin Folder Path
-if( ! defined( 'RECIPE_HERO_PLUGIN_DIR' ) ) {
-	define( 'RECIPE_HERO_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-}
-
-// Template Folder Path
-if( ! defined( 'RECIPE_HERO_TEMPLATE_DIR' ) ) {
-	define( 'RECIPE_HERO_TEMPLATE_DIR', 'recipe-hero/' );
-}
-
-// Define Current Plugin Version
-if( ! defined( 'RECIPE_HERO_VERSION_NUMBER' ) ) {
-	define( 'RECIPE_HERO_VERSION_NUMBER', '0.9.0' );
-}
-
-$rh_general_options = get_option( 'recipe_hero_general_options' );
-$rh_style_options = get_option( 'recipe_hero_style_options' );
-$rh_labels_options = get_option( 'recipe_hero_labels_options' );
-$rh_other_options = get_option( 'recipe_hero_other_options' );
-
-/*----------------------------------------------------------------------------*
  * Public-Facing Functionality
  *----------------------------------------------------------------------------*/
 
-require_once( plugin_dir_path( __FILE__ ) . 'includes/class-recipe-hero.php' );
+if ( ! class_exists( 'RecipeHero' ) ) :
+	
+/**
+ * Main RecipeHero Class
+ *
+ * @class RecipeHero
+ * @version	1.0.0
+ */
 
-register_activation_hook( __FILE__, array( 'Recipe_Hero', 'activate' ) );
+final class RecipeHero {
 
-add_action( 'plugins_loaded', array( 'Recipe_Hero', 'get_instance' ) );
+	/**
+	 * Plugin version, used for cache-busting of style and script file references.
+	 *
+	 * @since   1.0.0
+	 *
+	 * @var     string
+	 */
+	public static $version = '1.0.0';
 
-/*----------------------------------------------------------------------------*
-* Dashboard and Administrative Functionality
-*----------------------------------------------------------------------------*/
+	/**
+	 * The variable name is used as the text domain when internationalizing strings
+	 * of text. Its value should match the Text Domain file header in the main
+	 * plugin file.
+	 *
+	 * @since    0.5.0
+	 *
+	 * @var      string
+	 */
+	protected $plugin_slug = 'recipe-hero';
 
-if ( is_admin() ) {
+	/**
+	 * Instance of this class.
+	 *
+	 * @since    0.5.0
+	 *
+	 * @var      object
+	 */
+	protected static $_instance = null;
 
-	require_once( RECIPE_HERO_PLUGIN_DIR . 'includes/admin/class-recipe-hero-admin.php' );
-	add_action( 'plugins_loaded', array( 'Recipe_Hero_Admin', 'get_instance' ) );
+	/**
+	 * Return an instance of this class.
+	 *
+	 * @since     1.0.0
+	 *
+	 * @return    object    A single instance of this class.
+	 */
+	public static function instance() {
+		if ( is_null( self::$_instance ) ) {
+			self::$_instance = new self();
+		}
+		return self::$_instance;
+	}
+
+	/**
+	 * Cloning is forbidden.
+	 *
+	 * @since 1.0.0
+	 */
+	public function __clone() {
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'recipe-hero' ), '1.0.0' );
+	}
+
+	/**
+	 * Unserializing instances of this class is forbidden.
+	 *
+	 * @since 1.0.0
+	 */
+	public function __wakeup() {
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'recipe-hero' ), '1.0.0' );
+	}
+
+	/**
+	 * Initialize the plugin by setting localization and loading public scripts
+	 * and styles.
+	 *
+	 * @since     0.9.0
+	 */
+	public function __construct() {
+
+		// Define constants
+		$this->define_constants();
+
+		// Include Required Files
+		$this->includes();
+
+		// Hooks
+		add_action( 'init', array( $this, 'init' ), 0 );
+
+		// Loaded Action
+		do_action( 'recipe_hero_loaded' );
+
+	}
+
+	/**
+	 * Define WC Constants
+	 */
+	private function define_constants() {
+
+		define( 'RH_PLUGIN_FILE', __FILE__ );
+		define( 'RH_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
+		define( 'RH_VERSION', self::$version );
+
+		// Plugin Folder Path
+		if( ! defined( 'RECIPE_HERO_PLUGIN_DIR' ) ) {
+			define( 'RECIPE_HERO_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+		}
+
+		// Template Folder Path
+		if( ! defined( 'RECIPE_HERO_TEMPLATE_DIR' ) ) {
+			define( 'RECIPE_HERO_TEMPLATE_DIR', 'recipe-hero/' );
+		}
+
+		// Define Current Plugin Version (backwards compatability)
+		if( ! defined( 'RECIPE_HERO_VERSION_NUMBER' ) ) {
+			define( 'RECIPE_HERO_VERSION_NUMBER', RH_VERSION );
+		}
+
+		// @todo Temp Var Globals
+		$rh_general_options = get_option( 'recipe_hero_general_options' );
+		$rh_style_options = get_option( 'recipe_hero_style_options' );
+		$rh_labels_options = get_option( 'recipe_hero_labels_options' );
+		$rh_other_options = get_option( 'recipe_hero_other_options' );
+
+	}
+
+	/**
+	 * Include required core files used in admin and on the frontend.
+	 */
+	private function includes() {
+
+		include_once( 'includes/class-rh-install.php' );
+
+		include_once( 'includes/rh-fields.php' );
+		include_once( 'includes/class-rh-post-types.php' );
+
+		include_once( 'includes/rh-settings.php' );
+		include_once( 'includes/class-rh-settings-methods.php' );
+
+		include_once( 'includes/rh-templates.php' );
+		include_once( 'includes/rh-templates-functions.php' );
+		include_once( 'includes/rh-templates-hooks.php' );
+
+		include_once( 'includes/rh-shortcodes.php' );
+		include_once( 'includes/rh-general-functions.php' );
+		include_once( 'includes/rh-image-sizes.php' );
+
+		include_once( 'includes/class-rh-lightbox.php' );
+		include_once( 'includes/class-rh-frontend-scripts.php' );
+
+		include_once( 'includes/rh-schema.php' );
+
+		if ( is_admin() ) {
+
+			include_once( 'includes/admin/class-recipe-hero-admin.php' );
+			add_action( 'plugins_loaded', array( 'Recipe_Hero_Admin', 'get_instance' ) );
+
+		}
+
+	}
+
+
+	/**
+	 * Init Recipe Hero when WordPress Initialises.
+	 */
+	public function init() {
+
+		// Before init action
+		do_action( 'recipe_hero_before_init' );
+
+		// Set up localisation
+		$this->load_plugin_textdomain();
+
+		// Init action
+		do_action( 'recipe_hero_init' );
+
+	}
+
+	/**
+	 * Load Localisation files.
+	 *
+	 * Note: the first-loaded translation file overrides any following ones if the same translation is present
+	 */
+	public function load_plugin_textdomain() {
+		$locale = apply_filters( 'plugin_locale', get_locale(), 'recipe-hero' );
+		$dir    = trailingslashit( WP_LANG_DIR );
+
+		/**
+		 * Admin Locale. Looks in:
+		 *
+		 * 		- WP_LANG_DIR/recipe-hero/recipe-hero-admin-LOCALE.mo
+		 * 		- WP_LANG_DIR/plugins/recipe-hero-admin-LOCALE.mo
+		 */
+		if ( is_admin() ) {
+			load_textdomain( 'recipe-hero', $dir . 'recipe-hero/recipe-hero-admin-' . $locale . '.mo' );
+			load_textdomain( 'recipe-hero', $dir . 'plugins/recipe-hero-admin-' . $locale . '.mo' );
+		}
+
+		/**
+		 * Frontend/global Locale. Looks in:
+		 *
+		 * 		- WP_LANG_DIR/recipe-hero/recipe-hero-LOCALE.mo
+		 * 	 	- recipe-hero/i18n/languages/recipe-hero-LOCALE.mo (which if not found falls back to:)
+		 * 	 	- WP_LANG_DIR/plugins/recipe-hero-LOCALE.mo
+		 */
+		load_textdomain( 'recipe-hero', $dir . 'recipe-hero/recipe-hero-' . $locale . '.mo' );
+		load_plugin_textdomain( 'recipe-hero', false, plugin_basename( dirname( __FILE__ ) ) . "/i18n/languages" );
+	}
+
+	/** Helper functions ******************************************************/
+
+	/**
+	 * Get the plugin url.
+	 *
+	 * @return string
+	 */
+	public function plugin_url() {
+		return untrailingslashit( plugins_url( '/', __FILE__ ) );
+	}
+
+	/**
+	 * Get the plugin path.
+	 *
+	 * @return string
+	 */
+	public function plugin_path() {
+		return untrailingslashit( plugin_dir_path( __FILE__ ) );
+	}
+
+	/**
+	 * Get the template path.
+	 *
+	 * @return string
+	 */
+	public function template_path() {
+		return apply_filters( 'recipe_hero_template_path', 'recipe-hero/' );
+	}
 
 }
+
+endif;
+
+/**
+ * Returns the main instance of RecipeHero to prevent the need to use globals.
+ *
+ * @since  1.0.0
+ * @return RecipeHero (Class)
+ */
+function RH() {
+	return RecipeHero::instance();
+}
+
+// Global for backwards compatibility.
+$GLOBALS['recipe_hero'] = RH();

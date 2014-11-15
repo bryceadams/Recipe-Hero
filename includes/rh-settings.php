@@ -14,6 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 
+
 add_action( 'admin_menu', 'recipe_hero_settings_add_pages' );
 
 if ( ! function_exists( 'recipe_hero_settings_add_pages' ) ) {

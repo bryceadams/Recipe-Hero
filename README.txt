@@ -34,8 +34,8 @@ Navigate to `http://yourwebsite.com/recipes` to see all the new recipes you've a
 * Can Extend / Develop with custom actions, etc.
 * Completely Open Source GPL Project - see [GitHub](https://github.com/bryceadams/Recipe-Hero) to contribute!
 * Translation-Ready (includes .pot file etc.)
-* Documentation (coming soon!)
-* Supported
+* Documentation
+* Lovingly Supported
 
 **Contributing:** Why not help out? This project is being actively developed [on GitHub](https://github.com/bryceadams/Recipe-Hero/). Feel free to report issues, help others and make pull requests!
 
@@ -121,6 +121,9 @@ Sure, but on food-steroids. Just check out the screenshots area.
 7. Recipe Hero Settings #3
 
 == Changelog ==
+
+= 1.0.0 =
+* New: Refactored entire core plugin structure / code
 
 = 0.9.0 =
 * New: Autocomplete Ingredients when adding in Edit screen

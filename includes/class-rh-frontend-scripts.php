@@ -30,15 +30,15 @@ if ( ! class_exists( 'Recipe_Hero_Frontend_Scripts' ) ) {
 		public static function get_styles() {
 			return apply_filters( 'recipe_hero_enqueue_styles', array(
 				'rh-layout' => array(
-					'src'     => plugins_url( 'assets/css/gridism.css', __FILE__ ),
+					'src'     => RH()->plugin_url() . '/assets/frontend/css/gridism.css',
 					'deps'    => '',
-					'version' => RECIPE_HERO_VERSION_NUMBER,
+					'version' => RecipeHero::$version,
 					'media'   => 'all'
 				),
 				'rh-general' => array(
-					'src'     => plugins_url( 'assets/css/rh-styles.css', __FILE__ ),
+					'src'     => RH()->plugin_url() . '/assets/frontend/css/rh-styles.css',
 					'deps'    => '',
-					'version' => RECIPE_HERO_VERSION_NUMBER,
+					'version' => RecipeHero::$version,
 					'media'   => 'all'
 				),
 			) );
@@ -54,10 +54,10 @@ if ( ! class_exists( 'Recipe_Hero_Frontend_Scripts' ) ) {
 			global $post, $wp;
 
 			// Register all scripts/styles for later use
-			wp_register_script( 'rh-plugin-script', plugins_url( 'assets/js/rh-scripts.js', __FILE__ ), array( 'jquery' ), RECIPE_HERO_VERSION_NUMBER, true );
-			wp_register_script( 'magnific', plugins_url( 'assets/js/jquery.magnific-popup.min.js', __FILE__ ), array( 'jquery' ), RECIPE_HERO_VERSION_NUMBER, true );
+			wp_register_script( 'rh-plugin-script', RH()->plugin_url() . '/assets/frontend/js/rh-scripts.js', array( 'jquery' ), RecipeHero::$version, true );
+			wp_register_script( 'magnific', RH()->plugin_url() . '/assets/frontend/js/jquery.magnific-popup.min.js', array( 'jquery' ), RecipeHero::$version, true );
 
-			wp_register_style( 'magnific-css', plugins_url( 'assets/css/magnific-popup.css', __FILE__ ), RECIPE_HERO_VERSION_NUMBER, true );
+			wp_register_style( 'magnific-css', RH()->plugin_url() . '/assets/frontend/css/magnific-popup.css', RecipeHero::$version, true );
 
 			wp_enqueue_script( 'jquery' );
 
@@ -66,9 +66,11 @@ if ( ! class_exists( 'Recipe_Hero_Frontend_Scripts' ) ) {
 			$enqueue_styles = $this->get_styles();
 
 
-			if ( $enqueue_styles )
-				foreach ( $enqueue_styles as $handle => $args )
+			if ( $enqueue_styles ) {
+				foreach ( $enqueue_styles as $handle => $args ) {
 					wp_enqueue_style( $handle, $args['src'], $args['deps'], $args['version'], $args['media'] );
+				}
+			}
 		}
 
 
@@ -79,8 +81,9 @@ if ( ! class_exists( 'Recipe_Hero_Frontend_Scripts' ) ) {
 		 */
 		public function backwards_compat( $styles ) {
 			if ( defined( 'RECIPE_HERO_USE_CSS' ) ) {
-				if ( ! RECIPE_HERO_USE_CSS )
+				if ( ! RECIPE_HERO_USE_CSS ) {
 					return false;
+				}
 			}
 
 			return $styles;

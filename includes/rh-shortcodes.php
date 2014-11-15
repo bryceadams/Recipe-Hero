@@ -21,5 +21,5 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 	  0.7.1
  */
 
-require_once( RECIPE_HERO_PLUGIN_DIR . 'includes/public/shortcodes/rh-shortcodes-single.php' );
-require_once( RECIPE_HERO_PLUGIN_DIR . 'includes/public/shortcodes/rh-shortcodes-archive.php' );
+require_once( RECIPE_HERO_PLUGIN_DIR . 'includes/shortcodes/rh-shortcodes-single.php' );
+require_once( RECIPE_HERO_PLUGIN_DIR . 'includes/shortcodes/rh-shortcodes-archive.php' );

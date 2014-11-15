@@ -7,7 +7,7 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
- * @since 	  0.9.0
+ * @since 	  1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,7 +20,13 @@ class Recipe_Hero_Admin_Scripts {
 	 * Constructor
 	 */
 	public function __construct () {
+
 		add_action( 'admin_enqueue_scripts', array( $this, 'load_scripts' ) );
+		
+		add_action( 'admin_head', array( $this, 'initialize_numeric_js' ) );
+		add_action( 'admin_head', array( $this, 'initialize_autocomplete_js' ) );
+		add_actioN( 'admin_head', array( $this, 'initialize_chosen_js' ) );
+
 	}
 
 	/**
@@ -34,9 +40,9 @@ class Recipe_Hero_Admin_Scripts {
 		global $post, $wp;
 
 		// Register all scripts/styles for later use
-		wp_register_script( 'numeric', plugins_url( 'assets/js/jquery.numeric.js', __FILE__ ), array( 'jquery' ), RECIPE_HERO_VERSION_NUMBER, true );
-		wp_register_script( 'liquidmetal', plugins_url( 'assets/js/liquidmetal.js', __FILE__ ), array( 'jquery' ), RECIPE_HERO_VERSION_NUMBER, true );
-		wp_register_script( 'chosen', plugins_url( 'assets/js/jquery.chosen.min.js', __FILE__ ), array( 'jquery' ), RECIPE_HERO_VERSION_NUMBER, true );
+		wp_register_script( 'numeric', RH()->plugin_url() . '/assets/admin/js/jquery.numeric.js', array( 'jquery' ), RecipeHero::$version, true );
+		wp_register_script( 'liquidmetal', RH()->plugin_url() . '/assets/admin/js/liquidmetal.js', array( 'jquery' ), RecipeHero::$version, true );
+		wp_register_script( 'chosen', RH()->plugin_url() . '/assets/admin/js/jquery.chosen.min.js', array( 'jquery' ), RecipeHero::$version, true );
 
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'numeric' );
@@ -48,22 +54,15 @@ class Recipe_Hero_Admin_Scripts {
 	}
 
 
-}
+	/**
+	 * Initialized Numeric JS
+	 *
+	 * @package   Recipe Hero
+	 * @author    Captain Theme <info@captaintheme.com>
+	 * @since 	  0.7.0
+	 */
 
-new Recipe_Hero_Admin_Scripts();
-
-
-/**
- * Initialized Numeric JS
- *
- * @package   Recipe Hero
- * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.7.0
- */
-
-if ( ! function_exists( 'recipe_hero_initialize_admin_numeric_js' ) ) {
-
-	function recipe_hero_initialize_admin_numeric_js() { ?>
+	public function initialize_numeric_js() { ?>
 
 		<script type="text/javascript">
 
@@ -78,21 +77,16 @@ if ( ! function_exists( 'recipe_hero_initialize_admin_numeric_js' ) ) {
 	<?php
 	}
 
-}
-add_action( 'admin_head', 'recipe_hero_initialize_admin_numeric_js' );
 
+	/**
+	 * Initialized autocomplete JS
+	 *
+	 * @package   Recipe Hero
+	 * @author    Captain Theme <info@captaintheme.com>
+	 * @since 	  0.9.0
+	 */
 
-/**
- * Initialized autocomplete JS
- *
- * @package   Recipe Hero
- * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.9.0
- */
-
-if ( ! function_exists( 'recipe_hero_initialize_admin_autocomplete_js' ) ) {
-
-	function recipe_hero_initialize_admin_autocomplete_js() { ?>
+	public function initialize_autocomplete_js() { ?>
 
 		<script type="text/javascript">
 
@@ -147,20 +141,15 @@ if ( ! function_exists( 'recipe_hero_initialize_admin_autocomplete_js' ) ) {
 	<?php
 	}
 
-}
-add_action( 'admin_head', 'recipe_hero_initialize_admin_autocomplete_js' );
+	/**
+	 * Initialized Chosen JS
+	 *
+	 * @package   Recipe Hero
+	 * @author    Captain Theme <info@captaintheme.com>
+	 * @since 	  0.9.0
+	 */
 
-/**
- * Initialized Chosen JS
- *
- * @package   Recipe Hero
- * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.9.0
- */
-
-if ( ! function_exists( 'recipe_hero_initialize_admin_chosen_js' ) ) {
-
-	function recipe_hero_initialize_admin_chosen_js() { ?>
+	public function initialize_chosen_js() { ?>
 
 		<script type="text/javascript">
 
@@ -176,4 +165,5 @@ if ( ! function_exists( 'recipe_hero_initialize_admin_chosen_js' ) ) {
 	}
 
 }
-add_action( 'admin_head', 'recipe_hero_initialize_admin_chosen_js' );
+
+new Recipe_Hero_Admin_Scripts();

@@ -11,17 +11,23 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-/**
- * Initialized Lightbox JS
- *
- * @package   Recipe Hero
- * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.8.0
- */
+class Recipe_Hero_Lightbox {
 
-if ( ! function_exists( 'recipe_hero_initialize_lightbox_js' ) ) {
+    function __construct() {
+ 
+ 		add_action( 'wp_head', array( $this, 'initialize_lightbox_js' ) );
 
-	function recipe_hero_initialize_lightbox_js() {
+    }
+
+    /**
+	 * Initialized Lightbox JS
+	 *
+	 * @package   Recipe Hero
+	 * @author    Captain Theme <info@captaintheme.com>
+	 * @since 	  0.8.0
+	 */
+
+	public function initialize_lightbox_js() {
 
 		global $rh_style_options;
 
@@ -54,4 +60,5 @@ if ( ! function_exists( 'recipe_hero_initialize_lightbox_js' ) ) {
 	}
 
 }
-add_action( 'wp_head', 'recipe_hero_initialize_lightbox_js' );
+
+new Recipe_Hero_Lightbox;

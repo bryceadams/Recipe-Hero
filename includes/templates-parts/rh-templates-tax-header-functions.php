@@ -63,17 +63,17 @@ if ( ! function_exists( 'recipe_hero_archive_tax_desc' ) ) {
 
 	function recipe_hero_archive_tax_desc() {
 
-			if ( is_tax() ) {
+		if ( is_tax() ) {
 
-				$term_description = term_description();
+			$term_description = term_description();
 
-				if ( ! empty( $term_description ) ) {
-					echo apply_filters( 'category_archive_meta', '<div class="taxonomy-description">' . $term_description . '</div>' );
-				}
-
-				echo '</div><hr />';
-
+			if ( ! empty( $term_description ) ) {
+				echo apply_filters( 'category_archive_meta', '<div class="taxonomy-description">' . $term_description . '</div>' );
 			}
+
+			echo '</div><hr />';
+
+		}
 	
 	}
 
