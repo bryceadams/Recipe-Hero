@@ -7,11 +7,20 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
+ * @since 	  1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-add_filter( 'cmb_meta_boxes', 'recipe_hero_sample_metaboxes' );
+/**
+ * Get the bootstrap! If using the plugin from wordpress.org, REMOVE THIS!
+ */
+if ( file_exists(  __DIR__ .'/fields/init.php' ) ) {
+	require_once  __DIR__ .'/fields/init.php';
+}
+
+
+add_filter( 'cmb2_meta_boxes', 'recipe_hero_cmb2_metaboxes' );
 /**
  * Define the metabox and field configurations.
  *
@@ -22,9 +31,9 @@ add_filter( 'cmb_meta_boxes', 'recipe_hero_sample_metaboxes' );
  *
  * @package Recipe Hero
  * @author  Captain Theme <info@captaintheme.com>
- * @since   0.9.0
+ * @since   1.0.0
  */
-function recipe_hero_sample_metaboxes( array $meta_boxes ) {
+function recipe_hero_cmb2_metaboxes( array $meta_boxes ) {
 
 	// Start with an underscore to hide fields from custom fields list
 	$prefix = '_recipe_hero_';
@@ -36,11 +45,11 @@ function recipe_hero_sample_metaboxes( array $meta_boxes ) {
 	$meta_boxes['recipe_details'] = array(
 		'id'         => 'details_container',
 		'title'      => __( 'Recipe Details', 'recipe-hero' ),
-		'pages'      => array( 'recipe', ), // Post type
+		'object_types'      => array( 'recipe', ), // Post type
 		'context'    => 'normal',
 		'priority'   => 'high',
 		'show_names' => true, // Show field names on the left
-		// 'cmb_styles' => true, // Enqueue the CMB stylesheet on the frontend
+		// 'cmb2_styles' => true, // Enqueue the CMB2 stylesheet on the frontend
 		'fields'     => array(
 			array(
 				'name' => __( 'Servings', 'recipe-hero' ),
@@ -109,7 +118,7 @@ function recipe_hero_sample_metaboxes( array $meta_boxes ) {
 	$meta_boxes['recipe_ingredients'] = array(
 		'id'         => 'ingredients_container',
 		'title'      => __( 'Ingredients', 'recipe-hero' ),
-		'pages'      => array( 'recipe', ),
+		'object_types'      => array( 'recipe', ),
 		'fields'     => array(
 			array(
 				'id'          => $prefix . 'ingredients_group',
@@ -176,7 +185,7 @@ function recipe_hero_sample_metaboxes( array $meta_boxes ) {
 	$meta_boxes['recipe_steps'] = array(
 		'id'         => 'steps_container',
 		'title'      => __( 'Steps', 'recipe-hero' ),
-		'pages'      => array( 'recipe', ),
+		'object_types'      => array( 'recipe', ),
 		'fields'     => array(
 			array(
 				'id'          => $prefix . 'steps_group',
@@ -212,20 +221,4 @@ function recipe_hero_sample_metaboxes( array $meta_boxes ) {
 	// Add other metaboxes as needed
 
 	return $meta_boxes;
-}
-
-add_action( 'init', 'recipe_hero_initialize_cmb_meta_boxes', 9999 );
-/**
- * Initialize the metabox class.
- */
-
-if ( ! function_exists( 'recipe_hero_initialize_cmb_meta_boxes' ) ) {
-
-	function recipe_hero_initialize_cmb_meta_boxes() {
-
-		if ( ! class_exists( 'cmb_Meta_Box' ) )
-			require_once 'fields/init.php';
-
-	}
-
 }
