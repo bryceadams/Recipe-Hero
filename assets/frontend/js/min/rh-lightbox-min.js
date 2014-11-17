@@ -1,0 +1,1 @@
+!function($){"use strict";$(function(){$(document).ready(function(){$(".steps-image-link").magnificPopup({type:"image",gallery:{enabled:!0},image:{titleSrc:"title"}}),$(".recipe-gallery").magnificPopup({type:"image",gallery:{enabled:!0},image:{titleSrc:"title"}})})})}(jQuery);

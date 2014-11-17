@@ -15,7 +15,7 @@ class Recipe_Hero_Lightbox {
 
     function __construct() {
  
- 		add_action( 'wp_head', array( $this, 'initialize_lightbox_js' ) );
+ 		//add_action( 'wp_head', array( $this, 'initialize_lightbox_js' ) );
 
     }
 
@@ -29,9 +29,7 @@ class Recipe_Hero_Lightbox {
 
 	public function initialize_lightbox_js() {
 
-		global $rh_style_options;
-
-		if ( ! isset ( $rh_style_options['disable_lightbox'] ) ) {
+		if ( get_option( 'recipe_hero_enable_lightbox' ) == '' || get_option( 'recipe_hero_enable_lightbox' ) == 'yes' ) {
 
 			if ( ( get_post_type() == 'recipe' ) && is_single() ) { ?>
 

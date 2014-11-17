@@ -55,8 +55,9 @@ if ( ! class_exists( 'Recipe_Hero_Frontend_Scripts' ) ) {
 
 			// Register all scripts/styles for later use
 			wp_register_script( 'rh-plugin-script', RH()->plugin_url() . '/assets/frontend/js/rh-scripts.js', array( 'jquery' ), RecipeHero::$version, true );
+			
 			wp_register_script( 'magnific', RH()->plugin_url() . '/assets/frontend/js/jquery.magnific-popup.min.js', array( 'jquery' ), RecipeHero::$version, true );
-
+			wp_register_script( 'rh-lightbox', RH()->plugin_url() . '/assets/frontend/js/rh-lightbox.js', array( 'jquery', 'magnific' ), RecipeHero::$version, true );
 			wp_register_style( 'magnific-css', RH()->plugin_url() . '/assets/frontend/css/magnific-popup.css', RecipeHero::$version, true );
 
 			wp_enqueue_script( 'jquery' );
@@ -64,7 +65,6 @@ if ( ! class_exists( 'Recipe_Hero_Frontend_Scripts' ) ) {
 			// CSS Styles
 			wp_enqueue_style( 'dashicons' );
 			$enqueue_styles = $this->get_styles();
-
 
 			if ( $enqueue_styles ) {
 				foreach ( $enqueue_styles as $handle => $args ) {
@@ -78,6 +78,7 @@ if ( ! class_exists( 'Recipe_Hero_Frontend_Scripts' ) ) {
 		 * Provide backwards compat for old constant
 		 * @param  array $styles
 		 * @return array
+		 * @depreciated 0.8.0
 		 */
 		public function backwards_compat( $styles ) {
 			if ( defined( 'RECIPE_HERO_USE_CSS' ) ) {

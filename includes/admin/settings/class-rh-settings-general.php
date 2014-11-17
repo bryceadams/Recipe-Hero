@@ -108,11 +108,11 @@ class RH_Settings_General extends RH_Settings_Page {
 			),
 
 			array(
-				'title'         => __( 'Product Image Gallery', 'recipe-hero' ),
-				'desc'          => __( 'Enable Lightbox for product images', 'recipe-hero' ),
-				'id'            => 'woocommerce_enable_lightbox',
+				'title'         => __( 'Recipe Image Gallery & Steps', 'recipe-hero' ),
+				'desc'          => __( 'Enable Lightbox for recipe gallery & steps', 'recipe-hero' ),
+				'id'            => 'recipe_hero_enable_lightbox',
 				'default'       => 'yes',
-				'desc_tip'      => __( 'Include WooCommerce\'s lightbox. Product gallery images will open in a lightbox.', 'recipe-hero' ),
+				'desc_tip'      => __( 'Include Recipe Hero\'s lightbox. Recipe gallery images will open in a lightbox, as well as steps images.', 'recipe-hero' ),
 				'type'          => 'checkbox'
 			),
 

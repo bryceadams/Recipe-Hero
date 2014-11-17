@@ -28,6 +28,13 @@ if ( ! function_exists( 'recipe_hero_shortcode_single_display' ) ) {
 			echo 'You need to include the ID attribute!';
 		
 		} else {
+
+			// Enqueue Lightbox
+			if ( get_option( 'recipe_hero_enable_lightbox' ) == '' || get_option( 'recipe_hero_enable_lightbox' ) == 'yes' ) {
+				wp_enqueue_script( 'magnific' );
+				wp_enqueue_script( 'rh-lightbox' );
+				wp_enqueue_style( 'magnific-css' );
+			}
 		
 			$args = array(
 					'post_type' => 'recipe',

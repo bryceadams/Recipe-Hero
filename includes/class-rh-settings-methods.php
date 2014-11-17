@@ -15,7 +15,7 @@ class Recipe_Hero_Settings_Methods {
 
     function __construct() {
  
-    	add_action( 'wp_enqueue_scripts', array( $this, 'option_disable_lightbox' ), 9999 );
+    	add_action( 'wp_enqueue_scripts', array( $this, 'option_enable_lightbox' ), 9999 );
 		add_filter( 'comments_open', array( $this, 'override_comments_open' ), 1000);
 		add_action( 'wp_head', array( $this, 'option_styles' ) );
 
@@ -29,15 +29,14 @@ class Recipe_Hero_Settings_Methods {
 	 * @since 	  0.8.0
 	 */
 
-	public function option_disable_lightbox() {
+	public function option_enable_lightbox() {
 
-		global $rh_style_options;
-
-		if ( ! isset ( $rh_style_options['disable_lightbox'] ) ) {
+		if ( get_option( 'recipe_hero_enable_lightbox' ) == '' || get_option( 'recipe_hero_enable_lightbox' ) == 'yes' ) {
 
 			if ( ( get_post_type() == 'recipe' ) && is_single() ) {
 
 				wp_enqueue_script( 'magnific' );
+				wp_enqueue_script( 'rh-lightbox' );
 				wp_enqueue_style( 'magnific-css' );
 
 			}
