@@ -70,9 +70,13 @@ final class RecipeHero {
 	 */
 	protected static $_instance = null;
 
+	/**
+	 * @var RH_Query $query
+	 */
+	public $query = null;
 
 	/**
-	 * @var WC_Integrations $integrations
+	 * @var RH_Integrations $integrations
 	 */
 	public $integrations = null;
 
@@ -193,6 +197,9 @@ final class RecipeHero {
 		// Abstract Classes
 		include_once( 'includes/abstracts/abstract-rh-recipe.php' );
 
+		// Query Class
+		$this->query = include( 'includes/class-rh-query.php' );
+
 		if ( is_admin() ) {
 
 			include_once( 'includes/admin/class-rh-admin.php' );
@@ -201,7 +208,8 @@ final class RecipeHero {
 		}
 
 		// Classes (used on all pages)
-		include_once( 'includes/class-rh-integrations.php' );                   // Loads integrations
+		include_once( 'includes/class-rh-integrations.php' );
+		include_once( 'includes/class-rh-cache-helper.php' );
 
 	}
 

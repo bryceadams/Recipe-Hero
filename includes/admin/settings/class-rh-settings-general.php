@@ -56,6 +56,23 @@ class RH_Settings_General extends RH_Settings_Page {
 				'desc_tip' => true,
 			),
 
+			array(
+				'title'    => __( 'Recipes Order', 'recipe-hero' ),
+				'desc'     => __( 'The order to output recipes in on archive pages', 'recipe-hero' ),
+				'id'       => 'recipe_hero_recipe_order',
+				'type'     => 'select',
+				'default'  => '',
+				'class'    => 'select2_select_std',
+				'css'      => 'min-width:300px;',
+				'desc_tip' => true,
+				'options'  => apply_filters( 'recipe_hero_default_orderby_options', array(
+						'menu_order' => __( 'Default sorting (custom ordering + name)', 'woocommerce' ),
+						'date'       => __( 'Sort by most recent', 'woocommerce' ),
+						'asc'		 => __( 'Sort by A to Z', 'recipe-hero' ),
+						'desc'		 => __( 'Sort by Z to A', 'recipe-hero' ),
+				) ),
+			),
+
 			array( 'type' => 'sectionend', 'id' => '' ),
 
 			array(
