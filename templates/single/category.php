@@ -45,12 +45,7 @@ if ( ! empty ( $course_terms ) ) {
 
 		<div class="cuisine">
 			<meta itemprop="recipeCuisine" content="<?php echo $cuisine_meta; ?>">
-			<strong>
-			<?php if ( ! empty( $rh_labels_options['label_cuisine'] ) ) {
-				echo $rh_labels_options['label_cuisine'];
-			} else {
-				_e( 'Cuisine', 'recipe-hero' );
-			} ?></strong>
+			<strong><?php echo apply_filters( 'rh_label_cuisine', __( 'Cuisine', 'recipe-hero' ) ); ?></strong>
 			<?php echo $cuisine; ?>
 		</div>
 
@@ -59,13 +54,8 @@ if ( ! empty ( $course_terms ) ) {
 	<?php if ( isset ( $course ) ) { ?>
 
 		<div class="course">
-			<meta itemprop="recipeCategory" content="<?php echo $course_meta; ?>">	
-			<strong>
-			<?php if ( ! empty( $rh_labels_options['label_course'] ) ) {
-				echo $rh_labels_options['label_course'];
-			} else {
-				_e( 'Course', 'recipe-hero' );
-			} ?></strong>
+			<meta itemprop="recipeCategory" content="<?php echo $course_meta; ?>">
+			<strong><?php echo apply_filters( 'rh_label_course', __( 'Course', 'recipe-hero' ) ); ?></strong>
 			<?php echo $course; ?>
 		</div>
 		

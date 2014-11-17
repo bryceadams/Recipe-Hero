@@ -49,6 +49,17 @@ class Recipe_Hero_Lightbox {
 							    titleSrc: 'title'
 							  }
 						});
+						jQuery('.recipe-gallery').magnificPopup({ 
+						  type: 'image',
+						   gallery: {
+							    // options for gallery
+							    enabled: true
+							  },
+							  image: {
+							    // options for image content type
+							    titleSrc: 'title'
+							  }
+						});
 					});
 
 				</script>

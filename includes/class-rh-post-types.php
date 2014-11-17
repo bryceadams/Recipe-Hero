@@ -118,7 +118,8 @@ class RH_Post_Types {
 		$labels 		= array(
 			'name' 				=> _x( 'Recipes', 'post type general name' ),
 			'singular_name'		=> _x( 'Recipe', 'post type singular name' ),
-			'add_new' 			=> __( 'Add New Recipe' ),
+			'all_items'			=> __( 'Recipes' ),
+			'add_new' 			=> __( 'Add New' ),
 			'add_new_item' 		=> __( 'Add New Recipe' ),
 			'edit_item' 		=> __( 'Edit Recipe' ),
 			'new_item' 			=> __( 'New Recipe' ),
@@ -132,7 +133,7 @@ class RH_Post_Types {
 		
 		$taxonomies 	= array();
 
-		$supports   	= array( 'title','editor','author','thumbnail','excerpt','comments','revisions', 'publicize' );
+		$supports   	= array( 'title','editor','author','thumbnail','excerpt','comments','revisions','publicize' );
 		
 		$post_type_args = array(
 			'labels' 			=> $labels,

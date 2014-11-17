@@ -67,6 +67,24 @@ if ( ! function_exists( 'recipe_hero_output_single_photo' ) ) {
 }
 
 /**
+ * Recipe Gallery Thumbnails
+ *
+ * @package   Recipe Hero
+ * @author    Captain Theme <info@captaintheme.com>
+ * @since 	  0.8.0
+ */
+
+if ( ! function_exists( 'recipe_hero_output_single_thumbnails' ) ) {
+
+	function recipe_hero_output_single_thumbnails() {
+
+		recipe_hero_get_template( 'single/gallery.php' );
+
+	}
+
+}
+
+/**
  * Recipe Cuisine / Course
  *
  * @package   Recipe Hero

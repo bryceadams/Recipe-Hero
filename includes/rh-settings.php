@@ -22,7 +22,7 @@ if ( ! function_exists( 'recipe_hero_settings_add_pages' ) ) {
     function recipe_hero_settings_add_pages() {
 
         add_submenu_page(
-            'edit.php?post_type=recipe',
+            'edit.php?post_type=post',
             __( 'Recipe Hero Settings', 'recipe-hero' ),
             __( 'Settings', 'recipe-hero' ),
             'administrator',

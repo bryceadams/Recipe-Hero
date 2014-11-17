@@ -77,24 +77,41 @@ article.recipe {
 			content: none;
 		}
 	}
-	.recipe-single-photo,
-	.recipe-archive-photo {
-		margin-top: 15px;
-		margin-bottom: 15px;
-		img {
-			max-width: 100%;
-			padding: 3px;
-			border: 1px solid #ddd;
-			border-radius: 5px;
-		}
-		a {
-			img {
-				@include transition( all, 150ms, ease );
-			}
-			&:hover {
-				img {
-					opacity: 0.8;
+	.images {
+		margin-bottom: 10px;
+		.thumbnails {
+			margin-top: 5px;
+			@include clearfix();
+			a {
+				float:left;
+				&.columns-3 {
+					width: 30.75%;
+					margin-right: 3.8%;
 				}
+				&.columns-4 {
+					width: 22.85%;
+					margin-right: 2.55%;
+				}
+				&.columns-5 {
+					width: 18.05%;
+					margin-right: 2.2%;
+				}
+				&.columns-6 {
+					width: 14.2%;
+					margin-right: 2.8%;
+				}
+				img {
+					display: block;
+					width: 100%;
+					margin-bottom: 10px;
+					height: auto;
+				}
+			}
+			a.last {
+				margin-right: 0;
+			}
+			a.first {
+				clear:both;
 			}
 		}
 		.recipe-schema-thumb {

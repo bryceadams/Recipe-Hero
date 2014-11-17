@@ -28,11 +28,7 @@ $total_time 	= recipe_hero_convert_minute_hour ( recipe_hero_calc_total_cook_tim
 
 		<div class="serves unit w-1-4">
 			<strong>
-				<?php if ( $rh_labels_options['label_serves'] ) {
-						echo $rh_labels_options['label_serves'];
-					} else {
-						_e( 'Serves', 'recipe-hero' );
-					} ?>
+				<?php echo apply_filters( 'rh_label_serves', __( 'Serves', 'recipe-hero' ) ); ?>
 			</strong> <span itemprop="recipeYield"><?php echo $serves; ?> <?php echo $serves_type; ?></span>
 		</div>
 
@@ -41,11 +37,7 @@ $total_time 	= recipe_hero_convert_minute_hour ( recipe_hero_calc_total_cook_tim
 		<?php if ( $equipment ) { ?>
 			<div class="equipment unit w-1-4">
 				<strong>
-					<?php if ( $rh_labels_options['label_equipment'] ) {
-						echo $rh_labels_options['label_equipment'];
-						} else {
-							_e( 'Equipment', 'recipe-hero' );
-						} ?>
+					<?php echo apply_filters( 'rh_label_equipment', __( 'Equipment', 'recipe-hero' ) ); ?>
 				</strong>
 				<?php
 				foreach ($equipment as $equipment_item ) {
@@ -62,11 +54,7 @@ $total_time 	= recipe_hero_convert_minute_hour ( recipe_hero_calc_total_cook_tim
 		<?php if ( $prep_time ) { ?>
 			<div class="prep-time unit w-1-4">
 				<strong>
-					<?php if ( $rh_labels_options['label_prep'] ) {
-						echo $rh_labels_options['label_prep'];
-						} else {
-							_e( 'Prep Time', 'recipe-hero' );
-						} ?>
+					<?php echo apply_filters( 'rh_label_preptime', __( 'Prep time', 'recipe-hero' ) ); ?>
 				</strong> <meta itemprop="prepTime" content="<?php echo recipe_hero_schema_prep_time(); ?>">
 				<div class="the-time"><span class="dashicons dashicons-clock"></span> <?php echo $prep_time; ?></div>
 			</div>
@@ -76,11 +64,7 @@ $total_time 	= recipe_hero_convert_minute_hour ( recipe_hero_calc_total_cook_tim
 
 			<div class="cook-time unit w-1-4">
 				<strong>
-					<?php if ( $rh_labels_options['label_cook'] ) {
-						echo $rh_labels_options['label_cook'];
-						} else {
-							_e( 'Cook Time', 'recipe-hero' );
-						} ?>
+					<?php echo apply_filters( 'rh_label_cooktime', __( 'Cook Time', 'recipe-hero' ) ); ?>
 				</strong> <meta itemprop="cookTime" content="<?php echo recipe_hero_schema_cook_time(); ?>">
 				<div class="the-time"><span class="dashicons dashicons-clock"></span> <?php echo $cook_time; ?></div>
 				<meta itemprop="totalTime" content="<?php echo recipe_hero_schema_total_time(); ?>">

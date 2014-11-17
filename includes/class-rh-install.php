@@ -49,6 +49,8 @@ class RH_Install {
 	 */
 	public function install() {
 
+		$this->create_options();
+
 		// Register post types
 		include_once( 'class-rh-post-types.php' );
 		RH_Post_types::register_post_types();
@@ -60,6 +62,34 @@ class RH_Install {
 		// Flush rules after install
 		flush_rewrite_rules();
 
+	}
+
+	/**
+	 * Default options
+	 *
+	 * Sets up the default options used on the settings page
+	 *
+	 * @return void
+	 */
+	public function create_options() {
+		// Include settings so that we can run through defaults
+		include_once( 'admin/class-rh-admin-settings.php' );
+
+		$settings = RH_Admin_Settings::get_settings_pages();
+
+		foreach ( $settings as $section ) {
+			if ( ! method_exists( $section, 'get_settings' ) ) {
+				continue;
+			}
+
+			foreach ( $section->get_settings() as $value ) {
+				if ( isset( $value['default'] ) && isset( $value['id'] ) ) {
+					$autoload = isset( $value['autoload'] ) ? (bool) $value['autoload'] : true;
+					add_option( $value['id'], $value['default'], '', ( $autoload ? 'yes' : 'no' ) );
+				}
+			}
+
+		}
 	}
 
 	/**

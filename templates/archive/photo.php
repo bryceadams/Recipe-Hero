@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 global $post;
 
-$photo = get_the_post_thumbnail( $post->ID, 'rh-recipe-single' );
+$photo = get_the_post_thumbnail( $post->ID, 'recipe_single' );
 
 if ( has_post_thumbnail() ) { ?>
 

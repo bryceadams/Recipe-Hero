@@ -25,7 +25,6 @@ class Recipe_Hero_Admin_Scripts {
 		
 		add_action( 'admin_head', array( $this, 'initialize_numeric_js' ) );
 		add_action( 'admin_head', array( $this, 'initialize_autocomplete_js' ) );
-		add_actioN( 'admin_head', array( $this, 'initialize_chosen_js' ) );
 
 	}
 
@@ -34,6 +33,7 @@ class Recipe_Hero_Admin_Scripts {
 	 *
 	 * @access public
 	 * @return void
+	 * @todo include script_debug mode $min
 	 */
 	public function load_scripts() {
 
@@ -42,14 +42,34 @@ class Recipe_Hero_Admin_Scripts {
 		// Register all scripts/styles for later use
 		wp_register_script( 'numeric', RH()->plugin_url() . '/assets/admin/js/jquery.numeric.js', array( 'jquery' ), RecipeHero::$version, true );
 		wp_register_script( 'liquidmetal', RH()->plugin_url() . '/assets/admin/js/liquidmetal.js', array( 'jquery' ), RecipeHero::$version, true );
-		wp_register_script( 'chosen', RH()->plugin_url() . '/assets/admin/js/jquery.chosen.min.js', array( 'jquery' ), RecipeHero::$version, true );
+
+		wp_register_script( 'rh-admin-meta-boxes-gallery', RH()->plugin_url() . '/assets/admin/js/meta-boxes-gallery.js', array( 'jquery', 'tiptip' ), RecipeHero::$version, true );
+
+		wp_register_script( 'tiptip', RH()->plugin_url() . '/assets/admin/js/jquery-tiptip/jquery.tipTip.min.js', array( 'jquery' ), RecipeHero::$version, true );
+		wp_register_style( 'tiptip-css', RH()->plugin_url() . '/assets/admin/css/tiptip.css' );
+
+		wp_register_script( 'select2', RH()->plugin_url() . '/assets/admin/js/jquery-select/select2.min.js', array( 'jquery' ), RecipeHero::$version, true );
+		wp_register_style( 'select2-css', RH()->plugin_url() . '/assets/admin/css/select2.css' );
+
+		wp_register_script( 'rh-admin-js', RH()->plugin_url() . '/assets/admin/js/admin.js', array( 'jquery', 'numeric', 'liquidmetal', 'tiptip', 'select2' ), RecipeHero::$version, true );
+		wp_register_style( 'rh-admin-css', RH()->plugin_url() . '/assets/admin/css/admin.css' );
 
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'numeric' );
 		wp_enqueue_script( 'jquery-ui-core' );
 		wp_enqueue_script( 'jquery-ui-autocomplete' );
 		wp_enqueue_script( 'liquidmetal' );
-		wp_enqueue_script( 'chosen' );
+
+		wp_enqueue_script( 'tiptip' );
+		wp_enqueue_style( 'tiptip-css' );
+
+		wp_enqueue_script( 'select2' );
+		wp_enqueue_style( 'select2-css' );
+
+		wp_enqueue_script( 'rh-admin-js' );
+		wp_enqueue_style( 'rh-admin-css' );
+
+		wp_enqueue_script( 'rh-admin-meta-boxes-gallery' );
 
 	}
 
@@ -133,29 +153,6 @@ class Recipe_Hero_Admin_Scripts {
 					});
 
 				});
-
-			});
-
-		</script>
-
-	<?php
-	}
-
-	/**
-	 * Initialized Chosen JS
-	 *
-	 * @package   Recipe Hero
-	 * @author    Captain Theme <info@captaintheme.com>
-	 * @since 	  0.9.0
-	 */
-
-	public function initialize_chosen_js() { ?>
-
-		<script type="text/javascript">
-
-			jQuery(document).ready(function() {
-
-				jQuery(".chosen").chosen({disable_search_threshold: 5, no_results_text: "Oops, no page found!", width: "25%"});
 
 			});
 

@@ -41,7 +41,7 @@ if ( ! class_exists( 'Recipe_Hero_Admin' ) ) {
 		 * Initialize the plugin by loading admin scripts & styles and adding a
 		 * settings page and menu.
 		 *
-		 * @since     0.9.0
+		 * @since     1.0.0
 		 */
 		private function __construct() {
 
@@ -53,13 +53,19 @@ if ( ! class_exists( 'Recipe_Hero_Admin' ) ) {
 			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
 
 			// Let's make the magic happen on the backend
-			require_once( RECIPE_HERO_PLUGIN_DIR . 'includes/admin/class-rh-admin-tweaks.php' );
-			require_once( RECIPE_HERO_PLUGIN_DIR . 'includes/admin/rh-help-tab.php' );
-			require_once( RECIPE_HERO_PLUGIN_DIR . 'includes/admin/rh-columns.php' );
-			require_once( RECIPE_HERO_PLUGIN_DIR . 'includes/admin/class-rh-admin-scripts.php' );
+			include_once( 'rh-admin-functions.php' );
+			include_once( 'class-rh-admin-settings.php' );
 
-			// To Be Included in 1.0.0:
-			// require_once( RECIPE_HERO_PLUGIN_DIR . 'includes/admin/rh-welcome.php' );
+			include_once( 'rh-help-tab.php' );
+			include_once( 'rh-columns.php' );
+			include_once( 'class-rh-admin-tweaks.php' );
+			include_once( 'class-rh-admin-scripts.php' );
+
+			// Meta boxes
+			include_once( 'class-rh-admin-meta-boxes.php' );
+
+			include( 'class-rh-admin-menus.php' );
+			//include( 'class-rh-admin-welcome.php' );
 
 		}
 

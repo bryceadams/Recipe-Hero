@@ -7,6 +7,7 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
+ * @since     1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -63,4 +64,40 @@ function recipe_hero_sitewide_all_ingredients() {
 
     wp_reset_postdata();
 
+}
+
+/**
+ * Clean variables
+ *
+ * @param string $var
+ * @return string
+ */
+function rh_clean( $var ) {
+    return sanitize_text_field( $var );
+}
+
+/**
+ * Get an image size.
+ *
+ * Variable is filtered by woocommerce_get_image_size_{image_size}
+ *
+ * @param string $image_size
+ * @since 1.0.0
+ * @return array
+ */
+function rh_get_image_size( $image_size ) {
+    if ( in_array( $image_size, array( 'recipe_single', 'recipe_steps', 'recipe_thumbnail' ) ) ) {
+        $size           = get_option( $image_size . '_image_size', array() );
+        $size['width']  = isset( $size['width'] ) ? $size['width'] : '300';
+        $size['height'] = isset( $size['height'] ) ? $size['height'] : '300';
+        $size['crop']   = isset( $size['crop'] ) ? $size['crop'] : 0;
+    } else {
+        $size = array(
+            'width'  => '300',
+            'height' => '300',
+            'crop'   => 1
+        );
+    }
+
+    return apply_filters( 'woocommerce_get_image_size_' . $image_size, $size );
 }

@@ -37,7 +37,7 @@ if ( $instructions ) { ?>
 		    	if ( $instruction['_recipe_hero_step_image'] ) {
 		    		
 		    		$instruction_image = '<a href="' . $instruction['_recipe_hero_step_image'] . '" class="steps-image-link" title="' . __( 'Step', 'recipe-hero' ) . ' ' . $intruction_count . '">';
-		    		$instruction_image .= wp_get_attachment_image( $instruction['_recipe_hero_step_image_id'], 'rh-recipe-steps', false, array( 'class' => 'step-image', ) );
+		    		$instruction_image .= wp_get_attachment_image( $instruction['_recipe_hero_step_image_id'], 'recipe_steps', false, array( 'class' => 'step-image', ) );
 		    		$instruction_image .= '</a>';
 
 		    	}

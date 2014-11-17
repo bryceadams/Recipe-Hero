@@ -70,6 +70,12 @@ final class RecipeHero {
 	 */
 	protected static $_instance = null;
 
+
+	/**
+	 * @var WC_Integrations $integrations
+	 */
+	public $integrations = null;
+
 	/**
 	 * Return an instance of this class.
 	 *
@@ -117,6 +123,7 @@ final class RecipeHero {
 		$this->includes();
 
 		// Hooks
+		add_action( 'after_setup_theme', array( $this, 'setup_environment' ) );
 		add_action( 'init', array( $this, 'init' ), 0 );
 
 		// Loaded Action
@@ -175,19 +182,24 @@ final class RecipeHero {
 
 		include_once( 'includes/rh-shortcodes.php' );
 		include_once( 'includes/rh-general-functions.php' );
-		include_once( 'includes/rh-image-sizes.php' );
 
 		include_once( 'includes/class-rh-lightbox.php' );
 		include_once( 'includes/class-rh-frontend-scripts.php' );
 
 		include_once( 'includes/rh-schema.php' );
 
+		// Abstract Classes
+		include_once( 'includes/abstracts/abstract-rh-recipe.php' );
+
 		if ( is_admin() ) {
 
-			include_once( 'includes/admin/class-recipe-hero-admin.php' );
+			include_once( 'includes/admin/class-rh-admin.php' );
 			add_action( 'plugins_loaded', array( 'Recipe_Hero_Admin', 'get_instance' ) );
 
 		}
+
+		// Classes (used on all pages)
+		include_once( 'includes/class-rh-integrations.php' );                   // Loads integrations
 
 	}
 
@@ -202,6 +214,9 @@ final class RecipeHero {
 
 		// Set up localisation
 		$this->load_plugin_textdomain();
+
+		// Load class instances
+		$this->integrations = new RH_Integrations();	// Integrations class
 
 		// Init action
 		do_action( 'recipe_hero_init' );
@@ -237,6 +252,42 @@ final class RecipeHero {
 		 */
 		load_textdomain( 'recipe-hero', $dir . 'recipe-hero/recipe-hero-' . $locale . '.mo' );
 		load_plugin_textdomain( 'recipe-hero', false, plugin_basename( dirname( __FILE__ ) ) . "/i18n/languages" );
+	}
+
+	/**
+	 * Ensure theme and server variable compatibility and setup image sizes.
+	 */
+	public function setup_environment() {
+		
+		$this->add_thumbnail_support();
+		$this->add_image_sizes();
+
+	}
+
+	/**
+	 * Ensure post thumbnail support is turned on
+	 */
+	private function add_thumbnail_support() {
+		if ( ! current_theme_supports( 'post-thumbnails' ) ) {
+			add_theme_support( 'post-thumbnails' );
+		}
+		add_post_type_support( 'recipe', 'thumbnail' );
+	}
+
+	/**
+	 * Add RH Image sizes to WP
+	 *
+	 * @since 2.3
+	 */
+	private function add_image_sizes() {
+		$recipe_single 		= rh_get_image_size( 'recipe_single' );
+		$recipe_steps		= rh_get_image_size( 'recipe_steps' );
+		$recipe_thumbnail	= rh_get_image_size( 'recipe_thumbnail' );
+
+		add_image_size( 'rh-admin-column', 100, 100, true );
+		add_image_size( 'recipe_single', $recipe_single['width'], $recipe_single['height'], $recipe_single['crop'] );
+		add_image_size( 'recipe_steps', $recipe_steps['width'], $recipe_steps['height'], $recipe_steps['crop'] );
+		add_image_size( 'recipe_thumbnail', $recipe_thumbnail['width'], $recipe_thumbnail['height'], $recipe_thumbnail['crop'] );
 	}
 
 	/** Helper functions ******************************************************/

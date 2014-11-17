@@ -73,6 +73,8 @@ add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_inst
 add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_nutrition', 90 );
 add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_jetpack_sharing_buttons', 100 );
 
+add_action( 'recipe_hero_recipe_thumbnails', 'recipe_hero_output_single_thumbnails', 10 );
+
 /**
  * Recipe After Single Content
  *

@@ -55,6 +55,9 @@
 /* TRANSFORM  */
 /* TRANSITION */
 /* TRIPLE BORDERS */
+/**
+ * Mixins
+ */
 /*
 Specific Core Theme Styles
 */
@@ -121,28 +124,40 @@ article.recipe {
     article.recipe .recipe-single-meta .comments-link a:before,
     article.recipe .recipe-archive-meta .comments-link a:before {
       content: none; }
-  article.recipe .recipe-single-photo,
-  article.recipe .recipe-archive-photo {
-    margin-top: 15px;
-    margin-bottom: 15px; }
-    article.recipe .recipe-single-photo img,
-    article.recipe .recipe-archive-photo img {
-      max-width: 100%;
-      padding: 3px;
-      border: 1px solid #ddd;
-      border-radius: 5px; }
-    article.recipe .recipe-single-photo a img,
-    article.recipe .recipe-archive-photo a img {
-      -moz-transition: all 150ms ease;
-      -o-transition: all 150ms ease;
-      -webkit-transition: all 150ms ease;
-      -ms-transition: all 150ms ease;
-      transition: all 150ms ease; }
-    article.recipe .recipe-single-photo a:hover img,
-    article.recipe .recipe-archive-photo a:hover img {
-      opacity: 0.8; }
-    article.recipe .recipe-single-photo .recipe-schema-thumb,
-    article.recipe .recipe-archive-photo .recipe-schema-thumb {
+  article.recipe .images {
+    margin-bottom: 10px; }
+    article.recipe .images .thumbnails {
+      margin-top: 5px;
+      *zoom: 1; }
+      article.recipe .images .thumbnails:before, article.recipe .images .thumbnails:after {
+        content: " ";
+        display: table; }
+      article.recipe .images .thumbnails:after {
+        clear: both; }
+      article.recipe .images .thumbnails a {
+        float: left; }
+        article.recipe .images .thumbnails a.columns-3 {
+          width: 30.75%;
+          margin-right: 3.8%; }
+        article.recipe .images .thumbnails a.columns-4 {
+          width: 22.85%;
+          margin-right: 2.55%; }
+        article.recipe .images .thumbnails a.columns-5 {
+          width: 18.05%;
+          margin-right: 2.2%; }
+        article.recipe .images .thumbnails a.columns-6 {
+          width: 14.2%;
+          margin-right: 2.8%; }
+        article.recipe .images .thumbnails a img {
+          display: block;
+          width: 100%;
+          margin-bottom: 10px;
+          height: auto; }
+      article.recipe .images .thumbnails a.last {
+        margin-right: 0; }
+      article.recipe .images .thumbnails a.first {
+        clear: both; }
+    article.recipe .images .recipe-schema-thumb {
       display: none; }
   article.recipe .recipe-single-tax .cuisine,
   article.recipe .recipe-single-tax .course,
