@@ -243,15 +243,22 @@ if ( ! function_exists( 'recipe_hero_output_single_seperator' ) ) {
 
 if ( ! function_exists( 'recipe_hero_convert_minute_hour' ) ) {
 
-	function recipe_hero_convert_minute_hour($time, $format = '%dh %02dm') {
+	function recipe_hero_convert_minute_hour( $time, $format = '%dh %02dm' ) {
 
-	    settype($time, 'integer');
-	    if ($time < 1) {
+	    settype( $time, 'integer' );
+	    if ( $time < 1 ) {
 	        return;
 	    }
-	    $hours = floor($time / 60);
+	    $hours = floor( $time / 60 );
 	    $minutes = $time % 60;
-	    return sprintf($format, $hours, $minutes);
+	    
+	    if ( $time < 60 ) {
+	    	$content = $minutes . 'm';
+	    } else {
+	   		$content = sprintf( $format, $hours, $minutes );
+	    }
+
+	    return $content;
 
 	}
 

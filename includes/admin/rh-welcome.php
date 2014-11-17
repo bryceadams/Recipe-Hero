@@ -85,7 +85,7 @@ if ( ! class_exists( 'Recipe_Hero_Admin_Welcome' ) ) {
 		 * @return void
 		 */
 		public function admin_css() {
-			wp_enqueue_style( 'recipe-hero-activation', plugins_url( 'assets/css/css/activation.css', __FILE__ ), array(), RECIPE_HERO_VERSION_NUMBER );
+			wp_enqueue_style( 'recipe-hero-activation', plugins_url( 'assets/css/css/activation.css', __FILE__ ), array(), RecipeHero::$version );
 		}
 
 		/**
@@ -207,7 +207,7 @@ if ( ! class_exists( 'Recipe_Hero_Admin_Welcome' ) ) {
 				flush_rewrite_rules();
 
 			// Drop minor version if 0
-			$major_version = substr( RECIPE_HERO_VERSION_NUMBER, 0, 3 );
+			$major_version = substr( RecipeHero::$version, 0, 3 );
 			?>
 			<h1><?php printf( __( 'Welcome to Recipe Hero %s', 'recipe-hero' ), $major_version ); ?></h1>
 

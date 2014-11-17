@@ -139,9 +139,11 @@ final class RecipeHero {
 		if ( ! defined( 'RH_PLUGIN_FILE' ) ) {
 			define( 'RH_PLUGIN_FILE', __FILE__ );
 		}
+
 		if ( ! defined( 'RH_PLUGIN_BASENAME' ) ) {
 			define( 'RH_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 		}
+
 		if ( ! defined( 'RH_VERSION' ) ) {
 			define( 'RH_VERSION', self::$version );
 		}
@@ -154,11 +156,6 @@ final class RecipeHero {
 		// Template Folder Path
 		if( ! defined( 'RECIPE_HERO_TEMPLATE_DIR' ) ) {
 			define( 'RECIPE_HERO_TEMPLATE_DIR', 'recipe-hero/' );
-		}
-
-		// Define Current Plugin Version (backwards compatability)
-		if( ! defined( 'RECIPE_HERO_VERSION_NUMBER' ) ) {
-			define( 'RECIPE_HERO_VERSION_NUMBER', RH_VERSION );
 		}
 
 		// @todo Temp Var Globals
@@ -179,7 +176,6 @@ final class RecipeHero {
 		include_once( 'includes/rh-fields.php' );
 		include_once( 'includes/class-rh-post-types.php' );
 
-		include_once( 'includes/rh-settings.php' );
 		include_once( 'includes/class-rh-settings-methods.php' );
 
 		include_once( 'includes/rh-templates.php' );

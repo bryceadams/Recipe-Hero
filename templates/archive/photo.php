@@ -15,10 +15,12 @@ $photo = get_the_post_thumbnail( $post->ID, 'recipe_single' );
 
 if ( has_post_thumbnail() ) { ?>
 
-	<div class="recipe-archive-photo">
+	<div class="images">
+
 		<a href="<?php echo esc_url( get_permalink( $post->ID ) ); ?>" title="<?php echo get_the_title( $post->ID ); ?>" rel="bookmark">
 			<?php echo $photo; ?>
 		</a>
+		
 	</div>
 
 <?php
