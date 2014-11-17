@@ -20,7 +20,7 @@ if ( $attachment_ids ) {
 	<div class="thumbnails"><?php
 
 		$loop = 0;
-		$columns = apply_filters( 'woocommerce_product_thumbnails_columns', 5 );
+		$columns = apply_filters( 'recipe_hero_recipe_thumbnails_columns', 5 );
 
 		foreach ( $attachment_ids as $attachment_id ) {
 
@@ -46,7 +46,7 @@ if ( $attachment_ids ) {
 			$image_class = esc_attr( implode( ' ', $classes ) );
 			$image_title = esc_attr( get_the_title( $attachment_id ) );
 
-			echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', sprintf( '<a href="%s" class="%s" title="%s" data-rel="prettyPhoto[product-gallery]">%s</a>', $image_link, $image_class, $image_title, $image ), $attachment_id, $post->ID, $image_class );
+			echo apply_filters( 'recipe_hero_single_recipe_image_thumbnail_html', sprintf( '<a href="%s" class="%s" title="%s" data-rel="prettyPhoto[product-gallery]">%s</a>', $image_link, $image_class, $image_title, $image ), $attachment_id, $post->ID, $image_class );
 
 			$loop++;
 		}

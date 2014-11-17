@@ -23,7 +23,6 @@ add_filter( 'cmb2_render_pw_multiselect', 'pw_select2', 10, 2 );
  */
 function pw_select( $field, $meta ) {
 	echo '<select name="', $field['id'], '" id="', $field['id'], '" data-placeholder="' . $field['desc'] . '" class="select2">';
-	echo '<option></option>';
 	if ( isset( $field['options'] ) && ! empty( $field['options'] ) ) {
 		foreach ( $field['options'] as $option_key => $option ) {
 			$opt_label = is_array( $option ) && array_key_exists( 'name', $option ) ? $option['name'] : $option;

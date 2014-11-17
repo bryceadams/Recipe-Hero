@@ -26,13 +26,9 @@ $ingredients = get_post_meta( $post->ID, '_recipe_hero_ingredients_group', true 
 
 	    $ingredient_quantity = $ingredient_amount = $ingredient_name = '';
 
-	    if ( isset( $ingredient['quantity'] ) ) {
+	    if ( isset( $ingredient['quantity'] ) && isset( $ingredient['amount'] ) ) {
 
 	        $ingredient_quantity = $ingredient['quantity'];
-
-	    }
-
-	    if ( isset( $ingredient['amount'] ) ) {
 
 	        $ingredient_amount_pre = $ingredient['amount'];
 	    	
@@ -49,7 +45,6 @@ $ingredients = get_post_meta( $post->ID, '_recipe_hero_ingredients_group', true 
 	   	?>
 
 	   	<li class="ingredients-item" itemprop="ingredients">
-	   		<?php echo $ingredient_quantity; ?> 
 	   		<?php echo $ingredient_amount; ?> 
 	   		<?php echo $ingredient_name; ?> 
 	    </li>

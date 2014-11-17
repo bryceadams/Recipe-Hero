@@ -146,7 +146,7 @@ function recipe_hero_cmb2_metaboxes( array $meta_boxes ) {
 						'name'    => __( 'Amount', 'recipe-hero' ),
 						//'desc'    => __( 'field description (optional)', 'recipe-hero' ),
 						'id'      => 'amount',
-						'type'    => 'pw_select',
+						'type'    => 'select', // will use 'pw_select' when issue is fixed - https://github.com/mustardBees/cmb-field-select2/issues/10
 						'options' => array(
 							'gm' 	 => __( 'Gram (gm)', 'recipe-hero' ),
 							'oz'   	 => __( 'Ounce (oz)', 'recipe-hero' ),
@@ -163,6 +163,8 @@ function recipe_hero_cmb2_metaboxes( array $meta_boxes ) {
 							// Should there be slices / cloves / etc. as terms of measurement? Get feedback.
 							// Also, what about sizes? Small / Large etc. - we don't want this to be a long list of all possible amounts but we want to make it as easy as possible for users.
 						),
+						'default'	=> 'gm',
+    					'sanitization_cb' => 'pw_select2_sanitise',
 					),
 					array(
 						'name' => __( 'Ingredient', 'recipe-hero' ),
@@ -212,7 +214,7 @@ function recipe_hero_cmb2_metaboxes( array $meta_boxes ) {
 						'desc' => __( 'Upload an image using the media uploader (optional)', 'recipe-hero' ),
 						'id'   => $prefix . 'step_image',
 						'type' => 'file',
-						'allow' => array( 'attachment' ), // onlu attachments allowed --> no URLs
+						'allow' => array( 'attachment' ), // only attachments allowed --> no URLs
 					),
 					// Add time per step?
 				),

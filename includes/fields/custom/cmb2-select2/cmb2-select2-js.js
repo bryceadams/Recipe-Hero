@@ -2,7 +2,6 @@
 
 	$( '.cmb-type-pw-select .select2' ).each(function() {
 		$( this ).select2({
-			allowClear: true,
 			width: '200px',
 		});
 	});

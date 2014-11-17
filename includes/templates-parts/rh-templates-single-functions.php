@@ -295,45 +295,39 @@ if ( ! function_exists( 'recipe_hero_output_single_ingredient_amount' ) ) {
 
 	function recipe_hero_output_single_ingredient_amount( $ingredient_amount_pre, $ingredient_quantity ) {
 
-		if ( $ingredient_quantity == 1 ) {
-			$plural = '';
-		} else {
-			$plural = 's';
-		}
-
 		switch ( $ingredient_amount_pre ) {
 		    case 'gm':
-		    	$ingredient_amount = __( 'Gram', 'recipe-hero' ) . $plural;
+		    	$ingredient_amount = sprintf( _n( '1 Gram', '%s Grams', $ingredient_quantity, 'recipe-hero' ), $ingredient_quantity );
 		    	break;
 		    case 'oz':
-		    	$ingredient_amount = __( 'Ounce', 'recipe-hero' ) . $plural;
+		    	$ingredient_amount = sprintf( _n( '1 Ounce', '%s Ounces', $ingredient_quantity, 'recipe-hero' ), $ingredient_quantity );
 		    	break;
 		    case 'ml':
-		    	$ingredient_amount = __( 'Milliliter', 'recipe-hero' ) . $plural;
+		    	$ingredient_amount = sprintf( _n( '1 Millilitre', '%s Millilitres', $ingredient_quantity, 'recipe-hero' ), $ingredient_quantity );
 		    	break;
 		    case 'ts':
-		    	$ingredient_amount = __( 'Teaspoon', 'recipe-hero' ) . $plural;
+		    	$ingredient_amount = sprintf( _n( '1 Teaspoon', '%s Teaspoons', $ingredient_quantity, 'recipe-hero' ), $ingredient_quantity );
 		    	break;
 		    case 'tas':
-		    	$ingredient_amount = __( 'Tablespoon', 'recipe-hero' ) . $plural;
+		    	$ingredient_amount = sprintf( _n( '1 Tablespoon', '%s Tablespoons', $ingredient_quantity, 'recipe-hero' ), $ingredient_quantity );
 		    	break;
 		    case 'cup':
-		    	$ingredient_amount = __( 'Cup', 'recipe-hero' ) . $plural;
+		    	$ingredient_amount = sprintf( _n( '1 Cup', '%s Cups', $ingredient_quantity, 'recipe-hero' ), $ingredient_quantity );
 		    	break;
 		    case 'lt':
-		    	$ingredient_amount = __( 'LIter', 'recipe-hero' ) . $plural;
+		    	$ingredient_amount = sprintf( _n( '1 Liter', '%s Liters', $ingredient_quantity, 'recipe-hero' ), $ingredient_quantity );
 		    	break;
 		    case 'lb':
-		    	$ingredient_amount = __( 'Pound', 'recipe-hero' ) . $plural;
+		    	$ingredient_amount = sprintf( _n( '1 Pound', '%s Pounds', $ingredient_quantity, 'recipe-hero' ), $ingredient_quantity );
 		    	break;
 		    case 'kg':
-		    	$ingredient_amount = __( 'Kilogram', 'recipe-hero' ) . $plural;
+		    	$ingredient_amount = sprintf( _n( '1 Kilogram', '%s Kilograms', $ingredient_quantity, 'recipe-hero' ), $ingredient_quantity );
 		    	break;
 		    case 'slice':
-		    	$ingredient_amount = __( 'Slice', 'recipe-hero' ) . $plural;
+		    	$ingredient_amount = sprintf( _n( '1 Slice', '%s Slices', $ingredient_quantity, 'recipe-hero' ), $ingredient_quantity );
 		    	break;
 		    case 'piece':
-		    	$ingredient_amount = __( 'Piece', 'recipe-hero' ) . $plural;
+		    	$ingredient_amount = sprintf( _n( '1 Piece', '%s Pieces', $ingredient_quantity, 'recipe-hero' ), $ingredient_quantity );
 		    	break;
 		    case 'none':
 		    	$ingredient_amount = '';

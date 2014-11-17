@@ -136,9 +136,15 @@ final class RecipeHero {
 	 */
 	private function define_constants() {
 
-		define( 'RH_PLUGIN_FILE', __FILE__ );
-		define( 'RH_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
-		define( 'RH_VERSION', self::$version );
+		if ( ! defined( 'RH_PLUGIN_FILE' ) ) {
+			define( 'RH_PLUGIN_FILE', __FILE__ );
+		}
+		if ( ! defined( 'RH_PLUGIN_BASENAME' ) ) {
+			define( 'RH_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
+		}
+		if ( ! defined( 'RH_VERSION' ) ) {
+			define( 'RH_VERSION', self::$version );
+		}
 
 		// Plugin Folder Path
 		if( ! defined( 'RECIPE_HERO_PLUGIN_DIR' ) ) {
