@@ -60,6 +60,7 @@ article.recipe {
 			padding-left: 15px;
 			font-size: 14px;
 			margin-top: 0;
+			line-height: 1.5;
 			.dashicons {
 				font-size: 16px;
 				vertical-align: bottom;
@@ -262,7 +263,7 @@ article.recipe {
 		margin-bottom: 15px;
 	}
 	hr.recipe-single-seperator {
-		margin-top: 25px;
+		background: #ddd;
 	}
 }
 

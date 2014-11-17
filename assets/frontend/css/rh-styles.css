@@ -102,7 +102,8 @@ article.recipe {
       vertical-align: bottom;
       padding-left: 15px;
       font-size: 14px;
-      margin-top: 0; }
+      margin-top: 0;
+      line-height: 1.5; }
       article.recipe .recipe-single-meta .date .dashicons, article.recipe .recipe-single-meta .author .dashicons, article.recipe .recipe-single-meta .comments-link .dashicons, article.recipe .recipe-single-meta .edit-link .dashicons,
       article.recipe .recipe-archive-meta .date .dashicons,
       article.recipe .recipe-archive-meta .author .dashicons,
@@ -286,4 +287,4 @@ article.recipe {
     line-height: 1.6;
     margin-bottom: 15px; }
   article.recipe hr.recipe-single-seperator {
-    margin-top: 25px; }
+    background: #ddd; }

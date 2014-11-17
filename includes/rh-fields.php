@@ -12,11 +12,13 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-/**
- * Get the bootstrap! If using the plugin from wordpress.org, REMOVE THIS!
- */
-if ( file_exists(  __DIR__ .'/fields/init.php' ) ) {
-	require_once  __DIR__ .'/fields/init.php';
+// Include CMB2
+if ( file_exists( __DIR__ . '/fields/init.php' ) ) {
+	require_once  __DIR__ . '/fields/init.php';
+}
+// Include CMB2 - Select2 Custom Field
+if ( file_exists( __DIR__ . '/fields/custom/cmb2-select2/cmb2-select2.php' ) ) {
+	require_once __DIR__ . '/fields/custom/cmb2-select2/cmb2-select2.php';
 }
 
 
@@ -144,7 +146,7 @@ function recipe_hero_cmb2_metaboxes( array $meta_boxes ) {
 						'name'    => __( 'Amount', 'recipe-hero' ),
 						//'desc'    => __( 'field description (optional)', 'recipe-hero' ),
 						'id'      => 'amount',
-						'type'    => 'select',
+						'type'    => 'pw_select',
 						'options' => array(
 							'gm' 	 => __( 'Gram (gm)', 'recipe-hero' ),
 							'oz'   	 => __( 'Ounce (oz)', 'recipe-hero' ),
