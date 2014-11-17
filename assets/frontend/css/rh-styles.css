@@ -264,9 +264,11 @@ article.recipe {
     -moz-column-gap: 20px;
     -webkit-column-count: 2;
     -webkit-column-gap: 20px;
-    font-size: 14px; }
+    font-size: 14px;
+    list-style: none; }
     article.recipe .recipe-single-ingredients ul.ingredients-list li.ingredients-item {
-      padding-bottom: 5px; }
+      padding-bottom: 5px;
+      margin-left: 0; }
   article.recipe .recipe-single-instructions h4 {
     margin-top: 25px; }
   article.recipe .recipe-single-instructions ol.steps-list {
@@ -278,10 +280,7 @@ article.recipe {
         font-size: 14px;
         line-height: 1.6; }
       article.recipe .recipe-single-instructions ol.steps-list li.steps-item img.step-image {
-        max-width: 100%;
-        padding: 3px;
-        border: 1px solid #ddd;
-        border-radius: 5px; }
+        max-width: 100%; }
   article.recipe .recipe-single-nutrition {
     font-size: 14px;
     line-height: 1.6;

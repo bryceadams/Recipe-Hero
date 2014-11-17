@@ -230,8 +230,10 @@ article.recipe {
 	       -webkit-column-count: 2;
 	       -webkit-column-gap : 20px;
 	       font-size: 14px;
+	       list-style: none;
 			li.ingredients-item {
 				padding-bottom: 5px;
+				margin-left: 0;
 			}
 		}
 	}
@@ -250,9 +252,6 @@ article.recipe {
 				}
 				img.step-image {
 					max-width: 100%;
-					padding: 3px;
-					border: 1px solid #ddd;
-					border-radius: 5px;
 				}
 			}
 		}
