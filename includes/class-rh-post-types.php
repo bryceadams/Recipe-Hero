@@ -133,7 +133,7 @@ class RH_Post_Types {
 		
 		$taxonomies 	= array();
 
-		$supports   	= array( 'title','editor','author','thumbnail','excerpt','comments','revisions','publicize' );
+		$supports   	= array( 'title','editor','author','thumbnail','excerpt','comments','publicize','page-attributes' );
 		
 		$post_type_args = array(
 			'labels' 			=> $labels,
@@ -146,7 +146,7 @@ class RH_Post_Types {
 			'show_in_nav_menus'	=> true,
 			'capability_type' 	=> 'post',
 			'has_archive' 		=> true,
-			'hierarchical' 		=> false,
+			'hierarchical' 		=> false, // Hierarchical causes memory issues - WP loads all records!
 			'rewrite' 			=> array( 'slug' => 'recipes', 'with_front' => false ),
 			'supports' 			=> $supports,
 			'menu_position' 	=> 35,

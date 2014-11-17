@@ -56,6 +56,7 @@ if ( ! class_exists( 'Recipe_Hero_Admin' ) ) {
 			include_once( 'rh-admin-functions.php' );
 			include_once( 'class-rh-admin-settings.php' );
 
+			include_once( 'class-rh-admin-ordering.php' );
 			include_once( 'rh-help-tab.php' );
 			include_once( 'rh-columns.php' );
 			include_once( 'class-rh-admin-tweaks.php' );

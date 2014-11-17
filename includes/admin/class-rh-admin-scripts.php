@@ -42,8 +42,9 @@ class Recipe_Hero_Admin_Scripts {
 		// Register all scripts/styles for later use
 		wp_register_script( 'numeric', RH()->plugin_url() . '/assets/admin/js/jquery.numeric.js', array( 'jquery' ), RecipeHero::$version, true );
 		wp_register_script( 'liquidmetal', RH()->plugin_url() . '/assets/admin/js/liquidmetal.js', array( 'jquery' ), RecipeHero::$version, true );
+		wp_register_script( 'recipe-ordering', RH()->plugin_url() . '/assets/admin/js/recipe-ordering.js', array( 'jquery', 'jquery-ui-sortable' ), RecipeHero::$version, true );
 
-		wp_register_script( 'rh-admin-meta-boxes-gallery', RH()->plugin_url() . '/assets/admin/js/meta-boxes-gallery.js', array( 'jquery', 'tiptip' ), RecipeHero::$version, true );
+		wp_register_script( 'rh-admin-meta-boxes-gallery', RH()->plugin_url() . '/assets/admin/js/meta-boxes-gallery.js', array( 'jquery', 'jquery-ui-sortable', 'tiptip' ), RecipeHero::$version, true );
 
 		wp_register_script( 'tiptip', RH()->plugin_url() . '/assets/admin/js/jquery-tiptip/jquery.tipTip.min.js', array( 'jquery' ), RecipeHero::$version, true );
 		wp_register_style( 'tiptip-css', RH()->plugin_url() . '/assets/admin/css/tiptip.css' );
