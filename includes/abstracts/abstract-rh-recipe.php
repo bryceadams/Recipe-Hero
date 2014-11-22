@@ -79,6 +79,8 @@ class RH_Recipe {
 
 		if ( get_post_meta( $this->id, '_recipe_image_gallery', true )  ) {
 			$recipe_image_gallery = get_post_meta( $this->id, '_recipe_image_gallery', true );
+		} else {
+			$recipe_image_gallery = '';
 		}
 
 		$attachments = array_filter( explode( ',', $recipe_image_gallery ) );

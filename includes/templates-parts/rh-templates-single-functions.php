@@ -159,18 +159,18 @@ if ( ! function_exists( 'recipe_hero_output_single_ingredients' ) ) {
 }
 
 /**
- * Recipe Instructions / Steps
+ * Recipe Steps
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.6.0
+ * @since 	  1.0.0
  */
 
 if ( ! function_exists( 'recipe_hero_output_single_instructions' ) ) {
 
 	function recipe_hero_output_single_instructions() {
 
-		recipe_hero_get_template( 'single/instructions.php' );
+		recipe_hero_get_template( 'single/steps.php' );
 
 	}
 
