@@ -1,0 +1,19 @@
+{
+  "name": "bryceadams/recipe-hero",
+  "description": "Recipe Hero is a tool for adding beautiful recipes to your WordPress-powered site",
+  "keywords": ["wordpress", "plugin", "recipes", "recipe-hero"],
+  "homepage": "http://recipehero.in",
+  "license": "GPL",
+  "authors": [
+    {
+      "name": "Bryce Adams (Recipe Hero)",
+      "email": "info@recipehero.in",
+      "homepage": "http://recipehero.in"
+    }
+  ],
+  "type": "wordpress-plugin",
+  "require": {
+    "php": ">=5.3.2",
+    "composer/installers": "v1.0.6"
+  }
+}
