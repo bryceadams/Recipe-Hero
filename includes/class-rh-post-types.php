@@ -118,7 +118,7 @@ class RH_Post_Types {
 		$labels 		= array(
 			'name' 				=> _x( 'Recipes', 'post type general name' ),
 			'singular_name'		=> _x( 'Recipe', 'post type singular name' ),
-			'all_items'			=> __( 'Recipes' ),
+			'all_items'			=> __( 'All Recipes' ),
 			'add_new' 			=> __( 'Add New' ),
 			'add_new_item' 		=> __( 'Add New Recipe' ),
 			'edit_item' 		=> __( 'Edit Recipe' ),

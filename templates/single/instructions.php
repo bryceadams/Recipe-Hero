@@ -49,8 +49,8 @@ if ( $instructions ) { ?>
 		  	}
 
 		    echo '<li class="steps-item">';
-			    echo wpautop( $instruction_text ) . ' ';
-			    echo $instruction_image;
+			    echo apply_filters( 'recipe_hero_step_text', wpautop( $instruction_text ) . ' ', $instruction );
+			    echo apply_filters( 'recipe_hero_step_image', $instruction_image, $instruction );
 		    echo '</li>';
 
 		    $intruction_count++;

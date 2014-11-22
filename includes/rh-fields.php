@@ -21,7 +21,7 @@ if ( file_exists( __DIR__ . '/fields/custom/cmb2-select2/cmb2-select2.php' ) ) {
 	require_once __DIR__ . '/fields/custom/cmb2-select2/cmb2-select2.php';
 }
 
-
+// @todo rename the filter this filters
 add_filter( 'cmb2_meta_boxes', 'recipe_hero_cmb2_metaboxes' );
 /**
  * Define the metabox and field configurations.
@@ -202,10 +202,9 @@ function recipe_hero_cmb2_metaboxes( array $meta_boxes ) {
 					'sortable'      => true, // beta
 				),
 				// Fields array works the same, except id's only need to be unique for this group. Prefix is not needed.
-				'fields'      => array(
+				'fields'      => apply_filters( 'recipe_hero_meta_steps_fields', array(
 					array(
 						'name' => __( 'Instructions', 'recipe-hero' ),
-						//'desc' => __( 'field description (optional)', 'recipe-hero' ),
 						'id'   => $prefix . 'step_instruction',
 						'type' => 'textarea',
 					),
@@ -217,7 +216,7 @@ function recipe_hero_cmb2_metaboxes( array $meta_boxes ) {
 						'allow' => array( 'attachment' ), // only attachments allowed --> no URLs
 					),
 					// Add time per step?
-				),
+				), $prefix ),
 			),
 		),
 	);

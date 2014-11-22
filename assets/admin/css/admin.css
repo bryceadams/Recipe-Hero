@@ -224,3 +224,48 @@ jQuery UI Autocomplete Styles
 **/
 .ui-autocomplete {
   background: #fff; }
+
+/* Addons */
+.recipe_hero_extensions_wrap .products {
+  overflow: hidden; }
+  .recipe_hero_extensions_wrap .products li {
+    display: inline-block;
+    margin: 0 10px 10px 0 !important;
+    padding: 0;
+    vertical-align: top;
+    width: 250px;
+    border: 1px solid #ddd;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative; }
+    .recipe_hero_extensions_wrap .products li a {
+      color: inherit;
+      text-decoration: none; }
+    .recipe_hero_extensions_wrap .products li img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0;
+      background: #fff;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+    .recipe_hero_extensions_wrap .products li h2 {
+      margin: 0 !important;
+      padding: 10px 10px !important;
+      line-height: 1;
+      background: rgba(255, 255, 255, 0.6);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      color: #000;
+      text-align: center;
+      position: absolute;
+      width: 230px;
+      top: 0;
+      left: 0;
+      font-size: 16px;
+      text-shadow: none; }
+    .recipe_hero_extensions_wrap .products li p {
+      padding: 20px !important;
+      margin: 0 !important;
+      border-top: 1px solid #f1f1f1; }
+    .recipe_hero_extensions_wrap .products li .price {
+      display: none; }

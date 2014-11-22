@@ -124,6 +124,20 @@ Sure, but on food-steroids. Just check out the screenshots area.
 
 = 1.0.0 =
 * New: Refactored entire core plugin structure / code
+* New: Recipe Gallery
+* New: Custom Ordering (sorting and in option)
+* New: Settings redone - extendable / simpler
+* New: 'Custom Labels' moved to free Recipe Hero Labels extension
+* New: Updated CMB framework
+* New: Lightbox for shortcodes
+* New: More image sizes / options
+* New: Recipe Template file updates
+* i18n: Translation Files fixed / standardised
+* Bug Fix: If time <1 hour, don't show 0h
+* Bug Fix: Ingredient Plurals (and translations)
+* Bug Fix: Hide ingredients title if no ingredients
+* Bug Fix: Remove [recipe] shortcode from Jetpack (when active)
+* Bug Fix: Remove 'save permalinks' notice and just rewrite / flush rules
 
 = 0.9.0 =
 * New: Autocomplete Ingredients when adding in Edit screen

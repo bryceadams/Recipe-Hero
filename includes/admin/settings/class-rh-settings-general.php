@@ -41,7 +41,7 @@ class RH_Settings_General extends RH_Settings_Page {
 	 */
 	public function get_settings() {
 
-		$settings = apply_filters( 'recipe_hero_general_settings', array(
+		$settings_general = apply_filters( 'recipe_hero_general_settings_general', array(
 
 			array( 'title' => __( 'General Options', 'recipe-hero' ), 'type' => 'title', 'desc' => '', 'id' => 'general_options' ),
 
@@ -74,6 +74,10 @@ class RH_Settings_General extends RH_Settings_Page {
 			),
 
 			array( 'type' => 'sectionend', 'id' => '' ),
+
+		) );
+
+		$settings_images = apply_filters( 'recipe_hero_general_settings_images', array(
 
 			array(
 				'title' => __( 'Recipe Images', 'recipe-hero' ),
@@ -133,11 +137,16 @@ class RH_Settings_General extends RH_Settings_Page {
 				'type'          => 'checkbox'
 			),
 
-			array(
-				'type' 	=> 'sectionend',
-				'id' 	=> 'image_options'
-			),
+		) );
 
+		$settings_end = array(
+			array( 'type' => 'sectionend', 'id' => '' ),
+		);
+
+		$settings = apply_filters( 'recipe_hero_general_settings', array_merge(
+			$settings_general,
+			$settings_images,
+			$settings_end
 		) );
 
 		return apply_filters( 'recipe_hero_get_settings_' . $this->id, $settings );

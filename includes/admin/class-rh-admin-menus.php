@@ -28,8 +28,8 @@ class RH_Admin_Menus {
 		// Add menus
 		add_action( 'admin_menu', array( $this, 'settings_menu' ), 50 );
 
-		if ( apply_filters( 'recipe_hero_show_addons_page', true ) ) {
-			//add_action( 'admin_menu', array( $this, 'addons_menu' ), 70 );
+		if ( apply_filters( 'recipe_hero_show_extensions_page', true ) ) {
+			add_action( 'admin_menu', array( $this, 'extensions_menu' ), 70 );
 		}
 
 		add_action( 'admin_head', array( $this, 'menu_highlight' ) );
@@ -54,8 +54,8 @@ class RH_Admin_Menus {
 	/**
 	 * Addons menu item
 	 */
-	public function addons_menu() {
-		add_submenu_page( 'edit.php?post_type=recipe', __( 'WooCommerce Add-ons/Extensions', 'recipe-hero' ),  __( 'Add-ons', 'recipe-hero' ) , 'manage_woocommerce', 'wc-addons', array( $this, 'addons_page' ) );
+	public function extensions_menu() {
+		add_submenu_page( 'edit.php?post_type=recipe', __( 'Recipe Hero Add-ons/Extensions', 'recipe-hero' ),  __( 'Extensions', 'recipe-hero' ) , 'edit_posts', 'rh-extensions', array( $this, 'extensions_page' ) );
 	}
 
 	/**
@@ -104,8 +104,8 @@ class RH_Admin_Menus {
 	/**
 	 * Init the addons page
 	 */
-	public function addons_page() {
-		RH_Admin_Addons::output();
+	public function extensions_page() {
+		RH_Admin_Extensions::output();
 	}
 
 }
