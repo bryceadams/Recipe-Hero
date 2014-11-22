@@ -42,8 +42,13 @@ class RH_Admin_Meta_Boxes {
 	 */
 	public function add_meta_boxes() {
 	
+		// Add Recipe Gallery Metabox
 		add_meta_box( 'recipe-hero-recipe-images', __( 'Recipe Gallery', 'recipe-hero' ), array( $this, 'gallery_output' ), 'recipe', 'side' );
 	
+		// Remove Metaboxes
+		remove_meta_box( 'pageparentdiv', 'recipe', 'side' );
+		remove_meta_box( 'commentstatusdiv', 'recipe', 'normal' );
+
 	}
 
 
