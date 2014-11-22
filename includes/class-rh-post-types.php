@@ -28,6 +28,8 @@ class RH_Post_Types {
     	add_action( 'init', array( __CLASS__, 'register_taxonomies' ), 6 );
     	add_action( 'init', array( __CLASS__, 'register_post_types' ), 6 );
 
+		add_filter( 'post_updated_messages', array( __CLASS__, 'recipe_updated_messages' ) );
+
     }
 
     /**
@@ -156,6 +158,27 @@ class RH_Post_Types {
 
 		 register_post_type( 'recipe', $post_type_args );
 
+	}
+
+	/* Filter post updated messages for custom post types. */
+	public static function recipe_updated_messages( $messages ) {
+	    global $post, $post_ID;
+
+	    $messages['recipe'] = array(
+	         0 => '', // Unused. Messages start at index 1.
+	         1 => sprintf( __( 'Recipe updated. <a href="%s">View recipe</a>', 'recipe' ), esc_url( get_permalink( $post_ID ) ) ),
+	         2 => '',
+	         3 => '',
+	         4 => __( 'Recipe updated.', 'recipe' ),
+	         5 => isset( $_GET['revision'] ) ? sprintf( __( 'Recipe restored to revision from %s', 'recipe' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+	         6 => sprintf( __( 'Recipe published. <a href="%s">View recipe</a>', 'recipe' ), esc_url( get_permalink( $post_ID ) ) ),
+	         7 => __( 'Recipe saved.', 'recipe' ),
+	         8 => sprintf( __( 'Recipe submitted. <a target="_blank" href="%s">Preview recipe</a>', 'recipe' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
+	         9 => sprintf( __( 'Recipe scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview recipe</a>', 'recipe' ), date_i18n( __( 'M j, Y @ G:i', 'recipe' ), strtotime( $post->post_date ) ), esc_url( get_permalink( $post_ID ) ) ),
+	        10 => sprintf( __( 'Recipe draft updated. <a target="_blank" href="%s">Preview recipe</a>', 'recipe' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
+	    );
+
+	    return $messages;
 	}
 
 }
