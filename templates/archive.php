@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 
 	<?php if ( apply_filters( 'recipe_hero_show_page_title', true ) ) : ?>
 
-		<h1 class="page-title"><?php // woocommerce_page_title(); ?></h1>
+		<h1 class="page-title"><?php recipe_hero_page_title(); ?></h1>
 
 	<?php endif; ?>
 

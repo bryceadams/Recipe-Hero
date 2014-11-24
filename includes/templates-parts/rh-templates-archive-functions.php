@@ -126,7 +126,7 @@ if ( ! function_exists( 'recipe_hero_output_archive_description' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.8.0
+ * @since 	  1.0.0
  */
 
 if ( ! function_exists( 'recipe_hero_output_loop_pagination' ) ) {
@@ -139,3 +139,94 @@ if ( ! function_exists( 'recipe_hero_output_loop_pagination' ) ) {
 
 }
 
+/**
+ * Get a recipes page title on archives
+ *
+ * @package   Recipe Hero
+ * @author    Captain Theme <info@captaintheme.com>
+ * @since 	  1.0.0
+ */
+
+if ( ! function_exists( 'recipe_hero_page_title' ) ) {
+
+	function recipe_hero_page_title( $echo = true ) {
+
+		if ( is_search() ) {
+
+			$page_title = sprintf( __( 'Search Results: &ldquo;%s&rdquo;', 'recipe-hero' ), get_search_query() );
+
+			if ( get_query_var( 'paged' ) ) {
+				$page_title .= sprintf( __( '&nbsp;&ndash; Page %s', 'recipe-hero' ), get_query_var( 'paged' ) );
+			}
+
+		} elseif ( is_tax() ) {
+
+			$page_title = single_term_title( "", false );
+
+		} else {
+
+			$recipe_page_id = rh_get_page_id( 'recipes' );
+			$page_title   	= get_the_title( $recipe_page_id );
+
+		}
+
+		$page_title = apply_filters( 'recipe_hero_page_title', $page_title );
+
+		if ( $echo ) {
+	    	echo $page_title;
+		} else {
+	    	return $page_title;
+		}
+
+	}
+
+}
+
+/**
+ * Show a recipe page description on recipe archives
+ *
+ * @package   Recipe Hero
+ * @author    Captain Theme <info@captaintheme.com>
+ * @since 	  1.0.0
+ */
+
+if ( ! function_exists( 'recipe_hero_recipes_archive_description' ) ) {
+
+	function recipe_hero_recipes_archive_description() {
+
+		if ( is_post_type_archive( 'recipe' ) && get_query_var( 'paged' ) == 0 ) {
+			$recipe_page   = get_post( rh_get_page_id( 'recipes' ) );
+			if ( $recipe_page ) {
+				$description = wpautop( do_shortcode( $recipe_page->post_content ) );
+				if ( $description ) {
+					echo '<div class="page-description">' . $description . '</div>';
+				}
+			}
+		}
+
+	}
+
+}
+
+/**
+ * Show a recipe taxonomy description on recipe tax archives
+ *
+ * @package   Recipe Hero
+ * @author    Captain Theme <info@captaintheme.com>
+ * @since 	  1.0.0
+ */
+
+if ( ! function_exists( 'recipe_hero_taxonomy_archive_description' ) ) {
+
+	function recipe_hero_taxonomy_archive_description() {
+
+		if ( is_tax( array( 'cuisine', 'course' ) ) && get_query_var( 'paged' ) == 0 ) {
+			$description = wpautop( do_shortcode( term_description() ) );
+			if ( $description ) {
+				echo '<div class="term-description">' . $description . '</div>';
+			}
+		}
+
+	}
+
+}

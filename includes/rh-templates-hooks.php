@@ -22,13 +22,13 @@ add_action( 'recipe_hero_before_main_content', 'recipe_hero_output_content_wrapp
 add_action( 'recipe_hero_after_main_content', 'recipe_hero_output_content_wrapper_end', 10 );
 
 /**
- * Taxonomy Titles / Descriptions
+ * Recipe Archive / Tax Description
  *
- * @see recipe_hero_archive_tax_title - 20
- * @see recipe_hero_archive_tax_desc - 30
+ * @see recipe_hero_recipes_archive_description - 10
+ * @see recipe_hero_taxonomy_archive_description - 20
  */
-add_action( 'recipe_hero_before_main_content', 'recipe_hero_archive_tax_title', 20 );
-add_action( 'recipe_hero_before_main_content', 'recipe_hero_archive_tax_desc', 30 );
+add_action( 'recipe_hero_archive_description', 'recipe_hero_recipes_archive_description', 10 );
+add_action( 'recipe_hero_archive_description', 'recipe_hero_taxonomy_archive_description', 20 );
 
 /**
  * Search Results Page

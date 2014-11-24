@@ -24,5 +24,4 @@ require_once( RECIPE_HERO_PLUGIN_DIR . 'includes/templates-parts/rh-templates-se
 require_once( RECIPE_HERO_PLUGIN_DIR . 'includes/templates-parts/rh-templates-sidebar-functions.php' );
 require_once( RECIPE_HERO_PLUGIN_DIR . 'includes/templates-parts/rh-templates-single-functions.php' );
 require_once( RECIPE_HERO_PLUGIN_DIR . 'includes/templates-parts/rh-templates-supports-functions.php' );
-require_once( RECIPE_HERO_PLUGIN_DIR . 'includes/templates-parts/rh-templates-tax-header-functions.php' );
 require_once( RECIPE_HERO_PLUGIN_DIR . 'includes/templates-parts/rh-templates-wrapper-functions.php' );
