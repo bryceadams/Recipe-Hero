@@ -133,7 +133,7 @@ function recipe_hero_cmb2_metaboxes( array $meta_boxes ) {
 					'sortable'      => true, // beta
 				),
 				// Fields array works the same, except id's only need to be unique for this group. Prefix is not needed.
-				'fields'      => array(
+				'fields'      => apply_filters( 'recipe_hero_meta_ingredients_fields', array(
 					array(
 						'name' => __( 'Quantity', 'recipe-hero' ),
 						//'desc' => __( 'Please enter in integer form, so 1/2 a teaspoon would just be 0.5.', 'recipe-hero' ),
@@ -147,7 +147,7 @@ function recipe_hero_cmb2_metaboxes( array $meta_boxes ) {
 						//'desc'    => __( 'field description (optional)', 'recipe-hero' ),
 						'id'      => 'amount',
 						'type'    => 'select', // will use 'pw_select' when issue is fixed - https://github.com/mustardBees/cmb-field-select2/issues/10
-						'options' => array(
+						'options' => apply_filters( 'recipe_hero_meta_ingredients_amount', array(
 							'gm' 	 => __( 'Gram (gm)', 'recipe-hero' ),
 							'oz'   	 => __( 'Ounce (oz)', 'recipe-hero' ),
 							'ml'     => __( 'Milliliter (ml)', 'recipe-hero' ),
@@ -162,9 +162,9 @@ function recipe_hero_cmb2_metaboxes( array $meta_boxes ) {
 							'none'	 => __( 'None (blank)', 'recipe-hero' ),
 							// Should there be slices / cloves / etc. as terms of measurement? Get feedback.
 							// Also, what about sizes? Small / Large etc. - we don't want this to be a long list of all possible amounts but we want to make it as easy as possible for users.
-						),
-						'default'	=> 'gm',
-    					'sanitization_cb' => 'pw_select2_sanitise',
+						) ),
+						'default'	=> apply_filters( 'recipe_hero_meta_ingredients_amount_default', 'gm' ),
+    					//'sanitization_cb' => 'pw_select2_sanitise',
 					),
 					array(
 						'name' => __( 'Ingredient', 'recipe-hero' ),
@@ -175,9 +175,9 @@ function recipe_hero_cmb2_metaboxes( array $meta_boxes ) {
 						'attributes' => array(
 							'class' => 'ingredient_name_field',
 							'placeholder' => __( 'Start typing to see used ingredients (or add a new one)', 'recipe-hero' ),
-							),
+						),
 					),
-				),
+				) ),
 			),
 		),
 	);
