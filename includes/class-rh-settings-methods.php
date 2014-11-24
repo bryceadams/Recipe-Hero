@@ -56,9 +56,9 @@ class Recipe_Hero_Settings_Methods {
 
 		global $post;
 
-		if ( get_option( 'recipe_hero_page' ) ) {
+		if ( get_option( 'recipe_hero_recipes_page_id' ) ) {
             
-            $rh_home_id = get_option( 'recipe_hero_page' );
+            $rh_home_id = get_option( 'recipe_hero_recipes_page_id' );
     
             if ( isset( $rh_home_id ) ) {
 				if ( $post->ID == $rh_home_id ) {

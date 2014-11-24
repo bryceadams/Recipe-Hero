@@ -9,13 +9,15 @@
  * @copyright 2014 Captain Theme
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
+}
 
 /**
  * Tell WordPress not to use single.php for Recipe Single Posts
  * @package Recipe Hero
  * @author  Captain Theme <info@captaintheme.com>
- * @since   0.9.0
+ * @since   1.0.0
  */
  
 add_filter( 'template_include', 'recipe_hero_tc_template_chooser');
@@ -31,13 +33,13 @@ if ( ! function_exists( 'recipe_hero_tc_template_chooser' ) ) {
             return $template;
         }
 
-        if ( get_option( 'recipe_hero_page' ) ) {
+        if ( get_option( 'recipe_hero_recipes_page_id' ) ) {
             
-            $rh_home_id = get_option( 'recipe_hero_page' );
+            $rh_home_id = get_option( 'recipe_hero_recipes_page_id' );
     
             if ( isset( $rh_home_id ) ) {
                 if ( $post_id == $rh_home_id ) {
-                    return recipe_hero_tc_get_template_hierarchy( 'archive-home' );
+                    return recipe_hero_tc_get_template_hierarchy( 'archive' );
                 }
             }
 

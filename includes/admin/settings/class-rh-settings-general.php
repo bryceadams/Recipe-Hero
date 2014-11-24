@@ -48,7 +48,7 @@ class RH_Settings_General extends RH_Settings_Page {
 			array(
 				'title'    => __( 'Recipe Page', 'recipe-hero' ),
 				'desc'     => __( 'The page you select here will be the home of all your recipes. Additionally, the \'Recipe Archive\' of your site can be found at: ', 'recipe-hero' ) . site_url() . '/recipes/',
-				'id'       => 'recipe_hero_page',
+				'id'       => 'recipe_hero_recipes_page_id',
 				'type'     => 'single_select_page',
 				'default'  => '',
 				'class'    => 'select2_select_std',

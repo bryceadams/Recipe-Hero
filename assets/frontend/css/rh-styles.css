@@ -81,6 +81,40 @@ Single / Archive Template
   line-height: 1.5;
   font-size: 14px; }
 
+nav.recipe-hero-pagination {
+  text-align: center; }
+  nav.recipe-hero-pagination ul {
+    display: inline-block;
+    white-space: nowrap;
+    padding: 0;
+    clear: both;
+    border: 1px solid #d3ced2;
+    border-right: 0;
+    margin: 1px; }
+    nav.recipe-hero-pagination ul li {
+      border-right: 1px solid #d3ced2;
+      padding: 0;
+      margin: 0;
+      float: left;
+      display: inline;
+      overflow: hidden; }
+      nav.recipe-hero-pagination ul li a,
+      nav.recipe-hero-pagination ul li span {
+        margin: 0;
+        text-decoration: none;
+        padding: 0;
+        line-height: 1;
+        font-size: 1em;
+        font-weight: normal;
+        padding: .5em;
+        min-width: 1em;
+        display: block; }
+      nav.recipe-hero-pagination ul li span.current,
+      nav.recipe-hero-pagination ul li a:hover,
+      nav.recipe-hero-pagination ul li a:focus {
+        background: #ebe9eb;
+        color: #8a7e88; }
+
 article.recipe {
   line-height: 1.4; }
   article.recipe h4 {

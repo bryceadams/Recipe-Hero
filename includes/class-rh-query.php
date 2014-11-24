@@ -49,9 +49,9 @@ class RH_Query {
 			return;
 		}
 
-		if ( get_option( 'recipe_hero_page' ) ) {
+		if ( get_option( 'recipe_hero_recipes_page_id' ) ) {
 
-            $rh_home_id = get_option( 'recipe_hero_page' );
+            $rh_home_id = get_option( 'recipe_hero_recipes_page_id' );
 
             if ( isset( $rh_home_id ) ) {
                 $recipe_page = $rh_home_id;
@@ -59,10 +59,15 @@ class RH_Query {
             	$recipe_page = '';
             }
 
+        } else {
+        	$recipe_page = '';
         }
 
+        $current_id = array_key_exists( 'queried_object', $q ) ? $q->queried_object->ID : false;
+
 		// Fix for verbose page rules
-		if ( $GLOBALS['wp_rewrite']->use_verbose_page_rules && isset( $q->queried_object_id ) && $q->queried_object_id === $recipe_page ) {
+		//if ( $GLOBALS['wp_rewrite']->use_verbose_page_rules && isset( $q->queried_object_id ) && $q->queried_object_id === $recipe_page ) {
+		if ( $current_id == $recipe_page ) {
 			$q->set( 'post_type', 'recipe' );
 			$q->set( 'page', '' );
 			$q->set( 'pagename', '' );
@@ -135,7 +140,7 @@ class RH_Query {
 
 		$this->recipe_query( $q );
 
-		// We're on a shop page so queue the woocommerce_get_products_in_view function
+		// We're on a recipe archive page so queue the get_products_in_view method
 		add_action( 'wp', array( $this, 'get_recipes_in_view' ), 2);
 
 		// And remove the pre_get_posts hook
@@ -144,7 +149,7 @@ class RH_Query {
 
 
 	/**
-	 * Query the products, applying sorting/ordering etc. This applies to the main wordpress loop
+	 * Query the recipes, applying sorting/ordering etc. This applies to the main wordpress loop
 	 *
 	 * @access public
 	 * @param mixed $q
@@ -180,7 +185,7 @@ class RH_Query {
 		$this->post__in   = $post__in;
 		$this->meta_query = $meta_query;
 
-		do_action( 'woocommerce_recipe_query', $q, $this );
+		do_action( 'recipe_hero_recipe_query', $q, $this );
 	}
 
 	/**

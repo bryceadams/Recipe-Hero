@@ -7,7 +7,7 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
- * @version 0.7.1
+ * @version   1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
@@ -31,6 +31,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 
 	<?php do_action( 'recipe_hero_archive_description' ); ?>
 
+	<?php global $wp_query; ?>
+
 	<?php if ( have_posts() ) { ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -38,6 +40,13 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 			<?php recipe_hero_get_template_part( 'content', 'archive-recipe' ); ?>
 
 		<?php endwhile; // end of the loop. ?>
+
+		<?php
+			/** recipe_hero_after_main_loop hook
+			 *
+			 * @hooked recipe_hero_output_loop_pagination - 10
+			 */
+			do_action( 'recipe_hero_after_main_loop' ); ?>
 
 	<?php } else { ?>
 

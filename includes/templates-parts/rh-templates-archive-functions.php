@@ -120,3 +120,22 @@ if ( ! function_exists( 'recipe_hero_output_archive_description' ) ) {
 	}
 
 }
+
+/**
+ * Recipe Archive Loop - Pagination
+ *
+ * @package   Recipe Hero
+ * @author    Captain Theme <info@captaintheme.com>
+ * @since 	  0.8.0
+ */
+
+if ( ! function_exists( 'recipe_hero_output_loop_pagination' ) ) {
+
+	function recipe_hero_output_loop_pagination() {
+
+		recipe_hero_get_template( 'loop/pagination.php' );
+
+	}
+
+}
+

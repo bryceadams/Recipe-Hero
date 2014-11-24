@@ -175,6 +175,8 @@ final class RecipeHero {
 	 */
 	private function includes() {
 
+		include_once( 'includes/rh-core-functions.php' );
+
 		include_once( 'includes/class-rh-install.php' );
 
 		include_once( 'includes/rh-fields.php' );
@@ -187,7 +189,6 @@ final class RecipeHero {
 		include_once( 'includes/rh-templates-hooks.php' );
 
 		include_once( 'includes/rh-shortcodes.php' );
-		include_once( 'includes/rh-general-functions.php' );
 
 		include_once( 'includes/class-rh-lightbox.php' );
 		include_once( 'includes/class-rh-frontend-scripts.php' );
@@ -220,7 +221,7 @@ final class RecipeHero {
 	public function init() {
 
 		// Before init action
-		do_action( 'recipe_hero_before_init' );
+		do_action( 'before_recipe_hero_init' );
 
 		// Set up localisation
 		$this->load_plugin_textdomain();
@@ -345,3 +346,11 @@ function RH() {
 
 // Global for backwards compatibility.
 $GLOBALS['recipe_hero'] = RH();
+
+
+function print_array($aArray) {
+// Print a nicely formatted array representation:
+  echo '<pre>';
+  print_r($aArray);
+  echo '</pre>';
+}

@@ -147,7 +147,7 @@ class RH_Post_Types {
 			'exclude_from_search'=> false,
 			'show_in_nav_menus'	=> true,
 			'capability_type' 	=> 'post',
-			'has_archive' 		=> true,
+			'has_archive' 		=> ( $recipes_page_id = rh_get_page_id( 'recipes' ) ) && get_post( $recipes_page_id ) ? get_page_uri( $recipes_page_id ) : 'recipes',
 			'hierarchical' 		=> false, // Hierarchical causes memory issues - WP loads all records!
 			'rewrite' 			=> array( 'slug' => 'recipes', 'with_front' => false ),
 			'supports' 			=> $supports,
@@ -160,7 +160,7 @@ class RH_Post_Types {
 
 	}
 
-	/* Filter post updated messages for custom post types. */
+	/* Filter post updated messages for the recipe post type */
 	public static function recipe_updated_messages( $messages ) {
 	    global $post, $post_ID;
 

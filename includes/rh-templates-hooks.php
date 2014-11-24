@@ -7,7 +7,7 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
- * @since 	  0.7.1
+ * @since 	  1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -102,3 +102,10 @@ add_action( 'recipe_hero_archive_recipe_content', 'recipe_hero_output_archive_ph
 add_action( 'recipe_hero_archive_recipe_content', 'recipe_hero_output_archive_tax', 40 );
 add_action( 'recipe_hero_archive_recipe_content', 'recipe_hero_output_archive_details', 50 );
 add_action( 'recipe_hero_archive_recipe_content', 'recipe_hero_output_archive_description', 60 );
+
+/*
+ * Recipe Archive Lopp
+ *
+ * @see recipe_hero_output_loop_pagination - 10
+ */
+add_action( 'recipe_hero_after_main_loop', 'recipe_hero_output_loop_pagination', 10 );
