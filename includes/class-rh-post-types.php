@@ -61,6 +61,8 @@ class RH_Post_Types {
 		
 		$course_pages = array('recipe');
 		
+		$courses_slug = defined( 'RH_COURSES_SLUG' ) ? RH_COURSES_SLUG : 'courses';
+
 		$course_args = array(
 			'labels' 			=> $course_labels,
 			'singular_label' 	=> __( 'Course' ),
@@ -69,7 +71,7 @@ class RH_Post_Types {
 			'hierarchical' 		=> false,
 			'show_tagcloud' 	=> false,
 			'show_in_nav_menus' => false,
-			'rewrite' 			=> array('slug' => 'courses', 'with_front' => false ),
+			'rewrite' 			=> array('slug' => $courses_slug, 'with_front' => false ),
 		 );
 		register_taxonomy( 'course', $course_pages, $course_args );
 
@@ -91,6 +93,8 @@ class RH_Post_Types {
 		);
 		
 		$cuisine_pages = array('recipe');
+
+		$cuisines_slug = defined( 'RH_CUISINES_SLUG' ) ? RH_CUISINES_SLUG : 'cuisines';
 		
 		$cuisine_args = array(
 			'labels' 			=> $cuisine_labels,
@@ -100,7 +104,7 @@ class RH_Post_Types {
 			'hierarchical' 		=> false,
 			'show_tagcloud' 	=> false,
 			'show_in_nav_menus' => false,
-			'rewrite' 			=> array( 'slug' => 'cuisines', 'with_front' => false ),
+			'rewrite' 			=> array( 'slug' => $cuisines_slug, 'with_front' => false ),
 		 );
 
 		register_taxonomy( 'cuisine', $cuisine_pages, $cuisine_args );
