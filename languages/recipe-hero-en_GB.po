@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Recipe Hero\n"
-"POT-Creation-Date: 2014-11-25 22:45+0700\n"
-"PO-Revision-Date: 2014-11-25 22:45+0700\n"
+"POT-Creation-Date: 2014-11-25 23:06+0700\n"
+"PO-Revision-Date: 2014-11-25 23:06+0700\n"
 "Last-Translator: Bryce <bryce@bryce.se>\n"
 "Language-Team: Recipe Hero <info@recipehero.in>\n"
 "Language: en\n"
@@ -833,8 +833,16 @@ msgid ""
 "people it will feed or how many burgers it can make, etc."
 msgstr ""
 
+#: ../includes/rh-fields.php:71
+msgid "eg. People"
+msgstr ""
+
 #: ../includes/rh-fields.php:75
 msgid "Preparation Time"
+msgstr ""
+
+#: ../includes/rh-fields.php:79 ../includes/rh-fields.php:89
+msgid "Minutes"
 msgstr ""
 
 #: ../includes/rh-fields.php:85
@@ -855,6 +863,10 @@ msgstr ""
 
 #: ../includes/rh-fields.php:106
 msgid "A summary of nutrition information you would like to include."
+msgstr ""
+
+#: ../includes/rh-fields.php:110
+msgid "eg. Per serving: Calories (kcal) 657.7"
 msgstr ""
 
 #: ../includes/rh-fields.php:128

@@ -59,7 +59,7 @@ function recipe_hero_cmb2_metaboxes( array $meta_boxes ) {
 				'id'   => $prefix . 'detail_serves',
 				'type' => 'text_small',
 				'attributes' => array(
-									'placeholder' => 'eg. 4',
+					'placeholder' => 'eg. 4',
 				),
 			),
 			array(
@@ -68,7 +68,7 @@ function recipe_hero_cmb2_metaboxes( array $meta_boxes ) {
 				'id'   => $prefix . 'detail_serves_type',
 				'type' => 'text_small',
 				'attributes' => array(
-									'placeholder' => 'eg. People',
+					'placeholder' => __( 'eg. People', 'recipe-hero' ),
 				),
 			),
 			array(
@@ -76,9 +76,9 @@ function recipe_hero_cmb2_metaboxes( array $meta_boxes ) {
 				'id'   => $prefix . 'detail_prep_time',
 				'type' => 'text_small',
 				'before' => ' ',
-				'after' => 'Minutes',
+				'after' => __( 'Minutes', 'recipe-hero' ),
 				'attributes' => array(
-									'placeholder' => 'eg. 15',
+					'placeholder' => 'eg. 15',
 				),
 			),
 			array(
@@ -86,9 +86,9 @@ function recipe_hero_cmb2_metaboxes( array $meta_boxes ) {
 				'id'   => $prefix . 'detail_cook_time',
 				'type' => 'text_small',
 				'before' => ' ',
-				'after' => 'Minutes',
+				'after' => __( 'Minutes', 'recipe-hero' ),
 				'attributes' => array(
-									'placeholder' => 'eg. 85',
+					'placeholder' => 'eg. 85',
 				),
 			),
 			array(
@@ -98,7 +98,7 @@ function recipe_hero_cmb2_metaboxes( array $meta_boxes ) {
 				'type' => 'text_medium',
 				'repeatable' => true,
 				'attributes' => array(
-									'placeholder' => 'eg. Thermomix, Slow-Cooker',
+					'placeholder' => 'eg. Thermomix, Slow-Cooker',
 				),
 			),
 			array(
@@ -107,7 +107,7 @@ function recipe_hero_cmb2_metaboxes( array $meta_boxes ) {
 				'id'   => $prefix . 'detail_nutrition',
 				'type' => 'textarea_small',
 				'attributes' => array(
-									'placeholder' => 'eg. Per serving: Calories (kcal) 657.7',
+					'placeholder' => __( 'eg. Per serving: Calories (kcal) 657.7', 'recipe-hero' ),
 				),
 			),
 		),

@@ -60,6 +60,12 @@ if ( ! class_exists( 'Recipe_Hero_Frontend_Scripts' ) ) {
 			wp_register_script( 'rh-lightbox', RH()->plugin_url() . '/assets/frontend/js/rh-lightbox.js', array( 'jquery', 'magnific' ), RecipeHero::$version, true );
 			wp_register_style( 'magnific-css', RH()->plugin_url() . '/assets/frontend/css/magnific-popup.css', RecipeHero::$version, true );
 
+			wp_register_style( 'rh-general-rtl', RH()->plugin_url() . '/assets/frontend/css/rh-styles-rtl.css', RecipeHero::$version, true );
+
+			if ( is_rtl() ) {
+				wp_enqueue_style( 'rh-general-rtl' );
+			}
+
 			wp_enqueue_script( 'jquery' );
 
 			// CSS Styles
