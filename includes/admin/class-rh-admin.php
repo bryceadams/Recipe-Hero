@@ -67,7 +67,7 @@ if ( ! class_exists( 'Recipe_Hero_Admin' ) ) {
 
 			include( 'class-rh-admin-menus.php' );
 			include( 'class-rh-admin-extensions.php' );
-			//include( 'class-rh-admin-welcome.php' );
+			include( 'class-rh-admin-welcome.php' );
 
 		}
 

@@ -39,3 +39,10 @@ p.recipe-hero-actions {
 .about-wrap .feature-section h4 {
   line-height: 1.5em;
 }
+.about-wrap iframe {
+  margin-bottom: 0;
+}
+.about-wrap .quote {
+  font-style: italic;
+  font-size: 16px;
+}

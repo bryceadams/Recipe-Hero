@@ -71,8 +71,8 @@ if ( ! class_exists( 'Recipe_Hero_Admin_Welcome' ) ) {
 					$page = add_dashboard_page( $welcome_page_title, $welcome_page_name, 'manage_options', 'recipe-hero-credits', array( $this, 'credits_screen' ) );
 					add_action( 'admin_print_styles-'. $page, array( $this, 'admin_css' ) );
 				break;
-				case 'recipe-hero-translators' :
-					$page = add_dashboard_page( $welcome_page_title, $welcome_page_name, 'manage_options', 'recipe-hero-translators', array( $this, 'translators_screen' ) );
+				case 'recipe-hero-translations' :
+					$page = add_dashboard_page( $welcome_page_title, $welcome_page_name, 'manage_options', 'recipe-hero-translations', array( $this, 'translations_screen' ) );
 					add_action( 'admin_print_styles-'. $page, array( $this, 'admin_css' ) );
 				break;
 			}
@@ -85,7 +85,7 @@ if ( ! class_exists( 'Recipe_Hero_Admin_Welcome' ) ) {
 		 * @return void
 		 */
 		public function admin_css() {
-			wp_enqueue_style( 'recipe-hero-activation', plugins_url( 'assets/css/css/activation.css', __FILE__ ), array(), RecipeHero::$version );
+			wp_enqueue_style( 'recipe-hero-activation', plugins_url( '../../assets/admin/css/activation.css', __FILE__ ), array(), RecipeHero::$version );
 		}
 
 		/**
@@ -97,7 +97,7 @@ if ( ! class_exists( 'Recipe_Hero_Admin_Welcome' ) ) {
 		public function admin_head() {
 			remove_submenu_page( 'index.php', 'recipe-hero-about' );
 			remove_submenu_page( 'index.php', 'recipe-hero-credits' );
-			remove_submenu_page( 'index.php', 'recipe-hero-translators' );
+			remove_submenu_page( 'index.php', 'recipe-hero-translations' );
 
 			?>
 			<style type="text/css">
@@ -135,10 +135,17 @@ if ( ! class_exists( 'Recipe_Hero_Admin_Welcome' ) ) {
 					-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.2);
 					box-shadow: 0 1px 3px rgba(0,0,0,.2);
 				}
+				.about-wrap .dashicons-heart {
+					color: #f90000;
+					font-size: 30px;
+				}
 				.about-wrap .recipe-hero-badge {
 					position: absolute;
 					top: 0;
 					<?php echo get_bloginfo( 'text_direction' ) === 'rtl' ? 'left' : 'right'; ?>: 0;
+				}
+				.about-wrap .feature-section h4 {
+					line-height: 1.6;
 				}
 				.about-wrap .recipe-hero-feature {
 					overflow: visible !important;
@@ -189,6 +196,9 @@ if ( ! class_exists( 'Recipe_Hero_Admin_Welcome' ) ) {
 					margin: 20px 0;
 					padding: 1px 20px 10px;
 				}
+				.about-wrap .return-to-dashboard {
+					font-size: 20px !important;
+				}
 				/*]]>*/
 			</style>
 			<?php
@@ -203,43 +213,55 @@ if ( ! class_exists( 'Recipe_Hero_Admin_Welcome' ) ) {
 		private function intro() {
 
 			// Flush after upgrades
-			if ( ! empty( $_GET['recipe-hero-updated'] ) || ! empty( $_GET['recipe-hero-installed'] ) )
+			if ( ! empty( $_GET['recipe-hero-updated'] ) || ! empty( $_GET['recipe-hero-installed'] ) ) {
 				flush_rewrite_rules();
+			}
 
 			// Drop minor version if 0
 			$major_version = substr( RecipeHero::$version, 0, 3 );
 			?>
-			<h1><?php printf( __( 'Welcome to Recipe Hero %s', 'recipe-hero' ), $major_version ); ?></h1>
 
-			<div class="about-text recipe-hero-about-text">
-				<?php
-					if ( ! empty( $_GET['recipe-hero-installed'] ) )
-						$message = __( 'Thanks, all done!', 'recipe-hero' );
-					elseif ( ! empty( $_GET['recipe-hero-updated'] ) )
-						$message = __( 'Thank you for updating to the latest version!', 'recipe-hero' );
-					else
-						$message = __( 'Thanks for installing!', 'recipe-hero' );
+			<div style="float:left; width: 80%;">
+				<h1><?php printf( __( 'Welcome to Recipe Hero %s', 'recipe-hero' ), $major_version ); ?></h1>
 
-					printf( __( '%s Recipe Hero %s is more powerful, stable, and secure than ever before. We hope you enjoy it.', 'recipe-hero' ), $message, $major_version );
-				?>
+				<div class="about-text recipe-hero-about-text">
+					<?php
+						if ( ! empty( $_GET['recipe-hero-installed'] ) ) {
+							$message = __( 'Thanks, all done!', 'recipe-hero' );
+						} elseif ( ! empty( $_GET['recipe-hero-updated'] ) ) {
+							$message = __( 'Thank you for updating to the latest version!', 'recipe-hero' );
+						} else {
+							$message = __( 'Thanks for installing!', 'recipe-hero' );
+						}
+
+						printf( __( '%s Recipe Hero %s (Gorgeous Gordon) is more powerful, stable, and beautiful than ever before. We hope you enjoy it.', 'recipe-hero' ), $message, $major_version );
+					?>
+				</div>
+
+				<p class="recipe-hero-actions">
+					<a href="<?php echo admin_url('edit.php?post_type=recipe&page=rh-settings'); ?>" class="button button-primary"><?php _e( 'Settings', 'recipe-hero' ); ?></a>
+					<a class="docs button button-primary" href="<?php echo esc_url( apply_filters( 'recipe_hero_docs_url', 'http://recipehero.com/docs/', 'recipe-hero' ) ); ?>"><?php _e( 'Docs', 'recipe-hero' ); ?></a>
+					<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://recipehero.in/" data-text="A free open-source #recipe plugin for #WordPress that makes recipe creation fun again!" data-via="RecipeHeroWP" data-size="large" data-hashtags="RecipeHero">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				</p>
+
+				<p class="quote">
+					"I cook, I create, I'm incredibly excited by what I do, I've still got a lot to achieve." <strong>Gordon Ramsey</strong>
+				</p>
+			</div>
+			<div style="float:right; width: 20%;">
+				<img src="<?php echo plugins_url( '../../assets/images/gordon.png', __FILE__ ); ?>" width="200" />
 			</div>
 
-			<!--<div class="recipe-hero-badge"><?php // printf( __( 'Version %s', 'recipe-hero' ), WC()->version ); ?></div>-->
-
-			<p class="recipe-hero-actions">
-				<a href="<?php echo admin_url('edit.php?post_type=recipe&page=recipe_hero_general_options'); ?>" class="button button-primary"><?php _e( 'Settings', 'recipe-hero' ); ?></a>
-				<a class="docs button button-primary" href="<?php echo esc_url( apply_filters( 'recipe_hero_docs_url', 'http://recipehero.com/docs/', 'recipe-hero' ) ); ?>"><?php _e( 'Docs', 'recipe-hero' ); ?></a>
-				<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://recipehero.in/" data-text="A free open-source #recipe plugin for #WordPress that makes recipe creation fun again!" data-via="RecipeHeroWP" data-size="large" data-hashtags="RecipeHero">Tweet</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-			</p>
+			<div style="clear:both;"></div>
 
 			<h2 class="nav-tab-wrapper">
 				<a class="nav-tab <?php if ( $_GET['page'] == 'recipe-hero-about' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'recipe-hero-about' ), 'index.php' ) ) ); ?>">
 					<?php _e( "What's New", 'recipe-hero' ); ?>
 				</a><a class="nav-tab <?php if ( $_GET['page'] == 'recipe-hero-credits' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'recipe-hero-credits' ), 'index.php' ) ) ); ?>">
 					<?php _e( 'Credits', 'recipe-hero' ); ?>
-				</a><a class="nav-tab <?php if ( $_GET['page'] == 'recipe-hero-translators' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'recipe-hero-translators' ), 'index.php' ) ) ); ?>">
-					<?php _e( 'Translators', 'recipe-hero' ); ?>
+				</a><a class="nav-tab <?php if ( $_GET['page'] == 'recipe-hero-translations' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'recipe-hero-translations' ), 'index.php' ) ) ); ?>">
+					<?php _e( 'Translations', 'recipe-hero' ); ?>
 				</a>
 			</h2>
 			<?php
@@ -257,7 +279,8 @@ if ( ! class_exists( 'Recipe_Hero_Admin_Welcome' ) ) {
 				<!--<div class="changelog point-releases"></div>-->
 
 				<div class="changelog">
-					<h3><?php _e( 'Improved Ingredients adding that you will &#10084;', 'recipe-hero' ); ?></h3>
+					<h3><?php _e( 'Improved Ingredients adding that you will', 'recipe-hero' ); ?> <span class="dashicons dashicons-heart"></span></h3>
+					<p>The path of the righteous man is beset on all sides by. The path of the righteous man is beset on all sides by. The path of the righteous man is beset on all sides by.The path of the righteous man is beset on all sides by The path of the righteous man is beset on all sides.</p>
 					<div class="recipe-hero-feature feature-rest feature-section col three-col">
 						<div>
 							<h4><?php _e( 'Autocomplete Ingredient Suggestion as you Add or Edit Ingredients', 'recipe-hero' ); ?></h4>
@@ -296,7 +319,7 @@ if ( ! class_exists( 'Recipe_Hero_Admin_Welcome' ) ) {
 						</div>
 
 						<div>
-							<h4><?php _e( 'Settings UI / Style Improvements', 'recipe-hero' ); ?></h4>
+							<h4><?php _e( 'Settings API & UI Changes', 'recipe-hero' ); ?></h4>
 							<p><?php _e( 'Coupon usage limits can now be set per user (using email + ID) rather than global.', 'recipe-hero' ); ?></p>
 						</div>
 
@@ -309,17 +332,17 @@ if ( ! class_exists( 'Recipe_Hero_Admin_Welcome' ) ) {
 					<div class="feature-section col three-col">
 
 						<div>
-							<h4><?php _e( 'Cuisine / Course Custom Labels', 'recipe-hero' ); ?></h4>
+							<h4><?php _e( 'Image Gallery / Lightbox', 'recipe-hero' ); ?></h4>
 							<p><?php _e( 'Define whether prices should be shown incl. or excl. of tax on the frontend, and add an optional suffix.', 'recipe-hero' ); ?></p>
 						</div>
 
 						<div>
-							<h4><?php _e( 'Past order linking', 'recipe-hero' ); ?></h4>
+							<h4><?php _e( 'Custom Ordering', 'recipe-hero' ); ?></h4>
 							<p><?php _e( 'Admins now have the ability to link past orders to a customer (before they registered) by email address.', 'recipe-hero' ); ?></p>
 						</div>
 
 						<div class="last-feature">
-							<h4><?php _e( 'Review improvements', 'recipe-hero' ); ?></h4>
+							<h4><?php _e( 'Extensions', 'recipe-hero' ); ?></h4>
 							<p><?php _e( 'We\'ve added a new option to restrict reviews to logged in purchasers, and made ratings editable from the backend.', 'recipe-hero' ); ?></p>
 						</div>
 
@@ -327,7 +350,7 @@ if ( ! class_exists( 'Recipe_Hero_Admin_Welcome' ) ) {
 				</div>
 
 				<div class="return-to-dashboard">
-					<a href="<?php echo esc_url( admin_url( 'edit.php?post_type=recipe&page=recipe_hero_general_options' ) ); ?>"><?php _e( 'Go to Recipe Hero Settings', 'recipe-hero' ); ?></a>
+					<a href="<?php echo esc_url( admin_url( 'edit.php?post_type=recipe&page=recipe_hero_general_options' ) ); ?>"><?php _e( 'Go to Recipe Hero Settings', 'recipe-hero' ); ?> <span class="dashicons dashicons-arrow-right-alt"></span></a>
 				</div>
 			</div>
 			<?php
@@ -342,7 +365,7 @@ if ( ! class_exists( 'Recipe_Hero_Admin_Welcome' ) ) {
 
 				<?php $this->intro(); ?>
 
-				<p class="about-description"><?php _e( 'Recipe Hero is developed by <a href="http://bryceadams.com/">Bryce Adams</a> and maintained by a worldwide team of passionate individuals, backed by an awesome developer community. Want to see your name here? <a href="https://github.com/bryceadams/Recipe-Hero/">Contribute to Recipe Hero</a>.', 'recipe-hero' ); ?></p>
+				<p class="about-description"><?php _e( 'Recipe Hero is developed by <a href="http://bryce.se/">Bryce Adams</a> and maintained by a worldwide team of passionate individuals, backed by an awesome developer community. Want to see your name here? <a href="https://github.com/bryceadams/Recipe-Hero/">Contribute to Recipe Hero</a>.', 'recipe-hero' ); ?></p>
 
 				<?php echo $this->contributors(); ?>
 			</div>
@@ -350,9 +373,9 @@ if ( ! class_exists( 'Recipe_Hero_Admin_Welcome' ) ) {
 		}
 
 		/**
-		 * Output the translators screen
+		 * Output the translations screen
 		 */
-		public function translators_screen() {
+		public function translations_screen() {
 			?>
 			<div class="wrap about-wrap">
 
@@ -360,7 +383,6 @@ if ( ! class_exists( 'Recipe_Hero_Admin_Welcome' ) ) {
 
 				<p class="about-description"><?php _e( 'Recipe Hero has been kindly translated into a couple other languages thanks to our translation team. Want to join the lingual club? <a href="https://www.transifex.com/projects/p/recipe-hero/">Translate Recipe Hero</a>.', 'recipe-hero' ); ?></p>
 
-				<p class="wp-credits-list"><a href="http://www.transifex.com/projects/p/recipe-hero/">Get Your Name Here!</a></p>
 			</div>
 			<?php
 		}
@@ -430,25 +452,31 @@ if ( ! class_exists( 'Recipe_Hero_Admin_Welcome' ) ) {
 		public function welcome() {
 
 			// Bail if no activation redirect transient is set
-		    if ( ! get_transient( '_recipe_hero_activation_redirect' ) )
+		    if ( ! get_transient( '_recipe_hero_activation_redirect' ) ) {
 				return;
+		    }
 
 			// Delete the redirect transient
 			delete_transient( '_recipe_hero_activation_redirect' );
 
 			// Bail if we are waiting to install or update via the interface update/install links
-			if ( get_option( '_wc_needs_update' ) == 1 || get_option( '_wc_needs_pages' ) == 1 )
+			if ( get_option( '_wc_needs_update' ) == 1 || get_option( '_wc_needs_pages' ) == 1 ) {
 				return;
+			}
 
 			// Bail if activating from network, or bulk, or within an iFrame
-			if ( is_network_admin() || isset( $_GET['activate-multi'] ) || defined( 'IFRAME_REQUEST' ) )
+			if ( is_network_admin() || isset( $_GET['activate-multi'] ) || defined( 'IFRAME_REQUEST' ) ) {
 				return;
+			}
 
-			if ( ( isset( $_GET['action'] ) && 'upgrade-plugin' == $_GET['action'] ) && ( isset( $_GET['plugin'] ) && strstr( $_GET['plugin'], 'recipe-hero.php' ) ) )
+			if ( ( isset( $_GET['action'] ) && 'upgrade-plugin' == $_GET['action'] ) && ( isset( $_GET['plugin'] ) && strstr( $_GET['plugin'], 'recipe-hero.php' ) ) ) {
 				return;
+			}
 
 			wp_redirect( admin_url( 'index.php?page=recipe-hero-about' ) );
+
 			exit;
+
 		}
 
 	}
