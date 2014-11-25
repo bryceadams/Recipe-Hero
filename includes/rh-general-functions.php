@@ -13,6 +13,14 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
+ * Returns true if is recipe hero page
+ */
+
+function is_recipe_hero() {
+    return apply_filters( 'is_recipe_hero', ( is_post_type_archive( 'recipe' ) || is_tax( get_object_taxonomies( 'recipe' ) ) || is_singular( array( 'recipe' ) ) ) ? true : false );
+}
+
+/**
  * Returns all ingredeints site-wide
  * Note: We are using get_posts because WP_Query won't work in admin here (https://core.trac.wordpress.org/ticket/18408)
  *

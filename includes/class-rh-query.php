@@ -63,7 +63,7 @@ class RH_Query {
         	$recipe_page = '';
         }
 
-        $current_id = array_key_exists( 'queried_object', $q ) ? $q->queried_object->ID : false;
+        $current_id = array_key_exists( 'queried_object', $q ) && array_key_exists( 'ID', $q->queried_object ) ? $q->queried_object->ID : false;
 
 		// Fix for verbose page rules
 		//if ( $GLOBALS['wp_rewrite']->use_verbose_page_rules && isset( $q->queried_object_id ) && $q->queried_object_id === $recipe_page ) {

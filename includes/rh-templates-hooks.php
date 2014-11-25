@@ -10,7 +10,12 @@
  * @since 	  1.0.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
+// Add body class
+add_filter( 'body_class', 'recipe_hero_body_class' );
 
 /**
  * Content Wrappers

@@ -12,6 +12,23 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
+ * Add body classes for RH pages
+ *
+ * @param  array $classes
+ * @return array
+ */
+function recipe_hero_body_class( $classes ) {
+	$classes = (array) $classes;
+
+	if ( is_recipe_hero() ) {
+		$classes[] = 'recipe-hero';
+		$classes[] = 'recipe-hero-page';
+	}
+
+	return array_unique( $classes );
+}
+
+/**
  * Recipe Content Wrappers
  *
  * @package   Recipe Hero
