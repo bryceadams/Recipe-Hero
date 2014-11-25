@@ -79,7 +79,7 @@ function rh_clean( $var ) {
 /**
  * Get an image size.
  *
- * Variable is filtered by woocommerce_get_image_size_{image_size}
+ * Variable is filtered by recipe_hero_get_image_size_{image_size}
  *
  * @param string $image_size
  * @since 1.0.0
@@ -99,5 +99,5 @@ function rh_get_image_size( $image_size ) {
         );
     }
 
-    return apply_filters( 'woocommerce_get_image_size_' . $image_size, $size );
+    return apply_filters( 'recipe_hero_get_image_size_' . $image_size, $size );
 }

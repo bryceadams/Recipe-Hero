@@ -120,10 +120,10 @@ class CMB2_hookup {
 			wp_register_script( 'iris', admin_url( 'js/iris.min.js' ), array( 'jquery-ui-draggable', 'jquery-ui-slider', 'jquery-touch-punch' ), CMB2_VERSION );
 			wp_register_script( 'wp-color-picker', admin_url( 'js/color-picker.min.js' ), array( 'iris' ), CMB2_VERSION );
 			wp_localize_script( 'wp-color-picker', 'wpColorPickerL10n', array(
-				'clear'         => __( 'Clear', 'cmb2' ),
-				'defaultString' => __( 'Default', 'cmb2' ),
-				'pick'          => __( 'Select Color', 'cmb2' ),
-				'current'       => __( 'Current Color', 'cmb2' ),
+				'clear'         => __( 'Clear', 'recipe-hero' ),
+				'defaultString' => __( 'Default', 'recipe-hero' ),
+				'pick'          => __( 'Select Color', 'recipe-hero' ),
+				'current'       => __( 'Current Color', 'recipe-hero' ),
 			) );
 		}
 
@@ -147,17 +147,17 @@ class CMB2_hookup {
 				'date_picker'  => array(
 					'changeMonth'     => true,
 					'changeYear'      => true,
-					'dateFormat'      => __( 'mm/dd/yy', 'cmb2' ),
-					'dayNames'        => explode( ',', __( 'Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday', 'cmb2' ) ),
-					'dayNamesMin'     => explode( ',', __( 'Su, Mo, Tu, We, Th, Fr, Sa', 'cmb2' ) ),
-					'dayNamesShort'   => explode( ',', __( 'Sun, Mon, Tue, Wed, Thu, Fri, Sat', 'cmb2' ) ),
-					'monthNames'      => explode( ',', __( 'January, February, March, April, May, June, July, August, September, October, November, December', 'cmb2' ) ),
-					'monthNamesShort' => explode( ',', __( 'Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec', 'cmb2' ) ),
-					'nextText'        => __( 'Next', 'cmb2' ),
-					'prevText'        => __( 'Prev', 'cmb2' ),
-					'currentText'     => __( 'Today', 'cmb2' ),
-					'closeText'       => __( 'Done', 'cmb2' ),
-					'clearText'       => __( 'Clear', 'cmb2' ),
+					'dateFormat'      => __( 'mm/dd/yy', 'recipe-hero' ),
+					'dayNames'        => explode( ',', __( 'Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday', 'recipe-hero' ) ),
+					'dayNamesMin'     => explode( ',', __( 'Su, Mo, Tu, We, Th, Fr, Sa', 'recipe-hero' ) ),
+					'dayNamesShort'   => explode( ',', __( 'Sun, Mon, Tue, Wed, Thu, Fri, Sat', 'recipe-hero' ) ),
+					'monthNames'      => explode( ',', __( 'January, February, March, April, May, June, July, August, September, October, November, December', 'recipe-hero' ) ),
+					'monthNamesShort' => explode( ',', __( 'Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec', 'recipe-hero' ) ),
+					'nextText'        => __( 'Next', 'recipe-hero' ),
+					'prevText'        => __( 'Prev', 'recipe-hero' ),
+					'currentText'     => __( 'Today', 'recipe-hero' ),
+					'closeText'       => __( 'Done', 'recipe-hero' ),
+					'clearText'       => __( 'Clear', 'recipe-hero' ),
 				),
 				'time_picker'  => array(
 					'startTime'   => '00:00',
@@ -168,12 +168,12 @@ class CMB2_hookup {
 				),
 			),
 			'strings' => array(
-				'upload_file'  => __( 'Use this file', 'cmb2' ),
-				'remove_image' => __( 'Remove Image', 'cmb2' ),
-				'remove_file'  => __( 'Remove', 'cmb2' ),
-				'file'         => __( 'File:', 'cmb2' ),
-				'download'     => __( 'Download', 'cmb2' ),
-				'check_toggle' => __( 'Select / Deselect All', 'cmb2' ),
+				'upload_file'  => __( 'Use this file', 'recipe-hero' ),
+				'remove_image' => __( 'Remove Image', 'recipe-hero' ),
+				'remove_file'  => __( 'Remove', 'recipe-hero' ),
+				'file'         => __( 'File:', 'recipe-hero' ),
+				'download'     => __( 'Download', 'recipe-hero' ),
+				'check_toggle' => __( 'Select / Deselect All', 'recipe-hero' ),
 			),
 		) ) );
 

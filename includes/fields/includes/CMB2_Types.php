@@ -285,7 +285,7 @@ class CMB2_Types {
 			</div>
 		</div>
 		<p class="cmb-add-row">
-			<a data-selector="<?php echo $table_id; ?>" class="cmb-add-row-button button" href="#"><?php echo esc_html( $this->_text( 'add_row_text', __( 'Add Row', 'cmb2' ) ) ); ?></a>
+			<a data-selector="<?php echo $table_id; ?>" class="cmb-add-row-button button" href="#"><?php echo esc_html( $this->_text( 'add_row_text', __( 'Add Row', 'recipe-hero' ) ) ); ?></a>
 		</p>
 
 		<?php
@@ -344,7 +344,7 @@ class CMB2_Types {
 				<?php $this->_render(); ?>
 			</div>
 			<div class="cmb-td cmb-remove-row">
-				<a class="button cmb-remove-row-button" <?php echo $disabled; ?> href="#"><?php echo esc_html( $this->_text( 'remove_row_text', __( 'Remove', 'cmb2' ) ) ); ?></a>
+				<a class="button cmb-remove-row-button" <?php echo $disabled; ?> href="#"><?php echo esc_html( $this->_text( 'remove_row_text', __( 'Remove', 'recipe-hero' ) ) ); ?></a>
 			</div>
 		</div>
 
@@ -671,7 +671,7 @@ class CMB2_Types {
 		$options    = ''; $i = 1;
 
 		if ( ! $terms ) {
-			$options .= '<li><label>'. esc_html( $this->_text( 'no_terms_text', __( 'No terms', 'cmb2' ) ) ) .'</label></li>';
+			$options .= '<li><label>'. esc_html( $this->_text( 'no_terms_text', __( 'No terms', 'recipe-hero' ) ) ) .'</label></li>';
 		} else {
 			$option_none  = $this->field->args( 'show_option_none' );
 			if( ! empty( $option_none ) ) {
@@ -719,7 +719,7 @@ class CMB2_Types {
 		$options     = ''; $i = 1;
 
 		if ( ! $terms ) {
-			$options .= '<li><label>'. esc_html( $this->_text( 'no_terms_text', __( 'No terms', 'cmb2' ) ) ) .'</label></li>';
+			$options .= '<li><label>'. esc_html( $this->_text( 'no_terms_text', __( 'No terms', 'recipe-hero' ) ) ) .'</label></li>';
 		} else {
 
 			foreach ( $terms as $term ) {
@@ -763,7 +763,7 @@ class CMB2_Types {
 		$this->input( array(
 			'type'  => 'button',
 			'class' => 'cmb2-upload-button button cmb2-upload-list',
-			'value'  => esc_html( $this->_text( 'add_upload_file_text', __( 'Add or Upload File', 'cmb2' ) ) ),
+			'value'  => esc_html( $this->_text( 'add_upload_file_text', __( 'Add or Upload File', 'recipe-hero' ) ) ),
 			'name'  => '', 'id'  => '',
 		) );
 
@@ -784,7 +784,7 @@ class CMB2_Types {
 					echo
 					'<li class="img-status">',
 						wp_get_attachment_image( $id, $img_size ),
-						'<p class="cmb2-remove-wrapper"><a href="#" class="cmb2-remove-file-button">'. esc_html( $this->_text( 'remove_image_text', __( 'Remove Image', 'cmb2' ) ) ) .'</a></p>
+						'<p class="cmb2-remove-wrapper"><a href="#" class="cmb2-remove-file-button">'. esc_html( $this->_text( 'remove_image_text', __( 'Remove Image', 'recipe-hero' ) ) ) .'</a></p>
 						'. $id_input .'
 					</li>';
 
@@ -795,7 +795,7 @@ class CMB2_Types {
 					}
 					echo
 					'<li>',
-						esc_html( $this->_text( 'file_text', __( 'File:', 'cmb2' ) ) ) ,' <strong>', $title ,'</strong>&nbsp;&nbsp;&nbsp; (<a href="', $fullurl ,'" target="_blank" rel="external">', esc_html( $this->_text( 'file-download-text', __( 'Download', 'cmb2' ) ) ) ,'</a> / <a href="#" class="cmb2-remove-file-button">', esc_html( $this->_text( 'remove_text', __( 'Remove', 'cmb2' ) ) ) ,'</a>)
+						esc_html( $this->_text( 'file_text', __( 'File:', 'recipe-hero' ) ) ) ,' <strong>', $title ,'</strong>&nbsp;&nbsp;&nbsp; (<a href="', $fullurl ,'" target="_blank" rel="external">', esc_html( $this->_text( 'file-download-text', __( 'Download', 'recipe-hero' ) ) ) ,'</a> / <a href="#" class="cmb2-remove-file-button">', esc_html( $this->_text( 'remove_text', __( 'Remove', 'recipe-hero' ) ) ) ,'</a>)
 						', $id_input ,'
 					</li>';
 				}
@@ -820,7 +820,7 @@ class CMB2_Types {
 			'desc'  => '',
 			'data-previewsize' => is_array( $img_size ) ? '['. implode( ',', $img_size ) .']' : 350,
 		) ),
-		'<input class="cmb2-upload-button button" type="button" value="'. esc_attr( $this->_text( 'add_upload_file_text', __( 'Add or Upload File', 'cmb2' ) ) ) .'" />',
+		'<input class="cmb2-upload-button button" type="button" value="'. esc_attr( $this->_text( 'add_upload_file_text', __( 'Add or Upload File', 'recipe-hero' ) ) ) .'" />',
 		$this->_desc( true );
 
 		$cached_id = $this->_id();
@@ -867,7 +867,7 @@ class CMB2_Types {
 					}
 
 					echo $image;
-					echo '<p class="cmb2-remove-wrapper"><a href="#" class="cmb2-remove-file-button" rel="', $cached_id, '">'. esc_html( $this->_text( 'remove_image_text', __( 'Remove Image', 'cmb2' ) ) ) .'</a></p>';
+					echo '<p class="cmb2-remove-wrapper"><a href="#" class="cmb2-remove-file-button" rel="', $cached_id, '">'. esc_html( $this->_text( 'remove_image_text', __( 'Remove Image', 'recipe-hero' ) ) ) .'</a></p>';
 					echo '</div>';
 				} else {
 					// $file_ext = $this->get_file_ext( $meta_value );
@@ -875,7 +875,7 @@ class CMB2_Types {
 					for ( $i = 0; $i < count( $parts ); ++$i ) {
 						$title = $parts[$i];
 					}
-					echo esc_html( $this->_text( 'file_text', __( 'File:', 'cmb2' ) ) ), ' <strong>', $title ,'</strong>&nbsp;&nbsp;&nbsp; (<a href="', $meta_value ,'" target="_blank" rel="external">', esc_html( $this->_text( 'file-download-text', __( 'Download', 'cmb2' ) ) ) ,'</a> / <a href="#" class="cmb2-remove-file-button" rel="', $cached_id, '">', esc_html( $this->_text( 'remove_text', __( 'Remove', 'cmb2' ) ) ) ,'</a>)';
+					echo esc_html( $this->_text( 'file_text', __( 'File:', 'recipe-hero' ) ) ), ' <strong>', $title ,'</strong>&nbsp;&nbsp;&nbsp; (<a href="', $meta_value ,'" target="_blank" rel="external">', esc_html( $this->_text( 'file-download-text', __( 'Download', 'recipe-hero' ) ) ) ,'</a> / <a href="#" class="cmb2-remove-file-button" rel="', $cached_id, '">', esc_html( $this->_text( 'remove_text', __( 'Remove', 'recipe-hero' ) ) ) ,'</a>)';
 				}
 			}
 		echo '</div>';

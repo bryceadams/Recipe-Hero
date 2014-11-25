@@ -114,7 +114,7 @@ class RH_Recipe {
 	 * @return string
 	 */
 	public function get_title() {
-		return apply_filters( 'woocommerce_product_title', $this->post ? $this->post->post_title : '', $this );
+		return apply_filters( 'recipe_hero_recipe_title', $this->post ? $this->post->post_title : '', $this );
 	}
 
 	/**

@@ -84,19 +84,8 @@ if ( ! class_exists( 'cmb2_bootstrap_200beta', false ) ) {
 				if ( ! defined( 'CMB2_VERSION' ) ) {
 					define( 'CMB2_VERSION', self::VERSION );
 				}
-				$this->l10ni18n();
 				require_once 'CMB2.php';
 			}
-		}
-
-		/**
-		 * Load CMB text domain
-		 * @since  2.0.0
-		 */
-		public function l10ni18n() {
-			$locale = apply_filters( 'plugin_locale', get_locale(), 'cmb2' );
-			load_textdomain( 'cmb2', WP_LANG_DIR . '/cmb2/cmb2-' . $locale . '.mo' );
-			load_plugin_textdomain( 'cmb2', false, dirname( __FILE__ ) . '/languages/' );
 		}
 
 	}

@@ -1,6 +1,6 @@
 <?php
 /**
- * WooCommerce Integration Settings
+ * Recipe Hero Integration Settings
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
@@ -61,7 +61,7 @@ class RH_Settings_Integrations extends RH_Settings_Page {
 			}
 		}
 
-		return apply_filters( 'woocommerce_get_sections_' . $this->id, $sections );
+		return apply_filters( 'recipe_heroget_sections_' . $this->id, $sections );
 	}
 
 	/**

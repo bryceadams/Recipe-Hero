@@ -101,40 +101,6 @@ if ( ! class_exists( 'Recipe_Hero_Admin_Welcome' ) ) {
 
 			?>
 			<style type="text/css">
-				/*<![CDATA[*/
-				.recipe-hero-badge:before {
-					font-family: WooCommerce !important;
-					content: "\e03d";
-					color: #fff;
-					-webkit-font-smoothing: antialiased;
-					-moz-osx-font-smoothing: grayscale;
-					font-size: 80px;
-					font-weight: normal;
-					width: 165px;
-					height: 165px;
-					line-height: 165px;
-					text-align: center;
-					position: absolute;
-					top: 0;
-					<?php echo get_bloginfo( 'text_direction' ) === 'rtl' ? 'right' : 'left'; ?>: 0;
-					margin: 0;
-					vertical-align: middle;
-				}
-				.recipe-hero-badge {
-					position: relative;;
-					background: #9c5d90;
-					text-rendering: optimizeLegibility;
-					padding-top: 150px;
-					height: 52px;
-					width: 165px;
-					font-weight: 600;
-					font-size: 14px;
-					text-align: center;
-					color: #ddc8d9;
-					margin: 5px 0 0 0;
-					-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.2);
-					box-shadow: 0 1px 3px rgba(0,0,0,.2);
-				}
 				.about-wrap .dashicons-heart {
 					color: #f90000;
 					font-size: 30px;
@@ -176,7 +142,6 @@ if ( ! class_exists( 'Recipe_Hero_Admin_Welcome' ) ) {
 					margin: 0;
 				}
 				.about-wrap .feature-rest div.icon:before {
-					font-family: WooCommerce !important;
 					font-weight: normal;
 					width: 100%;
 					font-size: 170px;
@@ -234,7 +199,8 @@ if ( ! class_exists( 'Recipe_Hero_Admin_Welcome' ) ) {
 							$message = __( 'Thanks for installing!', 'recipe-hero' );
 						}
 
-						printf( __( '%s Recipe Hero %s (Gorgeous Gordon) is more powerful, stable, and beautiful than ever before. We hope you enjoy it.', 'recipe-hero' ), $message, $major_version );
+						printf( __( '%s Recipe Hero %s (Gorgeous Gordon) is more powerful, stable, and beautiful than ever before.', 'recipe-hero' ), $message, $major_version );
+						echo ' <strong>' . __( 'We hope you enjoy it.', 'recipe-hero' ) . '</strong>';
 					?>
 				</div>
 
@@ -246,7 +212,7 @@ if ( ! class_exists( 'Recipe_Hero_Admin_Welcome' ) ) {
 				</p>
 
 				<p class="quote">
-					"I cook, I create, I'm incredibly excited by what I do, I've still got a lot to achieve." <strong>Gordon Ramsey</strong>
+					<?php _e( '"I cook, I create, I\'m incredibly excited by what I do, I\'ve still got a lot to achieve."', 'recipe-hero' ); ?> <strong>Gordon Ramsey</strong>
 				</p>
 			</div>
 			<div style="float:right; width: 20%;">

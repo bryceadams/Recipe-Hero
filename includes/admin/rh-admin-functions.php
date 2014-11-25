@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Output admin fields.
  *
- * Loops though the woocommerce options array and outputs each field.
+ * Loops though the recipe hero options array and outputs each field.
  *
  * @param array $options Opens array to output
  */

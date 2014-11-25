@@ -64,10 +64,7 @@ class RH_Admin_Meta_Boxes {
 					if ( metadata_exists( 'post', $post->ID, '_recipe_image_gallery' ) ) {
 						$recipe_image_gallery = get_post_meta( $post->ID, '_recipe_image_gallery', true );
 					} else {
-						// Backwards compat
-						$attachment_ids = get_posts( 'post_parent=' . $post->ID . '&numberposts=-1&post_type=attachment&orderby=menu_order&order=ASC&post_mime_type=image&fields=ids&meta_key=_woocommerce_exclude_image&meta_value=0' );
-						$attachment_ids = array_diff( $attachment_ids, array( get_post_thumbnail_id() ) );
-						$recipe_image_gallery = implode( ',', $attachment_ids );
+						$recipe_image_gallery = '';
 					}
 
 					$attachments = array_filter( explode( ',', $recipe_image_gallery ) );
@@ -77,7 +74,7 @@ class RH_Admin_Meta_Boxes {
 							echo '<li class="image" data-attachment_id="' . esc_attr( $attachment_id ) . '">
 								' . wp_get_attachment_image( $attachment_id, 'thumbnail' ) . '
 								<ul class="actions">
-									<li><a href="#" class="delete tips" data-tip="' . __( 'Delete image', 'woocommerce' ) . '">' . __( 'Delete', 'woocommerce' ) . '</a></li>
+									<li><a href="#" class="delete tips" data-tip="' . __( 'Delete image', 'recipe-hero' ) . '">' . __( 'Delete', 'recipe-hero' ) . '</a></li>
 								</ul>
 							</li>';
 						}
@@ -89,7 +86,7 @@ class RH_Admin_Meta_Boxes {
 
 		</div>
 		<p class="add_recipe_images hide-if-no-js">
-			<a href="#" data-choose="<?php _e( 'Add Images to Recipe Gallery', 'woocommerce' ); ?>" data-update="<?php _e( 'Add to gallery', 'woocommerce' ); ?>" data-delete="<?php _e( 'Delete image', 'woocommerce' ); ?>" data-text="<?php _e( 'Delete', 'woocommerce' ); ?>"><?php _e( 'Add recipe gallery images', 'woocommerce' ); ?></a>
+			<a href="#" data-choose="<?php _e( 'Add Images to Recipe Gallery', 'recipe-hero' ); ?>" data-update="<?php _e( 'Add to gallery', 'recipe-hero' ); ?>" data-delete="<?php _e( 'Delete image', 'recipe-hero' ); ?>" data-text="<?php _e( 'Delete', 'recipe-hero' ); ?>"><?php _e( 'Add recipe gallery images', 'recipe-hero' ); ?></a>
 		</p>
 		<?php
 	}

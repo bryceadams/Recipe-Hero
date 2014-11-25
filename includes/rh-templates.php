@@ -117,7 +117,7 @@ if ( ! function_exists( 'recipe_hero_get_template_part' ) ) {
             $template = RH()->plugin_path() . "/templates/{$slug}-{$name}.php";
         }
 
-        // If template file doesn't exist, look in yourtheme/slug.php and yourtheme/woocommerce/slug.php
+        // If template file doesn't exist, look in yourtheme/slug.php and yourtheme/recipe-hero/slug.php
         if ( ! $template ) {
             $template = locate_template( array( "{$slug}.php", RH()->template_path() . "{$slug}.php" ) );
         }
