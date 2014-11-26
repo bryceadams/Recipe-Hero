@@ -95,9 +95,12 @@ class RH_Admin_Meta_Boxes {
 	 * Save meta box data
 	 */
 	public static function gallery_save( $post_id, $post ) {
-		$attachment_ids = array_filter( explode( ',', rh_clean( $_POST['recipe_image_gallery'] ) ) );
-
-		update_post_meta( $post_id, '_recipe_image_gallery', implode( ',', $attachment_ids ) );
+		
+		if ( isset( $_POST['recipe_image_gallery'] ) ) {
+			$attachment_ids = array_filter( explode( ',', rh_clean( $_POST['recipe_image_gallery'] ) ) );
+			update_post_meta( $post_id, '_recipe_image_gallery', implode( ',', $attachment_ids ) );
+		}
+		
 	}
 
 }

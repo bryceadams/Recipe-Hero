@@ -426,7 +426,7 @@ if ( ! class_exists( 'Recipe_Hero_Admin_Welcome' ) ) {
 			delete_transient( '_recipe_hero_activation_redirect' );
 
 			// Bail if we are waiting to install or update via the interface update/install links
-			if ( get_option( '_wc_needs_update' ) == 1 || get_option( '_wc_needs_pages' ) == 1 ) {
+			if ( get_option( '_rh_needs_update' ) == 1 ) {
 				return;
 			}
 

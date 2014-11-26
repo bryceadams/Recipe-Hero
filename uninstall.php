@@ -7,20 +7,10 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
+ * @since 	  1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-$other_options = get_option( 'recipe_hero_other_options' );
-
-if ( isset ( $other_options['delete_options'] ) ) {
-
-	// Delete Recipe Hero Options
-	delete_option( 'recipe_hero_general_options' );
-	delete_option( 'recipe_hero_style_options' );
-	delete_option( 'recipe_hero_labels_options' );
-	delete_option( 'recipe_hero_other_options' );
-
-}

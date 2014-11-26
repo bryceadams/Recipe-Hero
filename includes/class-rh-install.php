@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'RH_Install' ) ) :
 
 /**
- * WC_Install Class
+ * RH_Install Class
  */
 class RH_Install {
 
@@ -25,6 +25,7 @@ class RH_Install {
 		register_activation_hook( RH_PLUGIN_FILE, array( $this, 'install' ) );
 
 		// Hooks
+		add_action( 'admin_init', array( $this, 'install_actions' ) );
 		add_action( 'admin_init', array( $this, 'check_version' ), 5 );
 		add_filter( 'plugin_action_links_' . RH_PLUGIN_BASENAME, array( $this, 'plugin_action_links' ) );
 		add_filter( 'plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 2 );
@@ -36,16 +37,44 @@ class RH_Install {
 	 * @return void
 	 */
 	public function check_version() {
-		if ( ! defined( 'IFRAME_REQUEST' ) && ( get_option( 'recipe_hero_version' ) != RecipeHero::$version ) ) {
+		if ( ! defined( 'IFRAME_REQUEST' ) && ( get_option( 'recipe_hero_version' ) != RecipeHero::$version || get_option( 'recipe_hero_db_version' ) != RecipeHero::$version ) ) {
 			$this->install();
 
 			do_action( 'recipe_hero_updated' );
 		}
 	}
 
+	/**
+	 * Install actions such as installing pages when a button is clicked.
+	 */
+	public function install_actions() {
+		
+		// If updates are needed and the button is pressed, do it
+		if ( ! empty( $_GET['do_update_recipe_hero'] ) ) {
+
+			$this->update();
+
+			// Update complete
+			delete_option( '_rh_needs_update' );
+			delete_transient( '_rh_activation_redirect' );
+
+			// What's new redirect
+			wp_redirect( admin_url( 'index.php?page=recipe-hero-about&recipe-hero-updated=true' ) );
+			exit;
+
+		}
+
+		// If understood labels notice, delete it
+		if ( ! empty( $_GET['dismiss_rh_labels_notice'] ) ) {
+			delete_option( '_rh_had_labels' );
+		}
+
+	}
+
 
 	/**
 	 * Install Recipe Hero
+	 * @todo next DB updater, add to version compare: && null !== $current_db_version )
 	 */
 	public function install() {
 
@@ -56,11 +85,40 @@ class RH_Install {
 		RH_Post_types::register_post_types();
 		RH_Post_types::register_taxonomies();
 
+		// Queue upgrades
+		$current_version    = get_option( 'recipe_hero_version', null );
+		$current_db_version = get_option( 'recipe_hero_db_version', null );
+
+		if ( version_compare( $current_db_version, '1.0.0', '<' ) ) {
+			update_option( '_rh_needs_update', 1 );
+		} else {
+			update_option( 'recipe_hero_db_version', RecipeHero::$version );
+		}
+
 		// Update version
 		update_option( 'recipe_hero_version', RecipeHero::$version );
 
 		// Flush rules after install
 		flush_rewrite_rules();
+
+	}
+
+	/**
+	 * Handle updates
+	 */
+	public function update() {
+
+		// Do updates
+		$current_db_version = get_option( 'recipe_hero_db_version' );
+
+		if ( version_compare( $current_db_version, '1.0', '<' ) ) {
+
+			include( 'updates/recipe-hero-update-1.0.php' );
+			update_option( 'recipe_hero_db_version', '1.0' );
+
+		}
+
+		update_option( 'recipe_hero_db_version', RecipeHero::$version );
 
 	}
 

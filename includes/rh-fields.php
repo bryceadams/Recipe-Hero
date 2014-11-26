@@ -160,8 +160,6 @@ function recipe_hero_cmb2_metaboxes( array $meta_boxes ) {
 							'slice'	 => __( 'Slices', 'recipe-hero' ),
 							'piece'	 => __( 'Pieces', 'recipe-hero' ),
 							'none'	 => __( 'None (blank)', 'recipe-hero' ),
-							// Should there be slices / cloves / etc. as terms of measurement? Get feedback.
-							// Also, what about sizes? Small / Large etc. - we don't want this to be a long list of all possible amounts but we want to make it as easy as possible for users.
 						) ),
 						'default'	=> apply_filters( 'recipe_hero_meta_ingredients_amount_default', 'gm' ),
     					//'sanitization_cb' => 'pw_select2_sanitise',
