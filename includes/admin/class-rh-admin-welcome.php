@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @package 	Recipe Hero
  * @author 		Captain Theme <info@captaintheme.com>
- * @version     0.9.0
+ * @version     1.0.0
 */
 
 /**
@@ -105,6 +105,11 @@ if ( ! class_exists( 'Recipe_Hero_Admin_Welcome' ) ) {
 					color: #f90000;
 					font-size: 30px;
 				}
+				.about-wrap .dashicons-carrot {
+					color: #e16b1e;
+					font-size: 30px;
+					padding-left: 5px;
+				}
 				.about-wrap .recipe-hero-badge {
 					position: absolute;
 					top: 0;
@@ -112,6 +117,10 @@ if ( ! class_exists( 'Recipe_Hero_Admin_Welcome' ) ) {
 				}
 				.about-wrap .feature-section h4 {
 					line-height: 1.6;
+				}
+				.about-wrap .feature-section h4 span {
+					font-size: 25px;
+					padding-left: 8px;
 				}
 				.about-wrap .recipe-hero-feature {
 					overflow: visible !important;
@@ -246,70 +255,70 @@ if ( ! class_exists( 'Recipe_Hero_Admin_Welcome' ) ) {
 
 				<div class="changelog">
 					<h3><?php _e( 'Improved Ingredients adding that you will', 'recipe-hero' ); ?> <span class="dashicons dashicons-heart"></span></h3>
-					<p>The path of the righteous man is beset on all sides by. The path of the righteous man is beset on all sides by. The path of the righteous man is beset on all sides by.The path of the righteous man is beset on all sides by The path of the righteous man is beset on all sides.</p>
+					<p><?php _e( 'To me, the path to building Recipe Hero 1.0 was like baking a cake. Initially, I started with the ingredients. I then began to put them all together - slowly my recipe was becoming more... real. But it wasn\'t quite ready. I spent months waiting for it to bake, hoping that nothing went wrong and constantly adjusting the ingredients as time passed. Now, I\'m ready for you to taste it. Enjoy!', 'recipe-hero' ); ?> <span class="dashicons dashicons-shield"></span></p>
 					<div class="recipe-hero-feature feature-rest feature-section col three-col">
 						<div>
-							<h4><?php _e( 'Autocomplete Ingredient Suggestion as you Add or Edit Ingredients', 'recipe-hero' ); ?></h4>
-							<p><?php _e( 'Built on top of the WooCommerce API, and targeted directly at developers, the new REST API allows you to get data for <strong>Orders</strong>, <strong>Coupons</strong>, <strong>Customers</strong>, <strong>Products</strong> and <strong>Reports</strong> in both <code>XML</code> and <code>JSON</code> formats.', 'recipe-hero' ); ?></p>
+							<h4><?php _e( 'Autocomplete Ingredient Suggestion as you Add or Edit Ingredients', 'recipe-hero' ); ?> <span class="dashicons dashicons-search"></span></h4>
+							<p><?php _e( 'Adding ingredients to a new recipe has never been easier, thanks to the new autocomplete ingredient feature. As you type in an ingredient, it will pull past ingredients - making sure you stay consistent.', 'recipe-hero' ); ?></p>
 						</div>
 						<div class="last-feature">
-							<h4><?php _e( 'Easily See the Ingredients of a Recipe Without Opening it', 'recipe-hero' ); ?></h4>
-							<p><?php _e( 'Authentication for the REST API is performed using HTTP Basic Auth if you have SSL enabled, or signed according to the <a href="http://tools.ietf.org/html/rfc5849">OAuth 1.0a</a> specification if you don\'t have SSL. Data is only available to authenticated users.', 'recipe-hero' ); ?></p>
+							<h4><?php _e( 'Easily See the Ingredients of a Recipe Without Opening it', 'recipe-hero' ); ?> <span class="dashicons dashicons-editor-ul"></span></h4>
+							<p><?php _e( 'Another neat feature relating to ingredients is that you can now quickly view all of your recipes\'s ingredients from the Recipes admin page! Time saved = Exponential.', 'recipe-hero' ); ?></p>
 						</div>
 					</div>
 				</div>
 				<div class="changelog">
-					<h3><?php _e( 'Under the Hood', 'recipe-hero' ); ?></h3>
+					<h3><?php _e( 'Freshly Baked Features... mmmm!', 'recipe-hero' ); ?> <span class="dashicons dashicons-carrot"></span></h3>
 
 					<div class="feature-section col three-col">
 						<div>
-							<h4><?php _e( 'Custom Image Sizes', 'recipe-hero' ); ?></h4>
-							<p><?php _e( 'PayPal Data Transfer (PDT) is an alternative for PayPal IPN which sends back the status of an order when a customer returns from PayPal.', 'recipe-hero' ); ?></p>
+							<h4><?php _e( 'Custom Image Sizes', 'recipe-hero' ); ?> <span class="dashicons dashicons-format-image"></span></h4>
+							<p><?php _e( 'It\'s really easy to customize all of your recipe image sizes, from featured images to steps images - straight from the Recipe Hero settings.', 'recipe-hero' ); ?></p>
 						</div>
 
 						<div>
-							<h4><?php _e( 'Better File Structuring', 'recipe-hero' ); ?></h4>
-							<p><?php _e( 'Frontend styles have been split into separate appearance/layout/smallscreen stylesheets to help with selective customisation.', 'recipe-hero' ); ?></p>
+							<h4><?php _e( 'Custom Ordering', 'recipe-hero' ); ?> <span class="dashicons dashicons-list-view"></span></h4>
+							<p><?php _e( 'You now have the ability to order your recipes in a number of different ways. Simply change the order setting and voilà - custom order!', 'recipe-hero' ); ?></p>
 						</div>
 
 						<div class="last-feature">
-							<h4><?php _e( 'Security Improvements', 'recipe-hero' ); ?></h4>
-							<p><?php _e( 'Certain pages such as "Pay", "Order Received" and some account pages are now endpoints rather than pages to make checkout more reliable.', 'recipe-hero' ); ?></p>
+							<h4><?php _e( 'Templating Engine', 'recipe-hero' ); ?> <span class="dashicons dashicons-admin-appearance"></span></h4>
+							<p><?php _e( 'Recipe Hero comes with a complete templating engine, allowing you to easily copy the plugin\'s <strong>templates</strong> folder over to your theme\'s <strong>recipe-hero</strong> folder - customization awaits!', 'recipe-hero' ); ?></p>
 						</div>
 					</div>
 					<div class="feature-section col three-col">
 
 						<div>
-							<h4><?php _e( 'Custom Permalinks', 'recipe-hero' ); ?></h4>
-							<p><?php _e( 'We\'ve added a standardized, default credit card form for gateways to use if they support <code>default_credit_card_form</code>.', 'recipe-hero' ); ?></p>
+							<h4><?php _e( 'Custom Permalinks', 'recipe-hero' ); ?> <span class="dashicons dashicons-admin-links"></span></h4>
+							<p><?php _e( 'The <code>recipes</code> URL will now automatically adjust to your custom Recipes Page\'s slug, allowing for a more custom experience. Courses / Cuisines slugs can also be defined.', 'recipe-hero' ); ?></p>
 						</div>
 
 						<div>
-							<h4><?php _e( 'Settings API & UI Changes', 'recipe-hero' ); ?></h4>
-							<p><?php _e( 'Coupon usage limits can now be set per user (using email + ID) rather than global.', 'recipe-hero' ); ?></p>
+							<h4><?php _e( 'Settings API & UI Changes', 'recipe-hero' ); ?> <span class="dashicons dashicons-admin-generic"></span></h4>
+							<p><?php _e( 'Settings were rewritten in 1.0 to allow for a better user experience. Additionally, there\'s now a Recipe Hero Settings API so you can easily add new settings and customize the existing ones.', 'recipe-hero' ); ?></p>
 						</div>
 
 						<div class="last-feature">
-							<h4><?php _e( 'Cleans Up Before Leaving', 'recipe-hero' ); ?></h4>
-							<p><?php _e( 'A new <code>uninstall.php</code> file is now included that will trigger on deletion, removing Recipe Hero settings, etc. to keep your database clean.', 'recipe-hero' ); ?></p>
+							<h4><?php _e( 'Cleans Up Before Leaving', 'recipe-hero' ); ?> <span class="dashicons dashicons-migrate"></span></h4>
+							<p><?php _e( 'A new <code>uninstall.php</code> file is now included that will trigger on deletion, removing Recipe Hero settings, etc. to keep your database clean and your site yours.', 'recipe-hero' ); ?></p>
 						</div>
 
 					</div>
 					<div class="feature-section col three-col">
 
 						<div>
-							<h4><?php _e( 'Image Gallery / Lightbox', 'recipe-hero' ); ?></h4>
-							<p><?php _e( 'Define whether prices should be shown incl. or excl. of tax on the frontend, and add an optional suffix.', 'recipe-hero' ); ?></p>
+							<h4><?php _e( 'Image Gallery / Lightbox', 'recipe-hero' ); ?> <span class="dashicons dashicons-format-gallery"></span></h4>
+							<p><?php _e( 'Recipe Hero 1.0 introduces a gallery feature that pairs with the built-in lightbox, so you can add several images to one recipe, helping you show off all your delicious food!', 'recipe-hero' ); ?></p>
 						</div>
 
 						<div>
-							<h4><?php _e( 'Custom Ordering', 'recipe-hero' ); ?></h4>
-							<p><?php _e( 'Admins now have the ability to link past orders to a customer (before they registered) by email address.', 'recipe-hero' ); ?></p>
+							<h4><?php _e( 'Better File Structuring', 'recipe-hero' ); ?> <span class="dashicons dashicons-editor-code"></span></h4>
+							<p><?php _e( 'Most people won\'t notice this but the entire plugin has been restructured to help the <strong>developers</strong> out there get the most out of Recipe Hero.', 'recipe-hero' ); ?></p>
 						</div>
 
 						<div class="last-feature">
-							<h4><?php _e( 'Extensions', 'recipe-hero' ); ?></h4>
-							<p><?php _e( 'We\'ve added a new option to restrict reviews to logged in purchasers, and made ratings editable from the backend.', 'recipe-hero' ); ?></p>
+							<h4><?php _e( 'Extensions', 'recipe-hero' ); ?> <span class="dashicons dashicons-admin-plugins"></span></h4>
+							<p><?php _e( 'After months of work, Recipe Hero is finally ready for extensions - additional plugins (both free and premium) that add additional functionality, like <strong>Custom Labels</strong>, <strong>Recipe Videos</strong> & <strong>Front-End Recipe Submission</strong>. Rejoice!', 'recipe-hero' ); ?></p>
 						</div>
 
 					</div>
