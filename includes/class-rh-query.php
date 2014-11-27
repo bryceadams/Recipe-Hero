@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'RH_Query' ) ) :
 
 /**
- * WC_Query Class
+ * RH_Query Class
  */
 class RH_Query {
 
@@ -92,7 +92,7 @@ class RH_Query {
 		}
 
 		// When orderby is set, WordPress shows posts. Get around that here.
-		if ( $q->is_home() && 'page' == get_option('show_on_front') && get_option('page_on_front') == wc_get_page_id('shop') ) {
+		if ( $q->is_home() && 'page' == get_option('show_on_front') && get_option('page_on_front') == rh_get_page_id( 'recipes' ) ) {
 			$_query = wp_parse_args( $q->query );
 			if ( empty( $_query ) || ! array_diff( array_keys( $_query ), array( 'preview', 'page', 'paged', 'cpage', 'orderby' ) ) ) {
 				$q->is_page = true;
@@ -140,7 +140,7 @@ class RH_Query {
 
 		$this->recipe_query( $q );
 
-		// We're on a recipe archive page so queue the get_products_in_view method
+		// We're on a recipe archive page so queue the get_recipes_in_view method
 		add_action( 'wp', array( $this, 'get_recipes_in_view' ), 2);
 
 		// And remove the pre_get_posts hook
@@ -189,7 +189,7 @@ class RH_Query {
 	}
 
 	/**
-	 * Returns an array of arguments for ordering products based on the selected values
+	 * Returns an array of arguments for ordering recipes based on the selected values
 	 *
 	 * @access public
 	 * @return array
@@ -248,7 +248,7 @@ class RH_Query {
 	}
 
 	/**
-	 * Get an unpaginated list all product ID's (both filtered and unfiltered). Makes use of transients.
+	 * Get an unpaginated list all recipe ID's (both filtered and unfiltered). Makes use of transients.
 	 *
 	 * @access public
 	 * @return void
@@ -256,7 +256,7 @@ class RH_Query {
 	public function get_recipes_in_view() {
 		global $wp_the_query;
 
-		$unfiltered_product_ids = array();
+		$unfiltered_recipe_ids = array();
 
 		// Get main query
 		$current_wp_query = $wp_the_query->query;
@@ -296,9 +296,9 @@ class RH_Query {
 
 		// Also store filtered posts ids...
 		if ( sizeof( $this->post__in ) > 0 ) {
-			$this->filtered_product_ids = array_intersect( $this->unfiltered_recipe_ids, $this->post__in );
+			$this->filtered_recipe_ids = array_intersect( $this->unfiltered_recipe_ids, $this->post__in );
 		} else {
-			$this->filtered_product_ids = $this->unfiltered_recipe_ids;
+			$this->filtered_recipe_ids = $this->unfiltered_recipe_ids;
 		}
 	}
 

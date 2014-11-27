@@ -32,7 +32,15 @@ class RH_Recipe_Ordering {
 	 */
 	public static function _add_actions() {
 		add_action( 'load-edit.php', array( __CLASS__, 'load_edit_screen' ) );
-		add_action( 'wp_ajax_recipe_hero_recipe_ordering', array( __CLASS__, 'ajax_recipe_hero_recipe_ordering' ) );
+		add_action( 'wp_ajax_simple_page_ordering', array( __CLASS__, 'ajax_simple_page_ordering' ) );
+		add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
+	}
+
+	/**
+	 * Loads the plugin textdomain
+	 */
+	public static function load_textdomain() {
+		load_plugin_textdomain( 'simple-page-ordering', false, dirname( plugin_basename( __FILE__ ) ) . '/localization/' ); 
 	}
 
 	/**
@@ -44,7 +52,7 @@ class RH_Recipe_Ordering {
 
 		// is post type sortable?
 		$sortable = ( post_type_supports( $post_type, 'page-attributes' ) || is_post_type_hierarchical( $post_type ) );		// check permission
-		if ( ! $sortable = apply_filters( 'simple_page_ordering_is_sortable', $sortable, $post_type ) ) {
+		if ( ! $sortable = apply_filters( 'recipe_hero_ordering_is_sortable', $sortable, $post_type ) ) {
 			return;
 		}
 
@@ -64,7 +72,6 @@ class RH_Recipe_Ordering {
 	public static function wp() {
 		$orderby = get_query_var('orderby');
 		if ( ( is_string( $orderby ) && 0 === strpos( $orderby, 'menu_order' ) ) || ( isset( $orderby['menu_order'] ) && $orderby['menu_order'] == 'ASC' ) ) {
-
 			wp_register_script( 'recipe-ordering', RH()->plugin_url() . '/assets/admin/js/recipe-ordering.js', array( 'jquery', 'jquery-ui-sortable' ), RecipeHero::$version, true );
 			wp_enqueue_script( 'recipe-ordering' );
 		}
@@ -76,13 +83,13 @@ class RH_Recipe_Ordering {
 	public static function admin_head() {
 		$screen = get_current_screen();
 		$screen->add_help_tab(array(
-			'id' => 'recipe_ordering_help_tab',
+			'id' => 'recipe_hero_ordering_help_tab',
 			'title' => 'Recipe Ordering',
-			'content' => '<p>' . __( 'To reposition an item, simply drag and drop the row by "clicking and holding" it anywhere (outside of the links and form controls) and moving it to its new position.', 'simple-page-ordering' ) . '</p>',
+			'content' => '<p>' . __( 'To reposition a recipe, simply drag and drop the recipe\'s row by "clicking and holding" it anywhere (outside of the links and form controls) and moving it to its new position.', 'recipe-hero' ) . '</p>',
 		));
 	}
 
-	public static function ajax_recipe_hero_recipe_ordering() {
+	public static function ajax_simple_page_ordering() {
 		// check and make sure we have what we need
 		if ( empty( $_POST['id'] ) || ( !isset( $_POST['previd'] ) && !isset( $_POST['nextid'] ) ) ) {
 			die(-1);
@@ -113,7 +120,7 @@ class RH_Recipe_Ordering {
 		$new_pos = array(); // store new positions for ajax
 		$return_data = new stdClass;
 
-		do_action( 'simple_page_ordering_pre_order_posts', $post, $start );
+		do_action( 'recipe_hero_ordering_pre_order_posts', $post, $start );
 
 		// attempt to get the intended parent... if either sibling has a matching parent ID, use that
 		$parent_id = $post->post_parent;
@@ -131,7 +138,7 @@ class RH_Recipe_Ordering {
 			$nextid = false;
 		}
 
-		$max_sortable_posts = (int) apply_filters( 'simple_page_ordering_limit', 50 );	// should reliably be able to do about 50 at a time
+		$max_sortable_posts = (int) apply_filters( 'recipe_hero_ordering_limit', 50 );	// should reliably be able to do about 50 at a time
 		if ( $max_sortable_posts < 5 ) {	// don't be ridiculous!
 			$max_sortable_posts = 50;
 		}
@@ -231,7 +238,7 @@ class RH_Recipe_Ordering {
 			$return_data->next = false;
 		}
 
-		do_action( 'simple_page_ordering_ordered_posts', $post, $new_pos );
+		do_action( 'recipe_hero_ordering_ordered_posts', $post, $new_pos );
 
 		if ( ! $return_data->next ) {
 			// if the moved post has children, we need to refresh the page (unless we're continuing)
@@ -268,7 +275,7 @@ class RH_Recipe_Ordering {
 			$query_string = add_query_arg( 'orderby', urlencode( 'menu_order title' ), $query_string );
 			$query_string = add_query_arg( 'order', 'asc', $query_string );
 		}
-		$views['byorder'] = sprintf('<a href="%s" class="%s">%s</a>', $query_string, $class, __("Sort by Order", 'simple-page-ordering'));
+		$views['byorder'] = sprintf('<a href="%s" class="%s">%s</a>', $query_string, $class, __("Sort by Order", 'recipe-hero'));
 			
 		return $views;
 	}
@@ -282,10 +289,16 @@ class RH_Recipe_Ordering {
 	private static function check_edit_others_caps( $post_type ) {
 		$post_type_object = get_post_type_object( $post_type );
 		$edit_others_cap = empty( $post_type_object ) ? 'edit_others_' . $post_type . 's' : $post_type_object->cap->edit_others_posts;
-		return apply_filters( 'simple_page_ordering_edit_rights', current_user_can( $edit_others_cap ), $post_type );
+		return apply_filters( 'recipe_hero_ordering_edit_rights', current_user_can( $edit_others_cap ), $post_type );
 	}
 }
 
 RH_Recipe_Ordering::get_instance();
 
 endif;
+
+// dummy, to be used by poedit
+if (false) {
+	// Plugin description
+	__('Order your pages and hierarchical post types using drag and drop on the built in page list. For further instructions, open the "Help" tab on the Pages screen.', 'recipe-hero');
+}

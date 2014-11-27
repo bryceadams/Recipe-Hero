@@ -68,8 +68,6 @@ class RH_Settings_General extends RH_Settings_Page {
 				'options'  => apply_filters( 'recipe_hero_default_orderby_options', array(
 						'menu_order' => __( 'Default sorting (custom ordering + name)', 'recipe-hero' ),
 						'date'       => __( 'Sort by most recent', 'recipe-hero' ),
-						'asc'		 => __( 'Sort by A to Z', 'recipe-hero' ),
-						'desc'		 => __( 'Sort by Z to A', 'recipe-hero' ),
 				) ),
 			),
 
