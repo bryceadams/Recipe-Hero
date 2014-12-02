@@ -48,9 +48,37 @@ if ( ! class_exists( 'Recipe_Hero_Admin' ) ) {
 			// Plugin Slug
 			$this->plugin_slug = 'recipe-hero';
 
+			add_action( 'init', array( $this, 'includes' ) );
+			add_action( 'current_screen', array( $this, 'conditonal_includes' ) );
+
 			// Load admin style sheet and JavaScript.
 			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
 			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
+
+		}
+
+		/**
+		 * Return an instance of this class.
+		 *
+		 * @since     1.0.0
+		 *
+		 * @return    object    A single instance of this class.
+		 */
+		public static function get_instance() {
+
+			// If the single instance hasn't been set, set it now.
+			if ( null == self::$instance ) {
+				self::$instance = new self;
+			}
+
+			return self::$instance;
+		}
+
+		/**
+		 * Includes Files
+		 **/
+
+		public function includes() {
 
 			// Let's make the magic happen on the backend
 			include_once( 'rh-admin-functions.php' );
@@ -73,20 +101,25 @@ if ( ! class_exists( 'Recipe_Hero_Admin' ) ) {
 		}
 
 		/**
-		 * Return an instance of this class.
-		 *
-		 * @since     1.0.0
-		 *
-		 * @return    object    A single instance of this class.
+		 * Include admin files conditionally
 		 */
-		public static function get_instance() {
+		public function conditonal_includes() {
+			$screen = get_current_screen();
 
-			// If the single instance hasn't been set, set it now.
-			if ( null == self::$instance ) {
-				self::$instance = new self;
+			switch ( $screen->id ) {
+				case 'dashboard' :
+					//include( 'class-wc-admin-dashboard.php' );
+				break;
+				case 'options-permalink' :
+					include( 'class-rh-admin-permalink-settings.php' );
+				break;
+				case 'users' :
+				case 'user' :
+				case 'profile' :
+				case 'user-edit' :
+					//include( 'class-wc-admin-profile.php' );
+				break;
 			}
-
-			return self::$instance;
 		}
 
 		/**

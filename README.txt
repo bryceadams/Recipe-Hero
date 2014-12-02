@@ -2,9 +2,9 @@
 Contributors: captaintheme, recipehero,
 Donate link: http://recipehero.in/
 Tags: recipe, recipes, cooking, ingredients, food, cook, cook book, recipe hero, captain theme, google recipes
-Requires at least: 3.5.1
-Tested up to: 3.9.1
-Stable tag: 0.9.0
+Requires at least: 3.8.0
+Tested up to: 4.1.0
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -135,6 +135,8 @@ Sure, but on food-steroids. Just check out the screenshots area.
 * New: Pagination
 * New: No Recipes Found template file
 * New: Only use /recipes/ for archive when no Recipe Page has been set (one or the other - highly requested and better for SEO too)
+* New: Custom Permalinks Base
+* New: Custom Cuisine / Course Slugs
 * i18n: Translation Files fixed / standardised
 * Bug Fix: If time <1 hour, don't show 0h
 * Bug Fix: Ingredient Plurals (and translations)

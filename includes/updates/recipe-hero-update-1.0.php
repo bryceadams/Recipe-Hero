@@ -59,8 +59,26 @@ if ( isset( $rh_style_options['disable_lightbox'] ) ) {
 	update_option( 'recipe_hero_enable_lightbox', 'no' );
 }
 
-// If had labels before, update need labels option
+// If had labels before, update need labels option and save previous labels settings
 $labels_array = array_filter( $rh_labels_options, 'strlen' );
 if ( ! empty( $labels_array ) ) {
 	update_option( '_rh_had_labels', 1 );
+	if ( ! empty( $rh_labels_options['label_serves'] ) ) {
+		update_option( 'rhl_serves', $rh_labels_options['label_serves'] );
+	}
+	if ( ! empty( $rh_labels_options['label_equipment'] ) ) {
+		update_option( 'rhl_equipment', $rh_labels_options['label_equipment'] );
+	}
+	if ( ! empty( $rh_labels_options['label_prep'] ) ) {
+		update_option( 'rhl_preptime', $rh_labels_options['label_prep'] );
+	}
+	if ( ! empty( $rh_labels_options['label_cook'] ) ) {
+		update_option( 'rhl_cooktime', $rh_labels_options['label_cook'] );
+	}
+	if ( ! empty( $rh_labels_options['label_cuisine'] ) ) {
+		update_option( 'rhl_cuisine', $rh_labels_options['label_cuisine'] );
+	}
+	if ( ! empty( $rh_labels_options['label_course'] ) ) {
+		update_option( 'rhl_course', $rh_labels_options['label_course'] );
+	}
 }

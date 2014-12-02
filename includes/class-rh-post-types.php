@@ -42,6 +42,8 @@ class RH_Post_Types {
 
 	public static function register_taxonomies() {
 
+    	$permalinks        = get_option( 'recipe_hero_permalinks' );
+
 		/**
 		 * Course Taxonomy
 		 **/
@@ -60,8 +62,6 @@ class RH_Post_Types {
 		);
 		
 		$course_pages = array('recipe');
-		
-		$courses_slug = defined( 'RH_COURSES_SLUG' ) ? RH_COURSES_SLUG : 'courses';
 
 		$course_args = array(
 			'labels' 			=> $course_labels,
@@ -71,7 +71,11 @@ class RH_Post_Types {
 			'hierarchical' 		=> false,
 			'show_tagcloud' 	=> false,
 			'show_in_nav_menus' => false,
-			'rewrite' 			=> array('slug' => $courses_slug, 'with_front' => false ),
+			'rewrite'               => array(
+					'slug'         => empty( $permalinks['course_base'] ) ? _x( 'course', 'slug', 'woocommerce' ) : $permalinks['course_base'],
+					'with_front'   => false,
+					'hierarchical' => true,
+			),
 		 );
 		register_taxonomy( 'course', $course_pages, $course_args );
 
@@ -93,8 +97,6 @@ class RH_Post_Types {
 		);
 		
 		$cuisine_pages = array('recipe');
-
-		$cuisines_slug = defined( 'RH_CUISINES_SLUG' ) ? RH_CUISINES_SLUG : 'cuisines';
 		
 		$cuisine_args = array(
 			'labels' 			=> $cuisine_labels,
@@ -104,7 +106,11 @@ class RH_Post_Types {
 			'hierarchical' 		=> false,
 			'show_tagcloud' 	=> false,
 			'show_in_nav_menus' => false,
-			'rewrite' 			=> array( 'slug' => $cuisines_slug, 'with_front' => false ),
+			'rewrite'               => array(
+				'slug'         => empty( $permalinks['cuisine_base'] ) ? _x( 'cuisine', 'slug', 'woocommerce' ) : $permalinks['cuisine_base'],
+				'with_front'   => false,
+				'hierarchical' => true,
+			),
 		 );
 
 		register_taxonomy( 'cuisine', $cuisine_pages, $cuisine_args );
@@ -120,6 +126,13 @@ class RH_Post_Types {
 	 */
 
     public static function register_post_types() {
+
+    	if ( post_type_exists( 'recipe' ) ) {
+    		return;
+    	}
+
+    	$permalinks        = get_option( 'recipe_hero_permalinks' );
+		$recipe_permalink = empty( $permalinks['recipe_base'] ) ? _x( 'recipe', 'slug', 'recipe-hero' ) : $permalinks['recipe_base'];
 
 		$labels 		= array(
 			'name' 				=> _x( 'Recipes', 'post type general name' ),
@@ -153,7 +166,7 @@ class RH_Post_Types {
 			'capability_type' 	=> 'post',
 			'has_archive' 		=> ( $recipes_page_id = rh_get_page_id( 'recipes' ) ) && get_post( $recipes_page_id ) ? get_page_uri( $recipes_page_id ) : 'recipes',
 			'hierarchical' 		=> false, // Hierarchical causes memory issues - WP loads all records!
-			'rewrite' 			=> array( 'slug' => 'recipes', 'with_front' => false ),
+			'rewrite' 			=> $recipe_permalink ? array( 'slug' => untrailingslashit( $recipe_permalink ), 'with_front' => false, 'feeds' => true ) : false,
 			'supports' 			=> $supports,
 			'menu_position' 	=> 35,
 			'menu_icon' 		=> 'dashicons-shield',

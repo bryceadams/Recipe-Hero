@@ -42,7 +42,7 @@ if ( $attachment_ids ) {
 				continue;
 			}
 
-			$image       = wp_get_attachment_image( $attachment_id, apply_filters( 'single_product_small_thumbnail_size', 'recipe_thumbnail' ) );
+			$image       = wp_get_attachment_image( $attachment_id, apply_filters( 'single_recipe_small_thumbnail_size', 'recipe_thumbnail' ) );
 			$image_class = esc_attr( implode( ' ', $classes ) );
 			$image_title = esc_attr( get_the_title( $attachment_id ) );
 

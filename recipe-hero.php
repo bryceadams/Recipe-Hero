@@ -152,6 +152,10 @@ final class RecipeHero {
 			define( 'RH_VERSION', self::$version );
 		}
 
+		if ( ! defined( 'RH_CMB2_DIR' ) ) {
+			define( 'RH_CMB2_DIR', plugin_dir_path( __FILE__ ) . '/includes/fields/init.php' );
+		}
+
 		// Plugin Folder Path
 		if( ! defined( 'RECIPE_HERO_PLUGIN_DIR' ) ) {
 			define( 'RECIPE_HERO_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
