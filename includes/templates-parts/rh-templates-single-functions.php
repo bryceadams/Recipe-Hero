@@ -336,6 +336,9 @@ if ( ! function_exists( 'recipe_hero_output_single_ingredient_amount' ) ) {
 		    case 'piece':
 		    	$ingredient_amount = sprintf( _n( '1 Piece', '%s Pieces', $ingredient_quantity, 'recipe-hero' ), $ingredient_quantity );
 		    	break;
+		    case 'blank':
+		    	$ingredient_amount = sprintf( _n( '1', '%s', $ingredient_quantity, 'recipe-hero' ), $ingredient_quantity );
+		    	break;
 		    case 'none':
 		    	$ingredient_amount = '';
 		    	break;

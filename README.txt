@@ -16,13 +16,14 @@ It shouldn't be difficult to add a recipe to your WordPress site.
 
 Recipe Hero adds a new custom post type, **recipe**, to your website. Adding a recipe is just like adding a post. You can add everything from the recipe's yield to the equipment needed, the cooking time to the ingredients - everything will be automatically formatted for Google Rich Snippets.
 
-* **Support / Docs @ [Recipe Hero HQ](http://recipehero.in/)**
-* **Want to try it out?** [Recipe Hero Demo](http://try.recipehero.in/)
+* **Docs @ [Recipe Hero HQ](http://recipehero.in/docs/)**
+* **Extensions @ [Recipe Hero Extensions](http://recipehero.in/extensions/)**
 
 Navigate to `http://yourwebsite.com/recipes` to see all the new recipes you've added. You can easily customise the CSS to your liking and make it look perfect. It's automatically set-up to be responsive, clean & beautiful.
 
 * Custom Post Type for 'Recipes'
 * Recipe Details, Ingredients & Instructions
+* Instruction Images
 * Completely Responsive
 * Settings Panel
 * Intuitive Admin / Editing Experience
@@ -31,7 +32,9 @@ Navigate to `http://yourwebsite.com/recipes` to see all the new recipes you've a
 * Valid schema.org Markup - Works with Google Rich Snippets etc. (SEO Optimized)
 * Inherits Your Theme's Styles Automatically
 * Image Lightbox
-* Can Extend / Develop with custom actions, etc.
+* Recipe Gallery
+* Custom Ordering (sorting and in option)
+* Can Extend / Develop with custom actions, settings, etc.
 * Completely Open Source GPL Project - see [GitHub](https://github.com/bryceadams/Recipe-Hero) to contribute!
 * Translation-Ready (includes .pot file etc.)
 * Documentation
@@ -39,11 +42,7 @@ Navigate to `http://yourwebsite.com/recipes` to see all the new recipes you've a
 
 **Contributing:** Why not help out? This project is being actively developed [on GitHub](https://github.com/bryceadams/Recipe-Hero/). Feel free to report issues, help others and make pull requests!
 
-**Translations:** If you translate Recipe Hero, please [send me your translation](mailto:info@recipehero.in) so I can add it to the plugin for others to use. Here is a guide to [translating the plugin](captaintheme.com/docs/general/translating-a-theme-or-plugin/) to help you out! The following translations are available:
-
-* Chezch (cs_CZ)
-* Bulgarian (bg_BG) - Thanks Anton!
-* Korean (ko_KR)
+**Translations:** If you translate Recipe Hero, please [send me your translation](mailto:info@recipehero.in) so I can add it to the plugin for others to use. Here is a guide to [translating the plugin](http://recipehero.in/docs/translating-recipe-hero/) to help you out!
 
 == Installation ==
 
@@ -69,15 +68,11 @@ Navigate to `http://yourwebsite.com/recipes` to see all the new recipes you've a
 3. Upload the `recipe-hero` directory to the `/wp-content/plugins/` directory
 4. Activate the plugin in the Plugin dashboard
 
-= RE-SAVE YOUR PERMALINKS! =
-
-It's **essential** that you re-save your permalinks after installing and activating Recipe Hero. Simply go to **Settings > Permalinks** and re-save the settings you currently have (for best results switch to **post name**).
-
 == Usage ==
 
 After creating your first recipe, you'll normally be able to go to: `http://yourwebsite.com/recipes/` to view an archive of all your recipes.
 
-You can also visit **Recipe Hero > Settings > General Options** and choose a Recipe Page. This will turn the chosen page (created through **Pages > Add New**) into a recipe archive, showing all of your recipes. This is useful for then making that page your home page (in **Settings > Reading**).
+You can also visit **Recipe Hero > Settings** and choose a Recipe Page. This will turn the chosen page (created through **Pages > Add New**) into a recipe archive, showing all of your recipes. This is useful for then making that page your home page (in **Settings > Reading**).
 
 There are also 2 shortcodes included with Recipe Hero:
 
@@ -115,10 +110,11 @@ Sure, but on food-steroids. Just check out the screenshots area.
 1. Single Recipe
 2. Single Recipe #2
 3. Single Recipe #3
-4. Google Rich Snippets Preview
-5. Recipe Hero Settings #1
-6. Recipe Hero Settings #2
-7. Recipe Hero Settings #3
+4. Single Recipe - Gallery
+5. Edit Recipe
+6. Recipes Admin
+7. Recipe Hero Settings
+8. Google Rich Snippets Preview
 
 == Changelog ==
 
