@@ -44,6 +44,8 @@ Navigate to `http://yourwebsite.com/recipes` to see all the new recipes you've a
 
 **Translations:** If you translate Recipe Hero, please [send me your translation](mailto:info@recipehero.in) so I can add it to the plugin for others to use. Here is a guide to [translating the plugin](http://recipehero.in/docs/translating-recipe-hero/) to help you out!
 
+**Roadmap:** I’d love for you to get involved in the future of Recipe Hero. Please come visit the [Recipe Hero Trello Roadmap](https://trello.com/b/Qv3owrP0/recipe-hero-roadmap)
+
 == Installation ==
 
 = Using The WordPress Dashboard =
