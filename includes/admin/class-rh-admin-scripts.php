@@ -34,10 +34,9 @@ class Recipe_Hero_Admin_Scripts {
 	 * @access public
 	 * @return void
 	 * @todo include script_debug mode $min
+	 * @todo conditionally load on the specific recipe hero pages
 	 */
 	public function load_scripts() {
-
-		global $post, $wp;
 
 		// Register all scripts/styles for later use
 		wp_register_script( 'numeric', RH()->plugin_url() . '/assets/admin/js/jquery.numeric.js', array( 'jquery' ), RecipeHero::$version, true );
@@ -60,6 +59,7 @@ class Recipe_Hero_Admin_Scripts {
 		wp_enqueue_script( 'jquery-ui-core' );
 		wp_enqueue_script( 'jquery-ui-autocomplete' );
 		wp_enqueue_script( 'liquidmetal' );
+		wp_enqueue_style( 'wp-color-picker' );
 
 		wp_enqueue_script( 'tiptip' );
 		wp_enqueue_style( 'tiptip-css' );

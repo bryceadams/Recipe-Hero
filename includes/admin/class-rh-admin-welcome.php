@@ -278,7 +278,7 @@ if ( ! class_exists( 'Recipe_Hero_Admin_Welcome' ) ) {
 
 						<div>
 							<h4><?php _e( 'Custom Ordering', 'recipe-hero' ); ?> <span class="dashicons dashicons-list-view"></span></h4>
-							<p><?php _e( 'You now have the ability to order your recipes in a number of different ways. Simply change the order setting and voilà - custom order!', 'recipe-hero' ); ?></p>
+							<p><?php _e( 'You now have the ability to order your recipes in a number of different ways. Simply change the order setting and voila - custom order!', 'recipe-hero' ); ?></p>
 						</div>
 
 						<div class="last-feature">

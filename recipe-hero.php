@@ -11,7 +11,7 @@
  * Plugin Name:       Recipe Hero
  * Plugin URI:        http://recipehero.in/
  * Description:       The last recipe plugin you'll ever need.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Bryce Adams
  * Author URI:        http://bryce.se/
  * Text Domain:       recipe-hero
@@ -36,7 +36,7 @@ if ( ! class_exists( 'RecipeHero' ) ) :
  * Main RecipeHero Class
  *
  * @class RecipeHero
- * @version	1.0.0
+ * @version	1.0.1
  */
 
 final class RecipeHero {
@@ -44,11 +44,11 @@ final class RecipeHero {
 	/**
 	 * Plugin version, used for cache-busting of style and script file references.
 	 *
-	 * @since   1.0.0
+	 * @since   1.0.1
 	 *
 	 * @var     string
 	 */
-	public static $version = '1.0.0';
+	public static $version = '1.0.1';
 
 	/**
 	 * The variable name is used as the text domain when internationalizing strings
@@ -166,12 +166,6 @@ final class RecipeHero {
 			define( 'RECIPE_HERO_TEMPLATE_DIR', 'recipe-hero/' );
 		}
 
-		// @todo Temp Var Globals
-		$rh_general_options = get_option( 'recipe_hero_general_options' );
-		$rh_style_options = get_option( 'recipe_hero_style_options' );
-		$rh_labels_options = get_option( 'recipe_hero_labels_options' );
-		$rh_other_options = get_option( 'recipe_hero_other_options' );
-
 	}
 
 	/**
@@ -248,25 +242,14 @@ final class RecipeHero {
 		$dir    = trailingslashit( WP_LANG_DIR );
 
 		/**
-		 * Admin Locale. Looks in:
-		 *
-		 * 		- WP_LANG_DIR/recipe-hero/recipe-hero-admin-LOCALE.mo
-		 * 		- WP_LANG_DIR/plugins/recipe-hero-admin-LOCALE.mo
-		 */
-		if ( is_admin() ) {
-			load_textdomain( 'recipe-hero', $dir . 'recipe-hero/recipe-hero-admin-' . $locale . '.mo' );
-			load_textdomain( 'recipe-hero', $dir . 'plugins/recipe-hero-admin-' . $locale . '.mo' );
-		}
-
-		/**
-		 * Frontend/global Locale. Looks in:
+		 * Global Locale. Looks in:
 		 *
 		 * 		- WP_LANG_DIR/recipe-hero/recipe-hero-LOCALE.mo
-		 * 	 	- recipe-hero/i18n/languages/recipe-hero-LOCALE.mo (which if not found falls back to:)
+		 * 	 	- recipe-hero/languages/recipe-hero-LOCALE.mo (which if not found falls back to:)
 		 * 	 	- WP_LANG_DIR/plugins/recipe-hero-LOCALE.mo
 		 */
 		load_textdomain( 'recipe-hero', $dir . 'recipe-hero/recipe-hero-' . $locale . '.mo' );
-		load_plugin_textdomain( 'recipe-hero', false, plugin_basename( dirname( __FILE__ ) ) . "/i18n/languages" );
+		load_plugin_textdomain( 'recipe-hero', false, plugin_basename( dirname( __FILE__ ) ) . "/languages" );
 	}
 
 	/**

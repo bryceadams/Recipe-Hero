@@ -25,15 +25,9 @@ if ( ! function_exists( 'recipe_hero_archive_tax_title' ) ) {
 
 	function recipe_hero_archive_tax_title() {
 
-		global $rh_labels_options;
-
 		if ( is_tax( 'cuisine' ) ) {
 
-			if ( ! empty( $rh_labels_options['label_cuisine'] ) ) {
-				$cuisine_text = $rh_labels_options['label_cuisine'];
-			} else {
-				$cuisine_text = __( 'Cuisine', 'recipe-hero' );
-			}
+			$cuisine_text = apply_filters( 'rh_label_cuisine', __( 'Cuisine', 'recipe-hero' ) );
 
 			echo '<div class="recipe-archive-tax-header">';
 			echo '<h1 class="archive-title">';
@@ -42,11 +36,7 @@ if ( ! function_exists( 'recipe_hero_archive_tax_title' ) ) {
 		
 		} elseif ( is_tax( 'course' ) ) {
 
-			if ( ! empty( $rh_labels_options['label_course'] ) ) {
-				$course_text = $rh_labels_options['label_course'];
-			} else {
-				$course_text = __( 'Course', 'recipe-hero' );
-			}
+			$course_text = apply_filters( 'rh_label_course', __( 'Course', 'recipe-hero' ) );
 			
 			echo '<div class="recipe-archive-tax-header">';
 			echo '<h1 class="archive-title">';

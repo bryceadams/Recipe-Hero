@@ -4,16 +4,15 @@
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @version 	  0.8.0
+ * @version   1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 global $post;
-global $rh_labels_options;
 
-$cuisine_terms = wp_get_object_terms($post->ID, 'cuisine');
-$course_terms = wp_get_object_terms($post->ID, 'course');
+$cuisine_terms = wp_get_object_terms( $post->ID, 'cuisine' );
+$course_terms = wp_get_object_terms( $post->ID, 'course' );
 	
 if ( ! empty ( $cuisine_terms ) ) {
 	if ( ! is_wp_error ( $cuisine_terms ) ) {

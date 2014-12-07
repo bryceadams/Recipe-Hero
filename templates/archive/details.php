@@ -4,14 +4,13 @@
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @version 	  0.8.0
+ * @version   1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Variables
 global $post;
-global $rh_labels_options;
 
 $serves 		= get_post_meta( $post->ID, '_recipe_hero_detail_serves', true );
 $serves_type 	= get_post_meta( $post->ID, '_recipe_hero_detail_serves_type', true );
