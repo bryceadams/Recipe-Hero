@@ -121,11 +121,15 @@ Sure, but on food-steroids. Just check out the screenshots area.
 == Changelog ==
 
 = 1.0.1 =
+* New: Ingredients layout
+* New: Ingredients checkboxes and strikethroughs
+* Template Change: single/ingredients.php
 * Bug Fix: Translation file searching
 * Bug Fix: Ingredients plural translations (again)
 * Bug Fix: Remove old settings global variables
 * Bug Fix: Update Settings Link
 * Bug Fix: Use WP_INSTALL_PLUGIN check in uninstall.php
+* Bug Fix: Translation fixes for hours / minutes abbreviations
 
 = 1.0.0 =
 * New: Refactored entire core plugin structure / code

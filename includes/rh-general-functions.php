@@ -7,7 +7,7 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
- * @since     1.0.0
+ * @since     1.0.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -82,6 +82,27 @@ function recipe_hero_sitewide_all_ingredients() {
  */
 function rh_clean( $var ) {
     return sanitize_text_field( $var );
+}
+
+/**
+ * Format Strings
+ *
+ * @param string $var
+ * @return string
+ */
+function rh_format_string( $var ) {
+
+    //Lower case everything
+    $var = strtolower( $var );
+    //Make alphanumeric (removes all other characters)
+    $var = preg_replace( "/[^a-z0-9_\s-]/", "", $var );
+    //Clean up multiple dashes or whitespaces
+    $var = preg_replace( "/[\s-]+/", " ", $var );
+    //Convert whitespaces and underscore to dash
+    $var = preg_replace( "/[\s_]/", "-", $var );
+
+    return $var;
+
 }
 
 /**

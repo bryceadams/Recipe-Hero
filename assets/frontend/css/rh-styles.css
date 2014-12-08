@@ -292,17 +292,26 @@ article.recipe {
     margin-top: 25px; }
   article.recipe .recipe-single-ingredients ul.ingredients-list {
     margin-left: 0;
-    column-count: 2;
-    column-gap: 20px;
-    -moz-column-count: 2;
-    -moz-column-gap: 20px;
-    -webkit-column-count: 2;
-    -webkit-column-gap: 20px;
+    	   	/*column-count: 2;
+           column-gap: 20px;
+           -moz-column-count: 2;
+           -moz-column-gap: 20px;
+           -webkit-column-count: 2;
+           -webkit-column-gap : 20px;*/
     font-size: 14px;
     list-style: none; }
     article.recipe .recipe-single-ingredients ul.ingredients-list li.ingredients-item {
       padding-bottom: 5px;
       margin-left: 0; }
+      article.recipe .recipe-single-ingredients ul.ingredients-list li.ingredients-item .amount {
+        text-align: right;
+        min-width: 20%;
+        display: inline-block;
+        font-weight: bold; }
+      article.recipe .recipe-single-ingredients ul.ingredients-list li.ingredients-item .name {
+        text-align: left;
+        display: inline-block;
+        padding-left: 5px; }
   article.recipe .recipe-single-instructions h4 {
     margin-top: 25px; }
   article.recipe .recipe-single-instructions ol.steps-list {
@@ -321,3 +330,10 @@ article.recipe {
     margin-bottom: 15px; }
   article.recipe hr.recipe-single-seperator {
     background: #ddd; }
+
+@media all and (max-width: 799px) {
+  article.recipe .recipe-single-ingredients ul.ingredients-list li.ingredients-item .amount {
+    display: inline;
+    min-width: auto; }
+  article.recipe .recipe-single-ingredients ul.ingredients-list li.ingredients-item .name {
+    display: inline; } }

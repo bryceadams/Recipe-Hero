@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Recipe Hero\n"
-"POT-Creation-Date: 2014-12-07 23:27+0700\n"
-"PO-Revision-Date: 2014-12-07 23:27+0700\n"
+"POT-Creation-Date: 2014-12-08 09:29+0700\n"
+"PO-Revision-Date: 2014-12-08 09:33+0700\n"
 "Last-Translator: Bryce <bryce@bryce.se>\n"
 "Language-Team: Recipe Hero <info@recipehero.in>\n"
 "Language: en\n"
@@ -12,7 +12,8 @@ msgstr ""
 "X-Generator: Poedit 1.6.4\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __;_e;_n;_n:1,2;_n_noop:1,2;_nx:1,2;_nx_noop:1,2\n"
+"X-Poedit-KeywordsList: __;_e;_n;_n:1,2;_n_noop:1,2;_nx:1,2;_nx_noop:1,2;"
+"_x:1,2c\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../includes/admin/class-rh-admin-extensions.php:66
@@ -102,10 +103,31 @@ msgstr ""
 msgid "Recipe course base"
 msgstr ""
 
+#: ../includes/admin/class-rh-admin-permalink-settings.php:63
+msgctxt "slug"
+msgid "recipe-cuisine"
+msgstr ""
+
+#: ../includes/admin/class-rh-admin-permalink-settings.php:70
+msgctxt "slug"
+msgid "recipe-course"
+msgstr ""
+
 #: ../includes/admin/class-rh-admin-permalink-settings.php:78
 msgid ""
 "These settings control the permalinks used for recipes. These settings only "
 "apply when <strong>not using \"default\" permalinks above</strong>."
+msgstr ""
+
+#: ../includes/admin/class-rh-admin-permalink-settings.php:85
+#: ../includes/admin/class-rh-admin-permalink-settings.php:173
+msgctxt "default-slug"
+msgid "shop"
+msgstr ""
+
+#: ../includes/admin/class-rh-admin-permalink-settings.php:86
+msgctxt "default-slug"
+msgid "recipe"
 msgstr ""
 
 #: ../includes/admin/class-rh-admin-permalink-settings.php:97
@@ -614,6 +636,21 @@ msgstr ""
 msgid "Get Support for Recipe Hero"
 msgstr ""
 
+#: ../includes/class-rh-post-types.php:52 ../includes/rh-tax.php:30
+msgctxt "taxonomy general name"
+msgid "Courses"
+msgstr ""
+
+#: ../includes/class-rh-post-types.php:53 ../includes/rh-tax.php:31
+msgctxt "taxonomy singular name"
+msgid "Course"
+msgstr ""
+
+#: ../includes/class-rh-post-types.php:54 ../includes/rh-tax.php:32
+msgctxt "Course"
+msgid "Add New Course"
+msgstr ""
+
 #: ../includes/class-rh-post-types.php:55 ../includes/rh-tax.php:33
 msgid "Add New Course"
 msgstr ""
@@ -642,6 +679,26 @@ msgstr ""
 msgid "No Course found in Trash"
 msgstr ""
 
+#: ../includes/class-rh-post-types.php:75
+msgctxt "slug"
+msgid "course"
+msgstr ""
+
+#: ../includes/class-rh-post-types.php:87 ../includes/rh-tax.php:73
+msgctxt "taxonomy general name"
+msgid "Cuisines"
+msgstr ""
+
+#: ../includes/class-rh-post-types.php:88 ../includes/rh-tax.php:74
+msgctxt "taxonomy singular name"
+msgid "Cuisine"
+msgstr ""
+
+#: ../includes/class-rh-post-types.php:89 ../includes/rh-tax.php:75
+msgctxt "Cuisine"
+msgid "Add New Cuisine"
+msgstr ""
+
 #: ../includes/class-rh-post-types.php:90 ../includes/rh-tax.php:76
 msgid "Add New Cuisine"
 msgstr ""
@@ -668,6 +725,26 @@ msgstr ""
 
 #: ../includes/class-rh-post-types.php:96 ../includes/rh-tax.php:82
 msgid "No Cuisine found in Trash"
+msgstr ""
+
+#: ../includes/class-rh-post-types.php:110
+msgctxt "slug"
+msgid "cuisine"
+msgstr ""
+
+#: ../includes/class-rh-post-types.php:135
+msgctxt "slug"
+msgid "recipe"
+msgstr ""
+
+#: ../includes/class-rh-post-types.php:138
+msgctxt "post type general name"
+msgid "Recipes"
+msgstr ""
+
+#: ../includes/class-rh-post-types.php:139
+msgctxt "post type singular name"
+msgid "Recipe"
 msgstr ""
 
 #: ../includes/class-rh-post-types.php:140
@@ -1082,6 +1159,11 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
+#: ../includes/templates-parts/rh-templates-single-functions.php:256
+msgctxt "Abbreviation for minutes"
+msgid "m"
+msgstr ""
+
 #: ../includes/templates-parts/rh-templates-single-functions.php:307
 #, php-format
 msgid "1 Gram"
@@ -1163,19 +1245,19 @@ msgstr[1] ""
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 
-#: ../templates/archive/details.php:30 ../templates/single/details.php:30
+#: ../templates/archive/details.php:30 ../templates/single/details.php:32
 msgid "Serves"
 msgstr ""
 
-#: ../templates/archive/details.php:39 ../templates/single/details.php:39
+#: ../templates/archive/details.php:39 ../templates/single/details.php:41
 msgid "Equipment"
 msgstr ""
 
-#: ../templates/archive/details.php:56 ../templates/single/details.php:56
+#: ../templates/archive/details.php:56 ../templates/single/details.php:58
 msgid "Prep time"
 msgstr ""
 
-#: ../templates/archive/details.php:66 ../templates/single/details.php:66
+#: ../templates/archive/details.php:66 ../templates/single/details.php:68
 msgid "Cook Time"
 msgstr ""
 
@@ -1201,6 +1283,14 @@ msgstr ""
 
 #: ../templates/loop/no-recipes-found.php:8
 msgid "We have some coming soon though!"
+msgstr ""
+
+#: ../templates/single/details.php:19
+#, php-format
+msgctxt ""
+"Abbreviations for time: Replace h (hour) & m (minute) with appropriate "
+"appreviation"
+msgid "%dh %02dm"
 msgstr ""
 
 #: ../templates/single/nutrition.php:18

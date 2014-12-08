@@ -7,6 +7,7 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
+ * @since 	  1.0.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -54,7 +55,7 @@ if ( ! class_exists( 'Recipe_Hero_Frontend_Scripts' ) ) {
 			global $post, $wp;
 
 			// Register all scripts/styles for later use
-			wp_register_script( 'rh-plugin-script', RH()->plugin_url() . '/assets/frontend/js/rh-scripts.js', array( 'jquery' ), RecipeHero::$version, true );
+			wp_register_script( 'rh-scripts', RH()->plugin_url() . '/assets/frontend/js/rh-scripts.js', array( 'jquery' ), RecipeHero::$version, true );
 			
 			wp_register_script( 'magnific', RH()->plugin_url() . '/assets/frontend/js/jquery.magnific-popup.min.js', array( 'jquery' ), RecipeHero::$version, true );
 			wp_register_script( 'rh-lightbox', RH()->plugin_url() . '/assets/frontend/js/rh-lightbox.js', array( 'jquery', 'magnific' ), RecipeHero::$version, true );
@@ -67,6 +68,7 @@ if ( ! class_exists( 'Recipe_Hero_Frontend_Scripts' ) ) {
 			}
 
 			wp_enqueue_script( 'jquery' );
+			wp_enqueue_script( 'rh-scripts' );
 
 			// CSS Styles
 			wp_enqueue_style( 'dashicons' );

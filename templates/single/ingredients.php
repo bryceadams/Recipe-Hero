@@ -4,7 +4,8 @@
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @version   1.0.0
+ * @version   1.0.1
+ * @todo      Move functionaility into template parts and hook it in
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -21,6 +22,8 @@ if ( ( $ingredients[0]['quantity'] ) ) { ?>
 			<?php _e( 'Ingredients', 'recipe-hero' ); ?>
 		</h4>
 
+		<?php do_action( 'recipe_hero_before_ingredients_list' ); ?>
+
 		<ul class="ingredients-list">
 
 		<?php foreach ( (array) $ingredients as $key => $ingredient ) {
@@ -30,9 +33,7 @@ if ( ( $ingredients[0]['quantity'] ) ) { ?>
 		    if ( isset( $ingredient['quantity'] ) && isset( $ingredient['amount'] ) ) {
 
 		        $ingredient_quantity = $ingredient['quantity'];
-
 		        $ingredient_amount_pre = $ingredient['amount'];
-		    	
 		    	$ingredient_amount = recipe_hero_output_single_ingredient_amount( $ingredient_amount_pre, $ingredient_quantity );
 		  	
 		  	}
@@ -45,15 +46,26 @@ if ( ( $ingredients[0]['quantity'] ) ) { ?>
 
 		   	?>
 
-		   	<li class="ingredients-item" itemprop="ingredients">
-		   		<?php echo $ingredient_amount; ?> 
-		   		<?php echo $ingredient_name; ?> 
+		   	<li class="ingredients-item <?php echo rh_format_string( $ingredient_name ); ?>" itemprop="ingredients">
+
+		   		<?php do_action( 'recipe_hero_before_ingredients_list_item' ); ?>
+
+		   		<div class="amount">
+		   			<?php echo $ingredient_amount; ?>
+		   		</div>
+		   		<div class="name">
+		   			<?php echo $ingredient_name; ?>
+		   		</div>
+
+		   		<?php do_action( 'recipe_hero_after_ingredients_list_item' ); ?>
+
 		    </li>
 
-		<?php
-		}
-		?>
+		<?php } ?>
+
 		</ul>
+
+		<?php do_action( 'recipe_hero_after_ingredients_list' ); ?>
 
 	<hr class="recipe-single-seperator" />
 

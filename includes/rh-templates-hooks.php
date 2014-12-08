@@ -88,6 +88,19 @@ add_action( 'recipe_hero_recipe_thumbnails', 'recipe_hero_output_single_thumbnai
 add_action( 'recipe_hero_after_single_recipe', 'recipe_hero_output_single_comments', 10 );
 
 /**
+ * Recipe Ingredients Form
+ *
+ * @see recipe_hero_output_ingredients_form_start - 10
+ * @see recipe_hero_output_ingredients_form_end - 10
+ * @see recipe_hero_output_ingredients_form_checkbox - 10
+ */
+
+add_action( 'recipe_hero_before_ingredients_list', 'recipe_hero_output_ingredients_form_start', 10 );
+add_action( 'recipe_hero_after_ingredients_list', 'recipe_hero_output_ingredients_form_end', 10 );
+add_action( 'recipe_hero_before_ingredients_list_item', 'recipe_hero_output_ingredients_form_checkbox', 10 );
+
+
+/**
  * Recipe Archive Content
  *
  * @see recipe_hero_output_single_header_before - 5

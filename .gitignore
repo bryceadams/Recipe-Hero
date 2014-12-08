@@ -1,0 +1,5 @@
+# Ignore docs files
+assets/frontend/.sass-cache
+assets/frontend/.sass-cache/*
+assets/admin/css/.sass-cache
+assets/admin/css/.sass-cache/*

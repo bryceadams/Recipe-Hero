@@ -238,7 +238,7 @@ if ( ! function_exists( 'recipe_hero_output_single_seperator' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.8.0
+ * @since 	  1.0.0
  */
 
 if ( ! function_exists( 'recipe_hero_convert_minute_hour' ) ) {
@@ -253,7 +253,7 @@ if ( ! function_exists( 'recipe_hero_convert_minute_hour' ) ) {
 	    $minutes = $time % 60;
 	    
 	    if ( $time < 60 ) {
-	    	$content = $minutes . 'm';
+	    	$content = $minutes . _x( 'm', 'Abbreviation for minutes', 'recipe-hero' );
 	    } else {
 	   		$content = sprintf( $format, $hours, $minutes );
 	    }
@@ -294,8 +294,7 @@ if ( ! function_exists( 'recipe_hero_calc_total_cook_time' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.8.0
- * @todo 	  Not sure what to do about translations and plurals here.
+ * @since 	  1.0.1
  */
 
 if ( ! function_exists( 'recipe_hero_output_single_ingredient_amount' ) ) {
@@ -350,5 +349,59 @@ if ( ! function_exists( 'recipe_hero_output_single_ingredient_amount' ) ) {
 	   	return $ingredient_amount;
 
 	}
+
+}
+
+/**
+ * Start of ingredients form
+ *
+ * @package   Recipe Hero
+ * @author    Captain Theme <info@captaintheme.com>
+ * @since 	  1.0.1
+ */
+
+if ( ! function_exists( 'recipe_hero_output_ingredients_form_start' ) ) {
+
+	function recipe_hero_output_ingredients_form_start() { ?>
+
+		<form id="rh_ingredients_form">
+
+	<?php }
+
+}
+
+/**
+ * End of ingredients form
+ *
+ * @package   Recipe Hero
+ * @author    Captain Theme <info@captaintheme.com>
+ * @since 	  1.0.1
+ */
+
+if ( ! function_exists( 'recipe_hero_output_ingredients_form_end' ) ) {
+
+	function recipe_hero_output_ingredients_form_end() { ?>
+
+		</form>
+
+	<?php }
+
+}
+
+/**
+ * Ingredients form checkbox
+ *
+ * @package   Recipe Hero
+ * @author    Captain Theme <info@captaintheme.com>
+ * @since 	  1.0.1
+ */
+
+if ( ! function_exists( 'recipe_hero_output_ingredients_form_checkbox' ) ) {
+
+	function recipe_hero_output_ingredients_form_checkbox() { ?>
+
+		<input type="checkbox" id="ingredient_checkbox" class="ingredient-checkbox" /><label for="ingredient_checkbox" class="checkbox-label"></label>
+
+	<?php }
 
 }
