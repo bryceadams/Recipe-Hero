@@ -7,7 +7,7 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
- * @since 	  1.0.0
+ * @since 	  1.0.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -33,7 +33,7 @@ add_filter( 'cmb2_meta_boxes', 'recipe_hero_cmb2_metaboxes' );
  *
  * @package Recipe Hero
  * @author  Captain Theme <info@captaintheme.com>
- * @since   1.0.0
+ * @since   1.0.2
  */
 function recipe_hero_cmb2_metaboxes( array $meta_boxes ) {
 
@@ -66,7 +66,7 @@ function recipe_hero_cmb2_metaboxes( array $meta_boxes ) {
 				'name' => __( 'Servings Type', 'recipe-hero' ),
 				'desc' => __( 'The type of servings that relates to the Servings Amount, like how many people it will feed or how many burgers it can make, etc.', 'recipe-hero' ),
 				'id'   => $prefix . 'detail_serves_type',
-				'type' => 'text_small',
+				'type' => 'text_medium',
 				'attributes' => array(
 					'placeholder' => __( 'eg. People', 'recipe-hero' ),
 				),

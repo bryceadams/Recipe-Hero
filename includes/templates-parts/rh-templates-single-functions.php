@@ -238,12 +238,15 @@ if ( ! function_exists( 'recipe_hero_output_single_seperator' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0.0
+ * @since 	  1.0.2
  */
 
 if ( ! function_exists( 'recipe_hero_convert_minute_hour' ) ) {
 
-	function recipe_hero_convert_minute_hour( $time, $format = '%dh %02dm' ) {
+	function recipe_hero_convert_minute_hour( $time ) {
+
+		$hours_postfix = _x( 'h', 'Abbreviation for hours', 'recipe-hero' );
+		$minutes_postfix = _x( 'm', 'Abbreviation for minutes', 'recipe-hero' );
 
 	    settype( $time, 'integer' );
 	    if ( $time < 1 ) {
@@ -253,9 +256,9 @@ if ( ! function_exists( 'recipe_hero_convert_minute_hour' ) ) {
 	    $minutes = $time % 60;
 	    
 	    if ( $time < 60 ) {
-	    	$content = $minutes . _x( 'm', 'Abbreviation for minutes', 'recipe-hero' );
+	    	$content = $minutes . $minutes_postfix;
 	    } else {
-	   		$content = sprintf( $format, $hours, $minutes );
+	   		$content = $hours . $hours_postfix . ' ' . $minutes . $minutes_postfix;
 	    }
 
 	    return $content;

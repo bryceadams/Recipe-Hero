@@ -120,6 +120,9 @@ Sure, but on food-steroids. Just check out the screenshots area.
 
 == Changelog ==
 
+= 1.0.2 =
+* Bug Fix: Servings Type setting field made a bit bigger
+
 = 1.0.1 =
 * New: Ingredients layout
 * New: Ingredients checkboxes and strikethroughs
