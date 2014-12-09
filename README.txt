@@ -122,6 +122,7 @@ Sure, but on food-steroids. Just check out the screenshots area.
 
 = 1.0.2 =
 * Bug Fix: Servings Type setting field made a bit bigger
+* i18n: Couple translation fixes and .pot files used now
 
 = 1.0.1 =
 * New: Ingredients layout

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Recipe Hero\n"
-"POT-Creation-Date: 2014-12-08 09:29+0700\n"
-"PO-Revision-Date: 2014-12-09 20:47+0700\n"
+"POT-Creation-Date: 2014-12-09 21:23+0700\n"
+"PO-Revision-Date: 2014-12-09 21:23+0700\n"
 "Last-Translator: Bryce <bryce@bryce.se>\n"
 "Language-Team: Recipe Hero <info@recipehero.in>\n"
 "Language: en\n"
@@ -436,7 +436,7 @@ msgid "Cuisine"
 msgstr ""
 
 #: ../includes/admin/rh-columns.php:35 ../includes/rh-fields.php:122
-#: ../templates/single/ingredients.php:21
+#: ../templates/single/ingredients.php:22
 msgid "Ingredients"
 msgstr ""
 
@@ -1159,82 +1159,87 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: ../includes/templates-parts/rh-templates-single-functions.php:256
+#: ../includes/templates-parts/rh-templates-single-functions.php:248
+msgctxt "Abbreviation for hours"
+msgid "h"
+msgstr ""
+
+#: ../includes/templates-parts/rh-templates-single-functions.php:249
 msgctxt "Abbreviation for minutes"
 msgid "m"
 msgstr ""
 
-#: ../includes/templates-parts/rh-templates-single-functions.php:307
+#: ../includes/templates-parts/rh-templates-single-functions.php:309
 #, php-format
 msgid "1 Gram"
 msgid_plural "%s Grams"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../includes/templates-parts/rh-templates-single-functions.php:310
+#: ../includes/templates-parts/rh-templates-single-functions.php:312
 #, php-format
 msgid "1 Ounce"
 msgid_plural "%s Ounces"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../includes/templates-parts/rh-templates-single-functions.php:313
+#: ../includes/templates-parts/rh-templates-single-functions.php:315
 #, php-format
 msgid "1 Millilitre"
 msgid_plural "%s Millilitres"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../includes/templates-parts/rh-templates-single-functions.php:316
+#: ../includes/templates-parts/rh-templates-single-functions.php:318
 #, php-format
 msgid "1 Teaspoon"
 msgid_plural "%s Teaspoons"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../includes/templates-parts/rh-templates-single-functions.php:319
+#: ../includes/templates-parts/rh-templates-single-functions.php:321
 #, php-format
 msgid "1 Tablespoon"
 msgid_plural "%s Tablespoons"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../includes/templates-parts/rh-templates-single-functions.php:322
+#: ../includes/templates-parts/rh-templates-single-functions.php:324
 #, php-format
 msgid "1 Cup"
 msgid_plural "%s Cups"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../includes/templates-parts/rh-templates-single-functions.php:325
+#: ../includes/templates-parts/rh-templates-single-functions.php:327
 #, php-format
 msgid "1 Liter"
 msgid_plural "%s Liters"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../includes/templates-parts/rh-templates-single-functions.php:328
+#: ../includes/templates-parts/rh-templates-single-functions.php:330
 #, php-format
 msgid "1 Pound"
 msgid_plural "%s Pounds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../includes/templates-parts/rh-templates-single-functions.php:331
+#: ../includes/templates-parts/rh-templates-single-functions.php:333
 #, php-format
 msgid "1 Kilogram"
 msgid_plural "%s Kilograms"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../includes/templates-parts/rh-templates-single-functions.php:334
+#: ../includes/templates-parts/rh-templates-single-functions.php:336
 #, php-format
 msgid "1 Slice"
 msgid_plural "%s Slices"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../includes/templates-parts/rh-templates-single-functions.php:337
+#: ../includes/templates-parts/rh-templates-single-functions.php:339
 #, php-format
 msgid "1 Piece"
 msgid_plural "%s Pieces"
@@ -1245,19 +1250,27 @@ msgstr[1] ""
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 
-#: ../templates/archive/details.php:30 ../templates/single/details.php:32
+#: ../templates/archive/details.php:19
+#, php-format
+msgctxt ""
+"Abbreviations for time: Replace only h (hour) & m (minute) with appropriate "
+"appreviation"
+msgid "%dh %02dm"
+msgstr ""
+
+#: ../templates/archive/details.php:32 ../templates/single/details.php:31
 msgid "Serves"
 msgstr ""
 
-#: ../templates/archive/details.php:39 ../templates/single/details.php:41
+#: ../templates/archive/details.php:41 ../templates/single/details.php:40
 msgid "Equipment"
 msgstr ""
 
-#: ../templates/archive/details.php:56 ../templates/single/details.php:58
+#: ../templates/archive/details.php:58 ../templates/single/details.php:57
 msgid "Prep time"
 msgstr ""
 
-#: ../templates/archive/details.php:66 ../templates/single/details.php:68
+#: ../templates/archive/details.php:68 ../templates/single/details.php:67
 msgid "Cook Time"
 msgstr ""
 
@@ -1283,14 +1296,6 @@ msgstr ""
 
 #: ../templates/loop/no-recipes-found.php:8
 msgid "We have some coming soon though!"
-msgstr ""
-
-#: ../templates/single/details.php:19
-#, php-format
-msgctxt ""
-"Abbreviations for time: Replace h (hour) & m (minute) with appropriate "
-"appreviation"
-msgid "%dh %02dm"
 msgstr ""
 
 #: ../templates/single/nutrition.php:18
