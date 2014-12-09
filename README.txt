@@ -21,6 +21,17 @@ Recipe Hero adds a new custom post type, **recipe**, to your website. Adding a r
 
 Navigate to `http://yourwebsite.com/recipes` to see all the new recipes you've added. You can easily customise the CSS to your liking and make it look perfect. It's automatically set-up to be responsive, clean & beautiful.
 
+> #### Recipe Hero Extensions
+> Just incase you're looking to get a little bit more out of Recipe Hero, there are a several extensions available, both free and premium:<br />
+>
+> - [Recipe Hero Labels](https://wordpress.org/plugins/recipe-hero-labels/)<br />
+> - [Recipe Hero Video](http://recipehero.in/extensions/video/)<br />
+> - [Recipe Hero Likes](http://recipehero.in/extensions/likes/)<br />
+> - [Recipe Hero Submit](http://recipehero.in/extensions/submit/)<br />
+>
+> [See more about Recipe Hero, extensions and what it's capable of!](http://recipehero.in/)
+
+#### Some Features
 * Custom Post Type for 'Recipes'
 * Recipe Details, Ingredients & Instructions
 * Instruction Images
@@ -30,6 +41,7 @@ Navigate to `http://yourwebsite.com/recipes` to see all the new recipes you've a
 * Templating Engine for easy customization (anything can be edited!)
 * Display with easy [recipe] & [recipes] shortcodes
 * Valid schema.org Markup - Works with Google Rich Snippets etc. (SEO Optimized)
+* Ingredients checkboxes (check off ingredients as you add them!)
 * Inherits Your Theme's Styles Automatically
 * Image Lightbox
 * Recipe Gallery
