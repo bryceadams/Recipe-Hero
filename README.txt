@@ -133,7 +133,12 @@ Sure, but on food-steroids. Just check out the screenshots area.
 == Changelog ==
 
 = 1.0.2 =
-* Bug Fix: Servings Type setting field made a bit bigger
+* New: Recipe Reviews / Ratings
+* New: Rating schema.org markup
+* Bug Fix: 'Servings type' setting field made a bit bigger
+* Bug Fix: Ingredients list style fixes
+* Bug Fix: Template Engine improvements
+* Bug Fix: Extension Page Styling
 * i18n: Couple translation fixes and .pot files used now
 
 = 1.0.1 =

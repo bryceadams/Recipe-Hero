@@ -231,9 +231,9 @@ jQuery UI Autocomplete Styles
   .recipe_hero_extensions_wrap .products li {
     display: inline-block;
     margin: 0 10px 10px 0 !important;
-    padding: 0;
+    padding: 0 0 36px;
     vertical-align: top;
-    width: 250px;
+    width: 280px;
     border: 1px solid #ddd;
     -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
@@ -249,7 +249,9 @@ jQuery UI Autocomplete Styles
       margin: 0;
       background: #fff;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
-    .recipe_hero_extensions_wrap .products li h2 {
+      .recipe_hero_extensions_wrap .products li img:hover {
+        opacity: 0.8; }
+    .recipe_hero_extensions_wrap .products li h3 {
       margin: 0 !important;
       padding: 10px 10px !important;
       line-height: 1;
@@ -258,8 +260,8 @@ jQuery UI Autocomplete Styles
       color: #000;
       text-align: center;
       position: absolute;
-      width: 230px;
-      top: 0;
+      width: 260px;
+      bottom: 0;
       left: 0;
       font-size: 16px;
       text-shadow: none; }

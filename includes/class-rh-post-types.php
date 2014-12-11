@@ -72,7 +72,7 @@ class RH_Post_Types {
 			'show_tagcloud' 	=> false,
 			'show_in_nav_menus' => false,
 			'rewrite'               => array(
-					'slug'         => empty( $permalinks['course_base'] ) ? _x( 'course', 'slug', 'woocommerce' ) : $permalinks['course_base'],
+					'slug'         => empty( $permalinks['course_base'] ) ? _x( 'course', 'slug', 'recipe-hero' ) : $permalinks['course_base'],
 					'with_front'   => false,
 					'hierarchical' => true,
 			),
@@ -107,7 +107,7 @@ class RH_Post_Types {
 			'show_tagcloud' 	=> false,
 			'show_in_nav_menus' => false,
 			'rewrite'               => array(
-				'slug'         => empty( $permalinks['cuisine_base'] ) ? _x( 'cuisine', 'slug', 'woocommerce' ) : $permalinks['cuisine_base'],
+				'slug'         => empty( $permalinks['cuisine_base'] ) ? _x( 'cuisine', 'slug', 'recipe-hero' ) : $permalinks['cuisine_base'],
 				'with_front'   => false,
 				'hierarchical' => true,
 			),
@@ -152,7 +152,7 @@ class RH_Post_Types {
 		
 		$taxonomies 	= array();
 
-		$supports   	= array( 'title','editor','author','thumbnail','excerpt','comments','publicize','page-attributes' );
+		$supports   	= array( 'title','editor','author','thumbnail','excerpt','comments','custom-fields','publicize','page-attributes' );
 		
 		$post_type_args = array(
 			'labels' 			=> $labels,

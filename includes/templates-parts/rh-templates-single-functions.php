@@ -30,6 +30,22 @@ if ( ! function_exists( 'recipe_hero_output_single_title' ) ) {
 }
 
 /**
+ * Recipe Rating
+ *
+ * @package   Recipe Hero
+ * @author    Captain Theme <info@captaintheme.com>
+ * @since 	  1.0.2
+ */
+
+if ( ! function_exists( 'recipe_hero_output_single_rating' ) ) {
+
+	function recipe_hero_output_single_rating() {
+		recipe_hero_get_template( 'single/rating.php' );
+	}
+
+}
+
+/**
  * Recipe Meta: Author & Date
  *
  * @package   Recipe Hero
@@ -199,39 +215,33 @@ if ( ! function_exists( 'recipe_hero_output_single_nutrition' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.8.0
+ * @since 	  1.0.2
  */
 
-if ( ! function_exists( 'recipe_hero_output_single_comments' ) ) {
+if ( ! function_exists( 'recipe_hero_comments' ) ) {
 
-	function recipe_hero_output_single_comments() {
+	function recipe_hero_comments( $comment, $args, $depth ) {
 
-		recipe_hero_get_template( 'single/comments.php' );
+		$GLOBALS['comment'] = $comment;
+		recipe_hero_get_template( 'single/review.php', array( 'comment' => $comment, 'args' => $args, 'depth' => $depth ) );
 
 	}
 
 }
 
-/******************************/
-
-
 /**
- * Line Break
+ * Recipe Single Comments
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.8.0
+ * @since 	  1.0.2
  */
 
-if ( ! function_exists( 'recipe_hero_output_single_seperator' ) ) {
-
-	function recipe_hero_output_single_seperator() {
-
-		echo '<hr class="recipe-single-seperator" />';
-
-	}
-
+function recipe_hero_output_single_comments() {
+	echo comments_template();
 }
+
+/******************************/
 
 /**
  * Function to convert minutes to hours for prep/cook time

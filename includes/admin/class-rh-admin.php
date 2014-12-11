@@ -92,6 +92,7 @@ if ( ! class_exists( 'Recipe_Hero_Admin' ) ) {
 
 			// Meta boxes
 			include_once( 'class-rh-admin-meta-boxes.php' );
+			include_once( 'meta-boxes/class-rh-meta-box-recipe-reviews.php' );
 
 			include( 'class-rh-admin-notices.php' );
 			include( 'class-rh-admin-menus.php' );

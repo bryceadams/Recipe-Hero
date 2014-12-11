@@ -7,7 +7,7 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
- * @since     1.0.0
+ * @since     1.0.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -69,6 +69,15 @@ class RH_Settings_General extends RH_Settings_Page {
 						'menu_order' => __( 'Default sorting (custom ordering + name)', 'recipe-hero' ),
 						'date'       => __( 'Sort by most recent', 'recipe-hero' ),
 				) ),
+			),
+
+			array(
+				'title'         => __( 'Recipe Ratings', 'recipe-hero' ),
+				'desc'          => __( 'Enable Ratings for recipe reviews / comments', 'recipe-hero' ),
+				'id'            => 'recipe_hero_enable_review_rating',
+				'default'       => 'yes',
+				'desc_tip'      => __( 'Checking this will allow users to give a rating for recipes when leaving a review / comment', 'recipe-hero' ),
+				'type'          => 'checkbox'
 			),
 
 			array( 'type' => 'sectionend', 'id' => '' ),

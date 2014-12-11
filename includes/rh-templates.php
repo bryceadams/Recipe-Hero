@@ -1,6 +1,6 @@
 <?php
 /**
- * Include and setup custom metaboxes and fields.
+ * Templating engine - loads the correct template file based on overrides, settings, etc.
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
@@ -12,6 +12,31 @@
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
+
+
+add_filter( 'comments_template', 'recipe_hero_comments_template_loader' );
+function recipe_hero_comments_template_loader( $template ) {
+
+    if ( get_post_type() !== 'recipe' ) {
+        return $template;
+    }
+
+    $check_dirs = array(
+        trailingslashit( get_stylesheet_directory() ) . RH()->template_path(),
+        trailingslashit( get_template_directory() ) . RH()->template_path(),
+        trailingslashit( get_stylesheet_directory() ),
+        trailingslashit( get_template_directory() ),
+        trailingslashit( RH()->plugin_path() ) . 'templates/'
+    );
+
+    foreach ( $check_dirs as $dir ) {
+        if ( file_exists( trailingslashit( $dir ) . 'single-recipe-reviews.php' ) ) {
+            return trailingslashit( $dir ) . 'single-recipe-reviews.php';
+        }
+    }
+
+}
+
 
 /**
  * Tell WordPress not to use single.php for Recipe Single Posts
@@ -49,13 +74,21 @@ if ( ! function_exists( 'recipe_hero_tc_template_chooser' ) ) {
 
             // Else use custom template
             if ( is_single() ) {
+            
                 return recipe_hero_tc_get_template_hierarchy( 'single' );
-            }
-            if ( is_archive() ) {
+            
+            } elseif ( is_archive() || is_page( rh_get_page_id( 'recipes' ) ) ) {
+
                 return recipe_hero_tc_get_template_hierarchy( 'archive' );
-            }
-            if ( is_search() ) {
+
+            } elseif ( is_search() ) {
+
                 return recipe_hero_tc_get_template_hierarchy( 'search-results' );
+
+            } else {
+
+                return $template;
+
             }
 
         }

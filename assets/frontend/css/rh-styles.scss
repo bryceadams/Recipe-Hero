@@ -274,27 +274,27 @@ article.recipe {
 		}
 		ul.ingredients-list {
 			margin-left: 0;
-	 	   	/*column-count: 2;
-	        column-gap: 20px;
-	        -moz-column-count: 2;
-	        -moz-column-gap: 20px;
-	        -webkit-column-count: 2;
-	        -webkit-column-gap : 20px;*/
+			padding-left: 0;
 	       	font-size: 14px;
 	       	list-style: none;
 			li.ingredients-item {
 				padding-bottom: 5px;
 				margin-left: 0;
+				label {
+					display: inline-block;
+				}
 				.amount {
 					text-align: right;
 					min-width: 20%;
 					display: inline-block;
 					font-weight: bold;
+					vertical-align: top;
 				}
 				.name {
 					text-align: left;
 					display: inline-block;
 					padding-left: 5px;
+					vertical-align: top;
 				}
 			}
 		}
@@ -323,8 +323,178 @@ article.recipe {
 		line-height: 1.6;
 		margin-bottom: 15px;
 	}
-	hr.recipe-single-seperator {
-		background: #ddd;
+}
+
+.recipe-hero {
+	/**
+	 * Reviews
+	 */
+	#reviews {
+		h2 small {
+			float: right;
+			color: $secondarytext;
+			font-size: 15px;
+			margin: 10px 0 0 0;
+
+			a {
+				text-decoration: none;
+				color: $secondarytext;
+			}
+		}
+
+		h3 {
+			margin: 0;
+		}
+
+		#respond {
+			margin: 0;
+			border: 0;
+			padding: 0;
+		}
+
+		#comment {
+			height: 75px;
+		}
+
+		#comments {
+			.add_review {
+				@include clearfix();
+			}
+
+			h2 {
+				clear: none;
+			}
+
+			ol.commentlist {
+				@include clearfix();
+				margin: 0;
+				width: 100%;
+				background: none;
+				list-style: none;
+
+				li {
+					padding: 0;
+					margin: 0 0 20px;
+					border: 0;
+					position: relative;
+					background: 0;
+					border: 0;
+
+					.meta {
+						color: $secondarytext;
+						font-size: 0.75em;
+					}
+
+					img.avatar {
+						float: left;
+						position: absolute;
+						top: 0;
+						left: 0;
+						padding: 3px;
+						width: 32px;
+						height: auto;
+						background: $secondary;
+						border: 1px solid darken( $secondary, 3% );
+						margin: 0;
+						box-shadow: none;
+					}
+
+					.comment-text {
+						margin: 0 0 0 50px;
+						border: 1px solid darken( $secondary, 3% );
+						border-radius: 4px;
+						padding: 1em 1em 0;
+						@include clearfix();
+
+						p {
+							margin: 0 0 1em;
+						}
+
+						p.meta {
+							font-size: 0.83em;
+						}
+					}
+				}
+
+				ul.children {
+					list-style: none outside;
+					margin: 20px 0 0 50px;
+
+					.star-rating {
+						display: none;
+					}
+				}
+
+				#respond {
+					border: 1px solid darken( $secondary, 3% );
+					border-radius: 4px;
+					padding: 1em 1em 0;
+					margin: 20px 0 0 50px;
+				}
+			}
+
+			.commentlist > li:before {
+				content: "";
+			}
+		}
+	}
+
+	/**
+	 * Star ratings
+	 */
+	.star-rating {
+		float: right;
+		overflow: hidden;
+		position: relative;
+		height: 1em;
+		line-height: 1;
+		font-size: 1em;
+		width: 5.4em;
+		font-family: 'star';
+
+		&:before {
+			content: "\f155";
+			display: inline-block;
+			-webkit-font-smoothing: antialiased;
+			font: normal 20px/1 'dashicons';
+			vertical-align: top;
+			color: darken( $secondary, 10% );
+			float: left;
+			top: 0;
+			left: 0;
+			position: absolute;
+		}
+
+		span {
+			overflow: hidden;
+			float: left;
+			top: 0;
+			left: 0;
+			position: absolute;
+			padding-top: 1.5em;
+		}
+
+		span:before {
+			content: "\f155";
+			display: inline-block;
+			-webkit-font-smoothing: antialiased;
+			font: normal 20px/1 'dashicons';
+			vertical-align: top;
+			top: 0;
+			position: absolute;
+			left: 0;
+		}
+	}
+
+	.recipe-hero-product-rating {
+		@include clearfix();
+		line-height: 2;
+		display: block;
+
+		.star-rating {
+			margin: .5em 4px 0 0;
+			float: left;
+		}
 	}
 }
 

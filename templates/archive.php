@@ -50,7 +50,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 
 	<?php } else { ?>
 
-		<?php rh_get_template( 'loop/no-recipes-found.php' ); ?>
+		<?php recipe_hero_get_template( 'loop/no-recipes-found.php' ); ?>
 
 	<?php } ?>
 

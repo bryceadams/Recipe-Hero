@@ -1,3 +1,13 @@
+<?php
+/**
+ * No Recipes Found template
+ *
+ * @package   	Recipe Hero
+ * @author    	Captain Theme <info@captaintheme.com>
+ * @version 	1.0.0
+ */
+?>
+
 <p>
 	<?php _e( 'Sorry, there are no recipes to show!', 'recipe-hero' ); ?>
 	<?php if ( current_user_can( 'publish_posts' ) ) {

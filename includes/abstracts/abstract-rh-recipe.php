@@ -9,7 +9,7 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
- * @since 	  1.0.0
+ * @since 	  1.0.2
  */
 class RH_Recipe {
 
@@ -163,7 +163,7 @@ class RH_Recipe {
 	}
 
 	/**
-	 * Returns the main product image
+	 * Returns the main recipe image
 	 *
 	 * @param string $size (default: 'recipe_thumbnail')
 	 * @return string
@@ -175,10 +175,114 @@ class RH_Recipe {
 			$image = get_the_post_thumbnail( $this->id, $size, $attr );
 		} else {
 			$image = '';
-			//$image = wc_placeholder_img( $size );
 		}
 
 		return $image;
+	}
+
+	/**
+	 * Get the average rating of recipe.
+	 *
+	 * @return string
+	 */
+	public function get_average_rating() {
+
+		if ( false === ( $average_rating = get_transient( 'rh_average_rating_' . $this->id ) ) ) {
+
+			global $wpdb;
+
+			$average_rating = '';
+			$count          = $this->get_rating_count();
+
+			if ( $count > 0 ) {
+
+				$ratings = $wpdb->get_var( $wpdb->prepare("
+					SELECT SUM(meta_value) FROM $wpdb->commentmeta
+					LEFT JOIN $wpdb->comments ON $wpdb->commentmeta.comment_id = $wpdb->comments.comment_ID
+					WHERE meta_key = 'rating'
+					AND comment_post_ID = %d
+					AND comment_approved = '1'
+					AND meta_value > 0
+				", $this->id ) );
+
+				$average_rating = number_format( $ratings / $count, 2 );
+			}
+
+			set_transient( 'rh_average_rating_' . $this->id, $average_rating, YEAR_IN_SECONDS );
+		}
+
+		return $average_rating;
+	}
+
+	/**
+	 * Get the total amount (COUNT) of ratings.
+	 *
+	 * @param  int $value Optional. Rating value to get the count for. By default
+	 *                              returns the count of all rating values.
+	 * @return int
+	 */
+	public function get_rating_count( $value = null ) {
+
+		$value = intval( $value );
+		$value_suffix = $value ? '_' . $value : '';
+
+		if ( false === ( $count = get_transient( 'rh_rating_count_' . $this->id . $value_suffix ) ) ) {
+
+			global $wpdb;
+
+			$where_meta_value = $value ? $wpdb->prepare( " AND meta_value = %d", $value ) : " AND meta_value > 0";
+
+			if ( get_option( 'recipe_hero_enable_review_rating' ) == 'yes' ) {
+
+				$count = $wpdb->get_var( $wpdb->prepare("
+					SELECT COUNT(meta_value) FROM $wpdb->commentmeta
+					LEFT JOIN $wpdb->comments ON $wpdb->commentmeta.comment_id = $wpdb->comments.comment_ID
+					WHERE meta_key = 'rating'
+					AND comment_post_ID = %d
+					AND comment_approved = '1'
+				", $this->id ) . $where_meta_value );
+
+			} else {
+
+				$count = $wpdb->get_var( $wpdb->prepare("
+					SELECT COUNT(*) FROM $wpdb->comments
+					WHERE comment_parent = 0
+					AND comment_post_ID = %d
+					AND comment_approved = '1'
+				", $this->id ) );
+
+			}
+
+			set_transient( 'rh_rating_count_' . $this->id . $value_suffix, $count, YEAR_IN_SECONDS );
+		}
+
+		return $count;
+	}
+
+	/**
+	 * Returns the recipe rating in html format.
+	 *
+	 * @param string $rating (default: '')
+	 * @return string
+	 */
+	public function get_rating_html( $rating = null ) {
+
+		if ( ! is_numeric( $rating ) ) {
+			$rating = $this->get_average_rating();
+		}
+
+		if ( $rating > 0 ) {
+
+			$rating_html  = '<div class="star-rating" title="' . sprintf( __( 'Rated %s out of 5', 'recipe-hero' ), $rating ) . '">';
+
+			$rating_html .= '<span style="width:' . ( ( $rating / 5 ) * 100 ) . '%"><strong class="rating">' . $rating . '</strong> ' . __( 'out of 5', 'recipe-hero' ) . '</span>';
+
+			$rating_html .= '</div>';
+
+			return $rating_html;
+		}
+
+		return '';
 	}
 
 }

@@ -30,10 +30,14 @@ class RH_Admin_Meta_Boxes {
 	 */
 	public function __construct() {
 
+		add_action( 'add_meta_boxes', array( $this, 'rename_meta_boxes' ), 20 );
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ), 30 );
 
 		// Save Meta Boxes - @todo do it the WC way so it only affects recipes
 		add_action( 'save_post', array( $this, 'gallery_save' ), 20, 2 );
+
+		// Save Rating Meta Boxes
+		add_action( 'comment_edit_redirect',  'RH_Meta_Box_Recipe_Reviews::save', 1, 2 );
 
 	}
 
@@ -49,6 +53,26 @@ class RH_Admin_Meta_Boxes {
 		remove_meta_box( 'pageparentdiv', 'recipe', 'side' );
 		remove_meta_box( 'commentstatusdiv', 'recipe', 'normal' );
 
+		// Reviews
+		if ( 'comment' == get_current_screen()->id && isset( $_GET['c'] ) ) {
+			if ( get_comment_meta( intval( $_GET['c'] ), 'rating', true ) ) {
+				add_meta_box( 'recipe-hero-rating', __( 'Rating', 'recipe-hero' ), 'RH_Meta_Box_Recipe_Reviews::output', 'comment', 'normal', 'high' );
+			}
+		}
+
+	}
+
+	/**
+	 * Rename core meta boxes
+	 */
+	public function rename_meta_boxes() {
+		global $post;
+
+		// Comments/Reviews
+		if ( isset( $post ) && ( 'publish' == $post->post_status || 'private' == $post->post_status ) ) {
+			remove_meta_box( 'commentsdiv', 'recipe', 'normal' );
+			add_meta_box( 'commentsdiv', __( 'Reviews', 'recipe-hero' ), 'post_comment_meta_box', 'recipe', 'normal' );
+		}
 	}
 
 

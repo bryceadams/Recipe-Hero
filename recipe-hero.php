@@ -11,7 +11,7 @@
  * Plugin Name:       Recipe Hero
  * Plugin URI:        http://recipehero.in/
  * Description:       The last recipe plugin you'll ever need.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Author:            Bryce Adams
  * Author URI:        http://bryce.se/
  * Text Domain:       recipe-hero
@@ -181,6 +181,8 @@ final class RecipeHero {
 		include_once( 'includes/class-rh-post-types.php' );
 
 		include_once( 'includes/class-rh-settings-methods.php' );
+
+		include_once( 'includes/class-rh-comments.php' );
 
 		include_once( 'includes/rh-templates.php' );
 		include_once( 'includes/rh-templates-functions.php' );
