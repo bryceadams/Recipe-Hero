@@ -69,7 +69,7 @@ class RH_Admin_Extensions {
 				<div id="notice" class="updated below-h2"><p><?php printf( __( 'Buying multiple extensions? <a href="%s">Check out the core extension bundle &rarr;</a>', 'recipe-hero' ), 'https://recipehero.in/extensions/bundle/' ); ?></p></div>
 			*/
 			?>
-			<p></p>
+			<div id="notice" class="updated below-h2"><p><?php _e( 'The following are some extensions you can purchase to extend Recipe Hero in awesome and exciting ways!', 'recipe-hero' ); ?></p></div>
 			<?php echo $extensions; ?>
 		</div>
 		<?php
