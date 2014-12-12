@@ -139,6 +139,7 @@ Sure, but on food-steroids. Just check out the screenshots area.
 * Bug Fix: Ingredients list style fixes
 * Bug Fix: Template Engine improvements
 * Bug Fix: Extension Page Styling
+* Bug Fix: Shortcode style / comment fixes
 * i18n: Couple translation fixes and .pot files used now
 
 = 1.0.1 =

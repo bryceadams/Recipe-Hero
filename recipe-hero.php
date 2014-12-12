@@ -36,7 +36,7 @@ if ( ! class_exists( 'RecipeHero' ) ) :
  * Main RecipeHero Class
  *
  * @class RecipeHero
- * @version	1.0.1
+ * @version	1.0.2
  */
 
 final class RecipeHero {
@@ -44,11 +44,11 @@ final class RecipeHero {
 	/**
 	 * Plugin version, used for cache-busting of style and script file references.
 	 *
-	 * @since   1.0.1
+	 * @since   1.0.2
 	 *
 	 * @var     string
 	 */
-	public static $version = '1.0.1';
+	public static $version = '1.0.2';
 
 	/**
 	 * The variable name is used as the text domain when internationalizing strings
@@ -116,7 +116,7 @@ final class RecipeHero {
 	 * Initialize the plugin by setting localization and loading public scripts
 	 * and styles.
 	 *
-	 * @since     0.9.0
+	 * @since     1.0.0
 	 */
 	public function __construct() {
 

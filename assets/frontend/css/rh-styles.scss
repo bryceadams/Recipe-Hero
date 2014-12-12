@@ -91,242 +91,241 @@ nav.recipe-hero-pagination {
 	}
 }
 
-article.recipe {
-	line-height: 1.4;
-	h4 {
-		font-size: 23px;
-		margin-bottom: 18px;
-		font-weight: 600;
-	}
-	.recipe-single-title,
-	.recipe-archive-title {
-		font-size: 35px;
-	}
-	.recipe-single-meta,
-	.recipe-archive-meta {
-		margin-top: 10px;
-		.date, .author, .comments-link, .edit-link {
-			display: inline-block;
-			vertical-align: bottom;
-			padding-left: 15px;
-			font-size: 14px;
-			margin-top: 0;
-			line-height: 1.5;
-			.dashicons {
-				font-size: 16px;
+.recipe-hero {
+	article.recipe {
+		line-height: 1.4;
+		h4 {
+			font-size: 23px;
+			margin-bottom: 18px;
+			font-weight: 600;
+		}
+		.recipe-single-title,
+		.recipe-archive-title {
+			font-size: 35px;
+		}
+		.recipe-single-meta,
+		.recipe-archive-meta {
+			margin-top: 10px;
+			.date, .author, .dashicons-testimonial, .edit-link {
+				display: inline-block;
 				vertical-align: bottom;
-				line-height: 1.35;
-			}
-			a {
-				float: none;
+				padding-left: 15px;
 				font-size: 14px;
-			}
-		}
-		.date {
-			padding-left: 0;
-		}
-		.comments-link a:before {
-			content: none;
-		}
-	}
-	.images {
-		margin-bottom: 10px;
-		.thumbnails {
-			margin-top: 5px;
-			@include clearfix();
-			a {
-				float:left;
-				&.columns-3 {
-					width: 30.75%;
-					margin-right: 3.8%;
+				margin-top: 0;
+				line-height: 1.5;
+				.dashicons {
+					font-size: 16px;
+					vertical-align: bottom;
+					line-height: 1.35;
 				}
-				&.columns-4 {
-					width: 22.85%;
-					margin-right: 2.55%;
-				}
-				&.columns-5 {
-					width: 17.45%;
-					margin-right: 2.2%;
-				}
-				&.columns-6 {
-					width: 14.2%;
-					margin-right: 2.8%;
-				}
-				img {
-					display: block;
-					width: 100%;
-					margin-bottom: 10px;
-					height: auto;
+				a {
+					float: none;
+					font-size: 14px;
 				}
 			}
-			a.last {
-				margin-right: 0;
+			.date {
+				padding-left: 0;
 			}
-			a.first {
-				clear:both;
+			.comments-link a:before {
+				content: none;
 			}
 		}
-		.recipe-schema-thumb {
-			display: none;
+		.images {
+			margin-bottom: 10px;
+			.thumbnails {
+				margin-top: 5px;
+				@include clearfix();
+				a {
+					float:left;
+					&.columns-3 {
+						width: 30.75%;
+						margin-right: 3.8%;
+					}
+					&.columns-4 {
+						width: 22.85%;
+						margin-right: 2.55%;
+					}
+					&.columns-5 {
+						width: 17.45%;
+						margin-right: 2.2%;
+					}
+					&.columns-6 {
+						width: 14.2%;
+						margin-right: 2.8%;
+					}
+					img {
+						display: block;
+						width: 100%;
+						margin-bottom: 10px;
+						height: auto;
+					}
+				}
+				a.last {
+					margin-right: 0;
+				}
+				a.first {
+					clear:both;
+				}
+			}
+			.recipe-schema-thumb {
+				display: none;
+			}
 		}
-	}
-	.recipe-single-tax,
-	.recipe-archive-tax {
-		.cuisine,
-		.course {
-			display: inline-block;
-			padding-right: 15px;
+		.recipe-single-tax,
+		.recipe-archive-tax {
+			.cuisine,
+			.course {
+				display: inline-block;
+				padding-right: 15px;
+				strong {
+					font-size: 16px;
+					&:after {
+						content: ':';
+					}
+				}
+				ul {
+					display: inline-block;
+					list-style-type: none;
+					margin-left: 5px;
+					margin-bottom: 0;
+					li {
+						display: inline-block;
+						padding: 3px 8px;
+						margin: 0 5px 0 0;
+						background: #fff;
+						border: 1px solid #ddd;
+						@include transition(all, 200ms, ease);
+						a {
+							text-decoration: none;
+						}
+						&:hover {
+							background: #fbfbfb;
+
+						}
+					}
+				}
+			}
+			.cuisine {
+				border-right: 1px solid #ddd;
+				padding-right: 15px;
+				margin-right: 15px;
+			}
+		}
+		.recipe-single-details,
+		.recipe-archive-details {
+			margin-top: 20px;
+			> div {
+				margin-bottom: 5px;
+			}
 			strong {
 				font-size: 16px;
-				&:after {
-					content: ':';
+				display: block;
+				margin-bottom: 5px;
+			}
+			.serves, .equipment, .prep-time, .cook-time, .total-time {
+				font-size: 14px;
+			}
+			.serves {
+			}
+			.equipment {
+				.equipment-item {
 				}
 			}
-			ul {
-				display: inline-block;
-				list-style-type: none;
-				margin-left: 5px;
-				margin-bottom: 0;
-				li {
-					display: inline-block;
-					padding: 3px 8px;
-					margin: 0 5px 0 0;
-					background: #fff;
-					border: 1px solid #ddd;
-					@include transition(all, 200ms, ease);
-					a {
-						text-decoration: none;
-					}
-					&:hover {
-						background: #fbfbfb;
+			.prep-time {
+			}
+			.cook-time {
+			}
+			.prep-time, .cook-time {
+				span {
+					font-size: 17px;
+					vertical-align: middle;
+				}
+			}
+			.total-time {
+				font-weight: bold;
+			}
 
-					}
-				}
+		}
+		.recipe-archive-details {
+			> div {
+				margin-bottom: 15px;
 			}
 		}
-		.cuisine {
-			border-right: 1px solid #ddd;
-			padding-right: 15px;
-			margin-right: 15px;
-		}
-	}
-	.recipe-single-details,
-	.recipe-archive-details {
-		margin-top: 20px;
-		> div {
-			margin-bottom: 5px;
-		}
-		strong {
+		.recipe-single-content {
 			font-size: 16px;
-			display: block;
-			margin-bottom: 5px;
+			margin-top: 25px;
+			line-height: 1.6;
+			p {
+				margin-bottom: 12px;
+			}
 		}
-		.serves, .equipment, .prep-time, .cook-time, .total-time {
+		.recipe-archive-content {
+			font-size: 16px;
+			line-height: 1.6;
+			p {
+				margin-bottom: 12px;
+			}
+			.sharedaddy {
+				margin-top: 15px;
+			}
+		}
+		.recipe-single-ingredients {
+			h4 {
+				margin-top: 25px;
+			}
+			ul.ingredients-list {
+				margin-left: 0;
+				padding-left: 0;
+		       	font-size: 14px;
+		       	list-style: none;
+				li.ingredients-item {
+					padding-bottom: 5px;
+					margin-left: 0;
+					label {
+						display: inline-block;
+					}
+					.amount {
+						text-align: right;
+						min-width: 20%;
+						display: inline-block;
+						font-weight: bold;
+						vertical-align: top;
+					}
+					.name {
+						text-align: left;
+						display: inline-block;
+						padding-left: 5px;
+						vertical-align: top;
+					}
+				}
+			}
+		}
+		.recipe-single-instructions {
+			h4 {
+				margin-top: 25px;
+			}
+			ol.steps-list {
+				list-style-type: decimal;
+				li.steps-item {
+					margin-bottom: 30px;
+					p {
+						margin-bottom: 15px;
+						font-size: 14px;
+						line-height: 1.6;
+					}
+					img.step-image {
+						max-width: 100%;
+					}
+				}
+			}
+		}
+		.recipe-single-nutrition {
 			font-size: 14px;
-		}
-		.serves {
-		}
-		.equipment {
-			.equipment-item {
-			}
-		}
-		.prep-time {
-		}
-		.cook-time {
-		}
-		.prep-time, .cook-time {
-			span {
-				font-size: 17px;
-				vertical-align: middle;
-			}
-		}
-		.total-time {
-			font-weight: bold;
-		}
-
-	}
-	.recipe-archive-details {
-		> div {
+			line-height: 1.6;
 			margin-bottom: 15px;
 		}
 	}
-	.recipe-single-content {
-		font-size: 16px;
-		margin-top: 25px;
-		line-height: 1.6;
-		p {
-			margin-bottom: 12px;
-		}
-	}
-	.recipe-archive-content {
-		font-size: 16px;
-		line-height: 1.6;
-		p {
-			margin-bottom: 12px;
-		}
-		.sharedaddy {
-			margin-top: 15px;
-		}
-	}
-	.recipe-single-ingredients {
-		h4 {
-			margin-top: 25px;
-		}
-		ul.ingredients-list {
-			margin-left: 0;
-			padding-left: 0;
-	       	font-size: 14px;
-	       	list-style: none;
-			li.ingredients-item {
-				padding-bottom: 5px;
-				margin-left: 0;
-				label {
-					display: inline-block;
-				}
-				.amount {
-					text-align: right;
-					min-width: 20%;
-					display: inline-block;
-					font-weight: bold;
-					vertical-align: top;
-				}
-				.name {
-					text-align: left;
-					display: inline-block;
-					padding-left: 5px;
-					vertical-align: top;
-				}
-			}
-		}
-	}
-	.recipe-single-instructions {
-		h4 {
-			margin-top: 25px;
-		}
-		ol.steps-list {
-			list-style-type: decimal;
-			li.steps-item {
-				margin-bottom: 30px;
-				p {
-					margin-bottom: 15px;
-					font-size: 14px;
-					line-height: 1.6;
-				}
-				img.step-image {
-					max-width: 100%;
-				}
-			}
-		}
-	}
-	.recipe-single-nutrition {
-		font-size: 14px;
-		line-height: 1.6;
-		margin-bottom: 15px;
-	}
-}
-
-.recipe-hero {
-	/**
+		/**
 	 * Reviews
 	 */
 	#reviews {
@@ -371,6 +370,7 @@ article.recipe {
 				width: 100%;
 				background: none;
 				list-style: none;
+				margin-top: 25px;
 
 				li {
 					padding: 0;
@@ -390,19 +390,20 @@ article.recipe {
 						position: absolute;
 						top: 0;
 						left: 0;
-						padding: 3px;
+						padding: 2px;
 						width: 32px;
 						height: auto;
 						background: $secondary;
 						border: 1px solid darken( $secondary, 3% );
 						margin: 0;
 						box-shadow: none;
+						border-radius: 100%;
 					}
 
 					.comment-text {
 						margin: 0 0 0 50px;
 						border: 1px solid darken( $secondary, 3% );
-						border-radius: 4px;
+						border-radius: 2px;
 						padding: 1em 1em 0;
 						@include clearfix();
 
@@ -412,6 +413,9 @@ article.recipe {
 
 						p.meta {
 							font-size: 0.83em;
+							.time {
+								color: #888;
+							}
 						}
 					}
 				}
@@ -444,59 +448,157 @@ article.recipe {
 	 */
 	.star-rating {
 		float: right;
-		overflow: hidden;
 		position: relative;
 		height: 1em;
 		line-height: 1;
 		font-size: 1em;
-		width: 5.4em;
-		font-family: 'star';
-
-		&:before {
-			content: "\f155";
-			display: inline-block;
-			-webkit-font-smoothing: antialiased;
-			font: normal 20px/1 'dashicons';
-			vertical-align: top;
-			color: darken( $secondary, 10% );
-			float: left;
-			top: 0;
-			left: 0;
-			position: absolute;
+		width: 8.4em;
+		
+		.dashicons {
+			color: #e3cf7a;
+			&.dashicons-star-empty {
+				color: #ccc;
+			}
 		}
 
-		span {
-			overflow: hidden;
-			float: left;
-			top: 0;
-			left: 0;
-			position: absolute;
-			padding-top: 1.5em;
-		}
+	}
 
-		span:before {
-			content: "\f155";
-			display: inline-block;
-			-webkit-font-smoothing: antialiased;
-			font: normal 20px/1 'dashicons';
-			vertical-align: top;
-			top: 0;
-			position: absolute;
-			left: 0;
+	#review_form {
+		#respond {
+			@include clearfix();
+			position: static;
+			margin: 0;
+			width: auto;
+			padding: 0 0 0;
+			background: transparent none;
+			border: 0;
+			p {
+				margin: 0 0 15px;
+			}
+			.form-submit {
+				input {
+					left: auto;
+				}
+			}
+			textarea {
+				-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+				-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+				box-sizing: border-box;         /* Opera/IE 8+ */
+				width: 100%;
+			}
 		}
 	}
 
-	.recipe-hero-product-rating {
-		@include clearfix();
-		line-height: 2;
-		display: block;
+	p.stars {
+		position: relative;
+		font-size: 1em;
 
-		.star-rating {
-			margin: .5em 4px 0 0;
-			float: left;
+		a {
+			display: inline-block;
+			font-weight: 700;
+			margin-right: 1em;
+			text-indent: -9999px;
+			position: relative;
+			border-bottom: 0 !important;
+			outline: 0;
+
+			&:last-child {
+				border-right:0;
+			}
+
+			&.star-1,
+			&.star-2,
+			&.star-3,
+			&.star-4,
+			&.star-5 {
+				border-right:1px solid #ccc;
+
+				&:after {
+					font-family: "dashicons";
+					text-indent: 0;
+					position: absolute;
+					top: 0;
+					left: 0;
+					color: #ccc;
+				}
+
+				&:hover:after,
+				&.active:after {
+					color: #e3cf7a;
+				}
+
+			}
+
+			&.star-1 {
+				width: 2em;
+
+				&:after {
+					content: "\f154";
+				}
+
+				&:hover:after,
+				&.active:after {
+					content: "\f155";
+				}
+			}
+
+			&.star-2 {
+				width: 3em;
+
+				&:after {
+					content: "\f154\f154";
+				}
+
+				&:hover:after,
+				&.active:after {
+					content: "\f155\f155";
+				}
+			}
+
+			&.star-3 {
+				width: 4em;
+
+				&:after {
+					content: "\f154\f154\f154";
+				}
+
+				&:hover:after,
+				&.active:after {
+					content: "\f155\f155\f155";
+				}
+			}
+
+			&.star-4 {
+				width: 5em;
+
+				&:after {
+					content: "\f154\f154\f154\f154";
+				}
+
+				&:hover:after,
+				&.active:after {
+					content: "\f155\f155\f155\f155";
+				}
+			}
+
+			&.star-5 {
+				width: 6em;
+				border: 0;
+
+				&:after {
+					content: "\f154\f154\f154\f154\f154";
+				}
+
+				&:hover:after,
+				&.active:after {
+					content: "\f155\f155\f155\f155\f155";
+				}
+			}
 		}
 	}
+
 }
+
 
 @media all and (max-width: 799px) {
 	article.recipe {

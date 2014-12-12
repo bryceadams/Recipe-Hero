@@ -21,15 +21,20 @@ $rating = intval( get_comment_meta( $comment->comment_ID, 'rating', true ) );
 		<div class="comment-text">
 
 			<?php if ( $rating && get_option( 'recipe_hero_enable_review_rating' ) == 'yes' ) : ?>
-<?php for ( $rating_count = 1; $rating_count <= $rating; $rating_count++ ) { ?>
-						<span class="dashicons dashicons-star-filled"></span>
-					<?php } ?>
+					
 				<div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating" class="star-rating" title="<?php echo sprintf( __( 'Rated %d out of 5', 'recipe-hero' ), $rating ) ?>">
 					
-					
+					<?php
+					for ( $rating_count = 1; $rating_count <= $rating; $rating_count++ ) {
+						echo '<span class="dashicons dashicons-star-filled"></span>';
+					}
+					for ( $rating_count = $rating; $rating_count <= 4; $rating_count++ ) {
+						echo '<span class="dashicons dashicons-star-empty"></span>';
+					}
+					?>
 
-					<span style="width:<?php echo ( $rating / 5 ) * 100; ?>%">
-					<strong itemprop="ratingValue"><?php echo $rating; ?></strong> <?php _e( 'out of 5', 'recipe-hero' ); ?></span>
+					<div style="display:none;" itemprop="ratingValue"><?php echo $rating; ?></div>
+
 				</div>
 
 			<?php endif; ?>
@@ -41,7 +46,8 @@ $rating = intval( get_comment_meta( $comment->comment_ID, 'rating', true ) );
 			<?php else : ?>
 
 				<p class="meta">
-					<strong itemprop="author"><?php comment_author(); ?></strong> &ndash; <time itemprop="datePublished" datetime="<?php echo get_comment_date( 'c' ); ?>"><?php echo get_comment_date( __( get_option( 'date_format' ), 'recipe-hero' ) ); ?></time>:
+					<strong itemprop="author"><?php comment_author(); ?></strong> 
+					<span class="time">(<time itemprop="datePublished" datetime="<?php echo get_comment_date( 'c' ); ?>"><?php echo get_comment_date( __( get_option( 'date_format' ), 'recipe-hero' ) ); ?></time>)</span>
 				</p>
 
 			<?php endif; ?>

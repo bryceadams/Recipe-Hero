@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Recipe Hero\n"
-"POT-Creation-Date: 2014-12-09 21:23+0700\n"
-"PO-Revision-Date: 2014-12-09 21:23+0700\n"
+"POT-Creation-Date: 2014-12-12 18:27+0700\n"
+"PO-Revision-Date: 2014-12-12 18:27+0700\n"
 "Last-Translator: Bryce <bryce@bryce.se>\n"
 "Language-Team: Recipe Hero <info@recipehero.in>\n"
 "Language: en\n"
@@ -16,15 +16,25 @@ msgstr ""
 "_x:1,2c\n"
 "X-Poedit-SearchPath-0: ..\n"
 
+#: ../includes/abstracts/abstract-rh-recipe.php:275
+#: ../templates/single/rating.php:38
+#, php-format
+msgid "Rated %s out of 5"
+msgstr ""
+
+#: ../includes/abstracts/abstract-rh-recipe.php:277
+#: ../templates/single/rating.php:40
+msgid "out of 5"
+msgstr ""
+
 #: ../includes/admin/class-rh-admin-extensions.php:66
 msgid "Recipe Hero Extensions"
 msgstr ""
 
-#: ../includes/admin/class-rh-admin-extensions.php:67
-#, php-format
+#: ../includes/admin/class-rh-admin-extensions.php:72
 msgid ""
-"Buying multiple extensions? <a href=\"%s\">Check out the core extension "
-"bundle &rarr;</a>"
+"The following are some extensions you can purchase to extend Recipe Hero in "
+"awesome and exciting ways!"
 msgstr ""
 
 #: ../includes/admin/class-rh-admin-menus.php:42
@@ -47,29 +57,38 @@ msgstr ""
 msgid "Extensions"
 msgstr ""
 
-#: ../includes/admin/class-rh-admin-meta-boxes.php:46
+#: ../includes/admin/class-rh-admin-meta-boxes.php:50
 msgid "Recipe Gallery"
 msgstr ""
 
-#: ../includes/admin/class-rh-admin-meta-boxes.php:77
-#: ../includes/admin/class-rh-admin-meta-boxes.php:89
+#: ../includes/admin/class-rh-admin-meta-boxes.php:59
+msgid "Rating"
+msgstr ""
+
+#: ../includes/admin/class-rh-admin-meta-boxes.php:74
+#: ../templates/single-recipe-reviews.php:27
+msgid "Reviews"
+msgstr ""
+
+#: ../includes/admin/class-rh-admin-meta-boxes.php:101
+#: ../includes/admin/class-rh-admin-meta-boxes.php:113
 msgid "Delete image"
 msgstr ""
 
-#: ../includes/admin/class-rh-admin-meta-boxes.php:77
-#: ../includes/admin/class-rh-admin-meta-boxes.php:89
+#: ../includes/admin/class-rh-admin-meta-boxes.php:101
+#: ../includes/admin/class-rh-admin-meta-boxes.php:113
 msgid "Delete"
 msgstr ""
 
-#: ../includes/admin/class-rh-admin-meta-boxes.php:89
+#: ../includes/admin/class-rh-admin-meta-boxes.php:113
 msgid "Add Images to Recipe Gallery"
 msgstr ""
 
-#: ../includes/admin/class-rh-admin-meta-boxes.php:89
+#: ../includes/admin/class-rh-admin-meta-boxes.php:113
 msgid "Add to gallery"
 msgstr ""
 
-#: ../includes/admin/class-rh-admin-meta-boxes.php:89
+#: ../includes/admin/class-rh-admin-meta-boxes.php:113
 msgid "Add recipe gallery images"
 msgstr ""
 
@@ -528,11 +547,25 @@ msgstr ""
 msgid "Sort by most recent"
 msgstr ""
 
-#: ../includes/admin/settings/class-rh-settings-general.php:81
+#: ../includes/admin/settings/class-rh-settings-general.php:75
+msgid "Recipe Ratings"
+msgstr ""
+
+#: ../includes/admin/settings/class-rh-settings-general.php:76
+msgid "Enable Ratings for recipe reviews / comments"
+msgstr ""
+
+#: ../includes/admin/settings/class-rh-settings-general.php:79
+msgid ""
+"Checking this will allow users to give a rating for recipes when leaving a "
+"review / comment"
+msgstr ""
+
+#: ../includes/admin/settings/class-rh-settings-general.php:90
 msgid "Recipe Images"
 msgstr ""
 
-#: ../includes/admin/settings/class-rh-settings-general.php:83
+#: ../includes/admin/settings/class-rh-settings-general.php:92
 #, php-format
 msgid ""
 "These settings affect the display and dimensions of images in your recipes - "
@@ -541,42 +574,42 @@ msgid ""
 "thumbnails</a>."
 msgstr ""
 
-#: ../includes/admin/settings/class-rh-settings-general.php:88
+#: ../includes/admin/settings/class-rh-settings-general.php:97
 msgid "Main Recipe Image"
 msgstr ""
 
-#: ../includes/admin/settings/class-rh-settings-general.php:89
+#: ../includes/admin/settings/class-rh-settings-general.php:98
 msgid "This size is for the main image in archives and single recipe pages"
 msgstr ""
 
-#: ../includes/admin/settings/class-rh-settings-general.php:102
+#: ../includes/admin/settings/class-rh-settings-general.php:111
 msgid "Recipe Steps Images"
 msgstr ""
 
-#: ../includes/admin/settings/class-rh-settings-general.php:103
+#: ../includes/admin/settings/class-rh-settings-general.php:112
 msgid ""
 "This is the size of the images attached to steps / instructions on a single "
 "recipe page"
 msgstr ""
 
-#: ../includes/admin/settings/class-rh-settings-general.php:116
+#: ../includes/admin/settings/class-rh-settings-general.php:125
 msgid "Recipe Thumbnails"
 msgstr ""
 
-#: ../includes/admin/settings/class-rh-settings-general.php:117
+#: ../includes/admin/settings/class-rh-settings-general.php:126
 msgid ""
 "This size is usually used for the gallery of images on a single recipe page"
 msgstr ""
 
-#: ../includes/admin/settings/class-rh-settings-general.php:130
+#: ../includes/admin/settings/class-rh-settings-general.php:139
 msgid "Recipe Image Gallery & Steps"
 msgstr ""
 
-#: ../includes/admin/settings/class-rh-settings-general.php:131
+#: ../includes/admin/settings/class-rh-settings-general.php:140
 msgid "Enable Lightbox for recipe gallery & steps"
 msgstr ""
 
-#: ../includes/admin/settings/class-rh-settings-general.php:134
+#: ../includes/admin/settings/class-rh-settings-general.php:143
 msgid ""
 "Include Recipe Hero's lightbox. Recipe gallery images will open in a "
 "lightbox, as well as steps images."
@@ -759,8 +792,8 @@ msgstr ""
 msgid "Add New Recipe"
 msgstr ""
 
-#: ../includes/class-rh-post-types.php:143 ../templates/archive/meta.php:33
-#: ../templates/single/meta.php:35
+#: ../includes/class-rh-post-types.php:143 ../templates/archive/meta.php:35
+#: ../templates/single/meta.php:34
 msgid "Edit Recipe"
 msgstr ""
 
@@ -1140,7 +1173,7 @@ msgstr ""
 msgid "Upload an image using the media uploader (optional)"
 msgstr ""
 
-#: ../includes/shortcodes/rh-shortcodes-archive.php:75
+#: ../includes/shortcodes/rh-shortcodes-archive.php:77
 msgid "No recipes have been found!"
 msgstr ""
 
@@ -1159,87 +1192,87 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: ../includes/templates-parts/rh-templates-single-functions.php:248
+#: ../includes/templates-parts/rh-templates-single-functions.php:242
 msgctxt "Abbreviation for hours"
 msgid "h"
 msgstr ""
 
-#: ../includes/templates-parts/rh-templates-single-functions.php:249
+#: ../includes/templates-parts/rh-templates-single-functions.php:243
 msgctxt "Abbreviation for minutes"
 msgid "m"
 msgstr ""
 
-#: ../includes/templates-parts/rh-templates-single-functions.php:309
+#: ../includes/templates-parts/rh-templates-single-functions.php:303
 #, php-format
 msgid "1 Gram"
 msgid_plural "%s Grams"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../includes/templates-parts/rh-templates-single-functions.php:312
+#: ../includes/templates-parts/rh-templates-single-functions.php:306
 #, php-format
 msgid "1 Ounce"
 msgid_plural "%s Ounces"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../includes/templates-parts/rh-templates-single-functions.php:315
+#: ../includes/templates-parts/rh-templates-single-functions.php:309
 #, php-format
 msgid "1 Millilitre"
 msgid_plural "%s Millilitres"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../includes/templates-parts/rh-templates-single-functions.php:318
+#: ../includes/templates-parts/rh-templates-single-functions.php:312
 #, php-format
 msgid "1 Teaspoon"
 msgid_plural "%s Teaspoons"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../includes/templates-parts/rh-templates-single-functions.php:321
+#: ../includes/templates-parts/rh-templates-single-functions.php:315
 #, php-format
 msgid "1 Tablespoon"
 msgid_plural "%s Tablespoons"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../includes/templates-parts/rh-templates-single-functions.php:324
+#: ../includes/templates-parts/rh-templates-single-functions.php:318
 #, php-format
 msgid "1 Cup"
 msgid_plural "%s Cups"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../includes/templates-parts/rh-templates-single-functions.php:327
+#: ../includes/templates-parts/rh-templates-single-functions.php:321
 #, php-format
 msgid "1 Liter"
 msgid_plural "%s Liters"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../includes/templates-parts/rh-templates-single-functions.php:330
+#: ../includes/templates-parts/rh-templates-single-functions.php:324
 #, php-format
 msgid "1 Pound"
 msgid_plural "%s Pounds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../includes/templates-parts/rh-templates-single-functions.php:333
+#: ../includes/templates-parts/rh-templates-single-functions.php:327
 #, php-format
 msgid "1 Kilogram"
 msgid_plural "%s Kilograms"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../includes/templates-parts/rh-templates-single-functions.php:336
+#: ../includes/templates-parts/rh-templates-single-functions.php:330
 #, php-format
 msgid "1 Slice"
 msgid_plural "%s Slices"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../includes/templates-parts/rh-templates-single-functions.php:339
+#: ../includes/templates-parts/rh-templates-single-functions.php:333
 #, php-format
 msgid "1 Piece"
 msgid_plural "%s Pieces"
@@ -1274,32 +1307,116 @@ msgstr ""
 msgid "Cook Time"
 msgstr ""
 
-#: ../templates/archive/meta.php:27 ../templates/single/meta.php:28
-msgid "0 Comments"
+#: ../templates/archive/meta.php:29
+msgid "0 Reviews"
 msgstr ""
 
-#: ../templates/archive/meta.php:27 ../templates/single/meta.php:28
-msgid "1 Comment"
+#: ../templates/archive/meta.php:29
+msgid "1 Review"
 msgstr ""
 
-#: ../templates/archive/meta.php:27 ../templates/single/meta.php:28
-msgid "% Comments"
+#: ../templates/archive/meta.php:29
+msgid "% Reviews"
 msgstr ""
 
-#: ../templates/loop/no-recipes-found.php:2
+#: ../templates/loop/no-recipes-found.php:12
 msgid "Sorry, there are no recipes to show!"
 msgstr ""
 
-#: ../templates/loop/no-recipes-found.php:5
+#: ../templates/loop/no-recipes-found.php:15
 msgid "Add Your First Recipe!"
 msgstr ""
 
-#: ../templates/loop/no-recipes-found.php:8
+#: ../templates/loop/no-recipes-found.php:18
 msgid "We have some coming soon though!"
+msgstr ""
+
+#: ../templates/single-recipe-reviews.php:25
+#, php-format
+msgid "%s review for %s"
+msgid_plural "%s reviews for %s"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../templates/single-recipe-reviews.php:49
+msgid "There are no reviews yet."
+msgstr ""
+
+#: ../templates/single-recipe-reviews.php:60
+msgid "Add a review"
+msgstr ""
+
+#: ../templates/single-recipe-reviews.php:60
+msgid "Be the first to review"
+msgstr ""
+
+#: ../templates/single-recipe-reviews.php:61
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: ../templates/single-recipe-reviews.php:65
+msgid "Name"
+msgstr ""
+
+#: ../templates/single-recipe-reviews.php:67
+msgid "Email"
+msgstr ""
+
+#: ../templates/single-recipe-reviews.php:70
+msgid "Submit"
+msgstr ""
+
+#: ../templates/single-recipe-reviews.php:76
+msgid "Your Rating"
+msgstr ""
+
+#: ../templates/single-recipe-reviews.php:77
+msgid "Rate&hellip;"
+msgstr ""
+
+#: ../templates/single-recipe-reviews.php:78
+msgid "Perfect"
+msgstr ""
+
+#: ../templates/single-recipe-reviews.php:79
+msgid "Good"
+msgstr ""
+
+#: ../templates/single-recipe-reviews.php:80
+msgid "Average"
+msgstr ""
+
+#: ../templates/single-recipe-reviews.php:81
+msgid "Not that bad"
+msgstr ""
+
+#: ../templates/single-recipe-reviews.php:82
+msgid "Very Poor"
+msgstr ""
+
+#: ../templates/single-recipe-reviews.php:86
+msgid "Your Review"
 msgstr ""
 
 #: ../templates/single/nutrition.php:18
 msgid "Nutrition"
+msgstr ""
+
+#: ../templates/single/rating.php:22 ../templates/single/rating.php:35
+#, php-format
+msgid "%s Review"
+msgid_plural "%s Reviews"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../templates/single/review.php:25
+#, php-format
+msgid "Rated %d out of 5"
+msgstr ""
+
+#: ../templates/single/review.php:44
+msgid "Your comment is awaiting approval"
 msgstr ""
 
 #: ../templates/single/steps.php:39

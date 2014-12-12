@@ -22,7 +22,6 @@ class RH_Recipe {
 	/**
 	 * Constructor gets the post object and sets the ID for the loaded product.
 	 *
-	 * @param int|WC_Product|WP_Post $recipe Product ID, post object, or product object
 	 */
 	public function __construct( $recipe ) {
 

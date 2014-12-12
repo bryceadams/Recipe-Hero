@@ -54,7 +54,6 @@ add_action( 'recipe_hero_sidebar_right', 'recipe_hero_get_sidebar', 10 );
  *
  * @see recipe_hero_output_single_header_before - 5
  * @see recipe_hero_output_single_title - 10
- * @see recipe_hero_output_single_rating - 15
  * @see recipe_hero_output_single_meta - 20
  * @see recipe_hero_output_single_header_after - 25
  * @see recipe_hero_output_single_photo - 30
@@ -68,7 +67,6 @@ add_action( 'recipe_hero_sidebar_right', 'recipe_hero_get_sidebar', 10 );
  */
 add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_header_before', 5 );
 add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_title', 10 );
-add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_rating', 15 );
 add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_meta', 20 );
 add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_header_after', 25 );
 add_action( 'recipe_hero_single_recipe_content', 'recipe_hero_output_single_photo', 30 );

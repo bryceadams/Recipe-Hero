@@ -4,10 +4,12 @@
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @version 	  0.8.0
+ * @version   1.0.2
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 $date = get_the_date();
 
@@ -24,7 +26,7 @@ $date = get_the_date();
 	</div>
 
 	<div class="comments-link">
-		<span class="dashicons dashicons-testimonial"></span> <a href="#comments"><?php comments_number( __( '0 Comments', 'recipe-hero' ), __( '1 Comment', 'recipe-hero' ), __( '% Comments', 'recipe-hero' ) ); ?></a>
+		<span class="dashicons dashicons-testimonial"></span> <a href="#reviews"><?php comments_number( __( '0 Reviews', 'recipe-hero' ), __( '1 Review', 'recipe-hero' ), __( '% Reviews', 'recipe-hero' ) ); ?></a>
 	</div>
 
 	<?php if ( get_edit_post_link() ) { ?>

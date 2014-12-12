@@ -30,27 +30,11 @@ class RH_Comments {
 	 */
 	public static function init() {
 		// Rating recipes
-		//add_filter( 'preprocess_comment', array( __CLASS__, 'check_comment_rating' ), 0 );
 		add_action( 'comment_post', array( __CLASS__, 'add_comment_rating' ), 1 );
 
 		// clear transients
 		add_action( 'wp_update_comment_count', array( __CLASS__, 'clear_transients' ) );
 
-	}
-
-	/**
-	 * Validate the comment ratings.
-	 *
-	 * @param array $comment_data
-	 * @return array
-	 */
-	public static function check_comment_rating( $comment_data ) {
-		// If posting a comment (not trackback etc) and not logged in
-		if ( isset( $_POST['rating'] ) && empty( $_POST['rating'] ) && '' === $comment_data['comment_type'] && 'yes' === get_option( 'woocommerce_review_rating_required' ) ) {
-			wp_die( __( 'Please rate the product.', 'recipe-hero' ) );
-			exit;
-		}
-		return $comment_data;
 	}
 
 	/**

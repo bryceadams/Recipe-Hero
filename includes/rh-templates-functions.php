@@ -36,7 +36,6 @@ add_action( 'template_redirect', 'rh_template_redirect' );
  */
 
 require_once( RH()->plugin_path() . '/includes/templates-parts/rh-templates-archive-functions.php' );
-require_once( RH()->plugin_path() . '/includes/templates-parts/rh-templates-ratings-functions.php' );
 require_once( RH()->plugin_path() . '/includes/templates-parts/rh-templates-search-functions.php' );
 require_once( RH()->plugin_path() . '/includes/templates-parts/rh-templates-sidebar-functions.php' );
 require_once( RH()->plugin_path() . '/includes/templates-parts/rh-templates-single-functions.php' );

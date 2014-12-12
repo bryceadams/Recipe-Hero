@@ -30,22 +30,6 @@ if ( ! function_exists( 'recipe_hero_output_single_title' ) ) {
 }
 
 /**
- * Recipe Rating
- *
- * @package   Recipe Hero
- * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0.2
- */
-
-if ( ! function_exists( 'recipe_hero_output_single_rating' ) ) {
-
-	function recipe_hero_output_single_rating() {
-		recipe_hero_get_template( 'single/rating.php' );
-	}
-
-}
-
-/**
  * Recipe Meta: Author & Date
  *
  * @package   Recipe Hero

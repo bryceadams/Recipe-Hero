@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  0.7.1
+ * @since 	  1.0.2
  */
 
 if ( ! function_exists( 'recipe_hero_shortcode_archive_display' ) ) {
@@ -38,23 +38,23 @@ if ( ! function_exists( 'recipe_hero_shortcode_archive_display' ) ) {
 		}
 
 
-		if ( $course || $cuisine) {
+		if ( $course || $cuisine ) {
 
 			$args['tax_query'] = array(
-									'relation'	=> 'AND', // @todo Make this an option? (AND or OR)
-									$course ?
-										array(
-											'taxonomy' 	=> 'course',
-											'field' 	=> 'slug',
-											'terms' 	=> $course,
-										) : false,
-									$cuisine ?
-										array(
-											'taxonomy' 	=> 'cuisine',
-											'field' 	=> 'slug',
-											'terms' 	=> $cuisine,
-										) : false,
-								);
+				'relation'	=> 'AND', // @todo Make this an option? (AND or OR)
+				$course ?
+					array(
+						'taxonomy' 	=> 'course',
+						'field' 	=> 'slug',
+						'terms' 	=> $course,
+					) : false,
+				$cuisine ?
+					array(
+						'taxonomy' 	=> 'cuisine',
+						'field' 	=> 'slug',
+						'terms' 	=> $cuisine,
+					) : false,
+			);
 		}
 
 
@@ -64,7 +64,9 @@ if ( ! function_exists( 'recipe_hero_shortcode_archive_display' ) ) {
 
 			while ( $the_query->have_posts() ) : $the_query->the_post();
 
-				echo recipe_hero_get_template_part( 'content', 'archive-recipe' );
+				echo '<div class="recipe-hero">';
+					echo recipe_hero_get_template_part( 'content', 'archive-recipe' );
+				echo '</div>';
 
 			endwhile;
 
