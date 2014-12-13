@@ -35,13 +35,14 @@ Navigate to `http://yourwebsite.com/recipes` to see all the new recipes you've a
 * Custom Post Type for 'Recipes'
 * Recipe Details, Ingredients & Instructions
 * Instruction Images
+* Recipe Reviews / Ratings
 * Completely Responsive
 * Settings Panel
 * Intuitive Admin / Editing Experience
 * Templating Engine for easy customization (anything can be edited!)
 * Display with easy [recipe] & [recipes] shortcodes
 * Valid schema.org Markup - Works with Google Rich Snippets etc. (SEO Optimized)
-* Ingredients checkboxes (check off ingredients as you add them!)
+* Ingredients checkboxes (users can check off ingredients as they use them)
 * Inherits Your Theme's Styles Automatically
 * Image Lightbox
 * Recipe Gallery
