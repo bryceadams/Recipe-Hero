@@ -7,7 +7,7 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
- * @since 	  1.0.3
+ * @since 	  1.0.4
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -64,7 +64,7 @@ class RH_Query {
             }
 
         } else {
-        	$recipe_page = '';
+        	return;
         }
 
         $current_id = array_key_exists( 'queried_object', $q ) && array_key_exists( 'ID', $q->queried_object ) ? $q->queried_object->ID : false;
