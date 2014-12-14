@@ -7,6 +7,7 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
+ * @since 	  1.0.3
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -19,6 +20,9 @@ if ( ! class_exists( 'RH_Query' ) ) :
  * RH_Query Class
  */
 class RH_Query {
+
+	/** @public array Query vars to add to wp */
+	public $query_vars = array();
 
 	/**
 	 * Constructor for the query class. Hooks in methods.

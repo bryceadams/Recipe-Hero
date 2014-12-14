@@ -162,7 +162,7 @@ function recipe_hero_cmb2_metaboxes( array $meta_boxes ) {
 							'blank'	 => __( 'Blank Amount', 'recipe-hero' ),
 							'none'	 => __( 'None (No Quantity)', 'recipe-hero' ),
 						) ),
-						'default'	=> apply_filters( 'recipe_hero_meta_ingredients_amount_default', 'gm' ),
+						'default'	=> apply_filters( 'recipe_hero_meta_ingredients_amount_default', 'none' ),
     					//'sanitization_cb' => 'pw_select2_sanitise',
 					),
 					array(

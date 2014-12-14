@@ -4,7 +4,7 @@
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @version   1.0.1
+ * @version   1.0.3
  * @todo      Move functionaility into template parts and hook it in
  */
 
@@ -12,9 +12,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 global $post;
 $ingredients = get_post_meta( $post->ID, '_recipe_hero_ingredients_group', true );
+$ingredients = array_filter( $ingredients );
 
 // Check if any ingredients exist
-if ( ( $ingredients[0]['quantity'] ) ) { ?>
+if ( isset( $ingredients[0]['name'] ) ) { ?>
 
 	<div class="recipe-single-ingredients">
 

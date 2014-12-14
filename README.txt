@@ -136,6 +136,10 @@ Sure, but on food-steroids. Just check out the screenshots area.
 = 1.0.3 =
 * Bug Fix: Reviews link / summary on archives
 * Bug Fix: Include recipe_hero_enable_review_rating option in uninstall.php
+* Bug Fix: RH_Query class missing a public var - added it!
+* Buf Fix: Ingredients undefined index error
+* Template Change: single/ingredients.php
+* Template Change: review.php / rating.php / single-recipe-reviews.php
 
 = 1.0.2 =
 * New: Recipe Reviews / Ratings

@@ -12,7 +12,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
- 
+
  /**
  * Register 'Recipe' Custom Post Type.
  *
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class RH_Post_Types {
 
     public static function init() {
- 
+
     	add_action( 'init', array( __CLASS__, 'register_taxonomies' ), 6 );
     	add_action( 'init', array( __CLASS__, 'register_post_types' ), 6 );
 
@@ -60,7 +60,7 @@ class RH_Post_Types {
 			'not_found' 			=> __( 'No Course found' ),
 			'not_found_in_trash' 	=> __( 'No Course found in Trash' ),
 		);
-		
+
 		$course_pages = array('recipe');
 
 		$course_args = array(
@@ -95,9 +95,9 @@ class RH_Post_Types {
 			'not_found' 			=> __( 'No Cuisine found' ),
 			'not_found_in_trash' 	=> __( 'No Cuisine found in Trash' ),
 		);
-		
+
 		$cuisine_pages = array('recipe');
-		
+
 		$cuisine_args = array(
 			'labels' 			=> $cuisine_labels,
 			'singular_label' 	=> __( 'Cuisine' ),
@@ -149,11 +149,11 @@ class RH_Post_Types {
 			'parent_item_colon' => '',
 			'menu_name'			=> __( 'Recipe Hero' )
 		);
-		
+
 		$taxonomies 	= array();
 
 		$supports   	= array( 'title','editor','author','thumbnail','excerpt','comments','custom-fields','publicize','page-attributes' );
-		
+
 		$post_type_args = array(
 			'labels' 			=> $labels,
 			'singular_label' 	=> __( 'Recipe' ),
