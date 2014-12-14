@@ -4,7 +4,7 @@
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @version   1.0.2
+ * @version   1.0.3
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -25,9 +25,7 @@ $date = get_the_date();
 		<span class="dashicons dashicons-admin-users"></span> <?php echo the_author_posts_link(); ?>
 	</div>
 
-	<div class="comments-link">
-		<span class="dashicons dashicons-testimonial"></span> <a href="#reviews"><?php comments_number( __( '0 Reviews', 'recipe-hero' ), __( '1 Review', 'recipe-hero' ), __( '% Reviews', 'recipe-hero' ) ); ?></a>
-	</div>
+	<?php recipe_hero_get_template( 'single/rating.php' ); ?>
 
 	<?php if ( get_edit_post_link() ) { ?>
 
