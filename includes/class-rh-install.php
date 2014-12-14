@@ -7,6 +7,7 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
+ * @since 	  1.0.5
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -29,6 +30,8 @@ class RH_Install {
 		add_action( 'admin_init', array( $this, 'check_version' ), 5 );
 		add_filter( 'plugin_action_links_' . RH_PLUGIN_BASENAME, array( $this, 'plugin_action_links' ) );
 		add_filter( 'plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 2 );
+
+		add_action( 'plugins_loaded', array( $this, 'rating_reminder' ) );
 	}
 
 	/**
@@ -97,6 +100,9 @@ class RH_Install {
 
 		// Update version
 		update_option( 'recipe_hero_version', RecipeHero::$version );
+
+		// Rating Reminder
+		self::install_date();
 
 		// Flush rules after install
 		flush_rewrite_rules();
@@ -182,6 +188,117 @@ class RH_Install {
 		}
 
 		return (array) $links;
+	}
+
+	/**
+	 * Rating Reminder (7 days after install)
+	 */
+
+	public function rating_reminder() {
+
+		// Admin notice hide catch
+		add_action( 'admin_init', array( $this, 'catch_hide_notice' ) );
+
+		// Is admin notice hidden?
+		$current_user = wp_get_current_user();
+		$hide_notice  = get_user_meta( $current_user->ID, 'recipe_hero_hide_rating_reminder', true );
+
+		if ( current_user_can( 'install_plugins' ) && $hide_notice == '' ) {
+			// Get installation date
+			$datetime_install = $this->get_install_date();
+			$datetime_past    = new DateTime( '-7 days' );
+
+			if ( $datetime_past >= $datetime_install ) {
+				// 10 or more days ago, show admin notice
+				add_action( 'admin_notices', array( $this, 'display_admin_notice' ) );
+			}
+		}
+
+	}
+
+	/**
+	 * Install Date
+	 */
+
+	private static function install_date() {
+
+		$datetime_now = new DateTime();
+		$date_string  = $datetime_now->format( 'Y-m-d' );
+		update_option( 'recipe_hero_install_date', $date_string );
+
+		return $date_string;
+
+	}
+
+	/**
+	 * Get Install Date
+	 */
+
+	private function get_install_date() {
+
+		$date_string = get_option( 'recipe_hero_install_date', '' );
+		if ( $date_string == '' ) {
+			// There is no install date, plugin was installed before version 1.2.0. Add it now.
+			$date_string = self::install_date();
+		}
+
+		return new DateTime( $date_string );
+
+	}
+
+	/**
+	 * Get the admin query string array
+	 */
+
+	private function get_admin_querystring_array() {
+		parse_str( $_SERVER['QUERY_STRING'], $params );
+
+		return $params;
+	}
+
+	/**
+	 * Catch / Hide Notice
+	 */
+
+	public function catch_hide_notice() {
+		if ( isset( $_GET['recipe_hero_hide_rating_reminder'] ) && current_user_can( 'install_plugins' ) ) {
+			// Add user meta
+			global $current_user;
+			add_user_meta( $current_user->ID, 'recipe_hero_hide_rating_reminder', '1', true );
+
+			// Build redirect URL
+			$query_params = $this->get_admin_querystring_array();
+			unset( $query_params['recipe_hero_hide_rating_reminder'] );
+			$query_string = http_build_query( $query_params );
+			if ( $query_string != '' ) {
+				$query_string = '?' . $query_string;
+			}
+
+			$redirect_url = 'http';
+			if ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] == 'on' ) {
+				$redirect_url .= 's';
+			}
+			$redirect_url .= '://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . $query_string;
+
+			// Redirect
+			wp_redirect( $redirect_url );
+			exit;
+		}
+	}
+
+	/**
+	 * Display the admin notice
+	 */
+
+	public function display_admin_notice() {
+
+		$query_params = $this->get_admin_querystring_array();
+		$query_string = '?' . http_build_query( array_merge( $query_params, array( 'recipe_hero_hide_rating_reminder' => '1' ) ) );
+
+		echo '<div class="updated"><p>';
+		printf( __( 'You\'ve been using <b>Recipe Hero</b> for some time now, would you please consider reviewing on wordpress.org? :) <br /><br /> <a href="%s" target="_blank">Yes, take me there!</a> - <a href="%s">I\'ve already done this!</a>', 'recipe-hero' ), 'http://wordpress.org/support/view/plugin-reviews/recipe-hero', $query_string );
+		echo "</p></div>";
+
 	}
 
 }

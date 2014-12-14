@@ -11,7 +11,7 @@
  * Plugin Name:       Recipe Hero
  * Plugin URI:        http://recipehero.in/
  * Description:       The last recipe plugin you'll ever need.
- * Version:           1.0.4
+ * Version:           1.0.5
  * Author:            Bryce Adams
  * Author URI:        http://bryce.se/
  * Text Domain:       recipe-hero
@@ -36,7 +36,7 @@ if ( ! class_exists( 'RecipeHero' ) ) :
  * Main RecipeHero Class
  *
  * @class RecipeHero
- * @version	1.0.4
+ * @version	1.0.5
  */
 
 final class RecipeHero {
@@ -44,11 +44,11 @@ final class RecipeHero {
 	/**
 	 * Plugin version, used for cache-busting of style and script file references.
 	 *
-	 * @since   1.0.4
+	 * @since   1.0.5
 	 *
 	 * @var     string
 	 */
-	public static $version = '1.0.4';
+	public static $version = '1.0.5';
 
 	/**
 	 * The variable name is used as the text domain when internationalizing strings

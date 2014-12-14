@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Recipe Hero\n"
-"POT-Creation-Date: 2014-12-12 18:27+0700\n"
-"PO-Revision-Date: 2014-12-12 18:27+0700\n"
+"POT-Creation-Date: 2014-12-15 00:33+0700\n"
+"PO-Revision-Date: 2014-12-15 00:33+0700\n"
 "Last-Translator: Bryce <bryce@bryce.se>\n"
 "Language-Team: Recipe Hero <info@recipehero.in>\n"
 "Language: en\n"
@@ -17,13 +17,13 @@ msgstr ""
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../includes/abstracts/abstract-rh-recipe.php:275
-#: ../templates/single/rating.php:38
+#: ../templates/single/rating.php:39
 #, php-format
 msgid "Rated %s out of 5"
 msgstr ""
 
 #: ../includes/abstracts/abstract-rh-recipe.php:277
-#: ../templates/single/rating.php:40
+#: ../templates/single/rating.php:41
 msgid "out of 5"
 msgstr ""
 
@@ -44,7 +44,7 @@ msgstr ""
 
 #: ../includes/admin/class-rh-admin-menus.php:42
 #: ../includes/admin/class-rh-admin-welcome.php:217
-#: ../includes/class-rh-install.php:161
+#: ../includes/class-rh-install.php:167
 msgid "Settings"
 msgstr ""
 
@@ -252,7 +252,7 @@ msgid "We hope you enjoy it."
 msgstr ""
 
 #: ../includes/admin/class-rh-admin-welcome.php:218
-#: ../includes/class-rh-install.php:177
+#: ../includes/class-rh-install.php:183
 msgid "Docs"
 msgstr ""
 
@@ -455,7 +455,7 @@ msgid "Cuisine"
 msgstr ""
 
 #: ../includes/admin/rh-columns.php:35 ../includes/rh-fields.php:122
-#: ../templates/single/ingredients.php:22
+#: ../templates/single/ingredients.php:23
 msgid "Ingredients"
 msgstr ""
 
@@ -502,7 +502,7 @@ msgid ""
 "Documentation</a>."
 msgstr ""
 
-#: ../includes/admin/rh-help-tab.php:81 ../includes/class-rh-install.php:178
+#: ../includes/admin/rh-help-tab.php:81 ../includes/class-rh-install.php:184
 msgid "Support"
 msgstr ""
 
@@ -657,16 +657,25 @@ msgid ""
 "Are you sure you wish to run the updater now?"
 msgstr ""
 
-#: ../includes/class-rh-install.php:161
+#: ../includes/class-rh-install.php:167
 msgid "View Recipe Hero Settings"
 msgstr ""
 
-#: ../includes/class-rh-install.php:177
+#: ../includes/class-rh-install.php:183
 msgid "View Recipe Hero Documentation"
 msgstr ""
 
-#: ../includes/class-rh-install.php:178
+#: ../includes/class-rh-install.php:184
 msgid "Get Support for Recipe Hero"
+msgstr ""
+
+#: ../includes/class-rh-install.php:299
+#, php-format
+msgid ""
+"You've been using <b>Recipe Hero</b> for some time now, would you please "
+"consider reviewing on wordpress.org? :) <br /><br /> <a href=\"%s\" target="
+"\"_blank\">Yes, take me there!</a> - <a href=\"%s\">I've already done this!</"
+"a>"
 msgstr ""
 
 #: ../includes/class-rh-post-types.php:52 ../includes/rh-tax.php:30
@@ -792,7 +801,7 @@ msgstr ""
 msgid "Add New Recipe"
 msgstr ""
 
-#: ../includes/class-rh-post-types.php:143 ../templates/archive/meta.php:35
+#: ../includes/class-rh-post-types.php:143 ../templates/archive/meta.php:33
 #: ../templates/single/meta.php:34
 msgid "Edit Recipe"
 msgstr ""
@@ -1307,18 +1316,6 @@ msgstr ""
 msgid "Cook Time"
 msgstr ""
 
-#: ../templates/archive/meta.php:29
-msgid "0 Reviews"
-msgstr ""
-
-#: ../templates/archive/meta.php:29
-msgid "1 Review"
-msgstr ""
-
-#: ../templates/archive/meta.php:29
-msgid "% Reviews"
-msgstr ""
-
 #: ../templates/loop/no-recipes-found.php:12
 msgid "Sorry, there are no recipes to show!"
 msgstr ""
@@ -1403,7 +1400,7 @@ msgstr ""
 msgid "Nutrition"
 msgstr ""
 
-#: ../templates/single/rating.php:22 ../templates/single/rating.php:35
+#: ../templates/single/rating.php:24 ../templates/single/rating.php:36
 #, php-format
 msgid "%s Review"
 msgid_plural "%s Reviews"
