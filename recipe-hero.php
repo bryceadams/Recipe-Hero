@@ -197,6 +197,8 @@ final class RecipeHero {
 
 		// Abstract Classes
 		include_once( 'includes/abstracts/abstract-rh-recipe.php' );
+		include_once( 'includes/abstracts/abstract-rh-settings-api.php' );
+		include_once( 'includes/abstracts/abstract-rh-integration.php' );
 
 		// Query Class
 		$this->query = include( 'includes/class-rh-query.php' );

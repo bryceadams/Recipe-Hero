@@ -9,12 +9,12 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
- * @since     1.0.0
+ * @since     1.0.5
  */
 class RH_Integrations {
 
 	/** @var array Array of integration classes */
-	var $integrations = array();
+	public $integrations = array();
 
     /**
      * __construct function.
@@ -36,6 +36,7 @@ class RH_Integrations {
 			$this->integrations[ $load_integration->id ] = $load_integration;
 
 		}
+		
 
 	}
 

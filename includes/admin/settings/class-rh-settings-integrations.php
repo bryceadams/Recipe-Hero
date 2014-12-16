@@ -7,7 +7,7 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
- * @since     1.0.0
+ * @since     1.0.5
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -61,7 +61,7 @@ class RH_Settings_Integrations extends RH_Settings_Page {
 			}
 		}
 
-		return apply_filters( 'recipe_heroget_sections_' . $this->id, $sections );
+		return apply_filters( 'recipe_hero_get_sections_' . $this->id, $sections );
 	}
 
 	/**
