@@ -7,7 +7,7 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
- * @since 	  1.0.4
+ * @since 	  1.0.6
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -67,10 +67,13 @@ class RH_Query {
         	return;
         }
 
-        $current_id = array_key_exists( 'queried_object', $q ) && array_key_exists( 'ID', $q->queried_object ) ? $q->queried_object->ID : false;
+        if ( is_array( $q ) ) {
+        	$current_id = array_key_exists( 'queried_object', $q ) && array_key_exists( 'ID', $q->queried_object ) ? $q->queried_object->ID : '';
+		} else {
+			$current_id = '';
+		}     
 
 		// Fix for verbose page rules
-		//if ( $GLOBALS['wp_rewrite']->use_verbose_page_rules && isset( $q->queried_object_id ) && $q->queried_object_id === $recipe_page ) {
 		if ( $current_id == $recipe_page ) {
 			$q->set( 'post_type', 'recipe' );
 			$q->set( 'page', '' );
