@@ -5,3 +5,4 @@ assets/frontend/css/.sass-cache
 assets/frontend/css/.sass-cache/*
 assets/admin/css/.sass-cache
 assets/admin/css/.sass-cache/*
+*.scssc
