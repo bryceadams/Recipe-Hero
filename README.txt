@@ -134,6 +134,8 @@ Sure, but on food-steroids. Just check out the screenshots area.
 == Changelog ==
 
 = 1.0.5 =
+* Bug Fix: Add lightbox gallery class to featured image regardless of gallery
+* Tempalte Change: single/photo.php
 * RH: Notice that shows after a while asking you to maybe review the plugin - please do! :)
 
 = 1.0.4 =

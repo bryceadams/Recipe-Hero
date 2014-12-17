@@ -7,7 +7,7 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
- * @version   1.0.0
+ * @version   1.0.5
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -29,6 +29,12 @@ switch( $template ) {
 		break;
 	case 'twentyfourteen' :
 		echo '<div id="primary" class="content-area"><div id="content" class="site-content twentyfourteen"><div class="tfrh">';
+		break;
+	case 'twentyfifteen' :
+		echo '<div id="primary" role="main" class="content-area twentyfifteen"><div id="main" class="site-main t15wc">';
+		break;
+	case 'storefront' :
+		echo '<div id="primary" class="content-area"><main id="main" class="site-main" role="main">';
 		break;
 	default :
 		echo '<div id="container"><div id="content" class="content';
