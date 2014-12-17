@@ -70,6 +70,19 @@ Specific Core Theme Styles
     border-top: 0;
     padding-top: 0; }
 
+.twentyfifteen .page-title {
+  margin: 0 8.3333%;
+  margin-bottom: 40px; }
+.twentyfifteen article,
+.twentyfifteen .hentry.has-post-thumbnail {
+  padding: 8.3333% 50px 50px; }
+.twentyfifteen h1.recipe-single-title,
+.twentyfifteen h1.recipe-archive-title {
+  margin-bottom: 0.4em; }
+.twentyfifteen .recipe-single-meta,
+.twentyfifteen .recipe-archive-meta {
+  margin-bottom: 15px; }
+
 /*
 Single / Archive Template
 */
@@ -134,29 +147,36 @@ nav.recipe-hero-pagination {
     .recipe-hero article.recipe .recipe-single-meta,
     .recipe-hero article.recipe .recipe-archive-meta {
       margin-top: 10px; }
-      .recipe-hero article.recipe .recipe-single-meta .date, .recipe-hero article.recipe .recipe-single-meta .author, .recipe-hero article.recipe .recipe-single-meta .dashicons-testimonial, .recipe-hero article.recipe .recipe-single-meta .edit-link,
+      .recipe-hero article.recipe .recipe-single-meta .date, .recipe-hero article.recipe .recipe-single-meta .author, .recipe-hero article.recipe .recipe-single-meta .recipe-hero-recipe-rating, .recipe-hero article.recipe .recipe-single-meta .edit-link,
       .recipe-hero article.recipe .recipe-archive-meta .date,
       .recipe-hero article.recipe .recipe-archive-meta .author,
-      .recipe-hero article.recipe .recipe-archive-meta .dashicons-testimonial,
+      .recipe-hero article.recipe .recipe-archive-meta .recipe-hero-recipe-rating,
       .recipe-hero article.recipe .recipe-archive-meta .edit-link {
         display: inline-block;
         vertical-align: bottom;
         padding-left: 15px;
         font-size: 14px;
         margin-top: 0;
-        line-height: 1.5; }
-        .recipe-hero article.recipe .recipe-single-meta .date .dashicons, .recipe-hero article.recipe .recipe-single-meta .author .dashicons, .recipe-hero article.recipe .recipe-single-meta .dashicons-testimonial .dashicons, .recipe-hero article.recipe .recipe-single-meta .edit-link .dashicons,
+        margin-bottom: 10px;
+        line-height: 1.4; }
+        .recipe-hero article.recipe .recipe-single-meta .date:before, .recipe-hero article.recipe .recipe-single-meta .author:before, .recipe-hero article.recipe .recipe-single-meta .recipe-hero-recipe-rating:before, .recipe-hero article.recipe .recipe-single-meta .edit-link:before,
+        .recipe-hero article.recipe .recipe-archive-meta .date:before,
+        .recipe-hero article.recipe .recipe-archive-meta .author:before,
+        .recipe-hero article.recipe .recipe-archive-meta .recipe-hero-recipe-rating:before,
+        .recipe-hero article.recipe .recipe-archive-meta .edit-link:before {
+          display: none; }
+        .recipe-hero article.recipe .recipe-single-meta .date .dashicons, .recipe-hero article.recipe .recipe-single-meta .author .dashicons, .recipe-hero article.recipe .recipe-single-meta .recipe-hero-recipe-rating .dashicons, .recipe-hero article.recipe .recipe-single-meta .edit-link .dashicons,
         .recipe-hero article.recipe .recipe-archive-meta .date .dashicons,
         .recipe-hero article.recipe .recipe-archive-meta .author .dashicons,
-        .recipe-hero article.recipe .recipe-archive-meta .dashicons-testimonial .dashicons,
+        .recipe-hero article.recipe .recipe-archive-meta .recipe-hero-recipe-rating .dashicons,
         .recipe-hero article.recipe .recipe-archive-meta .edit-link .dashicons {
           font-size: 16px;
           vertical-align: bottom;
           line-height: 1.35; }
-        .recipe-hero article.recipe .recipe-single-meta .date a, .recipe-hero article.recipe .recipe-single-meta .author a, .recipe-hero article.recipe .recipe-single-meta .dashicons-testimonial a, .recipe-hero article.recipe .recipe-single-meta .edit-link a,
+        .recipe-hero article.recipe .recipe-single-meta .date a, .recipe-hero article.recipe .recipe-single-meta .author a, .recipe-hero article.recipe .recipe-single-meta .recipe-hero-recipe-rating a, .recipe-hero article.recipe .recipe-single-meta .edit-link a,
         .recipe-hero article.recipe .recipe-archive-meta .date a,
         .recipe-hero article.recipe .recipe-archive-meta .author a,
-        .recipe-hero article.recipe .recipe-archive-meta .dashicons-testimonial a,
+        .recipe-hero article.recipe .recipe-archive-meta .recipe-hero-recipe-rating a,
         .recipe-hero article.recipe .recipe-archive-meta .edit-link a {
           float: none;
           font-size: 14px; }

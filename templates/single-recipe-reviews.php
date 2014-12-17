@@ -19,7 +19,7 @@ if ( ! comments_open() ) {
 
 ?>
 <div id="reviews">
-	<div id="comments">
+	<div id="comments" class="comments-area">
 		<h2><?php
 			if ( get_option( 'recipe_hero_enable_review_rating' ) === 'yes' && ( $count = $recipe->get_rating_count() ) )
 				printf( _n( '%s review for %s', '%s reviews for %s', $count, 'recipe-hero' ), $count, get_the_title() );
@@ -51,7 +51,7 @@ if ( ! comments_open() ) {
 		<?php endif; ?>
 	</div>
 
-	<div id="review_form_wrapper">
+	<div id="review_form_wrapper" class="comments-area">
 		<div id="review_form">
 			<?php
 				$commenter = wp_get_current_commenter();

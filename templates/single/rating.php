@@ -21,7 +21,9 @@ $link = is_archive() ? get_permalink( get_the_ID() ) . '#reviews' : '#reviews';
 if ( get_option( 'recipe_hero_enable_review_rating' ) === 'no' ) {
 
 	if ( comments_open() ) : ?>
+	<span class="recipe-hero-recipe-rating">
 		<span class="dashicons dashicons-testimonial"></span> <a href="<?php echo $link; ?>" rel="nofollow"><?php printf( _n( '%s Review', '%s Reviews', $count, 'recipe-hero' ), '<span itemprop="ratingCount" class="count">' . $count . '</span>' ); ?></a>
+	</span>
 	<?php endif;
 
 	return;

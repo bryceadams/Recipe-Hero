@@ -31,6 +31,26 @@ Specific Core Theme Styles
 	}
 }
 
+// Twenty Fifteen
+.twentyfifteen {
+	.page-title {
+		margin: 0 8.3333%;
+		margin-bottom: 40px;
+	}
+	article,
+	.hentry.has-post-thumbnail {
+		padding: 8.3333% 50px 50px;
+	}
+	h1.recipe-single-title,
+	h1.recipe-archive-title {
+		margin-bottom: 0.4em;
+	}
+	.recipe-single-meta,
+	.recipe-archive-meta {
+		margin-bottom: 15px;
+	}
+}
+
 /*
 Single / Archive Template
 */
@@ -106,13 +126,17 @@ nav.recipe-hero-pagination {
 		.recipe-single-meta,
 		.recipe-archive-meta {
 			margin-top: 10px;
-			.date, .author, .dashicons-testimonial, .edit-link {
+			.date, .author, .recipe-hero-recipe-rating, .edit-link {
 				display: inline-block;
 				vertical-align: bottom;
 				padding-left: 15px;
 				font-size: 14px;
 				margin-top: 0;
-				line-height: 1.5;
+				margin-bottom: 10px;
+				line-height: 1.4;
+				&:before {
+					display: none;
+				}
 				.dashicons {
 					font-size: 16px;
 					vertical-align: bottom;
