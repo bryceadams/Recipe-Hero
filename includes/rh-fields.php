@@ -7,18 +7,25 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
- * @since 	  1.0.2
+ * @since 	  1.0.7
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-// Include CMB2
-if ( file_exists( __DIR__ . '/fields/init.php' ) ) {
-	require_once  __DIR__ . '/fields/init.php';
+/**
+ * INCLUDE CMB2:
+ * We need to check the PHP version first as 5.3+ uses __DIR__
+ * while 5.2 uses dirname( __FILE__ ) - causing issues for some users.
+ */
+
+$dir = ( version_compare( PHP_VERSION, '5.3.0' ) >= 0 ) ? __DIR__ : dirname( __FILE__ );
+
+if ( file_exists( $dir . '/fields/init.php' ) ) {
+	require_once  $dir . '/fields/init.php';
 }
 // Include CMB2 - Select2 Custom Field
-if ( file_exists( __DIR__ . '/fields/custom/cmb2-select2/cmb2-select2.php' ) ) {
-	require_once __DIR__ . '/fields/custom/cmb2-select2/cmb2-select2.php';
+if ( file_exists( $dir . '/fields/custom/cmb2-select2/cmb2-select2.php' ) ) {
+	require_once $dir . '/fields/custom/cmb2-select2/cmb2-select2.php';
 }
 
 // @todo rename the filter this filters

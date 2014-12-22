@@ -136,6 +136,7 @@ Sure, but on food-steroids. Just check out the screenshots area.
 
 = 1.0.7 =
 * Bug Fix: Update Settings Link
+* Bug Fix: Custom fields not working in PHP 5.2 but now fixed.
 
 = 1.0.6 =
 * Bug Fix: More query errors - should be fixed (sorry!)
