@@ -7,7 +7,7 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
- * @since 	  1.0.5
+ * @since 	  1.0.7
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -164,7 +164,7 @@ class RH_Install {
 	 */
 	public function plugin_action_links( $links ) {
 		$action_links = array(
-			'settings'	=>	'<a href="' . admin_url( 'edit.php?post_type=recipe&page=recipe_hero_general_options' ) . '" title="' . esc_attr( __( 'View Recipe Hero Settings', 'recipe-hero' ) ) . '">' . __( 'Settings', 'recipe-hero' ) . '</a>',
+			'settings'	=>	'<a href="' . admin_url( 'edit.php?post_type=recipe&page=rh-settings' ) . '" title="' . esc_attr( __( 'View Recipe Hero Settings', 'recipe-hero' ) ) . '">' . __( 'Settings', 'recipe-hero' ) . '</a>',
 		);
 
 		return array_merge( $action_links, $links );
