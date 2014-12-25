@@ -63,14 +63,14 @@ Navigate to `http://yourwebsite.com/recipes` to see all the new recipes you've a
 
 ## Installation
 
-### Using The WordPress Dashboard
+#### Using The WordPress Dashboard
 
 1. Navigate to the 'Add New' in the plugins dashboard
 2. Search for 'Recipe Hero'
 3. Click 'Install Now'
 4. Activate the plugin on the Plugin dashboard
 
-### Uploading in WordPress Dashboard
+#### Uploading in WordPress Dashboard
 
 1. Navigate to the 'Add New' in the plugins dashboard
 2. Navigate to the 'Upload' area
@@ -78,7 +78,7 @@ Navigate to `http://yourwebsite.com/recipes` to see all the new recipes you've a
 4. Click 'Install Now'
 5. Activate the plugin in the Plugin dashboard
 
-## Using FTP
+#### Using FTP
 
 1. Download `recipe-hero.zip`
 2. Extract the `recipe-hero` directory to your computer
@@ -100,25 +100,25 @@ There are also 2 shortcodes included with Recipe Hero:
 
 ## Frequently Asked Questions
 
-### I keep getting 404 Page Not Found errors when trying to view the recipes I've added!
+#### I keep getting 404 Page Not Found errors when trying to view the recipes I've added!
 
 You need to re-save your permalinks first! Navigate to `http://yourwebsite.com/wp-admin/options-permalink.php` and re-save your permalink settings.
 
-### How do I remove the default Recipe Hero styling?
+#### How do I remove the default Recipe Hero styling?
 
 Easy! Just add the code in the following gist to your theme's functions.php file: [Remove Styles Gist](https://gist.github.com/bryceadams/22439ae2efd3433ca29a)
 
-### How can I translate the plugin?
+#### How can I translate the plugin?
 
 Just like you would translate any other plugin or theme! I've written [some documentation over here](http://captaintheme.com/docs/general/translating-a-theme-or-plugin/) that will help you get started.
 
 Please feel free to [send me your translation](mailto:info@recipehero.in) afterwards so I can share it with other users, making Recipe Hero more accessible to everyone.
 
-### Will Google recognise my recipes and show them like the other recipes in Google?
+#### Will Google recognise my recipes and show them like the other recipes in Google?
 
 Sure, but on food-steroids. Just check out the screenshots area.
 
-### How can I thank you?
+#### How can I thank you?
 
 [Send me your most precious family recipe!](mailto:info@recipehero.in)
 
