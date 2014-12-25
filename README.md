@@ -1,16 +1,17 @@
-=== Recipe Hero ===
-Contributors: captaintheme, recipehero,
-Donate link: http://recipehero.in/
-Tags: recipe, recipes, cooking, ingredients, food, cook, cook book, recipe hero, captain theme, google recipes
-Requires at least: 3.8.0
-Tested up to: 4.1.0
-Stable tag: 1.0.7
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+# Recipe Hero
+
+* **Contributors:** captaintheme, recipehero,
+* **Donate link:** http://recipehero.in/
+* **Tags:** recipe, recipes, cooking, ingredients, food, cook, cook book, recipe hero, captain theme, google recipes
+* **Requires at least:** 3.8.0
+* **Tested up to:** 4.1.0
+* **Stable tag:** 1.0.7
+* **License:** GPLv2 or later
+* **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 
 Recipe Hero is the easiest way to add recipes to your WordPress site in seconds. Complete with countless features, food never tasted better.
 
-== Description ==
+## Description
 
 It shouldn't be difficult to add a recipe to your WordPress site.
 
@@ -60,16 +61,16 @@ Navigate to `http://yourwebsite.com/recipes` to see all the new recipes you've a
 
 **Roadmap:** I’d love for you to get involved in the future of Recipe Hero. Please come visit the [Recipe Hero Trello Roadmap](https://trello.com/b/Qv3owrP0/recipe-hero-roadmap)
 
-== Installation ==
+## Installation
 
-= Using The WordPress Dashboard =
+### Using The WordPress Dashboard
 
 1. Navigate to the 'Add New' in the plugins dashboard
 2. Search for 'Recipe Hero'
 3. Click 'Install Now'
 4. Activate the plugin on the Plugin dashboard
 
-= Uploading in WordPress Dashboard =
+### Uploading in WordPress Dashboard
 
 1. Navigate to the 'Add New' in the plugins dashboard
 2. Navigate to the 'Upload' area
@@ -77,14 +78,14 @@ Navigate to `http://yourwebsite.com/recipes` to see all the new recipes you've a
 4. Click 'Install Now'
 5. Activate the plugin in the Plugin dashboard
 
-= Using FTP =
+## Using FTP
 
 1. Download `recipe-hero.zip`
 2. Extract the `recipe-hero` directory to your computer
 3. Upload the `recipe-hero` directory to the `/wp-content/plugins/` directory
 4. Activate the plugin in the Plugin dashboard
 
-== Usage ==
+## Usage
 
 After creating your first recipe, you'll normally be able to go to: `http://yourwebsite.com/recipes/` to view an archive of all your recipes.
 
@@ -97,31 +98,31 @@ There are also 2 shortcodes included with Recipe Hero:
 
 **For more about displaying recipes, check out our [Displaying Recipes](http://recipehero.in/docs/displaying-recipes/) documentation.**
 
-== Frequently Asked Questions ==
+## Frequently Asked Questions
 
-= I keep getting 404 Page Not Found errors when trying to view the recipes I've added! =
+### I keep getting 404 Page Not Found errors when trying to view the recipes I've added!
 
 You need to re-save your permalinks first! Navigate to `http://yourwebsite.com/wp-admin/options-permalink.php` and re-save your permalink settings.
 
-= How do I remove the default Recipe Hero styling? =
+### How do I remove the default Recipe Hero styling?
 
 Easy! Just add the code in the following gist to your theme's functions.php file: [Remove Styles Gist](https://gist.github.com/bryceadams/22439ae2efd3433ca29a)
 
-= How can I translate the plugin? =
+### How can I translate the plugin?
 
 Just like you would translate any other plugin or theme! I've written [some documentation over here](http://captaintheme.com/docs/general/translating-a-theme-or-plugin/) that will help you get started.
 
 Please feel free to [send me your translation](mailto:info@recipehero.in) afterwards so I can share it with other users, making Recipe Hero more accessible to everyone.
 
-= Will Google recognise my recipes and show them like the other recipes in Google? =
+### Will Google recognise my recipes and show them like the other recipes in Google?
 
 Sure, but on food-steroids. Just check out the screenshots area.
 
-= How can I thank you? =
+### How can I thank you?
 
 [Send me your most precious family recipe!](mailto:info@recipehero.in)
 
-== Screenshots ==
+## Screenshots
 
 1. Single Recipe
 2. Single Recipe #2
@@ -132,7 +133,7 @@ Sure, but on food-steroids. Just check out the screenshots area.
 7. Recipe Hero Settings
 8. Google Rich Snippets Preview
 
-== Changelog ==
+## Changelog 
 
 = 1.0.7 =
 * Bug Fix: Update Settings Link
@@ -274,6 +275,6 @@ Sure, but on food-steroids. Just check out the screenshots area.
 = 0.5.0 =
 * Initial BETA Release
 
-== Updates ==
+## Updates
 
 They'll come automatically through the WordPress dashboard - just relax and cook.
