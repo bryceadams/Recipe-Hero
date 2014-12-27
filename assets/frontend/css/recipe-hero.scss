@@ -1,4 +1,4 @@
-@import 'rh-mixins';
+@import 'sass/mixins';
 
 $primary:           #a46497;                                    // Primary colour for buttons (alt)
 $primarytext:       desaturate(lighten($primary, 50%), 18%);    // Text on primary colour bg

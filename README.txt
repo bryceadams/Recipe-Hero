@@ -4,7 +4,7 @@ Donate link: http://recipehero.in/
 Tags: recipe, recipes, cooking, ingredients, food, cook, cook book, recipe hero, captain theme, google recipes
 Requires at least: 3.8.0
 Tested up to: 4.1.0
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -133,6 +133,9 @@ Sure, but on food-steroids. Just check out the screenshots area.
 8. Google Rich Snippets Preview
 
 == Changelog ==
+
+= 1.0.8 =
+* Frontend CSS file renaming
 
 = 1.0.7 =
 * Bug Fix: Update Settings Link

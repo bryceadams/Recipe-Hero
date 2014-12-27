@@ -7,10 +7,12 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
- * @since 	  1.0.1
+ * @since 	  1.0.8
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 if ( ! class_exists( 'Recipe_Hero_Frontend_Scripts' ) ) {
 
@@ -37,7 +39,7 @@ if ( ! class_exists( 'Recipe_Hero_Frontend_Scripts' ) ) {
 					'media'   => 'all'
 				),
 				'rh-general' => array(
-					'src'     => RH()->plugin_url() . '/assets/frontend/css/rh-styles.css',
+					'src'     => RH()->plugin_url() . '/assets/frontend/css/recipe-hero.css',
 					'deps'    => '',
 					'version' => RecipeHero::$version,
 					'media'   => 'all'
@@ -61,7 +63,7 @@ if ( ! class_exists( 'Recipe_Hero_Frontend_Scripts' ) ) {
 			wp_register_script( 'rh-lightbox', RH()->plugin_url() . '/assets/frontend/js/rh-lightbox.js', array( 'jquery', 'magnific' ), RecipeHero::$version, true );
 			wp_register_style( 'magnific-css', RH()->plugin_url() . '/assets/frontend/css/magnific-popup.css', RecipeHero::$version, true );
 
-			wp_register_style( 'rh-general-rtl', RH()->plugin_url() . '/assets/frontend/css/rh-styles-rtl.css', RecipeHero::$version, true );
+			wp_register_style( 'rh-general-rtl', RH()->plugin_url() . '/assets/frontend/css/recipe-hero-rtl.css', RecipeHero::$version, true );
 
 			if ( is_rtl() ) {
 				wp_enqueue_style( 'rh-general-rtl' );
