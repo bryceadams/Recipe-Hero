@@ -136,6 +136,7 @@ Sure, but on food-steroids. Just check out the screenshots area.
 
 = 1.0.8 =
 * Frontend CSS file renaming
+* Filters for post types and tax args
 
 = 1.0.7 =
 * Bug Fix: Update Settings Link

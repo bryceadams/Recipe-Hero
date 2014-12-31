@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0.0
+ * @since 	  1.0.8
  */
 
 class RH_Post_Types {
@@ -37,7 +37,7 @@ class RH_Post_Types {
 	 *
 	 * @package   Recipe Hero
 	 * @author    Captain Theme <info@captaintheme.com>
-	 * @since 	  1.0.0
+	 * @since 	  1.0.8
 	 */
 
 	public static function register_taxonomies() {
@@ -63,7 +63,7 @@ class RH_Post_Types {
 
 		$course_pages = array('recipe');
 
-		$course_args = array(
+		$course_args = apply_filters( 'recipe_hero_course_tax_args', array(
 			'labels' 			=> $course_labels,
 			'singular_label' 	=> __( 'Course' ),
 			'public' 			=> true,
@@ -76,7 +76,7 @@ class RH_Post_Types {
 					'with_front'   => false,
 					'hierarchical' => true,
 			),
-		 );
+		) );
 		register_taxonomy( 'course', $course_pages, $course_args );
 
 		/**
@@ -98,7 +98,7 @@ class RH_Post_Types {
 
 		$cuisine_pages = array('recipe');
 
-		$cuisine_args = array(
+		$cuisine_args = apply_filters( 'recipe_hero_cuisine_tax_args', array(
 			'labels' 			=> $cuisine_labels,
 			'singular_label' 	=> __( 'Cuisine' ),
 			'public' 			=> true,
@@ -111,7 +111,7 @@ class RH_Post_Types {
 				'with_front'   => false,
 				'hierarchical' => true,
 			),
-		 );
+		) );
 
 		register_taxonomy( 'cuisine', $cuisine_pages, $cuisine_args );
 
@@ -122,7 +122,7 @@ class RH_Post_Types {
 	 *
 	 * @package   Recipe Hero
 	 * @author    Captain Theme <info@captaintheme.com>
-	 * @since 	  1.0.0
+	 * @since 	  1.0.8
 	 */
 
     public static function register_post_types() {
@@ -154,7 +154,7 @@ class RH_Post_Types {
 
 		$supports   	= array( 'title','editor','author','thumbnail','excerpt','comments','custom-fields','publicize','page-attributes' );
 
-		$post_type_args = array(
+		$post_type_args = apply_filters( 'recipe_hero_recipe_post_type_args', array(
 			'labels' 			=> $labels,
 			'singular_label' 	=> __( 'Recipe' ),
 			'public' 			=> true,
@@ -171,13 +171,20 @@ class RH_Post_Types {
 			'menu_position' 	=> 35,
 			'menu_icon' 		=> 'dashicons-shield',
 			'taxonomies'		=> $taxonomies
-		 );
+		) );
 
-		 register_post_type( 'recipe', $post_type_args );
+		register_post_type( 'recipe', $post_type_args );
 
 	}
 
-	/* Filter post updated messages for the recipe post type */
+	/**
+	 * Filter post updated messages for the recipe post type
+	 *
+	 * @package   Recipe Hero
+	 * @author    Captain Theme <info@captaintheme.com>
+	 * @since 	  1.0.8
+	 */
+
 	public static function recipe_updated_messages( $messages ) {
 	    global $post, $post_ID;
 
