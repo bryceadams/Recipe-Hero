@@ -135,9 +135,12 @@ Sure, but on food-steroids. Just check out the screenshots area.
 == Changelog ==
 
 = 1.0.8 =
-* Frontend CSS file renaming
-* Filters for post types and tax args
-* Fix gallery thumbnail sizing
+* Enhancement: Frontend CSS file renaming
+* Dev: Filters for post types and tax args
+* Bug Fix: Fix gallery thumbnail sizing
+* Bug Fix: Featured image width link fix
+* Bug Fix: Better margins for featured image
+* Bug Fix: Vertically aligned ingredients
 
 = 1.0.7 =
 * Bug Fix: Update Settings Link
