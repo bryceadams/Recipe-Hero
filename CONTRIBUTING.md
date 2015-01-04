@@ -6,7 +6,7 @@ When contributing please ensure you follow the guidelines below so that we can k
 
 __Note:__
 
-GitHub is for *bug reports and contributions only* - if you have a support question or a request for a customization don't post here. Feel free to ask for help on [WordPress.org](https://wordpress.org/support/plugin/recipe-hero) but I can't guarantee support there. Customers who have purchased extensions may get premium support on [Recipe Hero](http://recipehero.in/support/)
+GitHub is for *bug reports and contributions only* - if you have a support question or a request for a customization don't post here. Feel free to ask for help on [WordPress.org](https://wordpress.org/support/plugin/recipe-hero) but I can't guarantee support there. Customers who have purchased extensions may get premium support on [Recipe Hero](http://recipehero.in/support/).
 
 ## Getting Started
 
