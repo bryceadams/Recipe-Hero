@@ -1,6 +1,6 @@
 # Recipe Hero
 
-* **Contributors:** captaintheme, recipehero,
+* **Contributors:** captaintheme, recipehero, bryceadams
 * **Donate link:** http://recipehero.in/
 * **Tags:** recipe, recipes, cooking, ingredients, food, cook, cook book, recipe hero, captain theme, google recipes
 * **Requires at least:** 3.8.0
