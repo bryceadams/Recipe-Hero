@@ -143,6 +143,7 @@ Sure, but on food-steroids. Just check out the screenshots area.
 * Bug Fix: Better margins for featured image
 * Bug Fix: Vertically aligned ingredients
 * Bug Fix: Point Theme compatible styles
+* Bug Fix: Add back 'Discussion' meta box
 * Template Change: global/wrapper-start.php
 * Template Change: global/wrapper-end.php
 

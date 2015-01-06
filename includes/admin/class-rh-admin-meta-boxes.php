@@ -11,7 +11,7 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
- * @since     1.0.0
+ * @since     1.0.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -51,7 +51,6 @@ class RH_Admin_Meta_Boxes {
 	
 		// Remove Metaboxes
 		remove_meta_box( 'pageparentdiv', 'recipe', 'side' );
-		remove_meta_box( 'commentstatusdiv', 'recipe', 'normal' );
 
 		// Reviews
 		if ( 'comment' == get_current_screen()->id && isset( $_GET['c'] ) ) {
