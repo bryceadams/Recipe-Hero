@@ -141,6 +141,9 @@ Sure, but on food-steroids. Just check out the screenshots area.
 * Bug Fix: Featured image width link fix
 * Bug Fix: Better margins for featured image
 * Bug Fix: Vertically aligned ingredients
+* Bug Fix: Point Theme compatible styles
+* Template Change: global/wrapper-start.php
+* Template Change: global/wrapper-end.php
 
 = 1.0.7 =
 * Bug Fix: Update Settings Link

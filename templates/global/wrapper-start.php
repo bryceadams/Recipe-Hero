@@ -7,15 +7,13 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
- * @version   1.0.5
+ * @version   1.0.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Current WordPress Template Chosen
 $template = get_option( 'template' );
-
-$remove_char = array( '#', '.' );
 
 switch( $template ) {
 	case 'twentyeleven' :
@@ -35,6 +33,9 @@ switch( $template ) {
 		break;
 	case 'storefront' :
 		echo '<div id="primary" class="content-area"><main id="main" class="site-main" role="main">';
+		break;
+	case 'point' :
+		echo '<div id="primary" class="point-theme"><div class="article">';
 		break;
 	default :
 		echo '<div id="container"><div id="content" class="content';

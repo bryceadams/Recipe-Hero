@@ -83,6 +83,14 @@ Specific Core Theme Styles
 .twentyfifteen .recipe-archive-meta {
   margin-bottom: 15px; }
 
+.theme-point.recipe-hero #primary {
+  margin-left: 22px; }
+  .theme-point.recipe-hero #primary > .article {
+    margin-top: 15px; }
+.theme-point.recipe-hero aside.sidebar {
+  margin-top: 23px;
+  margin-right: 20px; }
+
 /*
 Single / Archive Template
 */

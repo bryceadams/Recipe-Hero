@@ -51,6 +51,20 @@ Specific Core Theme Styles
 	}
 }
 
+// Point Theme
+.theme-point.recipe-hero {
+	#primary {
+		margin-left: 22px;
+		>.article {
+			margin-top: 15px;
+		}
+	}
+	aside.sidebar {
+		margin-top: 23px;
+		margin-right: 20px;
+	}
+}
+
 /*
 Single / Archive Template
 */

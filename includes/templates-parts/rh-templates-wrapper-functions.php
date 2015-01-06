@@ -7,6 +7,7 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
+ * @since 	  1.0.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -24,6 +25,9 @@ function recipe_hero_body_class( $classes ) {
 		$classes[] = 'recipe-hero';
 		$classes[] = 'recipe-hero-page';
 	}
+
+	// Add theme class to body
+	$classes[] = 'theme-' . get_option( 'template' );
 
 	return array_unique( $classes );
 }

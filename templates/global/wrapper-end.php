@@ -7,7 +7,7 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
- * @version   1.0.5
+ * @version   1.0.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -34,6 +34,9 @@ switch( $template ) {
 		break;
 	case 'storefront' :
 		echo '</main></div>';
+		break;
+	case 'point' :
+		echo '</div></div>';
 		break;
 	default :
 		echo '</div></div>';
