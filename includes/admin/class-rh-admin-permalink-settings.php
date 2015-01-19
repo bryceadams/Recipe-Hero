@@ -7,6 +7,7 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
+ * @since 	  1.0.9
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -94,16 +95,16 @@ class RH_Admin_Permalink_Settings {
 		<table class="form-table">
 			<tbody>
 				<tr>
-					<th><label><input name="recipe_permalink" type="radio" value="<?php echo $structures[0]; ?>" class="wctog" <?php checked( $structures[0], $recipe_permalink ); ?> /> <?php _e( 'Default', 'recipe-hero' ); ?></label></th>
+					<th><label><input name="recipe_permalink" type="radio" value="<?php echo $structures[0]; ?>" class="rhtog" <?php checked( $structures[0], $recipe_permalink ); ?> /> <?php _e( 'Default', 'recipe-hero' ); ?></label></th>
 					<td><code><?php echo home_url(); ?>/?recipe=sample-recipe</code></td>
 				</tr>
 				<tr>
-					<th><label><input name="recipe_permalink" type="radio" value="<?php echo $structures[1]; ?>" class="wctog" <?php checked( $structures[1], $recipe_permalink ); ?> /> <?php _e( 'Recipe', 'recipe-hero' ); ?></label></th>
+					<th><label><input name="recipe_permalink" type="radio" value="<?php echo $structures[1]; ?>" class="rhtog" <?php checked( $structures[1], $recipe_permalink ); ?> /> <?php _e( 'Recipe', 'recipe-hero' ); ?></label></th>
 					<td><code><?php echo home_url(); ?>/<?php echo $recipe_base; ?>/sample-recipe/</code></td>
 				</tr>
 				<?php if ( $shop_page_id ) : ?>
 					<tr>
-						<th><label><input name="recipe_permalink" type="radio" value="<?php echo $structures[2]; ?>" class="wctog" <?php checked( $structures[2], $recipe_permalink ); ?> /> <?php _e( 'Recipes base', 'recipe-hero' ); ?></label></th>
+						<th><label><input name="recipe_permalink" type="radio" value="<?php echo $structures[2]; ?>" class="rhtog" <?php checked( $structures[2], $recipe_permalink ); ?> /> <?php _e( 'Recipes base', 'recipe-hero' ); ?></label></th>
 						<td><code><?php echo home_url(); ?>/<?php echo $base_slug; ?>/sample-recipe/</code></td>
 					</tr>
 				<?php endif; ?>
@@ -118,7 +119,7 @@ class RH_Admin_Permalink_Settings {
 		</table>
 		<script type="text/javascript">
 			jQuery(function(){
-				jQuery('input.wctog').change(function() {
+				jQuery('input.rhtog').change(function() {
 					jQuery('#recipe_hero_permalink_structure').val( jQuery(this).val() );
 				});
 

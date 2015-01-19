@@ -11,14 +11,13 @@
  * Plugin Name:       Recipe Hero
  * Plugin URI:        http://recipehero.in/
  * Description:       The last recipe plugin you'll ever need.
- * Version:           1.0.8
+ * Version:           1.0.9
  * Author:            Bryce Adams
  * Author URI:        http://bryce.se/
  * Text Domain:       recipe-hero
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path:       /languages
- * Made with the amazing: WordPress-Plugin-Boilerplate: v2.6.1
  */
 
 // If this file is called directly, abort.
@@ -36,7 +35,7 @@ if ( ! class_exists( 'RecipeHero' ) ) :
  * Main RecipeHero Class
  *
  * @class RecipeHero
- * @version	1.0.8
+ * @version	1.0.9
  */
 
 final class RecipeHero {
@@ -44,11 +43,11 @@ final class RecipeHero {
 	/**
 	 * Plugin version, used for cache-busting of style and script file references.
 	 *
-	 * @since   1.0.8
+	 * @since   1.0.9
 	 *
 	 * @var     string
 	 */
-	public static $version = '1.0.8';
+	public static $version = '1.0.9';
 
 	/**
 	 * The variable name is used as the text domain when internationalizing strings
