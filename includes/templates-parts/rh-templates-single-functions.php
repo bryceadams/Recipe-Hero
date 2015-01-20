@@ -291,7 +291,7 @@ if ( ! function_exists( 'recipe_hero_calc_total_cook_time' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0.1
+ * @since 	  1.0.10
  */
 
 if ( ! function_exists( 'recipe_hero_output_single_ingredient_amount' ) ) {
@@ -332,6 +332,9 @@ if ( ! function_exists( 'recipe_hero_output_single_ingredient_amount' ) ) {
 		    case 'piece':
 		    	$ingredient_amount = sprintf( _n( '1 Piece', '%s Pieces', $ingredient_quantity, 'recipe-hero' ), $ingredient_quantity );
 		    	break;
+		    case 'scoop':
+		    	$ingredient_amount = sprintf( _n( '1 Scoop', '%s Scoops', $ingredient_quantity, 'recipe-hero' ), $ingredient_quantity );
+		    	break;
 		    case 'blank':
 		    	$ingredient_amount = $ingredient_quantity;
 		    	break;
@@ -339,7 +342,7 @@ if ( ! function_exists( 'recipe_hero_output_single_ingredient_amount' ) ) {
 		    	$ingredient_amount = '';
 		    	break;
 		    default :
-		    	$ingredient_amount = '';
+		    	$ingredient_amount = $ingredient_quantity . ' ' . $ingredient_amount_pre;
 		    	break;
 	   	}
 

@@ -7,7 +7,7 @@
  * @license   GPL-2.0+
  * @link      http://captaintheme.com
  * @copyright 2014 Captain Theme
- * @since 	  1.0.7
+ * @since 	  1.0.10
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -166,6 +166,7 @@ function recipe_hero_cmb2_metaboxes( array $meta_boxes ) {
 							'kg'     => __( 'Kilogram (kg)', 'recipe-hero' ),
 							'slice'	 => __( 'Slices', 'recipe-hero' ),
 							'piece'	 => __( 'Pieces', 'recipe-hero' ),
+							'scoop'	 => __( 'Scoops', 'recipe-hero' ),
 							'blank'	 => __( 'Blank Amount', 'recipe-hero' ),
 							'none'	 => __( 'None (No Quantity)', 'recipe-hero' ),
 						) ),

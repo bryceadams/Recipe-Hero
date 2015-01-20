@@ -134,6 +134,9 @@ Sure, but on food-steroids. Just check out the screenshots area.
 
 == Changelog ==
 
+= 1.0.10 =
+* Add 'scoop' ingredient amount
+
 = 1.0.9 =
 * Conflict with WooCommerce + Permalinks - #bryceisstupid
 
