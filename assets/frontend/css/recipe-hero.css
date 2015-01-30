@@ -344,7 +344,8 @@ nav.recipe-hero-pagination {
           text-align: right;
           min-width: 20%;
           display: inline-block;
-          font-weight: bold; }
+          font-weight: bold;
+          float: none; }
         .recipe-hero article.recipe .recipe-single-ingredients ul.ingredients-list li.ingredients-item .name {
           text-align: left;
           display: inline-block;
