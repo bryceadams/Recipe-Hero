@@ -4,7 +4,7 @@ Donate link: http://recipehero.in/
 Tags: recipe, recipes, cooking, ingredients, food, cook, cook book, recipe hero, captain theme, google recipes
 Requires at least: 3.8.0
 Tested up to: 4.1.0
-Stable tag: 1.0.9
+Stable tag: 1.0.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -136,6 +136,7 @@ Sure, but on food-steroids. Just check out the screenshots area.
 
 = 1.0.10 =
 * Add 'scoop' ingredient amount
+* Finally (hopefully) fixed a bug with fractions for amounts
 
 = 1.0.9 =
 * Conflict with WooCommerce + Permalinks - #bryceisstupid
