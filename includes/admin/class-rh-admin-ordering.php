@@ -275,7 +275,7 @@ class RH_Recipe_Ordering {
 			$query_string = add_query_arg( 'orderby', urlencode( 'menu_order title' ), $query_string );
 			$query_string = add_query_arg( 'order', 'asc', $query_string );
 		}
-		$views['byorder'] = sprintf('<a href="%s" class="%s">%s</a>', $query_string, $class, __("Sort by Order", 'recipe-hero'));
+		$views['byorder'] = sprintf('<a href="%s" class="%s">%s</a>', esc_url( $query_string ), $class, __("Sort by Order", 'recipe-hero'));
 			
 		return $views;
 	}

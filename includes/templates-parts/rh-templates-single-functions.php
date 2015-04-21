@@ -291,7 +291,7 @@ if ( ! function_exists( 'recipe_hero_calc_total_cook_time' ) ) {
  *
  * @package   Recipe Hero
  * @author    Captain Theme <info@captaintheme.com>
- * @since 	  1.0.10
+ * @since 	  1.0.11
  */
 
 if ( ! function_exists( 'recipe_hero_output_single_ingredient_amount' ) ) {
@@ -335,6 +335,9 @@ if ( ! function_exists( 'recipe_hero_output_single_ingredient_amount' ) ) {
 		    case 'scoop':
 		    	$ingredient_amount = sprintf( _n( '%s Scoop', '%s Scoops', $ingredient_quantity, 'recipe-hero' ), $ingredient_quantity );
 		    	break;
+	    	case 'pinch':
+	    		$ingredient_amount = sprintf( _n( '%s Pinch', '%s Pinches', $ingredient_quantity, 'recipe-hero' ), $ingredient_quantity );
+	    		break;
 		    case 'blank':
 		    	$ingredient_amount = $ingredient_quantity;
 		    	break;

@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div id="message" class="updated recipe-hero-message rh-connect">
 	<p><?php _e( '<strong>Recipe Hero Data Update Required</strong> &#8211; We just need to update your install to the latest version!', 'recipe-hero' ); ?></p>
-	<p class="submit"><a href="<?php echo add_query_arg( 'do_update_recipe_hero', 'true', admin_url( 'admin.php?page=rh-settings' ) ); ?>" class="rh-update-now button-primary"><?php _e( 'Run the updater', 'recipe-hero' ); ?></a></p>
+	<p class="submit"><a href="<?php echo esc_url( add_query_arg( 'do_update_recipe_hero', 'true', admin_url( 'admin.php?page=rh-settings' ) ) ); ?>" class="rh-update-now button-primary"><?php _e( 'Run the updater', 'recipe-hero' ); ?></a></p>
 </div>
 <script type="text/javascript">
 	jQuery('.rh-update-now').click('click', function(){
